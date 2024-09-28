@@ -1,0 +1,2988 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',
+}
+
+/* Banner css */
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.uptodd-banner {
+    width: 100%;
+    background: linear-gradient(0deg, #5a40c4 0%, #4b5adb 100%);
+    padding: 49px 130px 37px 113px;
+}
+
+.uptodd-banner h3 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -.6px
+}
+
+.uptodd-banner h5 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -.32px;
+    margin-top: 12px
+}
+
+.banner-container {
+    display: flex;
+    justify-content: center; /* Centers child elements horizontally */
+    align-items: center; /* Centers child elements vertically */
+    flex-direction: row;
+}
+
+.image-banner-part-mobile {
+    display: none
+}
+
+.text-banner-part {
+    width: 45%;
+    display: flex; /* Enables flex properties for inner elements */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers child elements horizontally */
+    text-align: center;
+}
+
+.image-banner-part {
+    width: 41%
+}
+
+.image-banner-part img {
+    width: 100%
+}
+
+.text-banner-part h1 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 66px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -1.32px
+}
+
+.text-banner-part li {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -.32px;
+    padding: 9px 0;
+    display: flex;
+    align-items: center
+}
+
+.text-banner-part li i {
+    font-size: 24px;
+    margin-right: 11px
+}
+
+.text-banner-part button {
+    border-radius: 8px;
+    background: #ff5766;
+    width: 198px;
+    height: 54px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.8px;
+    border: none;
+    cursor: pointer
+}
+
+.full{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1250px) {
+    .uptodd-banner {
+        padding: 49px 100px 37px 90px
+    }
+
+    .image-banner-part {
+        width: 50%
+    }
+}
+
+@media (max-width: 970px) {
+    .uptodd-banner {
+        padding: 49px 40px 37px 40px
+    }
+
+    .text-banner-part h1 {
+        font-size: 35px;
+        line-height: 40px;
+        letter-spacing: -1.12px
+    }
+
+    .text-banner-part li {
+        font-size: 14px;
+        padding: 4px 0
+    }
+
+    .text-banner-part li i {
+        font-size: 18px
+    }
+
+    .text-banner-part button {
+        width: 170px;
+        height: 45px;
+        font-size: 17px;
+        line-height: 20px
+    }
+}
+
+@media (max-width: 700px) {
+    .uptodd-banner {
+        padding: 49px 6.5% 37px 6.5%
+    }
+
+    .banner-container {
+        flex-wrap: wrap
+    }
+
+    .image-banner-part {
+        display: none
+    }
+
+    .image-banner-part-mobile {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0 8% 0 3.5%
+    }
+
+    .image-banner-part-mobile img {
+        width: 100%
+    }
+
+    .text-banner-part {
+        width: 100%
+    }
+
+    .text-banner-part h1 {
+        font-size: 55px;
+        line-height: 60px;
+        letter-spacing: -1.2px
+    }
+
+    .text-banner-part li {
+        font-size: 16px;
+        padding: 8px 0
+    }
+
+    .text-banner-part li i {
+        font-size: 24px
+    }
+
+    .text-banner-part button {
+        width: 198px;
+        height: 54px;
+        font-size: 20px;
+        line-height: 26px
+    }
+}
+
+@media (max-width: 550px) {
+    .text-banner-part h1 {
+        font-size: 45px;
+        line-height: 56px;
+        letter-spacing: -.72px
+    }
+
+    .text-banner-part button {
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -.64px
+    }
+}
+
+@media (max-width: 400px) {
+    .text-banner-part h1 {
+        font-size: 36px;
+        line-height: 46px;
+        letter-spacing: -.72px
+    }
+
+    .text-banner-part li {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -.28px
+    }
+}
+
+/* Program curated by Medical experts, Researchers, & IITians */
+
+.program-curation {
+    padding: 41px 0 80px
+}
+
+.program-curation h1,
+.program-curation h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: -.6px
+}
+
+.program-curation h1 span {
+    color: var(--Primary-Font, #002863);
+    font-weight: 700
+}
+
+.curation-insti {
+    text-align: center;
+    padding-top: 30px
+}
+
+.curation-insti img {
+    width: 60%;
+    margin-bottom: 55px
+}
+
+.curation-insti svg {
+    width: 80%
+}
+
+.curation-objective {
+    padding: 49px 11% 0;
+    display: flex;
+    justify-content: space-between
+}
+
+.curation-objective div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.curation-objective img {
+    width: 65px;
+    height: 65px
+}
+
+.curation-objective p {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 46px;
+    letter-spacing: -.4px;
+    padding: 8px 0
+}
+
+@media (max-width: 1100px) {
+    .curation-objective {
+        padding: 49px 5% 0
+    }
+
+    .curation-objective img {
+        width: 55px
+    }
+
+    .curation-objective p {
+        font-size: 18px;
+        line-height: 25px
+    }
+}
+
+@media (max-width: 800px) {
+    .program-curation {
+        padding: 41px 0 50px
+    }
+
+    .program-curation h1 {
+        padding: 0 15px
+    }
+
+    .program-curation h1,
+    .program-curation h1 span {
+        font-size: 25px;
+        line-height: 38px;
+        letter-spacing: -.5px
+    }
+
+    .curation-objective p {
+        font-size: 17px
+    }
+
+
+    /* Objective css    */
+
+    .curation-objective {
+        padding: 43px 10px 0;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+
+    .curation-objective div {
+        margin-right: 15px;
+        margin-bottom: 10px
+    }
+}
+
+@media (max-width: 700px) {
+    .curation-insti img {
+        width: 85%;
+        margin-bottom: 40px
+    }
+
+    .curation-insti svg {
+        width: 100%
+    }
+}
+
+@media (max-width: 500px) {
+
+    .program-curation h1,
+    .program-curation h1 span {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -.4px
+    }
+
+    .curation-objective img {
+        width: 50px
+    }
+
+    .curation-objective div {
+        width: 100px;
+        margin-right: 15px
+    }
+
+    .curation-objective p {
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -.28px;
+        padding: 8px 0
+    }
+}
+
+@media (max-width: 367px) {
+    .curation-objective img {
+        width: 40px
+    }
+
+    .curation-objective div {
+        width: 85px;
+        margin-right: 10px;
+        margin-bottom: 10px
+    }
+
+    .curation-objective p {
+        font-size: 14px
+    }
+}
+
+
+/* The Proof is in the Play: Watch How Babies Thrive! */
+
+
+.genius-babies {
+    background: #5a40c4;
+    background-image: url('https://www.uptodd.com/images/newWebsite/genius-babies-background.png');
+    width: 100%;
+    padding: 48px 0 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.genius-babies h1,.genius-babies h1 span {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: -1.6px;
+    padding: 0 15px
+}
+
+.genius-babies h1 span {
+    font-weight: 400;
+    padding: 0
+}
+
+.genius-babies h5 {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -.8px;
+    margin-top: 16px
+}
+
+.babies-card-container {
+    position: relative
+}
+
+.baby-card-slider-next,.baby-card-slider-prev {
+    position: absolute;
+    top: 45%;
+    right: 7.5%;
+    width: 44px;
+    cursor: pointer
+}
+
+.baby-card-slider-prev {
+    left: 7.5%;
+    display: none
+}
+
+.babies-card-list {
+    margin: auto;
+    margin-top: 36px;
+    width: 81%;
+    display: flex;
+    overflow-x: scroll
+}
+
+.babies-card-list::-webkit-scrollbar {
+    display: none;
+}
+
+.baby-card {
+    width: 360px;
+    border-radius: 12px;
+    background: #fff;
+    margin-left: 40px;
+    margin-bottom: 20px
+}
+
+.baby-card:first-of-type {
+    margin-left: 0
+}
+
+.baby-card-image-part {
+    width: 100%;
+    padding: 17px 18px 0;
+    position: relative
+}
+
+.baby-card-image-part iframe {
+    border-radius: 12px
+}
+
+.baby-card-image-part iframe {
+    width: 324px;
+    height: 180px
+}
+
+.baby-card-text-part {
+    padding: 22px 26px
+}
+
+.baby-card-text-part p {
+    color: var(--Primary-Font,#002863);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px
+}
+
+@media (max-width: 750px) {
+    .genius-babies {
+        padding:27px 0 80px
+    }
+
+    .genius-babies h1,.genius-babies h1 span {
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: -1.3px
+    }
+
+    .genius-babies h5 {
+        font-size: 18px;
+        line-height: 30px;
+        padding: 0 15%
+    }
+
+    .baby-card-slider-next,.baby-card-slider-prev {
+        display: none
+    }
+
+    .babies-card-list {
+        margin-top: 23px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .baby-card {
+        margin-left: 20px
+    }
+
+    .baby-card:first-of-type {
+        margin-left: 0
+    }
+
+    .baby-card-image-part {
+        padding: 13px 14px 0
+    }
+
+    .baby-card-text-part {
+        padding: 22px 20px
+    }
+
+    .baby-card-text-part p {
+        font-size: 16px;
+        line-height: 24px
+    }
+}
+
+@media (max-width: 450px) {
+    .genius-babies h1,.genius-babies h1 span {
+        font-size:20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .genius-babies h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px;
+        margin-top: 13px;
+        padding: 0 15%
+    }
+
+    .baby-card {
+        width: 280px
+    }
+
+    .baby-card-image-part iframe {
+        width: 252px;
+        height: 140px
+    }
+}
+
+/* How our Program Works !! */
+
+.how-it-works {
+    width: 100%;
+    padding: 52px 0 62px
+}
+
+.how-it-works h1 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: -1.6px
+}
+
+.step-wise-process {
+    width: 81%;
+    padding-top: 40px;
+    display: flex;
+    margin: auto
+}
+
+.all-process-steps {
+    width: 45%;
+    margin-right: 5%
+}
+
+.process-step {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    margin-top: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 21px;
+    cursor: pointer
+}
+
+.process-step:first-child {
+    margin-top: 0
+}
+
+.active-process-step {
+    border: 1px solid #5a40c4;
+    background: rgb(90 64 196 / .06)
+}
+
+.left-step-no {
+    margin-right: 18px
+}
+
+.left-step-no h4 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -.56px
+}
+
+.active-process-step h4 {
+    color: #ff3f4e
+}
+
+.left-step-no h3 {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -.96px
+}
+
+.active-process-step h3 {
+    color: #5a40c4
+}
+
+.process-step svg {
+    width: 3px
+}
+
+.right-step-desc {
+    margin-left: 18px
+}
+
+.right-step-desc p {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -.64px
+}
+
+.active-process-step p {
+    color: #5a40c4
+}
+
+.process-steps-slider {
+    width: 50%
+}
+
+.process-steps-image-holder {
+    position: relative
+}
+
+.process-steps-slider img {
+    border-radius: 12px;
+    width: 100%;
+    display: none;
+    animation-name: process-step-slider-animation;
+    animation-duration: 0.6s;
+    -webkit-animation-name: process-step-slider-animation;
+    -webkit-animation-duration: 0.6s
+}
+
+.process-steps-slide-icons-laptop {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center
+}
+
+.how-it-works-button {
+    text-align: center
+}
+
+.how-it-works-button button {
+    width: 250px;
+    height: 54px;
+    border-radius: 8px;
+    background: #ff5766;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.8px;
+    border: none;
+    text-align: center;
+    margin-top: 55px
+}
+
+.step-wise-process-mobile {
+    display: none
+}
+
+@media (max-width: 1150px) {
+    .step-wise-process {
+        width: 90%
+    }
+}
+
+@media (max-width: 1000px) {
+    .all-process-steps {
+        width: 48%;
+        margin-right: 3%
+    }
+
+    .process-step {
+        padding: 8px 15px
+    }
+
+    .left-step-no h4 {
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: -.5px
+    }
+
+    .left-step-no h3 {
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: -.76px
+    }
+
+    .right-step-desc p {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -.54px
+    }
+}
+
+@media (max-width: 850px) {
+    .step-wise-process {
+        width: 95%
+    }
+}
+
+@media (max-width: 750px) {
+    .how-it-works {
+        padding: 29px 0 20px
+    }
+
+    .how-it-works h1 {
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: -1.3px
+    }
+
+    .step-wise-process {
+        display: none
+    }
+
+    .how-it-works-button button {
+        display: none
+    }
+
+    .step-wise-process-mobile {
+        display: block;
+        margin-top: 12px;
+        padding: 13px 50px;
+        position: relative
+    }
+
+    .process-step-slider-icons-mobile {
+        margin-top: 20px;
+        text-align: center
+    }
+
+    .mobile-step-with-img {
+        display: flex;
+        overflow-x: hidden
+    }
+
+    .process-step-mobile-next,
+    .process-step-mobile-prev {
+        position: absolute;
+        top: 34%;
+        right: 0%;
+        width: 44px;
+        cursor: pointer
+    }
+
+    .process-step-mobile-prev {
+        left: 0%
+    }
+
+    .process-step-mobile {
+        min-width: 100%;
+        display: none;
+        animation-name: fade;
+        animation-duration: 0.6s;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 0.6s
+    }
+
+    .process-step-mobile img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 11px
+    }
+
+    .process-step {
+        padding: 12px 20px
+    }
+
+    .left-step-no h4 {
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -.6px
+    }
+
+    .left-step-no h3 {
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: -.8px
+    }
+
+    .right-step-desc p {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -.7px
+    }
+}
+
+@media (max-width: 550px) {
+    .how-it-works {
+        padding: 22px 0 13px
+    }
+
+    .how-it-works h1 {
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .step-wise-process-mobile {
+        padding: 13px 15px
+    }
+
+    .process-step-slider-icons-mobile {
+        margin-top: 16px
+    }
+
+    .process-step {
+        padding: 8px 10px;
+        width: 100%
+    }
+
+    .right-step-desc p {
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: -.56px
+    }
+}
+
+
+/* Why UpTodd? The UpTodd Difference  */
+/* section-1  */
+
+
+.why-uptodd {
+    width: 100%;
+    padding: 74px 10.2% 60px;
+    background: #f5eae2
+}
+
+.why-uptodd h1 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: -1.6px
+}
+
+.why-uptodd h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -.8px;
+    margin-top: 27px
+}
+
+.why-uptodd-usps {
+    margin-top: 39px;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: auto auto;
+    grid-gap: 27px 45px
+}
+
+.usp-card {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 6px 0 rgb(0 0 0 / .06);
+    display: flex;
+    padding: 25px
+}
+
+.usp-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 30px
+}
+
+.usp-card h3 {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: -.88px
+}
+
+.usp-card p {
+    color: #5c6a7e;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -.56px;
+    margin-top: 6px
+}
+
+.why-uptodd-slider-icons-mobile {
+    display: none
+}
+
+@media (max-width: 1150px) {
+    .why-uptodd {
+        padding: 74px 5% 60px
+    }
+}
+
+@media (max-width: 1000px) {
+    .why-uptodd-usps {
+        grid-gap: 22px 35px
+    }
+
+    .usp-card {
+        padding: 18px
+    }
+
+    .usp-card img {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px
+    }
+
+    .usp-card h3 {
+        font-size: 18px
+    }
+
+    .usp-card p {
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: -.53px;
+        margin-top: 6px
+    }
+}
+
+@media (max-width: 750px) {
+    .why-uptodd {
+        padding: 30px 15px 35px
+    }
+
+    .why-uptodd h1 {
+        font-size: 30px
+    }
+
+    .why-uptodd h5 {
+        font-size: 17px;
+        line-height: 24px;
+        margin-top: 27px
+    }
+
+    .why-uptodd-usps {
+        display: flex;
+        overflow-x: hidden
+    }
+
+    .usp-card {
+        padding: 25px;
+        min-height: 155px;
+        min-width: 100%;
+        display: none;
+        animation-name: fade;
+        animation-duration: 0.6s;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 0.6s
+    }
+
+    .why-uptodd-slider-icons-mobile {
+        display: block;
+        text-align: center;
+        margin-top: 27px
+    }
+}
+
+@media (max-width: 550px) {
+    .why-uptodd h1 {
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: -.4px
+    }
+
+    .why-uptodd h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px;
+        margin-top: 11px
+    }
+
+    .usp-card {
+        padding: 18px
+    }
+
+    .usp-card img {
+        width: 67px;
+        height: 67px;
+        margin-right: 19px
+    }
+
+    .usp-card h3 {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -.72px
+    }
+
+    .usp-card p {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -.56px;
+        margin-top: 3px
+    }
+}
+
+
+/* Banne-2 */
+
+
+.start-now-banner {
+    background: #5a40c4;
+    padding: 48px 14%;
+    display: flex;
+    justify-content: space-between
+}
+
+.start-now-banner h3 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -.8px;
+    width: 70%
+}
+
+.start-now-banner button {
+    padding: 0px 20px;
+    height: 54px;
+    border-radius: 8px;
+    background: #ff5766;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.8px;
+    border: none
+}
+
+@media (max-width: 1150px) {
+    .start-now-banner {
+        padding: 48px 8%
+    }
+}
+
+@media (max-width: 750px) {
+    .start-now-banner {
+        flex-wrap: wrap
+    }
+
+    .start-now-banner h3 {
+        width: 100%
+    }
+
+    .start-now-banner button {
+        margin-top: 34px;
+        width: 100%
+    }
+}
+
+@media (max-width: 550px) {
+    .start-now-banner {
+        padding: 30px 8%
+    }
+
+    .start-now-banner h3 {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -.72px
+    }
+
+    .start-now-banner button {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -.72px
+    }
+}
+
+/* Brilliant Minds: Celebrating Global Baby Champions */
+
+.awared-babies {
+    width: 100%;
+    padding: 70px 0 70px;
+    background: #fffbfb
+}
+
+.awared-babies h1,
+.awared-babies h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.6px
+}
+
+.awared-babies h1 span {
+    font-weight: 400
+}
+
+.awared-babies h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: -.96px;
+    margin-top: 17px
+}
+
+.baby-award-list-container {
+    position: relative
+}
+
+.baby-award-slider-next,
+.baby-award-slider-prev {
+    position: absolute;
+    top: 45%;
+    right: 7.5%;
+    width: 44px;
+    cursor: pointer
+}
+
+.baby-award-slider-prev {
+    left: 7.5%;
+    display: none
+}
+
+.baby-award-list {
+    margin: auto;
+    margin-top: 36px;
+    width: 81%;
+    display: flex;
+    overflow-x: scroll
+}
+
+.baby-award-list::-webkit-scrollbar {
+    display: none;
+}
+
+.baby-award-card {
+    min-width: 360px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px 0 rgb(19 15 46 / .06);
+    margin-left: 40px;
+    margin-bottom: 20px
+}
+
+.baby-award-card:first-of-type {
+    margin-left: 0
+}
+
+.baby-award-card img {
+    width: 100%
+}
+
+.baby-award-card p {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: -.8px;
+    padding: 20px 26px 43px
+}
+
+.baby-award-card p span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+@media (max-width: 750px) {
+    .awared-babies {
+        padding: 50px 0 30px
+    }
+
+    .awared-babies h1,
+    .awared-babies h1 span {
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -1.3px
+    }
+
+    .awared-babies h5 {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: -.65px;
+        padding: 0 50px
+    }
+
+    .baby-award-slider-next {
+        display: none
+    }
+
+    .baby-award-list {
+        margin-top: 23px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .baby-award-card {
+        margin-left: 15px
+    }
+
+    .baby-award-card:first-of-type {
+        margin-left: 0
+    }
+
+    .baby-award-card p {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -.64px
+    }
+
+    .baby-award-card p span {
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: -.50px
+    }
+
+    .baby-award-card {
+        min-width: 320px
+    }
+}
+
+@media (max-width: 450px) {
+    .awared-babies {
+        padding: 31px 0 30px
+    }
+
+    .awared-babies h1,
+    .awared-babies h1 span {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .awared-babies h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px
+    }
+
+    .baby-award-card {
+        min-width: 280px
+    }
+}
+
+
+/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth */
+
+.happy-parents {
+    width: 100%;
+    padding: 42px 0;
+    background: #fffbfb
+}
+
+.happy-parents h1,
+.happy-parents h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: -1.44px
+}
+
+.happy-parents h1 span {
+    font-weight: 400
+}
+
+.happy-parents h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: -.96px;
+    margin-top: 17px
+}
+
+.happy-parent-list-container {
+    position: relative
+}
+
+.happy-parents-slider-next,
+.happy-parents-slider-prev {
+    position: absolute;
+    top: 45%;
+    right: 7.5%;
+    width: 44px;
+    cursor: pointer
+}
+
+.happy-parents-slider-prev {
+    left: 7.5%;
+    display: none
+}
+
+.happy-parent-list {
+    margin: auto;
+    margin-top: 17px;
+    width: 81%;
+    display: flex;
+    overflow-x: scroll
+}
+
+.happy-parent-list::-webkit-scrollbar {
+    display: none;
+}
+
+.happy-parent-card {
+    width: 360px;
+    border-radius: 12px;
+    border: 0 solid var(--Primary-Font, #002863);
+    background: #fff;
+    box-shadow: 0 4px 12px 0 rgb(9 22 48 / .06);
+    margin-left: 40px;
+    margin-bottom: 20px
+}
+
+.happy-parent-card:first-of-type {
+    margin-left: 0
+}
+
+.happy-parent-image {
+    width: 100%;
+    padding: 12px 12px 0;
+    position: relative
+}
+
+.happy-parent-image iframe {
+    width: 336px;
+    height: 190px
+}
+
+.happy-parent-quote {
+    padding: 16px 24px 24px
+}
+
+.happy-parent-quote img {
+    margin-bottom: 12px
+}
+
+.happy-parent-quote p {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -.4px
+}
+
+.happy-parents-button {
+    text-align: center;
+    margin-top: 38px
+}
+
+.happy-parents-button button {
+    width: 316px;
+    height: 54px;
+    border-radius: 8px;
+    background: #ff5766;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.8px;
+    border: none
+}
+
+@media (max-width: 750px) {
+    .happy-parents h1 {
+        padding: 0 30px
+    }
+
+    .happy-parents h1,
+    .happy-parents h1 span {
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -1.3px
+    }
+
+    .happy-parents h5 {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: -.65px;
+        padding: 0 50px
+    }
+
+    .happy-parents-slider-next {
+        display: none
+    }
+
+    .happy-parent-list {
+        margin-top: 23px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .happy-parent-card {
+        margin-left: 15px
+    }
+
+    .happy-parent-card:first-of-type {
+        margin-left: 0
+    }
+
+    .happy-parent-card p {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -.64px
+    }
+
+    .happy-parent-card {
+        min-width: 320px
+    }
+
+    .happy-parent-image iframe {
+        width: 296px;
+        height: 167px
+    }
+}
+
+@media (max-width: 450px) {
+
+    .happy-parents h1,
+    .happy-parents h1 span {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .happy-parents h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px
+    }
+
+    .happy-parent-card {
+        min-width: 280px
+    }
+
+    .happy-parent-image iframe {
+        width: 256px;
+        height: 148px
+    }
+
+    .happy-parents-button {
+        padding: 24px
+    }
+
+    .happy-parents-button button {
+        width: 100%;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -.72px
+    }
+}
+
+
+/* Recommended by Top Global Experts */
+
+.doctor-review {
+    width: 100%;
+    padding: 46px 0 80px
+}
+
+.doctor-review h1 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -1.76px
+}
+
+.doctor-review h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -.96px;
+    margin-top: 9px
+}
+
+.doctor-review-list {
+    margin-top: 41px;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll
+}
+
+.doctor-review-list::-webkit-scrollbar {
+    display: none
+}
+
+.doctor-review-card {
+    min-width: 260px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    margin-left: 21px;
+    white-space: wrap
+}
+
+.doctor-review-card:first-of-type {
+    margin-left: 9%
+}
+
+.doctor-review-card:last-of-type {
+    margin-right: 20px
+}
+
+.doctor-review-image-part {
+    position: relative
+}
+
+.doctor-review-image-part img {
+    width: 100%;
+    border-radius: 12px 12px 0 0
+}
+
+.doctor-review-image-part div {
+    position: absolute;
+    width: 100%;
+    background: #5a40c4;
+    padding: 12px 22px;
+    bottom: -10px
+}
+
+.doctor-review-image-part div h3 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -.8px
+}
+
+.doctor-review-image-part div h6 {
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -.56px;
+    margin-top: 1px
+}
+
+.doctor-review-quote {
+    padding: 22px 22px 34px
+}
+
+.doctor-review-quote img {
+    margin-bottom: 7px
+}
+
+.doctor-review-quote p {
+    color: #000;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -.3px
+}
+
+@media (max-width: 750px) {
+    .doctor-review {
+        padding: 30px 0 60px
+    }
+
+    .doctor-review h1 {
+        padding: 0 30px;
+        font-size: 32px;
+        line-height: 42px;
+        letter-spacing: -1.4px
+    }
+
+    .doctor-review h5 {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: -.65px;
+        padding: 0 50px
+    }
+
+    .doctor-review-card {
+        margin-left: 10px
+    }
+
+    .doctor-review-card:first-of-type {
+        margin-left: 21px
+    }
+}
+
+@media (max-width: 450px) {
+    .doctor-review {
+        padding: 21px 0 52px
+    }
+
+    .doctor-review h1 {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .doctor-review h5 {
+        display: none
+    }
+}
+
+
+/* Science-Backed Approach: Rooted in Research */
+
+
+.research-backed {
+    width: 100%;
+    padding: 38px 0 85px;
+    background: #f6fcfe
+}
+
+.research-backed h1,
+.research-backed h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.76px
+}
+
+.research-backed h1 span {
+    font-weight: 400
+}
+
+.research-backed h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -.96px
+}
+
+.insti-research,
+.theory-research {
+    display: block;
+    width: 81%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 12px;
+    border: 2px solid #5a40c4;
+    padding: 50px 38px 0;
+    position: relative
+}
+
+.theory-research {
+    border: 2px solid #ff3f4e;
+    margin-top: 71px
+}
+
+.insti-head,
+.theory-head {
+    border-radius: 33px;
+    background: #5a40c4;
+    position: absolute;
+    top: -30px;
+    left: 30%;
+    padding: 0 3%
+}
+
+.theory-head {
+    background: #ff3f4e;
+    top: -30px;
+    left: 33.5%
+}
+
+.research-backed h4 {
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -.96px
+}
+
+.research-backed img {
+    width: 100%
+}
+
+.research-backed p {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -.64px
+}
+
+@media (max-width: 1150px) {
+    .insti-head {
+        top: -28px;
+        left: 28%
+    }
+
+    .theory-head {
+        top: -28px;
+        left: 32%
+    }
+
+    .research-backed h4 {
+        font-size: 20px;
+        line-height: 50px
+    }
+}
+
+.insti-research-mobile,
+.theory-research-mobile {
+    display: none
+}
+
+@media (max-width: 1000px) {
+    .research-backed h4 {
+        font-size: 18px;
+        line-height: 45px
+    }
+}
+
+@media (max-width: 850px) {
+    .research-backed h4 {
+        font-size: 17px;
+        line-height: 40px
+    }
+}
+
+@media (max-width: 750px) {
+
+    .research-backed h1,
+    .research-backed h1 span {
+        padding: 0 30px;
+        font-size: 32px;
+        line-height: 42px;
+        letter-spacing: -1.4px
+    }
+
+    .research-backed h1 span {
+        padding: 0
+    }
+
+    .research-backed h5 {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: -.65px;
+        padding: 0 50px;
+        margin-top: 11px
+    }
+
+    .insti-research,
+    .theory-research {
+        display: none
+    }
+
+    .insti-research-mobile,
+    .theory-research-mobile {
+        display: block;
+        padding: 0 40px;
+        text-align: center;
+        margin-top: 30px
+    }
+
+    .theory-research-mobile {
+        padding: 0
+    }
+
+    .insti-research-mobile div,
+    .theory-research-mobile-head {
+        margin: auto;
+        border-radius: 33px;
+        background: #5a40c4;
+        width: 350px;
+        padding: 15px 21px;
+        margin-bottom: 27px
+    }
+
+    .theory-research-mobile-head {
+        background: #ff3f4e;
+        width: 277px
+    }
+
+    .insti-research-mobile div h4,
+    .theory-research-mobile div h4 {
+        color: #fff;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: -.56px
+    }
+
+    .theory-research-mobile-list {
+        display: flex;
+        overflow-x: scroll;
+        width: 100%;
+        margin-top: 5px
+    }
+
+    .theory-research-mobile-list::-webkit-scrollbar {
+        display: none
+    }
+
+    .theory-research-mobile-list div {
+        min-width: 113px;
+        margin-right: 15px
+    }
+
+    .theory-research-mobile-list h3 {
+        color: #000;
+        text-align: center;
+        font-family: "DM Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -.4px
+    }
+
+    .theory-research-mobile-list img {
+        width: 100px
+    }
+
+    .theory-research-mobile-list img:first-of-type {
+        margin-left: 10px
+    }
+}
+
+@media (max-width: 450px) {
+    .research-backed {
+        padding: 33px 0 20px
+    }
+
+    .research-backed h1,
+    .research-backed h1 span {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .research-backed h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px
+    }
+
+    .insti-research-mobile,
+    .theory-research-mobile {
+        padding: 0 14px;
+        margin-top: 22px
+    }
+
+    .theory-research-mobile {
+        padding: 0
+    }
+
+    .insti-research-mobile div,
+    .theory-research-mobile-head {
+        width: 280px;
+        padding: 7px 21px
+    }
+
+    .theory-research-mobile-head {
+        width: 221px
+    }
+
+    .insti-research-mobile div h4,
+    .theory-research-mobile div h4 {
+        font-size: 14px
+    }
+}
+
+/* Bending line */
+
+
+.dividing-curly-svg {
+    text-align: center;
+    background: #fffbfb
+}
+
+
+/* UpTodd™ Genius Premium Program */
+
+
+.product-and-cost {
+    width: 100%;
+    padding: 55px 0 67px
+}
+
+.product-and-cost h1 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.76px;
+    padding: 0 30px
+}
+
+.product-and-cost h5 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -.8px;
+    padding: 0 50px
+}
+
+.product-pointers {
+    margin: auto;
+    margin-top: 28px;
+    margin-bottom: 37px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-template-rows: auto auto auto;
+    grid-gap: 15px 20px
+}
+
+.product-pointers h3 {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: -.8px;
+    display: flex;
+    align-items: center
+}
+
+.product-pointers i {
+    font-size: 32px;
+    margin-right: 10px;
+    color: #002863
+}
+
+.product-cost-list {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between
+}
+
+.product-cost-card {
+    width: 47.3%;
+    border-radius: 12px;
+    border: 2px solid #5a40c4;
+    background: #fff;
+    padding: 25px 22px
+}
+
+.product-cost-card h3 {
+    color: #ff3f4e;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: -.96px
+}
+
+.product-cost-card h4 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    margin-top: 14px
+}
+
+.product-cost-card p {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -.32px;
+    margin-top: 5px
+}
+
+.product-cost-card h6 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: -.4px;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    margin-top: 15px
+}
+
+.product-cost-card h2 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: -.6px;
+    margin-top: 19px
+}
+
+.product-cost-card h2 s {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.32px
+}
+
+.product-cost-card button {
+    width: 100%;
+    border-radius: 8px;
+    background: #ff5766;
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -.8px;
+    padding: 15px 0;
+    margin-top: 16px;
+    border: none;
+    cursor: pointer
+}
+
+.see-more-product {
+    margin-top: 37px;
+    text-align: center
+}
+
+.see-more-product p {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -.64px
+}
+
+.see-more-product span {
+    color: var(--Primary-Font, #ff3f4e);
+    text-decoration-line: underline;
+    cursor: pointer
+}
+
+.developmental-kit {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 68px
+}
+
+.kit-intro {
+    width: 463px;
+    display: flex;
+    padding: 24px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgb(255 63 78 / .11) 0%, rgb(90 64 196 / .11) 100%);
+    justify-content: space-between
+}
+
+.kit-intro h3 {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -.8px
+}
+
+.kit-intro p {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: -.64px;
+    margin-top: 7px
+}
+
+.kit-intro img {
+    width: 93px;
+    height: 93px;
+    margin-left: 48px
+}
+
+.kit-video {
+    border-radius: 12px;
+    width: 257px;
+    height: 144px;
+    position: relative;
+    margin-left: 34px
+}
+
+.kit-video iframe {
+    width: 257px;
+    height: 144px
+}
+
+.kit-video h3 {
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    background: #5a40c4;
+    color: #fff;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: -.48px;
+    position: absolute;
+    bottom: 0%;
+    border-radius: 0 0 12px 12px
+}
+
+@media (max-width: 1100px) {
+    .product-pointers {
+        width: 90%
+    }
+
+    .product-cost-list {
+        width: 80%
+    }
+
+    .product-pointers h3 {
+        font-size: 18px;
+        line-height: 31px;
+        letter-spacing: -.75px
+    }
+
+    .product-pointers i {
+        font-size: 26px;
+        margin-right: 8px
+    }
+}
+
+@media (max-width: 900px) {
+    .product-pointers {
+        width: 80%;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: auto auto
+    }
+
+    .product-cost-list {
+        width: 95%
+    }
+}
+
+@media (max-width: 750px) {
+    .product-and-cost {
+        padding: 55px 0 50px
+    }
+
+    .product-and-cost h1 {
+        font-size: 32px;
+        line-height: 42px;
+        letter-spacing: -1.4px
+    }
+
+    .product-and-cost h5 {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.65px;
+        margin-top: 20px
+    }
+
+    .product-pointers {
+        width: 90%
+    }
+
+    .product-cost-list {
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0 23px
+    }
+
+    .product-cost-card {
+        width: 100%;
+        padding: 25px 22px
+    }
+
+    .product-cost-card:first-of-type {
+        margin-bottom: 20px
+    }
+
+    .product-cost-card h3 {
+        font-size: 20px;
+        line-height: 34px;
+        letter-spacing: -.8px
+    }
+
+    .product-cost-card h4 {
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -.36px;
+        margin-top: 10px
+    }
+
+    .product-cost-card p {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.28px;
+        margin-top: 10px
+    }
+
+    .developmental-kit {
+        padding: 0 23px;
+        margin-top: 25px;
+        flex-wrap: wrap
+    }
+
+    .kit-intro {
+        width: 100%;
+        padding: 16px
+    }
+
+    .kit-intro h3 {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -.64px
+    }
+
+    .kit-intro p {
+        font-size: 14px;
+        line-height: 34px;
+        letter-spacing: -.56px;
+        margin-top: 0
+    }
+
+    .kit-intro img {
+        width: 72px;
+        height: 72px;
+        margin-left: 2px
+    }
+
+    .kit-video {
+        margin-top: 18px;
+        height: 163px;
+        margin-left: 0
+    }
+
+    .kit-video h3 {
+        padding: 7px 0;
+        line-height: 12px;
+        letter-spacing: -.48px;
+        bottom: 0%
+    }
+}
+
+@media (max-width: 550px) {
+    .product-and-cost h1 {
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: -.8px
+    }
+
+    .product-and-cost h5 {
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: -.56px;
+        margin-top: 17px
+    }
+
+    .product-pointers {
+        width: 90%;
+        grid-template-columns: 100%;
+        grid-template-rows: auto
+    }
+
+    .product-pointers h3 {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: -.64px
+    }
+
+    .product-pointers i {
+        font-size: 24px;
+        margin-right: 11px
+    }
+
+    .developmental-kit {
+        padding: 0 15px
+    }
+}
+
+
+/* Your Child’s Peronalized Journey begins here: From enrollment to Thriving */
+
+
+.personalise-journey {
+    width: 100%;
+    padding: 25px 0 33px;
+    background: #f5eae2
+}
+
+.personalise-journey h1,
+.personalise-journey h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -1.2px;
+    padding: 0 30px
+}
+
+.personalise-journey h1 span {
+    font-weight: 400;
+    padding: 0
+}
+
+.journey-step-list {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    margin-top: 10px
+}
+
+.journey-card {
+    padding: 35px 42px;
+    width: 33%;
+    margin-left: 13px;
+    border-radius: 12px;
+    background: #fff;
+    position: relative
+}
+
+.journey-card:first-of-type {
+    margin-left: 0
+}
+
+.journey-card h3,
+.journey-card h3 span {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -.64px
+}
+
+.journey-card h3 span {
+    font-weight: 400
+}
+
+.right-pointing-arrow-svg {
+    position: absolute;
+    right: -10%;
+    top: 30%;
+    z-index: 1
+}
+
+.bottom-pointing-arrow-svg {
+    display: none
+}
+
+@media (max-width: 1100px) {
+    .journey-step-list {
+        width: 95%
+    }
+}
+
+@media (max-width: 900px) {
+    .journey-card {
+        padding: 20px 24px
+    }
+}
+
+@media (max-width: 750px) {
+
+    .personalise-journey h1,
+    .personalise-journey h1 span {
+        font-size: 25px;
+        line-height: 40px;
+        letter-spacing: -1px
+    }
+
+    .right-pointing-arrow-svg {
+        display: none
+    }
+
+    .journey-step-list {
+        width: 100%;
+        margin-top: 23px;
+        padding: 0 27px;
+        flex-wrap: wrap
+    }
+
+    .journey-card {
+        min-height: 100px;
+        padding: 12px 25px 20px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 14px
+    }
+
+    .journey-card:first-of-type {
+        margin-top: 0
+    }
+
+    .bottom-pointing-arrow-svg {
+        display: block;
+        position: absolute;
+        left: 46%;
+        bottom: -26%;
+        z-index: 1
+    }
+}
+
+@media (max-width: 450px) {
+
+    .personalise-journey h1,
+    .personalise-journey h1 span {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+}
+
+
+/* Meet our Mentors & Curators | 100+ Curators R&D Team */
+
+
+.our-mentors {
+    width: 100%;
+    padding: 38px 0 65px;
+    background: #fffbfb
+}
+
+.our-mentors h1,
+.our-mentors h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.44px;
+    padding: 0 30px
+}
+
+.our-mentors h1 span {
+    font-weight: 400;
+    padding: 0
+}
+
+.mentors-list {
+    margin: auto;
+    margin-top: 38px;
+    display: flex;
+    width: 82%;
+    overflow-x: scroll;
+    margin-bottom: 79px
+}
+
+.mentor-card {
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    min-width: 205px;
+    text-align: center;
+    padding: 23px 19px 36px;
+    margin-left: 23px;
+    margin-bottom: 20px
+}
+
+.mentor-card:first-of-type {
+    margin-left: 0
+}
+
+.mentor-card img {
+    width: 120px;
+    height: 120px
+}
+
+.mentor-card h3,
+.mentor-card h3 span {
+    color: #000;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -.64px
+}
+
+.mentor-card h3 span {
+    font-weight: 400
+}
+
+.featured-in {
+    margin: auto;
+    margin-top: 24px;
+    width: 70%
+}
+
+.featured-in img {
+    width: 100%
+}
+
+@media (max-width: 750px) {
+
+    .our-mentors h1,
+    .our-mentors h1 span {
+        font-size: 25px;
+        line-height: 40px;
+        letter-spacing: -1px
+    }
+
+    .mentors-list {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 45px
+    }
+
+    .featured-in {
+        margin: auto;
+        margin-top: 24px;
+        width: 90%
+    }
+}
+
+@media (max-width: 450px) {
+
+    .our-mentors h1,
+    .our-mentors h1 span {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .mentors-list {
+        margin-bottom: 35px
+    }
+}
+
+
+/* Your Frequently Asked Questions */
+
+
+.faqs {
+    width: 100%;
+    padding: 53px 0 81px;
+    background: #f5f5f5
+}
+
+.faqs h1 {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.44px
+}
+
+.faq-list {
+    width: 70%;
+    margin: auto;
+    margin-top: 30px
+}
+
+.faq-category-list {
+    margin-bottom: 45px
+}
+
+.faq-category-button {
+    border-radius: 8px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -.64px;
+    padding: 13px 17px;
+    border: none;
+    margin-left: 15px
+}
+
+.faq-category-button:first-of-type {
+    margin-left: 0
+}
+
+.active-faq-category {
+    background: #ff3f4e;
+    color: #fff
+}
+
+.faq-card {
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    width: 100%;
+    padding: 22px 35px;
+    margin-top: 15px;
+    cursor: pointer;
+    display: none
+}
+
+.programFaq {
+    display: block
+}
+
+.faq-card:first-of-type {
+    margin: 0
+}
+
+.faq-card h3 {
+    color: var(--Primary-Font, #002863);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -.8px
+}
+
+.faq-card p {
+    color: #596b86;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -.8px;
+    margin-top: 22px;
+    display: none;
+    animation-name: fade;
+    animation-duration: 0.6s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 0.6s
+}
+
+.faq-active-card {
+    border: 1px solid #ff3f4e
+}
+
+.faq-active-card p {
+    display: block
+}
+
+@media (max-width: 1000px) {
+    .faq-list {
+        width: 85%
+    }
+}
+
+@media (max-width: 750px) {
+    .faqs {
+        padding: 40px 0 50px
+    }
+
+    .faq-list {
+        width: 100%;
+        padding: 0 21px;
+        margin-top: 39px
+    }
+
+    .faq-category-list {
+        margin-bottom: 18px;
+        overflow-x: scroll;
+        display: flex
+    }
+
+    .faq-category-list::-webkit-scrollbar {
+        display: none
+    }
+
+    .faq-category-button {
+        min-width: 120px
+    }
+
+    .faqs h1 {
+        font-size: 25px;
+        line-height: 40px;
+        letter-spacing: -1px
+    }
+
+    .faq-card {
+        padding: 18px 25px;
+        margin-top: 11px
+    }
+
+    .faq-card h3 {
+        font-size: 18px;
+        letter-spacing: -.64px
+    }
+
+    .faq-card p {
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: -.65px;
+        margin-top: 10px
+    }
+}
+
+@media (max-width: 450px) {
+    .faqs h1 {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .faq-card {
+        padding: 15px 22px
+    }
+
+    .faq-card h3 {
+        font-size: 16px
+    }
+
+    .faq-card p {
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: -.56px;
+        margin-top: 6px
+    }
+}
+
+
+/* Footer */
+
+
+.plain-footer {
+    width: 100%;
+    padding: 53px 80px 31px;
+    background: #5a40c4
+}
+
+.plain-footer h1 {
+    color: var(--Primary-Font, white);
+    font-family: "DM Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: -.6px
+}
+
+.plain-footer p,
+.plain-footer h5 {
+    color: var(--Primary-Font, white);
+    font-family: "DM Sans";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: .2px;
+    margin-top: 20px
+}
+
+.plain-footer h5 {
+    position: relative;
+    font-style: italic;
+    font-size: 19px
+}
+
+.plain-footer span {
+    position: absolute;
+    right: 0;
+    bottom: -25px
+}
+
+.plain-footer svg {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px
+}
+
+.plain-footer-bottom {
+    display: flex;
+    justify-content: space-between
+}
+
+.plain-footer-bottom h3,
+.plain-footer-bottom h3 span {
+    color: var(--Primary-Font, white);
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -.5px
+}
+
+.plain-footer-bottom h3 b {
+    color: var(--Primary-Font, red)
+}
+
+@media (max-width: 750px) {
+    .plain-footer {
+        padding: 53px 30px
+    }
+
+    .plain-footer-bottom {
+        text-align: center;
+        flex-wrap: wrap
+    }
+
+    .plain-footer-bottom h3 {
+        width: 100%
+    }
+
+    .plain-footer-bottom h3:first-of-type {
+        margin-bottom: 20px
+    }
+}

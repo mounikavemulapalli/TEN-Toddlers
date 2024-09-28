@@ -1,0 +1,493 @@
+
+/* AboutSection.css */
+
+* {
+  box-sizing: border-box;
+}
+
+article {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#Focussection {
+  background-color: blue; /* Change this to your desired color */
+  padding: 70px 20px;
+  margin: 0; /* Optional: space between sections */
+  width: 98vw;
+  height: 410px;
+  color: white;
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text in case it wraps */
+  overflow: hidden;
+}
+
+#Focussection p {
+  text-align: center;
+  margin: 0;
+  max-width: 800px; /* Limit the width of the text to keep it readable */
+  margin-left: auto;
+  margin-right: auto; /* Centers the text horizontally */
+  padding: 0 20px;
+}
+
+#ourgoalsection {
+  padding: 20px;
+  font-size: 25px;
+}
+
+#ourgoalsection p {
+  text-align: center;
+  margin: 0;
+  max-width: 800px; /* Limit the width of the text to keep it readable */
+  margin-left: auto;
+  margin-right: auto; /* Centers the text horizontally */
+  padding: 0 20px;
+}
+
+#imagecontainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#imagecontainer .main-image {
+  max-width: 100%;
+  height: auto;
+}
+.main-image, .additional-image {
+  max-width: 100%;
+  height: auto;
+}
+#ourstorysection,#others {
+  position: relative; /* Relative positioning to place background images inside */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.ourstory-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.text {
+  z-index: 2; /* Ensures text appears above background images */
+  position: relative;
+  padding: 20px;
+  line-height: 1.3;
+}
+
+#ourstorysection h1, #ourstorysection h2, #ourstorysection h3,#others h2 {
+  margin: 10px 0;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+#ourstorysection p {
+  
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #333; /* Darker text color for better readability */
+}
+/* Image section styling */
+.journey-background-img {
+  position: absolute;
+  width: 80px; /* Small width */
+  height: 80px; /* Small height */
+  z-index: 1;
+  background-size: cover; /* Ensure the image covers the area */
+  background-position: center;
+}
+.journey-background-img1
+{
+  position:absolute;
+  z-index: 2;
+}
+.journey-background-img3
+{
+z-index:2;
+left:auto;
+right: 5px;
+position:absolute;
+}
+.journey-background-img2{
+  z-index: 2;
+  position: absolute;
+}
+.journey-bg-img2
+{
+  z-index: 2;
+  position: absolute;
+  left:auto;
+right: 5px;
+bottom:10px;
+}
+.journey-background-img4
+{
+z-index:2;
+left:auto;
+right: 5px;
+position:absolute;
+bottom:10px;
+}
+#others
+{
+  line-height: 1.4;
+  margin: 10px 0;
+  padding-left: 60px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #Focussection, #ourgoalsection, #ourstorysection {
+    padding: 10px;
+  }
+
+  #ourstorysection h1 {
+    font-size: 1.8rem;
+  }
+
+  #ourstorysection p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #Focussection {
+    font-size: 3vw;
+  }
+
+  #ourgoalsection, #ourstorysection {
+    font-size: 1rem;
+  }
+
+  #ourstorysection h1 {
+    font-size: 1.5rem;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .journey-background-img {
+    width: 60px; /* Adjust size for smaller screens */
+    height: 60px; /* Adjust size for smaller screens */
+  }
+}
+  /*---------- slider */
+  
+  .sliders {
+    /* display: flex; */
+    width: 1000px;
+  }
+ 
+  .doctor-review {
+    width: 100%;
+    padding: 46px 0 80px;
+  }
+  .doctor-review h1 {
+    color: #002863;
+    text-align: center;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: -1.76px;
+  }
+  .doctor-review h5 {
+    color: #002863;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+    margin-top: 9px;
+  }
+  
+  .doctor-review-list {
+    margin-top: 41px;
+    width: 100%;
+    display: flex;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap;
+  }
+  .doctor-review-card:first-of-type {
+    margin-left: 9%;
+  }
+  .doctor-review-container {
+    display: flex;
+    padding-left: 10%; /* Start the text outside of view */
+    animation: marquee 20s linear infinite;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  .paused {
+    animation-play-state: paused; /* Pause animation when hovered */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .doctor-review-card {
+    min-width: 260px;
+    height: 470px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    margin-left: 21px;
+    white-space: wrap;
+  }
+  .doctor-review-image-part {
+    position: relative;
+  }
+  .doctor-review-image-part img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+  .doctor-review-image-part div {
+    position: absolute;
+    width: 100%;
+    background: #5a40c4;
+    padding: 10px 22px;
+    bottom: -10px;
+  }
+  .doctor-review-image-part div h3 {
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+  }
+  .doctor-review-image-part div h6 {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.56px;
+    margin-top: 1px;
+  }
+  .doctor-review-quote {
+    padding: 22px 22px 34px;
+  }
+  
+  .research-backed {
+    width: 100%;
+    padding: 38px 0 85px;
+    background: #f6fcfe;
+  }
+  .research-backed h1,
+  .research-backed h1 span {
+    color: #002863;
+    text-align: center;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 68px;
+    letter-spacing: -1.76px;
+  }
+  .research-backed h5 {
+    color: #002863;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+  }
+  .insti-research,
+  .theory-research {
+    display: block;
+    width: 81%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 12px;
+    border: 2px solid #5a40c4;
+    padding: 50px 38px 0;
+    position: relative;
+  }
+  .insti-head,
+  .theory-head {
+    border-radius: 33px;
+    background: #5a40c4;
+    position: absolute;
+    top: -30px;
+    left: 30%;
+    padding: 0 3%;
+  }
+  .research-backed h4 {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+  }
+  .research-backed img {
+    width: 100%;
+  }
+  .research-backed p {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.64px;
+  }
+  .insti-research-mobile,
+  .theory-research-mobile {
+    display: none;
+  }
+  .research-backed h4 {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+  }
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+  }
+  .theory-research {
+    border: 2px solid #ff3f4e;
+    margin-top: 71px;
+  }
+  .theory-head {
+    background: #ff3f4e;
+    top: -30px;
+    left: 33.5%;
+  }
+ 
+  
+  .research-backed h1,
+  .research-backed h1 span {
+    color: var(--Primary-Font, #002863);
+    text-align: center;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.76px;
+  }
+  .happy-parents h1,
+  .happy-parents h1 span {
+    color: #002863;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 46px;
+    letter-spacing: -1.44px;
+  }
+  .board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .board-container {
+    width: 100%;
+    padding: 42px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "DM Sans";
+    background-color: #f5eae2 !important;
+  }
+  .board-grid {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 2em 0;
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+  
+    overflow: hidden;
+    gap: 15px;
+  }
+  .board-card {
+    width: 262px;
+    height: 354px;
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .board-card img {
+    width: 100%;
+    height: 200px;
+    background-color: #e1effe;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: top center;
+  }
+  .board-card h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: rgb(0, 40, 99);
+  }
+  .board-card span {
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: rgb(107, 114, 128);
+  }
+  .board-card p {
+    font-size: 0.87em;
+    font-weight: 400;
+    margin-top: 0;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: rgb(107, 114, 128);
+  }
+  
+  .footer {
+    width: 100%;
+    padding: 53px 80px 31px;
+    background: #5a40c4;
+  }
+  .footer-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-card {
+    text-align: left;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  

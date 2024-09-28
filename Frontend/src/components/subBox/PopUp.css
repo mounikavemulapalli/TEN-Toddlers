@@ -1,0 +1,159 @@
+/* sub-popUp styles */
+.sub-popUp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.sub-popUp-content {
+  width: 40%;
+  max-width: 600px;
+  height: auto;
+  max-height: 90vh;
+  background-color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.sub-popUp-content h1 {
+  width: 100%;
+  background-color: #44b7b6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.sub-popUp-content h2 {
+  width: 100%;
+  color: blue;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.sub-popUp-content label {
+  font-size: 1.3rem;
+  color: blue;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.sub-popUp-content select {
+  padding: 10px;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.sub-popUp-content button {
+  display: inline-block;
+  background-color: #ff5766;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sub-popUp-content button:hover {
+  background-color: #ff4054;
+}
+
+/* Responsiveness */
+@media (max-width: 998px) {
+  .sub-popUp-content {
+    width: 60%;
+    padding: 1.5rem;
+  }
+
+  .sub-popUp-content h1 {
+    font-size: 2.2rem;
+    padding: 0.8rem;
+  }
+
+  .sub-popUp-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .sub-popUp-content button {
+    padding: 0.8rem 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sub-popUp-content {
+    width: 70%;
+    padding: 1.5rem;
+  }
+
+  .sub-popUp-content h1 {
+    font-size: 2rem;
+  }
+
+  .sub-popUp-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .sub-popUp-content button {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-popUp-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .sub-popUp-content h1 {
+    font-size: 1.8rem;
+    padding: 0.6rem;
+  }
+
+  .sub-popUp-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .sub-popUp-content button {
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .sub-popUp-content {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .sub-popUp-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .sub-popUp-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .sub-popUp-content button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
