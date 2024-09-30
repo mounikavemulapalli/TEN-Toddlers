@@ -23,7 +23,7 @@
   height: auto;
   background-color: gainsboro;
   display: flex;
-  margin: 1rem auto;
+  margin: 2rem auto;
   flex-wrap: wrap;
 }
 
@@ -35,7 +35,9 @@
 .sub-mainDiv-img img {
   width: 100%;
   height: 500px;
-  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .sub-mainDiv-content {
@@ -45,7 +47,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
 }
 
 .sub-mainDiv-content h1 {
@@ -96,24 +97,24 @@
 
 .sub-kitDiv-img img {
   width: 100%;
-  height: auto;
   border-radius: 1rem;
 }
 
 .sub-kitDiv-content {
   width: 50%;
-  height: auto;
   padding: 0 2rem;
 }
 
 .sub-kitDiv-content h1 {
   font-size: 2.5rem;
   font-weight: 100;
+  text-align: left;
 }
 
 .sub-kitDiv-content h2 {
   font-size: 1.8rem;
   font-weight: 100;
+  text-align: left;
 }
 
 .sub-kitDiv-content ul {
@@ -127,6 +128,7 @@
 .sub-kitDiv-content ul li {
   position: relative;
   padding-left: 25px;
+  text-align: left;
 }
 
 .sub-kitDiv-content ul li::before {
@@ -140,6 +142,7 @@
   font-size: 2rem;
   color: green;
   margin-top: 1rem;
+  text-align: left;
 }
 
 .sub-kitDiv-content h4 {
@@ -147,6 +150,7 @@
   font-weight: 100;
   margin-top: 1rem;
   text-decoration: line-through;
+  text-align: left;
 }
 
 .sub-kitDiv-content h4 span {
@@ -160,12 +164,14 @@
   font-size: 20px;
   font-weight: 100;
   margin-top: 10px;
+  text-align: left;
 }
 
 .sub-kitDiv-content h6 {
   font-size: 1.5rem;
   font-weight: 100;
   margin: 2rem 0;
+  text-align: left;
 }
 
 .sub-kitDiv-content a {
@@ -185,6 +191,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-top: 1rem;
+  text-align: left;
 }
 
 /*                           Videos Styles */
@@ -215,6 +222,9 @@
 .sub-research-img img {
   width: 100%;
   height: 500px;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 .sub-research-content {

@@ -10,7 +10,7 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 import Premium from "../components/Premium";
 import NavBar from "../components/NavBar";
-import PopUpBox from "../components/subBox/PopUpBox";
+import Career from "../components/careerPage/Career";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/achievers" element={<SuccessStory />} />
         <Route path="/premium" element={<Premium />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/subscription-Boxes" element={<PopUpBox />} />
+        <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
     </Router>

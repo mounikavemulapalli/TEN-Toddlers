@@ -13,7 +13,7 @@ function PopUp() {
 
   // Get the current year and populate years in the dropdown
   const currentYear = new Date().getFullYear();
-  const years = Array.from(new Array(5), (val, index) => currentYear - index);
+  const years = Array.from(new Array(8), (val, index) => currentYear - index);
 
   // Function to calculate the baby's age in months
   const calculateAgeInMonths = () => {
@@ -39,7 +39,6 @@ function PopUp() {
     e.preventDefault();
     const age = calculateAgeInMonths();
     setAgeInMonths(age); // Store the calculated age
-    alert(`Your baby's age is: ${age} months`);
 
     // Reset the selected fields
     setSelectedMonth("");
@@ -49,9 +48,11 @@ function PopUp() {
 
   return (
     <>
-      <div className="App">
+      <div className="PopUp">
         {/* Button to open the modal */}
-        <button onClick={togglePopUp}>Select Month and Year</button>
+        <button className="pop-select-button" onClick={togglePopUp}>
+          Select Kit for your Baby
+        </button>
 
         {/* Modal */}
         {showPopUp && (
@@ -100,14 +101,22 @@ function PopUp() {
                 </select>
                 <br />
                 <br />
-                <button type="submit">Show My Baby's Kit</button>
+                <button className="popup-submit-button" type="submit">
+                  Show My Baby's Kit
+                </button>
               </form>
+
+              {/* Cancel Button */}
+              <button onClick={togglePopUp} className="popup-cancel-button">
+                Cancel
+              </button>
             </div>
           </div>
         )}
       </div>
 
-      <SubscriptionBox age={ageInMonths} />
+      {/* Render SubscriptionBox only if ageInMonths is not null */}
+      {ageInMonths !== null && <SubscriptionBox age={ageInMonths} />}
     </>
   );
 }
