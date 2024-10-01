@@ -110,15 +110,85 @@
   margin: 2rem 0;
 }
 
-/*                       Brilliant Minds Styles */
+/*                         Super Peek Styles */
+.super-peek {
+  background: #5a40c4;
+  background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
+  width: 100%;
+  padding: 48px 0 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.super-peek h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.super-peek-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.super-peek-cards {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.super-peek-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.super-peek-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.super-peek-card {
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+}
+
+.super-peek-card h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: start;
+  font-weight: 100;
+  color: darkblue;
+}
+
+.super-peek-card iframe {
+  text-align: center;
+  border-radius: 20px;
+}
+
+/*                           Brilliant Minds Styles */
 .super-brilliant-minds {
   width: 100%;
-  background: #fffbfb;
+  background: #e9dfdf;
+  padding: 1rem 0;
 }
 
 .super-brilliant-minds h1 {
   font-size: 2.5rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
   text-align: center;
   color: darkblue;
 }
@@ -146,16 +216,25 @@
   display: flex;
   scroll-behavior: smooth;
   overflow-x: auto;
-  overflow: hidden;
+  scroll-snap-type: x mandatory;
   gap: 1rem;
 }
 
-.super-brilliant-minds-card {
-  padding-bottom: 2.5rem;
+.super-brilliant-minds-cards::-webkit-scrollbar {
+  display: none;
 }
 
-.super-brilliant-minds-card img {
-  width: 100%;
+.super-brilliant-minds-card {
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  margin: 0 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+}
+
+.super-brilliant-minds-card-image img {
+  width: 350px;
 }
 
 .super-brilliant-minds-card-content {
@@ -165,12 +244,19 @@
 }
 
 .super-brilliant-minds-card-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 .super-brilliant-minds-card-content p {
-  font-size: 20px;
+  font-size: 1rem;
   margin: 0;
+}
+
+.line-section {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0;
+  background: #e9dfdf;
 }
 
 /*                           Super Baby Offers Styles */

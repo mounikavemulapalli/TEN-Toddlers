@@ -9,54 +9,64 @@ import { happyParent } from "../../assets/data/happyParent.js";
 import { pillarsList } from "../../assets/data/pillarsList.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoePrints } from "@fortawesome/free-solid-svg-icons";
+import { superOffers } from "../../assets/data/superOffers.js";
+import { cards } from "../../assets/data/card.js";
 
 function SuperDailyProgram() {
-  const superOffers = [
-    {
-      id: 0,
-      image:
-        "https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-1.webp",
-      name: "Holistic Framework: Nurturing Genius",
-      point1: "Brain stimulating Music",
-      point2: "Screen-Free Activities",
-    },
-    {
-      id: 1,
-      image:
-        "https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-2.webp",
-      name: "Milestone Tracker: Development Reports",
-      point1: "Personalized Brain Development Insights",
-      point2: "Celebrate one step at a time",
-    },
-    {
-      id: 2,
-      image:
-        "https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-3.webp",
-      name: "Expert-Led Webinars for You & Baby",
-      point1: "Exclusive Mastersession",
-      point2: "Interactive Webinar with Expert",
-    },
-    {
-      id: 3,
-      image:
-        "https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-4.webp",
-      name: "Personalized Support: Parental Coaching",
-      point1: "Expert Parental Coaches at Your Fingertips",
-      point2: "High-Priority Access to Technical Support",
-    },
-    {
-      id: 4,
-      image:
-        "https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-5.webp",
-      name: "Backed by Research & Science",
-      point1: "Parenting Skills Training Session",
-      point2: "Daily Development Journey",
-    },
-    {
-      id: 5,
-      name: "Expert Tips at Your Fingertips",
-    },
-  ];
+  const carouselRef = useRef(null);
+  const happyParentRef = useRef(null);
+  const boardMembersRef = useRef(null);
+  const awaredBabyRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const [activeContent, setActiveContent] = useState("enrollment");
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handlePrev = () => {
+    if (carouselRef.current) {
+      const cardWidth =
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const handleNext = () => {
+    if (carouselRef.current) {
+      const cardWidth =
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const handleAwaredBabyPrev = () => {
+    if (awaredBabyRef.current) {
+      const cardWidth =
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      awaredBabyRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleAwaredBabyNext = () => {
+    if (awaredBabyRef.current) {
+      const cardWidth =
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      awaredBabyRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="super-container">
@@ -82,12 +92,45 @@ function SuperDailyProgram() {
       </div>
 
       {/* Program Section */}
-      {/* <Slider /> */}
+      <Slider />
 
       {/* Peek-A-Boo! See the Joy of Development */}
-      {/* <div>
+      <div className="super-peek">
         <h1>Peek-A-Boo! See the Joy of Development</h1>
-      </div> */}
+        <div className="super-peek-wrapper">
+          <button className="super-peek-button prev" onClick={handlePrev}>
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+              alt="Previous"
+            />
+          </button>
+
+          <div className="super-peek-cards" ref={carouselRef}>
+            {cards.map((data) => (
+              <div className="super-peek-card" key={data.id}>
+                <iframe
+                  width="300"
+                  height="200"
+                  src={data.videoUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+                <h2>{data.title}</h2>
+                {data.description && <p>{data.description}</p>}
+              </div>
+            ))}
+          </div>
+
+          <button className="super-peek-button next" onClick={handleNext}>
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+              alt="Next"
+            />
+          </button>
+        </div>
+      </div>
 
       {/* What UpTodd Offers Your Baby: */}
       <div className="super-offers">
@@ -118,6 +161,66 @@ function SuperDailyProgram() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="super-brilliant-minds">
+        <h1>
+          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+        </h1>
+        <div className="super-brilliant-minds-wrapper">
+          <button
+            className="super-brilliant-minds-button prev"
+            onClick={handleAwaredBabyPrev}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+              alt="Previous"
+            />
+          </button>
+          <div className="super-brilliant-minds-cards" ref={awaredBabyRef}>
+            {babyAwardList.map((data) => (
+              <div
+                key={data.id}
+                className="super-brilliant-minds-card"
+                ref={awaredBabyRef}
+              >
+                <div className="super-brilliant-minds-card-image">
+                  <img src={data.img} alt="" />
+                </div>
+                <div className="super-brilliant-minds-card-content">
+                  <h3>{data.title} </h3>
+                  <p>{data.description} </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button
+            className="super-brilliant-minds-button next"
+            onClick={handleAwaredBabyNext}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+              alt="Next"
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* Line Section */}
+      <div className="line-section">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="314"
+          height="15"
+          viewBox="0 0 314 15"
+          fill="none"
+        >
+          <path
+            d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
+            stroke="#FF3F4E"
+            strokeWidth="2"
+          ></path>
+        </svg>
       </div>
     </div>
   );
