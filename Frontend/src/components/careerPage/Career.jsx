@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Career.css";
-import profile1 from "../../assets/images/subscription/profile1.png";
 import baby2 from "../../assets/images/subscription/baby2.webp";
 import airtel_logo from "../../assets/images/airtel_logo.jpg";
 import PopUp from "../subscriptionBox/PopUp";
@@ -142,31 +141,37 @@ function Career() {
   const mentorsDetails = [
     {
       id: 1,
-      image: profile1,
+      image: "https://www.uptodd.com/images/professors/1.webp",
       name: "Dr. Jaideep Sharma",
       position: "MBBS & MD, AIIMS, New Delhi",
     },
     {
       id: 2,
-      image: profile1,
+      image: "https://www.uptodd.com/images/professors/2.webp",
       name: "Krishna Vedula",
       position: "Professor, MIT, United States",
     },
     {
       id: 3,
-      image: profile1,
+      image: "https://www.uptodd.com/images/professors/3.webp",
       name: "Dr. Sudhanshu",
       position: "MD, DSMA Russia, CMC Vellore",
     },
     {
       id: 4,
-      image: profile1,
+      image: "https://www.uptodd.com/images/professors/4.webp",
       name: "Manoj Mondal",
       position: "Professor, IIT Kharagpur",
     },
     {
       id: 5,
-      image: profile1,
+      image: "https://www.uptodd.com/images/professors/dr_sarvesh_thakur.png",
+      name: "Dr Sarvesh Thakur",
+      position: "Professor, IIT Mumbai",
+    },
+    {
+      id: 6,
+      image: "https://www.uptodd.com/images/professors/richa_singh_expert.png",
       name: "Richa Singh",
       position: "PhD, IIT BHU",
     },
@@ -420,8 +425,8 @@ function Career() {
         <hr />
 
         <div className="career-footer-lastDiv">
-          <p>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</p>
-          <h5>Made With &#9829;</h5>
+          <h3>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h3>
+          <h3>Made With &#9829;</h3>
         </div>
       </div>
     </div>
