@@ -1,0 +1,324 @@
+.super-container {
+  width: 100%;
+  height: auto;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.prev {
+  left: 100px;
+}
+
+.next {
+  right: 100px;
+}
+
+/*                             Main Style */
+.super-main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: #f0fbff;
+}
+
+.super-main-content {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 4rem 5rem;
+}
+
+.super-main-content h1 {
+  font-size: 4rem;
+  color: red;
+}
+
+.super-main-content h1 span {
+  color: darkblue;
+}
+
+.super-main-content p {
+  font-size: 1.5rem;
+  color: darkblue;
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
+
+.super-main-content ul {
+  font-size: 1.5rem;
+  margin: 2.5rem 0;
+  line-height: 2rem;
+  list-style: none;
+}
+
+.super-main-content ul li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.super-main-content ul li::before {
+  content: "✔";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.super-main-content h4 {
+  font-size: 1.5rem;
+  color: darkblue;
+}
+
+.super-main-content a {
+  background-color: #ff5766;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.super-main-image {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.super-main-image img {
+  width: 50%;
+  height: auto;
+  margin: 2rem 0;
+}
+
+/*                       Brilliant Minds Styles */
+.super-brilliant-minds {
+  width: 100%;
+  background: #fffbfb;
+}
+
+.super-brilliant-minds h1 {
+  font-size: 2.5rem;
+  margin: 3rem 0;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-brilliant-minds h1 span {
+  font-weight: 100;
+}
+
+.super-brilliant-minds-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.super-brilliant-minds-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.super-brilliant-minds-cards {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.super-brilliant-minds-card {
+  padding-bottom: 2.5rem;
+}
+
+.super-brilliant-minds-card img {
+  width: 100%;
+}
+
+.super-brilliant-minds-card-content {
+  width: 90%;
+  margin: 1.5rem auto;
+  line-height: 30px;
+}
+
+.super-brilliant-minds-card-content h3 {
+  font-size: 1.25rem;
+}
+
+.super-brilliant-minds-card-content p {
+  font-size: 20px;
+  margin: 0;
+}
+
+/*                           Super Baby Offers Styles */
+.super-offers {
+  width: 100%;
+  height: auto;
+}
+
+.super-offers h1 {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-offers h5 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.super-offers-cards {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.super-offers-card {
+  width: 48%;
+  border-radius: 12px;
+  border: 1px solid #e2deef;
+  display: flex;
+}
+
+.super-offers-card-image {
+  width: 30%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.super-offers-card-image img {
+  width: 70%;
+}
+
+.super-offers-card-content {
+  width: 70%;
+  padding: 2rem 0;
+  line-height: 1.5rem;
+}
+
+.super-offers-card-content h2 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding-bottom: 1rem;
+}
+
+.super-offers-card-content h6 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.super-offers-card-lastDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f1;
+  border-radius: 12px;
+}
+
+.super-offers-card-lastDiv h2 {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.super-offers-card-lastDiv a {
+  background-color: #ff5766;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+/*                            Media Queries for responsiveness ( 1024px )*/
+@media (max-width: 1024px) {
+  .super-main-content {
+    width: 60%;
+  }
+  .super-main-image {
+    align-items: center;
+    width: 40%;
+  }
+  .super-main-image img {
+    width: 100%;
+    height: 75%;
+  }
+}
+
+/*                            Media Queries for responsiveness ( 768px )*/
+@media (max-width: 768px) {
+  .super-main-content {
+    padding: 4rem 2.5rem;
+  }
+  .super-main-content h1 {
+    font-size: 2rem;
+  }
+  .super-main-content p {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  .super-main-content ul {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .super-main-content h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/*                            Media Queries for responsiveness ( 480px )*/
+@media (max-width: 480px) {
+  .super-main {
+    flex-direction: column-reverse;
+  }
+  .super-main-content {
+    width: 100%;
+    padding-top: 1rem;
+  }
+  .super-main-image {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  .super-main-content p {
+    font-size: 1rem;
+  }
+  .super-main-content ul {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .super-main-content ul li::before {
+    width: 20px;
+    height: 20px;
+  }
+}

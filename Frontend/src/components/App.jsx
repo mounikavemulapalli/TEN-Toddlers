@@ -11,11 +11,12 @@ import Footer from "../components/Footer";
 import Premium from "../components/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
+import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
 
 function App() {
   return (
     <Router>
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route index element={<Home />} />
@@ -26,6 +27,10 @@ function App() {
         <Route path="/premium" element={<Premium />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/career" element={<Career />} />
+        <Route
+          path="/super_daily_app_program"
+          element={<SuperDailyProgram />}
+        />
       </Routes>
       <Footer />
     </Router>

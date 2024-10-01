@@ -46,45 +46,6 @@ function SubscriptionBox({ age }) {
     event.target.pauseVideo();
   };
 
-  const mentorsDetails = [
-    {
-      id: 1,
-      image: profile1,
-      name: "Dr. Jaideep Sharma",
-      position: "MBBS & MD, AIIMS, New Delhi",
-    },
-    {
-      id: 2,
-      image: profile1,
-      name: "Krishna Vedula",
-      position: "Professor, MIT, United States",
-    },
-    {
-      id: 3,
-      image: profile1,
-      name: "Dr. Sudhanshu",
-      position: "MD, DSMA Russia, CMC Vellore",
-    },
-    {
-      id: 4,
-      image: profile1,
-      name: "Manoj Mondal",
-      position: "Professor, IIT Kharagpur",
-    },
-    {
-      id: 5,
-      image: profile1,
-      name: "Dr Sarvesh Thakur",
-      position: "Professor, IIT Mumbai",
-    },
-    {
-      id: 6,
-      image: profile1,
-      name: "Richa Singh",
-      position: "PhD, IIT BHU",
-    },
-  ];
-
   const awardData = [
     {
       id: 0,
@@ -310,20 +271,6 @@ function SubscriptionBox({ age }) {
                 <h2>{data.name}</h2>
                 <p>{data.about}</p>
                 <h4>{data.parent}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mentors Section */}
-        <div className="sub-mentor">
-          <h1 className="heading">Meet our Mentors & Curators</h1>
-          <div className="sub-mentor-cards">
-            {mentorsDetails.map((data) => (
-              <div key={data.id} className="sub-mentor-card">
-                <img src={data.image} alt="Profile" />
-                <h2>{data.name}</h2>
-                <h3>{data.position}</h3>
               </div>
             ))}
           </div>

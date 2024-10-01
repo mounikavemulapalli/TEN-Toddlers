@@ -397,87 +397,6 @@
   display: inline-block;
 }
 
-/*                                  Mentor Style */
-.sub-mentor {
-  width: 100%;
-  height: auto;
-  margin: 1rem auto;
-}
-
-.sub-mentor h1 {
-  width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.sub-mentor-cards {
-  width: 95%;
-  height: auto;
-  margin: 1rem auto;
-  display: flex;
-  justify-content: space-around;
-}
-
-.sub-mentor-card {
-  width: 15%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.sub-mentor-card img {
-  width: 75%;
-  height: auto;
-  background-color: gray;
-  border-radius: 50%;
-}
-
-.sub-mentor-card h2 {
-  font-weight: 600;
-}
-
-.sub-mentor-card h3 {
-  font-weight: 100;
-  text-align: center;
-}
-
-/* Horizontal slider after 1450px */
-@media screen and (max-width: 1450px) {
-  .sub-mentor-cards {
-    display: block;
-    white-space: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    text-align: center;
-  }
-
-  .sub-mentor-card {
-    display: inline-block;
-    width: 20%;
-    white-space: normal;
-    vertical-align: top;
-  }
-
-  .sub-mentor-card h2 {
-    font-size: 1.5rem;
-  }
-
-  .sub-mentor-cards::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .sub-mentor-cards::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  .sub-mentor-cards::-webkit-scrollbar-thumb {
-    background-color: #ff5766;
-    border-radius: 10px;
-  }
-}
-
 /* Featured Section */
 .sub-featured {
   width: 100%;
@@ -560,10 +479,6 @@
     100% {
       transform: translateX(-86%);
     }
-  }
-
-  .sub-mentor-card {
-    width: 25%;
   }
 
   .sub-featured-cards img {
@@ -659,13 +574,6 @@
     100% {
       transform: translateX(-140%);
     }
-  }
-
-  .sub-mentor-card {
-    width: 30%;
-  }
-  .sub-mentor-card h2 {
-    font-size: 1.25rem;
   }
 
   .sub-featured-cards {
@@ -772,16 +680,6 @@
         -310%
       ); /* Make sure to move based on the full content width */
     }
-  }
-
-  .sub-mentor-card {
-    width: 45%;
-  }
-  .sub-mentor-card h2 {
-    font-size: 1rem;
-  }
-  .sub-mentor-card h3 {
-    font-size: 1rem;
   }
 
   .sub-featured-cards img {
