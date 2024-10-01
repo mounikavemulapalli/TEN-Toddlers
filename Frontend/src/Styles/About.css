@@ -3,28 +3,26 @@
 
 * {
   box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
 }
 
 article {
-  padding: 20px;
+  padding: 0px;
   font-family: Arial, sans-serif;
 }
 
 #Focussection {
-  background-color: blue; /* Change this to your desired color */
-  padding: 70px 20px;
-  margin: 0; /* Optional: space between sections */
-  width: 98vw;
-  height: 410px;
-  color: white;
-  font-size: 4vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; /* Center vertically */
-  text-align: center; /* Center text in case it wraps */
-  overflow: hidden;
-}
+
+    background: linear-gradient(0deg, #5a40c4 0%, #4b5adb 100%);
+    font-size: 40px;
+    color:white;
+    padding: 100px 20px 20px; /* Top, Right/Left, Bottom */
+    width: 98.8vw; /* Fill the width of the parent container */
+    height: 400px;
+    
+  }
 
 #Focussection p {
   text-align: center;
@@ -32,7 +30,7 @@ article {
   max-width: 800px; /* Limit the width of the text to keep it readable */
   margin-left: auto;
   margin-right: auto; /* Centers the text horizontally */
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 #ourgoalsection {
@@ -490,4 +488,117 @@ bottom:10px;
     text-align: -webkit-match-parent;
     unicode-bidi: isolate;
   }
+  /*Mentors*/
+.our-mentors {
+    /* width: 100%;
+    padding: 38px 0 65px;
+    background: #fffbfb */
+    text-align: center;
+    padding: 20px;
+}
+
+.our-mentors h1,.our-mentors h1 span {
+    color: var(--Primary-Font,#002863);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: -1.44px;
+    padding: 0 30px
+}
+
+.our-mentors h1 span {
+    font-weight: 400;
+    padding: 0
+}
+.mentor-container {
+  overflow: hidden; /* Hide overflow of the container */
+  width: 100%; /* You can set a fixed width here if needed */
   
+}
+.mentors-list {
+  margin: auto;
+  margin-top: 38px;
+  display: flex;
+  width: 82%;
+  overflow-x:scroll;
+  margin-bottom: 79px;
+}
+
+.mentor-card {
+  
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    min-width: 205px;
+    text-align: center;
+    padding: 23px 19px 36px;
+    margin-left: 23px;
+    margin-bottom: 20px
+}
+
+.mentor-card:first-of-type {
+    margin-left: 0
+}
+
+.mentor-card img {
+    width: 120px;
+    height: 120px
+}
+
+.mentor-card h3,.mentor-card h3 span {
+    color: #000;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -.64px
+}
+
+.mentor-card h3 span {
+    font-weight: 400
+}
+
+.featured-in {
+    margin: auto;
+    margin-top: 24px;
+    width: 70%
+}
+
+.featured-in img {
+    width: 100%
+}
+
+@media (max-width: 750px) {
+    .our-mentors h1,.our-mentors h1 span {
+        font-size:25px;
+        line-height: 40px;
+        letter-spacing: -1px
+    }
+
+    .mentors-list {
+      width: 80%;
+      
+    }
+
+    .featured-in {
+        margin: auto;
+        margin-top: 24px;
+        width: 90%
+    }
+}
+
+@media (max-width: 450px) {
+    .our-mentors h1,.our-mentors h1 span {
+        font-size:20px;
+        line-height: 30px;
+        letter-spacing: -.8px
+    }
+
+    .mentors-list {
+      width: 100%;
+    }
+}

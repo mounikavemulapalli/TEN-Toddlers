@@ -8,8 +8,7 @@ import Iframe from 'react-iframe';
 import { doctorReviews } from "../Lists/doctorReviews.js";
 import '../Styles/About.css';
 import { boardMembers } from "../Lists/boardMembers";
-
-
+import about from '../Lists/about.js'; // Importing the default export
 
 const About = () => {
   
@@ -17,7 +16,7 @@ const About = () => {
     <article>
       <div>
         <section id="Focussection">
-          <p>We focus on personalizing every child's journey at our best. We are obsessed with success in every family that merges with UpTodd.</p>
+          <p>We focus to personalise every child's journey at our best. We are obsessed for success at every family which merges with UpTodd</p>
         </section>
         
         <section id="ourgoalsection">
@@ -271,83 +270,84 @@ const About = () => {
     </section>
 
     <section className="our-mentors" id="our-mentors">
-        <h1>
-          Meet our Mentors &amp; Curators |
-          <span>100+ Curators R&amp;D Team</span>
-        </h1>
-        <div className="mentors-list" >
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-              loading="lazy"
-              alt="Uptodd mentor Prof.Krishna Vedula MIT"
-            />
-            <h3>
-              Krishna Vedula
-              <br />
-              <span>Professor, MIT, United States</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-              loading="lazy"
-              alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-            />
-            <h3>
-              Dr. Jaideep Sharma
-              <br />
-              <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-              loading="lazy"
-              alt="Uptodd mentor Dr.Sudhanshu Singh"
-            />
-            <h3>
-              Dr. Sudhanshu
-              <br />
-              <span>MD, DSMA CMC Vellore</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-              loading="lazy"
-              alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-            />
-            <h3>
-              Manoj Mondal
-              <br />
-              <span>Professor, IIT Kharagpur</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-              loading="lazy"
-              alt="Uptodd mentor PK Mishra IIT BHU"
-            />
-            <h3>
-              Prof. PK Mishra
-              <br />
-              <span>IIT BHU</span>
-            </h3>
-          </div>
-        </div>
-        <h1>UpTodd™ has been Featured In</h1>
-        <div className="featured-in">
-          <img
-            src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
-            loading="lazy"
-            alt="Media Houses Featuring UpTodd"
-          />
-        </div>
-      </section>
-     
-
+  <h1>
+    Meet our Mentors &amp; Curators |
+    <span>100+ Curators R&amp;D Team</span>
+  </h1>
+  <div className="mentor-container">
+    <div className="mentors-list">
+      <div className="mentor-card">
+        <img
+          src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
+          loading="lazy"
+          alt="Uptodd mentor Prof.Krishna Vedula MIT"
+        />
+        <h3>
+          Krishna Vedula
+          <br />
+          <span>Professor, MIT, United States</span>
+        </h3>
+      </div>
+      <div className="mentor-card">
+        <img
+          src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
+          loading="lazy"
+          alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
+        />
+        <h3>
+          Dr. Jaideep Sharma
+          <br />
+          <span>MBBS &amp; MD, AIIMS, New Delhi</span>
+        </h3>
+      </div>
+      <div className="mentor-card">
+        <img
+          src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
+          loading="lazy"
+          alt="Uptodd mentor Dr.Sudhanshu Singh"
+        />
+        <h3>
+          Dr. Sudhanshu
+          <br />
+          <span>MD, DSMA CMC Vellore</span>
+        </h3>
+      </div>
+      <div className="mentor-card">
+        <img
+          src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
+          loading="lazy"
+          alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
+        />
+        <h3>
+          Manoj Mondal
+          <br />
+          <span>Professor, IIT Kharagpur</span>
+        </h3>
+      </div>
+      <div className="mentor-card">
+        <img
+          src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
+          loading="lazy"
+          alt="Uptodd mentor PK Mishra IIT BHU"
+        />
+        <h3>
+          Prof. PK Mishra
+          <br />
+          <span>IIT BHU</span>
+        </h3>
+      </div>
+    </div>
+    <div className="scrollbar"></div> {/* Fixed scrollbar */}
+  </div>
+  <h1>UpTodd™ has been Featured In</h1>
+  <div className="featured-in">
+    <img
+      src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
+      loading="lazy"
+      alt="Media Houses Featuring UpTodd"
+    />
+  </div>
+</section>
 
 
     {/* Science-Backed Approach: Rooted in Research */}
