@@ -41,7 +41,6 @@
   margin: 2rem auto;
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid black; */
 }
 
 .super-objective-card {
@@ -51,7 +50,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* border: 1px solid aqua; */
 }
 
 .super-objective-card img {
@@ -62,6 +60,11 @@
   font-size: 1.5rem;
   font-weight: 100;
   margin: 1rem 0;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
 }
 
 /*                            Media Queries for responsiveness ( 1024px )*/

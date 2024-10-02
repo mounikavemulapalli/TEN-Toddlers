@@ -110,7 +110,7 @@
   margin: 2rem 0;
 }
 
-/*                         Super Peek Styles */
+/*                         Super Peek Section Styles */
 .super-peek {
   background: #5a40c4;
   background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
@@ -177,86 +177,6 @@
 .super-peek-card iframe {
   text-align: center;
   border-radius: 20px;
-}
-
-/*                           Brilliant Minds Styles */
-.super-brilliant-minds {
-  width: 100%;
-  background: #e9dfdf;
-  padding: 1rem 0;
-}
-
-.super-brilliant-minds h1 {
-  font-size: 2.5rem;
-  margin: 2rem 0;
-  text-align: center;
-  color: darkblue;
-}
-
-.super-brilliant-minds h1 span {
-  font-weight: 100;
-}
-
-.super-brilliant-minds-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-.super-brilliant-minds-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.super-brilliant-minds-cards {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1rem;
-}
-
-.super-brilliant-minds-cards::-webkit-scrollbar {
-  display: none;
-}
-
-.super-brilliant-minds-card {
-  width: 30%;
-  background: white;
-  border-radius: 10px;
-  margin: 0 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: start;
-}
-
-.super-brilliant-minds-card-image img {
-  width: 350px;
-}
-
-.super-brilliant-minds-card-content {
-  width: 90%;
-  margin: 1.5rem auto;
-  line-height: 30px;
-}
-
-.super-brilliant-minds-card-content h3 {
-  font-size: 1.2rem;
-}
-
-.super-brilliant-minds-card-content p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.line-section {
-  width: 100%;
-  text-align: center;
-  padding: 4rem 0;
-  background: #e9dfdf;
 }
 
 /*                           Super Baby Offers Styles */
@@ -347,6 +267,274 @@
   text-decoration: none;
 }
 
+/*                           Brilliant Minds Styles */
+.super-brilliant-minds {
+  width: 100%;
+  background: #e9dfdf;
+  padding: 1rem 0;
+}
+
+.super-brilliant-minds h1 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-brilliant-minds h1 span {
+  font-weight: 100;
+}
+
+.super-brilliant-minds-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.super-brilliant-minds-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.super-brilliant-minds-cards {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.super-brilliant-minds-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.super-brilliant-minds-card {
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  margin: 0 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+}
+
+.super-brilliant-minds-card-image img {
+  width: 350px;
+}
+
+.super-brilliant-minds-card-content {
+  width: 90%;
+  margin: 1.5rem auto;
+  line-height: 30px;
+}
+
+.super-brilliant-minds-card-content h3 {
+  font-size: 1.2rem;
+}
+
+.super-brilliant-minds-card-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/*                           Line Section Styles */
+.super-line-section {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0;
+  background: #e9dfdf;
+}
+
+/*                             Happy Parents Section Styles */
+.super-happy-parents {
+  width: 100%;
+  background: #e9dfdf;
+}
+
+.super-happy-parents h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-happy-parents h1 span {
+  font-weight: 100;
+}
+
+.super-happy-parents h4 {
+  font-size: 1.75rem;
+  text-align: center;
+  color: darkblue;
+  font-style: normal;
+  font-weight: 100;
+  margin: 1rem 0;
+}
+
+.super-happy-parents-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.super-happy-parents-cards {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.super-happy-parents-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.super-happy-parents-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.super-happy-parents-card {
+  padding: 15px;
+  width: 360px;
+  border-radius: 12px;
+  border: 0 solid var(--Primary-Font, #002863);
+  background: #fff;
+  box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.super-happy-parent-quote {
+  position: relative;
+  padding-top: 10px;
+}
+
+.child-development-button {
+  width: 100%;
+  background: #e9dfdf;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.child-development-button a {
+  background-color: #ff5766;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+.child-development-button a:hover {
+  box-shadow: 0px 15px 20px rgb(140, 140, 140);
+}
+
+/*                            Top Global Experts Styles*/
+.super-doctor-review {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.super-doctor-review h1 {
+  font-size: 2.75rem;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-doctor-review h4 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: darkblue;
+  font-style: normal;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+
+.super-doctor-review-list {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 2rem;
+}
+
+.super-doctor-review-cards {
+  display: flex;
+  padding-left: 10%;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.super-doctor-review-card {
+  min-width: 260px;
+  height: 470px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  margin-left: 21px;
+  white-space: wrap;
+}
+
+.super-doctor-review-image-part {
+  position: relative;
+}
+
+.super-doctor-review-image-part img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.super-doctor-review-image-part div {
+  position: absolute;
+  width: 100%;
+  background: #5a40c4;
+  padding: 10px 22px;
+  bottom: -10px;
+}
+
+.super-doctor-review-image-part div h3 {
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+}
+
+.super-doctor-review-image-part div h6 {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.56px;
+  margin-top: 1px;
+}
+
+.super-doctor-review-quote {
+  padding: 22px 22px 34px;
+}
+
 /*                            Media Queries for responsiveness ( 1024px )*/
 @media (max-width: 1024px) {
   .super-main-content {
@@ -359,6 +547,24 @@
   .super-main-image img {
     width: 100%;
     height: 75%;
+  }
+
+  .super-peek-card {
+    width: 40%;
+  }
+
+  .super-offers-cards {
+    width: 90%;
+  }
+  .super-offers-card-image {
+    width: 35%;
+  }
+  .super-offers-card-content {
+    padding: 1rem 0;
+  }
+  .super-offers-card-lastDiv a {
+    padding: 1rem 1rem;
+    font-size: 1rem;
   }
 }
 
@@ -380,6 +586,21 @@
   }
   .super-main-content h4 {
     font-size: 1.2rem;
+  }
+
+  .super-peek-card {
+    width: 60%;
+  }
+
+  .super-offers-card {
+    width: 100%;
+  }
+  .super-offers-card-image {
+    width: 20%;
+  }
+  .super-offers-card-lastDiv {
+    text-align: center;
+    padding: 1rem 0;
   }
 }
 
@@ -406,5 +627,34 @@
   .super-main-content ul li::before {
     width: 20px;
     height: 20px;
+  }
+
+  .super-peek h1 {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  .super-peek-card {
+    width: 100%;
+  }
+
+  .super-offers-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .super-offers-card-image {
+    width: 40%;
+  }
+  .super-offers-card-content {
+    width: 100%;
+    text-align: center;
+  }
+  .super-offers-card-content h2 {
+    font-size: 1.25rem;
+  }
+  .super-offers-card-content h6 {
+    font-size: 14px;
+  }
+  .super-offers-card-lastDiv h2 {
+    font-size: 1.25rem;
   }
 }

@@ -25,7 +25,7 @@ function SuperDailyProgram() {
   const handlePrev = () => {
     if (carouselRef.current) {
       const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+        carouselRef.current.querySelector(".super-peek-card").offsetWidth;
       const gap = 20; // Set this to the gap between cards in pixels
       const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
       carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -35,7 +35,7 @@ function SuperDailyProgram() {
   const handleNext = () => {
     if (carouselRef.current) {
       const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+        carouselRef.current.querySelector(".super-peek-card").offsetWidth;
       const gap = 20; // Set this to the gap between cards in pixels
       const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
       carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -44,8 +44,9 @@ function SuperDailyProgram() {
 
   const handleAwaredBabyPrev = () => {
     if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const cardWidth = awaredBabyRef.current.querySelector(
+        ".super-brilliant-minds-card"
+      ).offsetWidth;
       const gap = 30;
       const scrollAmount = cardWidth + gap;
       awaredBabyRef.current.scrollBy({
@@ -57,11 +58,40 @@ function SuperDailyProgram() {
 
   const handleAwaredBabyNext = () => {
     if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const cardWidth = awaredBabyRef.current.querySelector(
+        ".super-brilliant-minds-card"
+      ).offsetWidth;
       const gap = 30;
       const scrollAmount = cardWidth + gap;
       awaredBabyRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleHappyParentPrev = () => {
+    if (happyParentRef.current) {
+      const cardWidth = happyParentRef.current.querySelector(
+        ".super-happy-parents-card"
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
+      happyParentRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleHappyParentNext = () => {
+    if (happyParentRef.current) {
+      const cardWidth = happyParentRef.current.querySelector(
+        ".super-happy-parents-card"
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
+      happyParentRef.current.scrollBy({
         left: scrollAmount,
         behavior: "smooth",
       });
@@ -107,7 +137,7 @@ function SuperDailyProgram() {
 
           <div className="super-peek-cards" ref={carouselRef}>
             {cards.map((data) => (
-              <div className="super-peek-card" key={data.id}>
+              <div key={data.id} className="super-peek-card">
                 <iframe
                   width="300"
                   height="200"
@@ -163,6 +193,7 @@ function SuperDailyProgram() {
         </div>
       </div>
 
+      {/* Brilliant Minds Section */}
       <div className="super-brilliant-minds">
         <h1>
           Brilliant Minds: <span> Celebrating Global Baby Champions</span>
@@ -207,7 +238,7 @@ function SuperDailyProgram() {
       </div>
 
       {/* Line Section */}
-      <div className="line-section">
+      <div className="super-line-section">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="314"
@@ -221,6 +252,110 @@ function SuperDailyProgram() {
             strokeWidth="2"
           ></path>
         </svg>
+      </div>
+
+      {/* Happy Parents Section */}
+      <div className="super-happy-parents">
+        <h1>
+          Happy Parents, Thriving Tots:
+          <span>Witnessing Their Child's Growth</span>
+        </h1>
+        <h4>
+          Smarter Investment: Personalized Learning vs. Traditional Plastic Toys
+        </h4>
+        <div className="super-happy-parents-wrapper">
+          <button
+            className="super-happy-parents-button prev"
+            onClick={handleHappyParentPrev}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+              alt="Previous"
+            />
+          </button>
+
+          <div className="super-happy-parents-cards" ref={happyParentRef}>
+            {happyParent.map((data) => (
+              <div key={data.id} className="super-happy-parents-card">
+                <iframe
+                  loading="lazy"
+                  srcDoc={data.surdoc}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen=""
+                  data-gtm-yt-inspected-4="true"
+                  data-gtm-yt-inspected-40611628_62="true"
+                  id="72071507"
+                  data-gtm-yt-inspected-14="true"
+                ></iframe>
+
+                <div className="super-happy-parent-quote">
+                  <img
+                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
+                    alt="Quote"
+                    className="quote-mark"
+                  />
+                  <p className="quote-text">{data.content}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button
+            className="super-happy-parents-button next"
+            onClick={handleHappyParentNext}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+              alt="Next"
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* Child's Development Section */}
+      <div className="child-development-button">
+        <a href="#">Fuel Your Child's Development!</a>
+      </div>
+
+      {/* Top Global Experts Section */}
+      <div className="super-doctor-review">
+        <h1>Recommended by Top Global Experts</h1>
+        <h4>
+          Vetted &amp; Backed by 100+ Doctors, Educationists, Parenting Experts
+          &amp; Professors
+        </h4>
+
+        <div
+          className="super-doctor-review-list"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div
+            className={`super-doctor-review-cards ${isHovered ? "paused" : ""}`}
+          >
+            {doctorReviews.map((data) => (
+              <div key={data.id} className="super-doctor-review-card">
+                <div className="super-doctor-review-image-part">
+                  <img src={data.img} loading="lazy" alt="doctor-review" />
+                  <div>
+                    <h3>{data.name}</h3>
+                    <h6>{data.position} </h6>
+                  </div>
+                </div>
+                <div className="super-doctor-review-quote">
+                  <img
+                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
+                    loading="lazy"
+                    alt="quote"
+                  />
+                  <p>{data.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
