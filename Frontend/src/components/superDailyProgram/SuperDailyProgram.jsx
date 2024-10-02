@@ -258,7 +258,7 @@ function SuperDailyProgram() {
       <div className="super-happy-parents">
         <h1>
           Happy Parents, Thriving Tots:
-          <span>Witnessing Their Child's Growth</span>
+          <span> Witnessing Their Child's Growth</span>
         </h1>
         <h4>
           Smarter Investment: Personalized Learning vs. Traditional Plastic Toys
@@ -296,7 +296,7 @@ function SuperDailyProgram() {
                     alt="Quote"
                     className="quote-mark"
                   />
-                  <p className="quote-text">{data.content}</p>
+                  <p>{data.content}</p>
                 </div>
               </div>
             ))}

@@ -14,11 +14,11 @@
 }
 
 .prev {
-  left: 100px;
+  left: 8%;
 }
 
 .next {
-  right: 100px;
+  right: 12%;
 }
 
 /*                             Main Style */
@@ -50,8 +50,7 @@
 .super-main-content p {
   font-size: 1.5rem;
   color: darkblue;
-  padding: 0.5rem 0;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .super-main-content ul {
@@ -170,7 +169,7 @@
   font-size: 1.5rem;
   margin-top: 10px;
   text-align: start;
-  font-weight: 100;
+  font-weight: 400;
   color: darkblue;
 }
 
@@ -183,18 +182,18 @@
 .super-offers {
   width: 100%;
   height: auto;
+  color: darkblue;
 }
 
 .super-offers h1 {
   font-size: 2.5rem;
-  margin-top: 3rem;
+  padding-top: 3rem;
   text-align: center;
-  color: darkblue;
 }
 
 .super-offers h5 {
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
   margin-top: 2rem;
   text-align: center;
 }
@@ -202,6 +201,7 @@
 .super-offers-cards {
   width: 80%;
   margin: 2rem auto;
+  margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -233,13 +233,13 @@
 
 .super-offers-card-content h2 {
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
   padding-bottom: 1rem;
 }
 
 .super-offers-card-content h6 {
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .super-offers-card-lastDiv {
@@ -254,7 +254,7 @@
 
 .super-offers-card-lastDiv h2 {
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .super-offers-card-lastDiv a {
@@ -282,7 +282,7 @@
 }
 
 .super-brilliant-minds h1 span {
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .super-brilliant-minds-wrapper {
@@ -323,6 +323,7 @@
 
 .super-brilliant-minds-card-image img {
   width: 350px;
+  text-align: center;
 }
 
 .super-brilliant-minds-card-content {
@@ -333,11 +334,13 @@
 
 .super-brilliant-minds-card-content h3 {
   font-size: 1.2rem;
+  color: darkblue;
 }
 
 .super-brilliant-minds-card-content p {
   font-size: 1rem;
   margin: 0;
+  color: darkblue;
 }
 
 /*                           Line Section Styles */
@@ -361,7 +364,7 @@
 }
 
 .super-happy-parents h1 span {
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .super-happy-parents h4 {
@@ -369,7 +372,7 @@
   text-align: center;
   color: darkblue;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 400;
   margin: 1rem 0;
 }
 
@@ -402,19 +405,27 @@
 }
 
 .super-happy-parents-card {
-  padding: 15px;
-  width: 360px;
+  width: 30%;
   border-radius: 12px;
-  border: 0 solid var(--Primary-Font, #002863);
   background: #fff;
   box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
-  margin-left: 40px;
-  margin-bottom: 20px;
+  margin-left: 2rem;
+}
+
+.super-happy-parents-card iframe {
+  padding: 1rem;
+  text-align: center;
 }
 
 .super-happy-parent-quote {
   position: relative;
   padding-top: 10px;
+}
+
+.super-happy-parents-card p {
+  font-size: 20px;
+  color: darkblue;
+  padding-left: 10px;
 }
 
 .child-development-button {
@@ -435,7 +446,7 @@
 }
 
 .child-development-button a:hover {
-  box-shadow: 0px 15px 20px rgb(140, 140, 140);
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 /*                            Top Global Experts Styles*/
@@ -553,6 +564,17 @@
     width: 40%;
   }
 
+  .super-brilliant-minds-card {
+    width: 40%;
+  }
+  .super-brilliant-minds-card-image img {
+    width: 300px;
+  }
+
+  .super-happy-parents-card {
+    width: 40%;
+  }
+
   .super-offers-cards {
     width: 90%;
   }
@@ -590,6 +612,20 @@
 
   .super-peek-card {
     width: 60%;
+  }
+
+  .super-brilliant-minds-card {
+    width: 60%;
+  }
+
+  .super-happy-parents-card {
+    width: 60%;
+  }
+  .super-happy-parents h1 {
+    font-size: 2rem;
+  }
+  .super-happy-parents h4 {
+    font-size: 1.25rem;
   }
 
   .super-offers-card {
@@ -630,16 +666,27 @@
   }
 
   .super-peek h1 {
-    font-size: 1.5rem;
-    font-weight: 100;
+    font-size: 1.25rem;
+    font-weight: 400;
   }
   .super-peek-card {
     width: 100%;
   }
 
+  .super-offers {
+    background-color: #ffe4d0;
+  }
+  .super-offers h1 {
+    font-size: 1.4rem;
+  }
+  .super-offers h5 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
   .super-offers-card {
     flex-direction: column;
     align-items: center;
+    background-color: white;
   }
   .super-offers-card-image {
     width: 40%;
@@ -656,5 +703,17 @@
   }
   .super-offers-card-lastDiv h2 {
     font-size: 1.25rem;
+  }
+
+  .super-brilliant-minds h1 {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+  .super-brilliant-minds-card {
+    width: 100%;
+  }
+
+  .super-happy-parents-card {
+    width: 100%;
   }
 }

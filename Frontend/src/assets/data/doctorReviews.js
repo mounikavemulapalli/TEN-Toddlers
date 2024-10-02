@@ -39,7 +39,7 @@ export const doctorReviews = [
     id: 5,
     img: "https://www.uptodd.com/images/newWebsite/doctors/sudhanshu.webp",
     name: "Sudhanshu Singh",
-    position: "Doctor, MBBS &amp; MD, CMC Vellore",
+    position: "Doctor, MBBS & MD, CMC Vellore",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "UpTodd, backed by the expertise of over 1K professionals, nurtures their genius during the first 5 years with a comprehensive parenting program for baby",
@@ -48,7 +48,7 @@ export const doctorReviews = [
     id: 6,
     img: "https://www.uptodd.com/images/newWebsite/doctors/mani_kapur.webp",
     name: "Mani Kapur",
-    position: "Doctor, MBBS &amp; PG, Gyno",
+    position: "Doctor, MBBS & PG, Gyno",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "Pregnancy is crucial; the baby's brain grows fastest in the womb. Post-birth stimulation is also vital for nurturing the baby's genius through UpTodd's baby parenting program",
@@ -57,7 +57,7 @@ export const doctorReviews = [
     id: 7,
     img: "https://www.uptodd.com/images/newWebsite/doctors/saurabh_khanna.webp",
     name: "Saurabh Khanna",
-    position: "Doctor, MBBS &amp; PG, Pedia",
+    position: "Doctor, MBBS & PG, Pedia",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "Every baby is born a genius, needing personalized care for optimal growth. UpTodd excels in nurturing babies' brain abilities and supporting parents through a tailored program",
@@ -66,7 +66,7 @@ export const doctorReviews = [
     id: 8,
     img: "https://www.uptodd.com/images/newWebsite/doctors/sarvesh_thakur.webp",
     name: "Sarvesh Thakur",
-    position: "Doctor, MBBS &amp; PG, Pedia",
+    position: "Doctor, MBBS & PG, Pedia",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "From birth to 3-4 years, crucial developmental growth occurs. UpTodd ensures perfect baby development with comprehensive care in their parenting program",
@@ -75,7 +75,7 @@ export const doctorReviews = [
     id: 9,
     img: "https://www.uptodd.com/images/newWebsite/doctors/vipul_sehrawat.webp",
     name: "Vipul Sehrawat",
-    position: "Doctor, MBBS &amp; MD, MAMC",
+    position: "Doctor, MBBS & MD, MAMC",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "With expertise in fetal ultrasound, I see the importance of early cognitive care. UpTodd provides the best care from womb to 60 months, laying a solid foundation for your baby",
@@ -84,7 +84,7 @@ export const doctorReviews = [
     id: 10,
     img: "https://www.uptodd.com/images/newWebsite/doctors/aditya_sharma.webp",
     name: "Aditya Sharma",
-    position: "Doctor, M.Ch. &amp; MS, Apollo",
+    position: "Doctor, M.Ch. & MS, Apollo",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       "UpTodd fosters 300% potential growth through high-quality care from womb to 60 months, offering the world's first one-stop solution in a parenting program for your baby",
@@ -93,7 +93,7 @@ export const doctorReviews = [
     id: 11,
     img: "https://www.uptodd.com/images/newWebsite/doctors/rohit_kalani.webp",
     name: "Rohit Kalani",
-    position: "Doctor, MBBS &amp; MD, Neonatol",
+    position: "Doctor, MBBS & MD, Neonatol",
     quote: "https://www.uptodd.com/images/newWebsite/quote.svg",
     description:
       " At NICU, we see the impact of stimulation therapy. UpTodd's products support it perfectly for babies, integrated into their parenting program for babies",
