@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoePrints } from "@fortawesome/free-solid-svg-icons";
 import { superOffers } from "../../assets/data/superOffers.js";
 import { cards } from "../../assets/data/card.js";
+import { superMentors } from "../../assets/data/superMentors.js";
 
 function SuperDailyProgram() {
   const carouselRef = useRef(null);
@@ -26,8 +27,8 @@ function SuperDailyProgram() {
     if (carouselRef.current) {
       const cardWidth =
         carouselRef.current.querySelector(".super-peek-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
       carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
   };
@@ -36,8 +37,8 @@ function SuperDailyProgram() {
     if (carouselRef.current) {
       const cardWidth =
         carouselRef.current.querySelector(".super-peek-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
       carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
@@ -100,6 +101,9 @@ function SuperDailyProgram() {
 
   return (
     <div className="super-container">
+      {/* Header Section */}
+      {/* <div className="super-header" /> */}
+
       {/* Main Section */}
       <div className="super-main">
         <div className="super-main-content">
@@ -355,6 +359,61 @@ function SuperDailyProgram() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Mentors Section */}
+      <div className="super-mentors">
+        <h1>
+          Meet our Mentors & Curators |<span> 100+ Curators R&D Team</span>
+        </h1>
+        <div className="mentors-list">
+          {superMentors.map((data) => (
+            <div key={data.id} className="super-mentors-card">
+              <img src={data.image} alt={data.alt} />
+              <h3>{data.name}</h3>
+              <h5>{data.prof}</h5>
+            </div>
+          ))}
+        </div>
+
+        <h1>UpTodd™ has been Featured In</h1>
+        <div className="super-featured">
+          <img
+            src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
+            loading="lazy"
+            alt="Media Houses Featuring UpTodd"
+          />
+        </div>
+      </div>
+
+      {/* About Section */}
+      <div className="super-about">
+        <h1>About Uptodd</h1>
+        <p>
+          At UpTodd, we've carefully curated our approach by leveraging insights
+          from over 10,000+ research papers and tapping into the expertise of
+          professionals from prestigious institutions like MIT, Stanford, IITs,
+          and AIIMS. Our program integrates techniques from globally recognized
+          methodologies, including early stimulation from Glenn Doman,
+          Montessori's emphasis on independence and exploration, Howard
+          Gardner's theory of multiple intelligences from Harvard University,
+          Waldorf's holistic approach, the Reggio Emilia Approach's focus on
+          creativity, indigenous parenting and mindful parenting. This
+          comprehensive approach empowers babies worldwide to thrive and reach
+          their full potential with evidence-based guidance.
+        </p>
+        <h4>
+          "Join us on this captivating journey, where every child is truly
+          special, and every family's dreams matter"
+        </h4>
+        <h5>Your's UpTodd Family</h5>
+        <hr />
+        <div className="super-about-footer">
+          <h4>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h4>
+          <h4>
+            Made with Love <span>❤</span>
+          </h4>
         </div>
       </div>
     </div>

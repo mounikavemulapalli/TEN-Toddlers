@@ -18,10 +18,15 @@
 }
 
 .next {
-  right: 12%;
+  right: 8%;
 }
 
-/*                             Main Style */
+/*                             Header Styles */
+/* .super-header {
+
+} */
+
+/*                             Main Styles */
 .super-main {
   width: 100%;
   height: auto;
@@ -183,11 +188,11 @@
   width: 100%;
   height: auto;
   color: darkblue;
+  padding: 4rem 0;
 }
 
 .super-offers h1 {
   font-size: 2.5rem;
-  padding-top: 3rem;
   text-align: center;
 }
 
@@ -546,6 +551,120 @@
   padding: 22px 22px 34px;
 }
 
+/*                             Mentors Styles */
+.super-mentors {
+  width: 100%;
+  padding: 38px 0 65px;
+  background: #fffbfb;
+}
+
+.super-mentors h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: darkblue;
+}
+
+.super-mentors h1 span {
+  font-weight: 400;
+  padding: 0;
+}
+
+/* .super-mentors-cards {
+  margin: auto;
+  margin-top: 38px;
+  display: flex;
+  width: 85%;
+  margin-bottom: 79px;
+} */
+
+.mentors-list {
+  width: 85%;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.super-mentors-card:first-of-type {
+  margin-left: 0;
+}
+
+.super-mentors-card {
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  min-width: 205px;
+  text-align: center;
+  padding: 23px 19px 36px;
+  margin-left: 23px;
+  margin-bottom: 20px;
+}
+
+.super-mentors-card img {
+  width: 75%;
+}
+
+.super-mentors-card img {
+  width: 75%;
+}
+
+.super-mentors-card h3 {
+  text-align: center;
+}
+
+.super-mentors-card h5 {
+  font-weight: 500;
+}
+
+.super-featured {
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.super-featured img {
+  width: 100%;
+}
+
+/*                           About Styles */
+.super-about {
+  background-color: darkblue;
+  color: white;
+  padding: 4rem 4rem 2rem 4rem;
+}
+
+.super-about h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.super-about p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.super-about h4 {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.super-about h5 {
+  font-size: 1.25rem;
+  text-align: end;
+}
+
+.super-about hr {
+  margin: 1rem 0;
+}
+
+.super-about-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.super-about-footer span {
+  color: red;
+}
+
 /*                            Media Queries for responsiveness ( 1024px )*/
 @media (max-width: 1024px) {
   .super-main-content {
@@ -564,17 +683,6 @@
     width: 40%;
   }
 
-  .super-brilliant-minds-card {
-    width: 40%;
-  }
-  .super-brilliant-minds-card-image img {
-    width: 300px;
-  }
-
-  .super-happy-parents-card {
-    width: 40%;
-  }
-
   .super-offers-cards {
     width: 90%;
   }
@@ -587,6 +695,21 @@
   .super-offers-card-lastDiv a {
     padding: 1rem 1rem;
     font-size: 1rem;
+  }
+
+  .super-brilliant-minds-card {
+    width: 40%;
+  }
+  .super-brilliant-minds-card-image img {
+    width: 300px;
+  }
+
+  .super-happy-parents-card {
+    width: 40%;
+  }
+
+  .super-mentors h1 {
+    font-size: 2rem;
   }
 }
 
@@ -614,6 +737,17 @@
     width: 60%;
   }
 
+  .super-offers-card {
+    width: 100%;
+  }
+  .super-offers-card-image {
+    width: 20%;
+  }
+  .super-offers-card-lastDiv {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
   .super-brilliant-minds-card {
     width: 60%;
   }
@@ -626,17 +760,6 @@
   }
   .super-happy-parents h4 {
     font-size: 1.25rem;
-  }
-
-  .super-offers-card {
-    width: 100%;
-  }
-  .super-offers-card-image {
-    width: 20%;
-  }
-  .super-offers-card-lastDiv {
-    text-align: center;
-    padding: 1rem 0;
   }
 }
 
@@ -715,5 +838,22 @@
 
   .super-happy-parents-card {
     width: 100%;
+  }
+
+  .super-mentors h1 {
+    width: 80%;
+    font-size: 1.25rem;
+    margin: 0 auto;
+  }
+  .super-featured {
+    width: 90%;
+  }
+
+  .super-about {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+  .super-about-footer {
+    flex-direction: column;
+    text-align: center;
   }
 }
