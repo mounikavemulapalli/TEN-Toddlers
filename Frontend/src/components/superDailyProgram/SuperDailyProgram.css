@@ -114,6 +114,30 @@
   margin: 2rem 0;
 }
 
+/*                               CountDown Styles */
+.super-countdown {
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+  padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.super-countdown-date h2 {
+  font-weight: 400;
+}
+
+.super-countdown-time span {
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
 /*                         Super Peek Section Styles */
 .super-peek {
   background: #5a40c4;
@@ -569,22 +593,13 @@
   padding: 0;
 }
 
-/* .super-mentors-cards {
+.mentors-list {
   margin: auto;
   margin-top: 38px;
   display: flex;
-  width: 85%;
+  width: 82%;
+  overflow-x: scroll;
   margin-bottom: 79px;
-} */
-
-.mentors-list {
-  width: 85%;
-  margin-top: 2rem;
-  display: flex;
-}
-
-.super-mentors-card:first-of-type {
-  margin-left: 0;
 }
 
 .super-mentors-card {
@@ -597,8 +612,13 @@
   margin-bottom: 20px;
 }
 
+.super-mentors-card:first-of-type {
+  margin-left: 0;
+}
+
 .super-mentors-card img {
-  width: 75%;
+  width: 120px;
+  height: 120px;
 }
 
 .super-mentors-card img {
@@ -708,6 +728,10 @@
     width: 40%;
   }
 
+  .super-doctor-review h1 {
+    font-size: 2.5rem;
+  }
+
   .super-mentors h1 {
     font-size: 2rem;
   }
@@ -731,6 +755,10 @@
   }
   .super-main-content h4 {
     font-size: 1.2rem;
+  }
+
+  .super-countdown {
+    flex-direction: column;
   }
 
   .super-peek-card {
@@ -761,6 +789,10 @@
   .super-happy-parents h4 {
     font-size: 1.25rem;
   }
+
+  .super-doctor-review h1 {
+    font-size: 1.75rem;
+  }
 }
 
 /*                            Media Queries for responsiveness ( 480px )*/
@@ -786,6 +818,11 @@
   .super-main-content ul li::before {
     width: 20px;
     height: 20px;
+  }
+
+  .super-countdown-date h2 {
+    font-size: 1.25rem;
+    text-align: center;
   }
 
   .super-peek h1 {
@@ -838,6 +875,13 @@
 
   .super-happy-parents-card {
     width: 100%;
+  }
+
+  .super-doctor-review h1 {
+    font-size: 1.25rem;
+  }
+  .super-doctor-review h4 {
+    display: none;
   }
 
   .super-mentors h1 {

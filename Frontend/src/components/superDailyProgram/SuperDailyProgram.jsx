@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./superDailyProgram.css";
 import banner from "../../assets/images/super-daily-program-banner.webp";
 import Slider from "./Slider.jsx";
@@ -12,6 +12,8 @@ import { faShoePrints } from "@fortawesome/free-solid-svg-icons";
 import { superOffers } from "../../assets/data/superOffers.js";
 import { cards } from "../../assets/data/card.js";
 import { superMentors } from "../../assets/data/superMentors.js";
+import SuperScience from "./SuperScience.jsx";
+import SuperBanner from "./SuperBanner.jsx";
 
 function SuperDailyProgram() {
   const carouselRef = useRef(null);
@@ -22,6 +24,58 @@ function SuperDailyProgram() {
 
   const [activeContent, setActiveContent] = useState("enrollment");
   const [isHovered, setIsHovered] = useState(false);
+
+  const [date, setDate] = useState("");
+  const [timeLeft, setTimeLeft] = useState({
+    hours: "",
+    minutes: "",
+    seconds: "",
+  });
+
+  useEffect(() => {
+    const getCurrentDateTime = () => {
+      const now = new Date();
+
+      // Formatting the date as "Thursday, October 03, 2024"
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "2-digit",
+      };
+      const formattedDate = now.toLocaleDateString("en-US", options);
+
+      // Calculating time left until the end of the day
+      const endOfDay = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1
+      );
+      const timeDifference = endOfDay - now; // difference in milliseconds
+
+      const hoursLeft = Math.floor(timeDifference / (1000 * 60 * 60));
+      const minutesLeft = Math.floor(
+        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const secondsLeft = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      setDate(formattedDate);
+      setTimeLeft({
+        hours: String(hoursLeft).padStart(2, "0"),
+        minutes: String(minutesLeft).padStart(2, "0"),
+        seconds: String(secondsLeft).padStart(2, "0"),
+      });
+    };
+
+    // Get current date and time once component is rendered
+    getCurrentDateTime();
+
+    // Update every second
+    const intervalId = setInterval(getCurrentDateTime, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handlePrev = () => {
     if (carouselRef.current) {
@@ -102,7 +156,7 @@ function SuperDailyProgram() {
   return (
     <div className="super-container">
       {/* Header Section */}
-      {/* <div className="super-header" /> */}
+      <SuperBanner />
 
       {/* Main Section */}
       <div className="super-main">
@@ -122,6 +176,18 @@ function SuperDailyProgram() {
         </div>
         <div className="super-main-image">
           <img src={banner} alt="Banner Image" />
+        </div>
+      </div>
+
+      {/* CountDown Section */}
+      <div className="super-countdown">
+        <div className="super-countdown-date">
+          <h2>Hurry! Registrations - Closing : {date}</h2>
+        </div>
+        <div className="super-countdown-time">
+          <span>{timeLeft.hours} h</span>
+          <span>{timeLeft.minutes} m</span>
+          <span>{timeLeft.seconds} s</span>
         </div>
       </div>
 
@@ -361,6 +427,9 @@ function SuperDailyProgram() {
           </div>
         </div>
       </div>
+
+      {/* Science-Backed Approach Section */}
+      <SuperScience />
 
       {/* Mentors Section */}
       <div className="super-mentors">
