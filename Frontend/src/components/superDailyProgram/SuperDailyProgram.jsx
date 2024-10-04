@@ -4,9 +4,7 @@ import banner from "../../assets/images/super-daily-program-banner.webp";
 import Slider from "./Slider.jsx";
 import { babyAwardList } from "../../assets/data/babyAwardList.js";
 import { doctorReviews } from "../../assets/data/doctorReviews.js";
-import { FaqProgram, FaqBabyKit, Enrollment } from "../../assets/data/faq.js";
 import { happyParent } from "../../assets/data/happyParent.js";
-import { pillarsList } from "../../assets/data/pillarsList.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoePrints } from "@fortawesome/free-solid-svg-icons";
 import { superOffers } from "../../assets/data/superOffers.js";
@@ -14,17 +12,15 @@ import { cards } from "../../assets/data/card.js";
 import { superMentors } from "../../assets/data/superMentors.js";
 import SuperScience from "./SuperScience.jsx";
 import SuperBanner from "./SuperBanner.jsx";
+import SuperFramework from "./SuperFramework.jsx";
+import SuperQA from "./SuperQA.jsx";
 
 function SuperDailyProgram() {
   const carouselRef = useRef(null);
   const happyParentRef = useRef(null);
-  const boardMembersRef = useRef(null);
   const awaredBabyRef = useRef(null);
-  const [showModal, setShowModal] = useState(false);
 
-  const [activeContent, setActiveContent] = useState("enrollment");
   const [isHovered, setIsHovered] = useState(false);
-
   const [date, setDate] = useState("");
   const [timeLeft, setTimeLeft] = useState({
     hours: "",
@@ -431,6 +427,9 @@ function SuperDailyProgram() {
       {/* Science-Backed Approach Section */}
       <SuperScience />
 
+      {/* Super Daily Framework */}
+      <SuperFramework />
+
       {/* Mentors Section */}
       <div className="super-mentors">
         <h1>
@@ -455,6 +454,8 @@ function SuperDailyProgram() {
           />
         </div>
       </div>
+
+      <SuperQA />
 
       {/* About Section */}
       <div className="super-about">

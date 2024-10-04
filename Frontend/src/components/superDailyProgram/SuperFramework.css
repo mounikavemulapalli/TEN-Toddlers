@@ -1,0 +1,205 @@
+.super-framework {
+  width: 100%;
+  display: flex;
+  padding: 4rem;
+  color: darkblue;
+}
+
+.super-framework-info {
+  width: 60%;
+}
+
+.super-framework-info h4 {
+  font-size: 1.25rem;
+}
+
+.super-framework-info h1 {
+  font-size: 2.75rem;
+  font-weight: 500;
+}
+
+.super-framework-info h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 70%;
+  padding-top: 1rem;
+}
+
+.super-framework-info-list {
+  margin: 2rem 0 1rem 0;
+}
+
+.super-framework-info-list ul {
+  width: 120%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  list-style: none;
+  gap: 2rem;
+}
+
+.super-framework-info-list ul li {
+  width: 40%;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.super-framework-info-list ul li::before {
+  content: "✔";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.super-framework-join {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 2.5rem;
+  gap: 1.5rem;
+}
+
+.super-framework-join1 {
+  background: linear-gradient(
+    90deg,
+    rgb(241 208 184 / 0.55) 0%,
+    rgb(255 176 182 / 0.55) 100%
+  );
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+}
+
+.super-framework-join2 {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #5a40c4;
+}
+
+.super-framework-join2 h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.super-framework-join2 h4 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 12px;
+}
+
+.super-framework-join2 span {
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+
+.super-framework-join2-btn {
+  border-radius: 8px;
+  background: #ff5766;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.8px;
+  padding: 15px;
+  border: none;
+  margin-top: 16px;
+}
+
+.super-framework-join p {
+  color: #ff5766;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .super-framework {
+    flex-direction: column;
+  }
+
+  .super-framework-info {
+    width: 100%;
+  }
+
+  .super-framework-join {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .super-framework-info-list ul {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .super-framework-info-list ul li {
+    width: 46%;
+  }
+}
+
+@media (max-width: 480px) {
+  .super-framework {
+    padding: 1rem 1rem;
+  }
+
+  .super-framework-info h4 {
+    font-size: 1rem;
+  }
+
+  .super-framework-info h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .super-framework-info h3 {
+    font-size: 1em;
+    font-weight: 500;
+    opacity: 70%;
+    padding-top: 1rem;
+  }
+
+  .super-framework-info-list {
+    margin: 1rem 0;
+  }
+
+  .super-framework-info-list ul {
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  .super-framework-info-list ul li {
+    width: 100%;
+  }
+
+  .super-framework-info-list ul li::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .super-framework-join {
+    width: 100%;
+    padding: 0;
+  }
+
+  .super-framework-join2 h3 {
+    font-size: 1.25rem;
+  }
+
+  .super-framework-join2 h4 {
+    font-size: 1.5rem;
+  }
+}
