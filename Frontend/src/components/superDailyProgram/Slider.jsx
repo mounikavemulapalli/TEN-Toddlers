@@ -79,15 +79,14 @@ function SliderComponent() {
     },
   ];
 
-  // Calculate the center slide index based on the total number of slides and visible slides
+  // Get the index of the slide that is exactly in the center
   const getCenterIndex = () => {
-    // Middle index of currently visible slides
-    const middleVisibleIndex = Math.floor(settings.slidesToShow / 2);
+    // Get the middle slide of the visible slides (center index for the 5 visible slides)
+    const middleVisibleIndex = Math.floor(settings.slidesToShow / 3);
+    console.log(middleVisibleIndex);
 
-    // Calculate the index of the center slide
-    const centerSlideIndex =
-      (currentSlide + middleVisibleIndex) % institutions.length;
-    return centerSlideIndex;
+    // Return the correct center slide index considering the total number of slides
+    return (currentSlide + middleVisibleIndex) % institutions.length;
   };
 
   return (

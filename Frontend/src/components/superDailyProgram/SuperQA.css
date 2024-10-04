@@ -20,13 +20,73 @@
   color: #fff;
   border-radius: 8px;
   text-align: center;
-  font-family: "DM Sans";
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 22px;
-  letter-spacing: -0.64px;
-  padding: 13px 17px;
+  padding: 1rem 1.5rem;
   border: none;
-  margin-left: 15px;
+  margin-top: 1rem;
+}
+
+.super-qa-cards {
+  margin-top: 1rem;
+}
+
+.super-qa-card {
+  margin-top: 1rem;
+  border: 1px solid gray;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.super-qa-card.active {
+  border: 1px solid #ff3f4e;
+  background-color: white;
+}
+
+.super-qa-card p {
+  font-size: 1.2rem;
+  opacity: 60%;
+}
+
+@media (max-width: 1024px) {
+  .super-qa h1 {
+    font-weight: 500;
+  }
+
+  .super-qa-list {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .super-qa h1 {
+    font-size: 2rem;
+  }
+
+  .super-qa-list {
+    width: 85%;
+  }
+
+  .super-qa-card h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .super-qa h1 {
+    font-size: 1.75rem;
+  }
+
+  .super-qa-list {
+    width: 90%;
+  }
+
+  .super-qa-card h2 {
+    font-size: 1rem;
+  }
+
+  .super-qa-card p {
+    font-size: 1rem;
+    opacity: 60%;
+  }
 }

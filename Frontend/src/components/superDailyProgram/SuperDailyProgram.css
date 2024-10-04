@@ -797,7 +797,7 @@
   }
   .super-main-content {
     width: 100%;
-    padding-top: 1rem;
+    padding-top: 0;
   }
   .super-main-image {
     width: 100%;
@@ -813,6 +813,13 @@
   .super-main-content ul li::before {
     width: 20px;
     height: 20px;
+  }
+  .super-main-content h4 {
+    font-size: 1rem;
+  }
+  .super-main-content a {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .super-countdown-date h2 {
