@@ -212,8 +212,10 @@ function Career() {
         <hr />
 
         <div className="career-footer-lastDiv">
-          <h3>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h3>
-          <h3>Made With &#9829;</h3>
+          <h4>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h4>
+          <h4>
+            Made with Love <span>❤</span>
+          </h4>
         </div>
       </div>
     </div>
