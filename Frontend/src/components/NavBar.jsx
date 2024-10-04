@@ -2,43 +2,38 @@ import React, { useEffect, useState } from "react";
 import Button from "./premiumButton";
 import { Link, useLocation } from "react-router-dom";
 import '../Styles/NavBar.css';
-import logo  from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
+import logo from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
 
 const NavBar = ({ text, enroll }) => {
   const location = useLocation();
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPage] = useState(location.pathname === '/' ? 'home' : (location.pathname).substring(1));
 
   useEffect(() => {
-    switch (location.pathname) {
-      case "/premium_program":
-        setCurrentPage("premium");
-        break;
-      case "/success":
-        setCurrentPage("success");
-        break;
-      case "/blog":
-        setCurrentPage("blog");
-        break;
-      default:
-        setCurrentPage("home");
-        break;
+    setCurrentPage(currentPage);
+  });
+
+  const premiumPageNav = (link) => {
+    if (location.hash == link) return 'active'
+    if (location.hash == '') {
+      location.hash = '#root';
+      return 'active';
     }
-  }, [location]);
+  }
 
   const links = currentPage === "premium"
     ? [
-        { to: "/home", label: "Home" },
-        { to: "/premium", label: "Premium" },
-        { to: "/achievers", label: "Success Story" },
-        { to: "/aboutus", label: "About" }
-      ]
+      { href: '#root', label: "Home" },
+      { href: "#product-and-cost", label: "Premium" },
+      { href: "#genius-babies", label: "Success Story" },
+      { href: "#why-uptodd", label: "About" }
+    ]
     : [
-        { to: "/", label: "Home" },
-        { to: "/premium", label: "Premium" },
-        { to: "/achievers", label: "Success Story" },
-        { to: "/about", label: "About" },
-        { to: "/blog", label: "Blog" }
-      ];
+      { to: "/home", label: "Home" },
+      { to: "/premium", label: "Premium" },
+      { to: "/success story", label: "Success Story" },
+      { to: "/about", label: "About" },
+      { to: "/blog", label: "Blog" }
+    ];
 
   return (
     <nav className="navBar" aria-label="Main Navigation">
@@ -47,8 +42,13 @@ const NavBar = ({ text, enroll }) => {
       </div>
       <ul className="navLinks">
         {links.map((link) => (
-          <li key={link.to} className="navLink">
-            <Link to={link.to}>{link.label}</Link>
+          <li key={link.to || link.href} className="navLink">
+            {link.href ? (
+              <a href={link.href} className={premiumPageNav(link.href)}>{link.label}</a>
+            ) : (
+              <Link to={link.to} className={decodeURIComponent(currentPage) == (link.label).toLowerCase() ? 'active' : ''} target={currentPage != 'premium' ? '_blank' : ''}>
+                {link.label}
+              </Link>)}
           </li>
         ))}
         <li>

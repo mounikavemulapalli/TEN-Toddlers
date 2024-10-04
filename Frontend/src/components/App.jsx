@@ -16,14 +16,14 @@ import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
 function App() {
   return (
     <Router>
-      {/* <NavBar /> */}
+      {<NavBar />}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route index element={<Home />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/Apply" element={<ApplicationForm />} />
         <Route path="/step" element={<Step />} />
-        <Route path="/achievers" element={<SuccessStory />} />
+        <Route path="/success story" element={<SuccessStory />} />
         <Route path="/premium" element={<Premium />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/career" element={<Career />} />

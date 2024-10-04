@@ -23,6 +23,7 @@
 }
 
 .navLink a {
+  background: inherit;
   text-decoration: none;
   color: black; /* Link color */
   font-weight: normal;
