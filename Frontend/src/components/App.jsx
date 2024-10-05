@@ -12,6 +12,8 @@ import Premium from "../components/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
+import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
+import TermsCondition from "./termsCondition/TermsCondition";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/premium" element={<Premium />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsCondition />} />
         <Route
           path="/super_daily_app_program"
           element={<SuperDailyProgram />}
