@@ -12,6 +12,7 @@ import Premium from "../components/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
+import ResearchHub from '../components/ResearchHub';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           path="/super_daily_app_program"
           element={<SuperDailyProgram />}
         />
+        <Route path="/research" element={<ResearchHub />} />
       </Routes>
       <Footer />
     </Router>
