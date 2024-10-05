@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ApplicationForm from "../components/careerPage/ApplicationForm"; // Move the form component to a separate file
-import About from "./About/About";
-import Home from "./Home/Home";
+import ApplicationForm from "../components/ApplicationForm"; // Move the form component to a separate file
+import About from "../components/About";
+import Home from "../components/Home";
 import "../Styles/About.css";
 import "./App.css";
-import Step from "./premium/Step";
-import SuccessStory from "../components/Home/SuccessStory";
+import Step from "../components/Step";
+import SuccessStory from "../components/SuccessStory";
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
-import Premium from "./premium/Premium";
+import Premium from "../components/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";

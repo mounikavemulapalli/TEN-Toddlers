@@ -1,0 +1,181 @@
+
+/* AboutSection.css */
+
+* {
+  box-sizing: border-box;
+}
+
+article {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#Focussection {
+  background-color: blue; /* Change this to your desired color */
+  padding: 70px 20px;
+  margin: 0; /* Optional: space between sections */
+  width: 98vw;
+  height: 410px;
+  color: white;
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text in case it wraps */
+  overflow: hidden;
+}
+
+#Focussection p {
+  text-align: center;
+  margin: 0;
+  max-width: 800px; /* Limit the width of the text to keep it readable */
+  margin-left: auto;
+  margin-right: auto; /* Centers the text horizontally */
+  padding: 0 20px;
+}
+
+#ourgoalsection {
+  padding: 20px;
+  font-size: 25px;
+}
+
+#ourgoalsection p {
+  text-align: center;
+  margin: 0;
+  max-width: 800px; /* Limit the width of the text to keep it readable */
+  margin-left: auto;
+  margin-right: auto; /* Centers the text horizontally */
+  padding: 0 20px;
+}
+
+#imagecontainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#imagecontainer .main-image {
+  max-width: 100%;
+  height: auto;
+}
+.main-image, .additional-image {
+  max-width: 100%;
+  height: auto;
+}
+#ourstorysection,#others {
+  position: relative; /* Relative positioning to place background images inside */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.ourstory-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.text {
+  z-index: 2; /* Ensures text appears above background images */
+  position: relative;
+  padding: 20px;
+}
+
+#ourstorysection h1, #ourstorysection h2, #ourstorysection h3,#others h2 {
+  margin: 10px 0;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+#ourstorysection p {
+  
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #333; /* Darker text color for better readability */
+}
+/* Image section styling */
+.journey-background-img {
+  position: absolute;
+  width: 80px; /* Small width */
+  height: 80px; /* Small height */
+  z-index: 1;
+  background-size: cover; /* Ensure the image covers the area */
+  background-position: center;
+}
+.journey-background-img1
+{
+  position:absolute;
+  z-index: 2;
+}
+.journey-background-img3
+{
+z-index:2;
+left:auto;
+right: 5px;
+position:absolute;
+}
+.journey-background-img2{
+  z-index: 2;
+  position: absolute;
+}
+.journey-bg-img2
+{
+  z-index: 2;
+  position: absolute;
+  left:auto;
+right: 5px;
+bottom:10px;
+}
+.journey-background-img4
+{
+z-index:2;
+left:auto;
+right: 5px;
+position:absolute;
+bottom:10px;
+}
+#others
+{
+  line-height: 1.4;
+  margin: 10px 0;
+  padding-left: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #Focussection, #ourgoalsection, #ourstorysection {
+    padding: 10px;
+  }
+
+  #ourstorysection h1 {
+    font-size: 1.8rem;
+  }
+
+  #ourstorysection p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #Focussection {
+    font-size: 3vw;
+  }
+
+  #ourgoalsection, #ourstorysection {
+    font-size: 1rem;
+  }
+
+  #ourstorysection h1 {
+    font-size: 1.5rem;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .journey-background-img {
+    width: 60px; /* Adjust size for smaller screens */
+    height: 60px; /* Adjust size for smaller screens */
+  }
+}

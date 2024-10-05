@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "./premium/premiumButton";
+import Button from "./premiumButton";
 import { Link, useLocation } from "react-router-dom";
 import '../Styles/NavBar.css';
 import logo from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
