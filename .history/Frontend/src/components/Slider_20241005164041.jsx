@@ -19,7 +19,7 @@ function SliderComponent() {
     autoplaySpeed: 800,
     pauseOnHover: true,
     beforeChange: (current, next) => {
-    setCurrentSlide(next); // Update current slide index
+      setCurrentSlide(next); // Update current slide index
     },
     responsive: [
       {

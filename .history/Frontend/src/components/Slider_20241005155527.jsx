@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Slider from "react-slick";
 import './slider.css'; // Ensure you have this CSS file for styling
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 function SliderComponent() {
@@ -19,7 +19,7 @@ function SliderComponent() {
     autoplaySpeed: 800,
     pauseOnHover: true,
     beforeChange: (current, next) => {
-    setCurrentSlide(next); // Update current slide index
+      setCurrentSlide(next); // Update current slide index
     },
     responsive: [
       {

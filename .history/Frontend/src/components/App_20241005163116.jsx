@@ -12,12 +12,8 @@ import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
-<<<<<<< HEAD
-import ResearchHub from '../components/ResearchHub';
-=======
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
->>>>>>> fe69a7b24dfb2cf1e8c3bf31254828bed743defd
 
 function App() {
   return (
@@ -39,7 +35,6 @@ function App() {
           path="/super_daily_app_program"
           element={<SuperDailyProgram />}
         />
-        <Route path="/research" element={<ResearchHub />} />
       </Routes>
       <Footer />
     </Router>
