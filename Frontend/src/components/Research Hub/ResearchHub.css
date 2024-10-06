@@ -186,3 +186,36 @@
     letter-spacing: -.03;
     margin-top: .37rem;
 }
+
+.doctor-review h1 {
+    width: 70%;
+    margin-inline: auto;
+}
+
+.carousel-card {
+    padding: .75rem;
+    position: relative;
+    height: 31.25rem;
+}
+
+.carousel-card iframe {
+    border-radius: 0;
+    width: 312px;
+}
+
+.carousel-card img {
+    left: 0;
+    padding-inline: 1.2rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.carousel-card p {
+    color: var(--Primary-Font);
+    line-height: 1.75rem;
+    letter-spacing: -.02rem;
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 1rem .5rem 1.5rem;
+    margin: 0;
+}

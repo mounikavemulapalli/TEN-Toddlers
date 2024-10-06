@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './ResearchHub.css';
+import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
+import cards from '../../assets/Lists/expertTalksCards.json';
 
 export default function ResearchHub() {
+    const [isHovered, setIsHovered] = useState(false);
+    const carouselRef = useRef(null);
+
     const SuperDailyUspCard = (props) => {
         return (
             <div className="super-daily-usp-card">
-                <img src={props.imgSrc} alt="" />
+                <img width='100' src={props.imgSrc} />
                 <div>
                     <h3>{props.heading}</h3>
                     <p>{props.para}</p>
@@ -13,6 +18,30 @@ export default function ResearchHub() {
             </div>
         )
     }
+
+    const handlePrev = () => {
+        if (carouselRef.current) {
+            const cardWidth =
+                carouselRef.current.querySelector(".carousel-card").offsetWidth;
+            const gap = 20; // Set this to the gap between cards in pixels
+            const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+            carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+    };
+
+    const handleNext = () => {
+        if (carouselRef.current) {
+            const cardWidth =
+                carouselRef.current.querySelector(".carousel-card").offsetWidth;
+            const gap = 20; // Set this to the gap between cards in pixels
+            const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+            carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+    };
+
+    const handleCardClick = (id) => {
+        setClickedCardId(id);
+    };
     return (
         <>
             <section className='research-banner'>
@@ -215,13 +244,179 @@ export default function ResearchHub() {
                 </div>
             </section>
 
-            <section>
+            <section className='super-daily-why-upload'>
                 <h1>UpTodd's Philosphies</h1>
-                <div className='super-daily-why-upload'>
+                <div className='super-daily-why-upload-cards'>
                     <SuperDailyUspCard
                         imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/1.webp'
                         heading='Expert-Guided Personalisation for Your Child'
                         para='At UpTodd, we recognize that every child is unique with distinct developmental needs. Our UpTodd research-backed approach offers customized solutions designed to enhance growth by 5X.'
+                    />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/2.webp'
+                        heading='Family-Like Nurturing Environment'
+                        para="At UpTodd, we become your extended family, providing research-backed methodologies and special care to support your child's holistic growth."
+                    />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/3.webp'
+                        heading='Meticulously Crafted Personalized Mega Kit'
+                        para="Our high-quality toy kit and solutions undergo a meticulous 7-step approval process, ensuring world-class features tailored to your baby's developmental needs. With full personalization, our UpTodd scientific approach ensures that every aspect of the kit supports the science behind baby brain development."
+                    />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/4.webp'
+                        heading='Research-Approved One-Stop Solution App'
+                        para="The UpTodd app offers personalized insights based on your child’s growth needs. Our dedicated team ensures that every feature of the app is designed to boost your child's development. Backed by rigorous research, our app embodies the UpTodd research-validated philosophy."
+                    />
+                </div>
+            </section>
+
+            <section className="doctor-review" id="doctorreview">
+                <h1>Vetted &amp; Backed by 100+ Doctors, Educationists, Parenting
+                    Experts &amp; Professors</h1>
+                <div
+                    className="doctor-review-list"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <div
+                        className={`doctor-review-container ${isHovered ? "paused" : ""}`}
+                    >
+                        {doctorReviews.map((value) => (
+                            <div className="doctor-review-card" key={value.id}>
+                                <div className="doctor-review-image-part">
+                                    <img src={value.img} loading="lazy" alt="doctor-review" />
+                                    <div>
+                                        <h3>{value.name}</h3>
+                                        <h6>{value.position} </h6>
+                                    </div>
+                                </div>
+                                <div className="doctor-review-quote">
+                                    <img
+                                        src="https://www.uptodd.com/images/newWebsite/quote.svg"
+                                        loading="lazy"
+                                        alt="quote"
+                                    />
+                                    <p>{value.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="expert-talks">
+                <div className="carousel-container">
+                    <div className="carousel-header">
+                        <h1>Expert Talks</h1>
+                    </div>
+
+                    <div className="carousel-wrapper">
+                        <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
+                            <img
+                                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+                                alt="Previous"
+                            />
+                        </button>
+
+                        <div className="carousel" style={{ width: '81%' }} ref={carouselRef}>
+                            {cards.map((card, index) => (
+                                <div className="carousel-card" key={index}>
+                                    <iframe
+                                        height='190'
+                                        src={card.videoUrl}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
+                                    <img height='190' src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
+                                    <img height='19' style={{ position: 'relative' }} src="https://www.uptodd.com/images/newWebsite/quote.svg" />
+                                    <p>{card.text}<br /><br />{card.quoteAuthor}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <button className="carousel-button next" onClick={handleNext}>
+                            <img
+                                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+                                alt="Next"
+                            />
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section className="our-mentors" id="our-mentors">
+                <h1>
+                    Meet our Mentors &amp; Curators |
+                    <span>100+ Curators R&amp;D Team</span>
+                </h1>
+                <div className="mentors-list">
+                    <div className="mentor-card">
+                        <img
+                            src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
+                            loading="lazy"
+                            alt="Uptodd mentor Prof.Krishna Vedula MIT"
+                        />
+                        <h3>
+                            Krishna Vedula
+                            <br />
+                            <span>Professor, MIT, United States</span>
+                        </h3>
+                    </div>
+                    <div className="mentor-card">
+                        <img
+                            src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
+                            loading="lazy"
+                            alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
+                        />
+                        <h3>
+                            Dr. Jaideep Sharma
+                            <br />
+                            <span>MBBS &amp; MD, AIIMS, New Delhi</span>
+                        </h3>
+                    </div>
+                    <div className="mentor-card">
+                        <img
+                            src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
+                            loading="lazy"
+                            alt="Uptodd mentor Dr.Sudhanshu Singh"
+                        />
+                        <h3>
+                            Dr. Sudhanshu
+                            <br />
+                            <span>MD, DSMA CMC Vellore</span>
+                        </h3>
+                    </div>
+                    <div className="mentor-card">
+                        <img
+                            src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
+                            loading="lazy"
+                            alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
+                        />
+                        <h3>
+                            Manoj Mondal
+                            <br />
+                            <span>Professor, IIT Kharagpur</span>
+                        </h3>
+                    </div>
+                    <div className="mentor-card">
+                        <img
+                            src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
+                            loading="lazy"
+                            alt="Uptodd mentor PK Mishra IIT BHU"
+                        />
+                        <h3>
+                            Prof. PK Mishra
+                            <br />
+                            <span>IIT BHU</span>
+                        </h3>
+                    </div>
+                </div>
+                <h1>UpTodd™ has been Featured In</h1>
+                <div className="featured-in">
+                    <img
+                        src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
+                        loading="lazy"
+                        alt="Media Houses Featuring UpTodd"
                     />
                 </div>
             </section>
