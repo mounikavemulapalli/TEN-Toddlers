@@ -1,11 +1,13 @@
 import React from 'react';
 import './ResearchHub.css';
 
+import { doctorReviews } from '../Lists/doctorReviews.js';
+
 export default function ResearchHub() {
     const SuperDailyUspCard = (props) => {
         return (
             <div className="super-daily-usp-card">
-                <img src={props.imgSrc} alt="" />
+                <img src={props.imgSrc} width='100' />
                 <div>
                     <h3>{props.heading}</h3>
                     <p>{props.para}</p>
@@ -215,16 +217,33 @@ export default function ResearchHub() {
                 </div>
             </section>
 
-            <section>
+            <section className='super-daily-why-upload'>
                 <h1>UpTodd's Philosphies</h1>
-                <div className='super-daily-why-upload'>
+                <div className='super-daily-why-upload-cards'>
                     <SuperDailyUspCard
                         imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/1.webp'
                         heading='Expert-Guided Personalisation for Your Child'
                         para='At UpTodd, we recognize that every child is unique with distinct developmental needs. Our UpTodd research-backed approach offers customized solutions designed to enhance growth by 5X.'
                     />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/2.webp'
+                        heading='Family-Like Nurturing Environment'
+                        para="At UpTodd, we become your extended family, providing research-backed methodologies and special care to support your child's holistic growth."
+                    />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/3.webp'
+                        heading='Meticulously Crafted Personalized Mega Kit'
+                        para="Our high-quality toy kit and solutions undergo a meticulous 7-step approval process, ensuring world-class features tailored to your baby's developmental needs. With full personalization, our UpTodd scientific approach ensures that every aspect of the kit supports the science behind baby brain development."
+                    />
+                    <SuperDailyUspCard
+                        imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/4.webp'
+                        heading='Research-Approved One-Stop Solution App'
+                        para="The UpTodd app offers personalized insights based on your child’s growth needs. Our dedicated team ensures that every feature of the app is designed to boost your child's development. Backed by rigorous research, our app embodies the UpTodd research-validated philosophy."
+                    />
                 </div>
             </section>
+
+            
         </>
     )
 }

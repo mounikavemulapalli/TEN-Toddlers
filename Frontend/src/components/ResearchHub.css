@@ -140,27 +140,49 @@
 }
 
 .super-daily-why-upload {
+    padding-block: 4.62rem;
+}
+
+.super-daily-why-upload h1 {
+    color: var(--Primary-Font);
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.12rem;
+    letter-spacing: -.1rem;
+}
+
+.super-daily-why-upload-cards {
     width: 80%;
     margin-inline: auto;
     margin-top: 39px;
     display: grid;
-    grid-template-columns: 48% 48%;
+    grid-template-columns: 50% auto;
     grid-template-rows: auto auto;
     grid-gap: 27px 45px;
     font-family: "DM Sans";
-    font-size: 20px;
-    letter-spacing: -.8px;
-    font-weight: 700;
-    color: var(--Primary-Font);
-    line-height: 32px;
 }
 
 .super-daily-usp-card {
-    align-items: center;
+    align-items: start;
     border-radius: 12px;
     border: 1px solid;
     border-color: rgb(207, 206, 206);
     display: flex;
     gap: 1.25rem;
     padding: 1.56rem;
+}
+
+.super-daily-usp-card h3 {
+    color: var(--Primary-Font);
+    font-size: 1.25rem;
+    letter-spacing: -.05rem;
+    line-height: 2.12rem;
+}
+
+.super-daily-usp-card p {
+    color: #5c6a7e;
+    font-size: .87rem;
+    line-height: 1.37rem;
+    letter-spacing: -.03;
+    margin-top: .37rem;
 }
