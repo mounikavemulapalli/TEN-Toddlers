@@ -6,106 +6,105 @@ import {
   awaredBabies,
   doctorReviews,
   sloganImages,
-} from "../../successData"
-import { Link } from "react-router-dom"
-import quoteSvg from "../../assets/images/successstory/symbols/quote.svg"
-import globe from "../../assets/images/successstory/luminary/globe.svg"
-import mood from "../../assets/images/successstory/luminary/mood.svg"
-import playlistCheck from "../../assets/images/successstory/luminary/playlist_add_check_circle.svg"
-import supervisedUser from "../../assets/images/successstory/luminary/supervised_user_circle.svg"
-import sliderPrev from "../../assets/images/successstory/symbols/slider-prev.svg"
-import sliderNext from "../../assets/images/successstory/symbols/slider-next.svg"
-import Footer from '../../components/Footer';
-import NavBar from '../../components/NavBar';
-
+} from "../../assets/data/successData";
+import { Link } from "react-router-dom";
+import quoteSvg from "../../assets/images/successstory/symbols/quote.svg";
+import globe from "../../assets/images/successstory/luminary/globe.svg";
+import mood from "../../assets/images/successstory/luminary/mood.svg";
+import playlistCheck from "../../assets/images/successstory/luminary/playlist_add_check_circle.svg";
+import supervisedUser from "../../assets/images/successstory/luminary/supervised_user_circle.svg";
+import sliderPrev from "../../assets/images/successstory/symbols/slider-prev.svg";
+import sliderNext from "../../assets/images/successstory/symbols/slider-next.svg";
+import Footer from "../footer/Footer";
+import NavBar from "../../components/NavBar";
 
 const SuccessStory = () => {
-  const carouselRef = useRef(null) // Ref to track carousel container
-  const happyParentRef = useRef(null)
-  const awaredBabyRef = useRef(null)
-  const [isHovering, setIsHovering] = useState(false)
-  const scrollRef = useRef(null)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const carouselRef = useRef(null); // Ref to track carousel container
+  const happyParentRef = useRef(null);
+  const awaredBabyRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
     if (carouselRef.current) {
       const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth
-      const gap = 20 // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" })
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
-  }
+  };
 
   const handleNext = () => {
     if (carouselRef.current) {
       const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth
-      const gap = 20 // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" })
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
-  }
+  };
 
   const handleHappyParentPrev = () => {
     if (happyParentRef.current) {
       const cardWidth = happyParentRef.current.querySelector(
         ".happy-parents-card"
-      ).offsetWidth
-      const gap = 20
-      const scrollAmount = cardWidth + gap
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
       happyParentRef.current.scrollBy({
         left: -scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
   const handleHappyParentNext = () => {
     if (happyParentRef.current) {
       const cardWidth = happyParentRef.current.querySelector(
         ".happy-parents-card"
-      ).offsetWidth
-      const gap = 20
-      const scrollAmount = cardWidth + gap
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
       happyParentRef.current.scrollBy({
         left: scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   const handleAwaredBabyNext = () => {
     if (awaredBabyRef.current) {
       const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth
-      const gap = 30
-      const scrollAmount = cardWidth + gap
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
       awaredBabyRef.current.scrollBy({
         left: scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
   const handleAwaredBabyPrev = () => {
     if (awaredBabyRef.current) {
       const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth
-      const gap = 30
-      const scrollAmount = cardWidth + gap
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
       awaredBabyRef.current.scrollBy({
         left: -scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   //loop scrolling
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
 
-    let scrollInterval
+    let scrollInterval;
 
     const startScrolling = () => {
       scrollInterval = setInterval(() => {
@@ -115,47 +114,47 @@ const SuccessStory = () => {
         ) {
           // Smoothly reset to the start
           const resetScroll = setInterval(() => {
-            scrollContainer.scrollLeft -= 100
+            scrollContainer.scrollLeft -= 100;
             if (scrollContainer.scrollLeft <= 0) {
-              clearInterval(resetScroll)
+              clearInterval(resetScroll);
             }
-          }, 1)
+          }, 1);
         } else {
-          scrollContainer.scrollLeft += 1
+          scrollContainer.scrollLeft += 1;
         }
-      }, 10)
-    }
+      }, 10);
+    };
 
     const stopScrolling = () => {
       if (scrollInterval) {
-        clearInterval(scrollInterval)
+        clearInterval(scrollInterval);
       }
-    }
+    };
 
     if (!isHovering) {
-      startScrolling()
+      startScrolling();
     } else {
-      stopScrolling()
+      stopScrolling();
     }
 
-    return () => stopScrolling()
-  }, [isHovering])
+    return () => stopScrolling();
+  }, [isHovering]);
 
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) =>
         prevIndex === sloganImages.length - 1 ? 0 : prevIndex + 1
-      )
-    }, 3000) // Change image every 3 seconds
+      );
+    }, 3000); // Change image every 3 seconds
 
-    return () => clearInterval(interval) // Cleanup interval on component unmount
-  }, [])
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
 
   // Handle dot click
   const handleDotClick = (index) => {
-    setActiveIndex(index)
-  }
+    setActiveIndex(index);
+  };
 
   return (
     <div className="main">
@@ -248,11 +247,7 @@ const SuccessStory = () => {
                   ></iframe>
                 </div>
                 <div className="quote-container">
-                  <img
-                    src={quoteSvg}
-                    alt="Quote"
-                    className="quote-mark"
-                  />
+                  <img src={quoteSvg} alt="Quote" className="quote-mark" />
                   <p className="quote-text">{review.content}</p>
                 </div>
               </div>
@@ -280,11 +275,7 @@ const SuccessStory = () => {
 
       <section className="luminary">
         <div className="lum-item">
-          <img
-            src={globe}
-            alt=""
-            loading="lazy"
-          />
+          <img src={globe} alt="" loading="lazy" />
           <h4>
             <span>158</span>
             <br />
@@ -292,11 +283,7 @@ const SuccessStory = () => {
           </h4>
         </div>
         <div className="lum-item">
-          <img
-            src={mood}
-            alt=""
-            loading="lazy"
-          />
+          <img src={mood} alt="" loading="lazy" />
           <h4>
             <span>98%</span>
             <br />
@@ -304,11 +291,7 @@ const SuccessStory = () => {
           </h4>
         </div>
         <div className="lum-item">
-          <img
-            src={playlistCheck}
-            alt=""
-            loading="lazy"
-          />
+          <img src={playlistCheck} alt="" loading="lazy" />
           <h4>
             <span>107 </span>
             International &
@@ -318,11 +301,7 @@ const SuccessStory = () => {
           </h4>
         </div>
         <div className="lum-item">
-          <img
-            src={supervisedUser}
-            alt=""
-            loading="lazy"
-          />
+          <img src={supervisedUser} alt="" loading="lazy" />
           <h4>
             <span>1,50,000+</span>
             <br />
@@ -342,10 +321,7 @@ const SuccessStory = () => {
 
         <div className="carousel-wrapper">
           <button className="carousel-button prev" onClick={handlePrev}>
-            <img
-              src={sliderPrev}
-              alt="Previous"
-            />
+            <img src={sliderPrev} alt="Previous" />
           </button>
 
           <div className="carousel" ref={carouselRef}>
@@ -367,10 +343,7 @@ const SuccessStory = () => {
           </div>
 
           <button className="carousel-button next" onClick={handleNext}>
-            <img
-              src={sliderNext}
-              alt="Next"
-            />
+            <img src={sliderNext} alt="Next" />
           </button>
         </div>
         <div className="see-all-cont child-see-all-cont">
@@ -477,7 +450,7 @@ const SuccessStory = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default SuccessStory
+export default SuccessStory;

@@ -7,12 +7,12 @@ import "./App.css";
 import Step from "./premium/Step";
 import SuccessStory from "../components/Home/SuccessStory";
 import Layout from "../components/Layout";
-import Footer from "../components/Footer";
+import Footer from "../components/footer/Footer";
 import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
-import ResearchHub from '../components/ResearchHub';
+import ResearchHub from "../components/ResearchHub";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 

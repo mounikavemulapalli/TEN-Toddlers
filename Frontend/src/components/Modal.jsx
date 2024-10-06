@@ -1,5 +1,5 @@
 import React from "react";
-import { modalCard } from "../Lists/modal";
+import { modalCard } from "../assets/Lists/modal";
 
 const Modal = ({ show, onClose, children }) => {
   if (!show) return null;
