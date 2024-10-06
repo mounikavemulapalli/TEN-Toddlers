@@ -12,7 +12,7 @@ import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
-import ResearchHub from "../components/Research Hub/ResearchHub";
+import ResearchHub from "../";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 
