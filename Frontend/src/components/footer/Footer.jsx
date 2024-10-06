@@ -1,12 +1,12 @@
 import "./footer.css";
-import footerLogo from "../assets/images/footer/footer-logo.webp";
-import facebook from "../assets/images/footer/facebook.svg";
-import youtube from "../assets/images/footer/youtube.svg";
-import insta from "../assets/images/footer/insta.svg";
-import linkedin from "../assets/images/footer/linkedin.svg";
-import appstore from "../assets/images/footer/appstore.webp";
-import playstore from "../assets/images/footer/googleplay.webp";
-import line from "../assets/images/footer/line.svg";
+import footerLogo from "../../assets/images/footer/footer-logo.webp";
+import facebook from "../../assets/images/footer/facebook.svg";
+import youtube from "../../assets/images/footer/youtube.svg";
+import insta from "../../assets/images/footer/insta.svg";
+import linkedin from "../../assets/images/footer/linkedin.svg";
+import appstore from "../../assets/images/footer/appstore.webp";
+import playstore from "../../assets/images/footer/googleplay.webp";
+import line from "../../assets/images/footer/line.svg";
 
 const Footer = () => {
   return (
