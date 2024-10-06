@@ -2,19 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px; /* Overall padding for the navbar */
+  padding-inline: 40px; /* Overall padding for the navbar */
   background-color: white; /* Background color of navbar */
-}
-
-.logo {
-  font-size: 36px;
-  color: #ff6f61; /* Similar color to the logo */
+  padding-block: .2rem;
 }
 
 .navLinks {
   list-style-type: none;
   display: flex;
-  gap: 30px; /* Space between nav links */
+  gap: .5rem; /* Space between nav links */
 }
 
 .navLink {
@@ -36,16 +32,23 @@
 }
 
 .shiningButton {
-  background-color: #ff6f61; /* Button background color */
+  background-color: #ff5766; /* Button background color */
   color: white; /* Button text color */
+  width: 11rem;
+  height: 3rem;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  line-height: 1.62rem;
   padding: 10px 20px; /* Equal padding for the button */
   border: none;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: .5rem; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s; /* Transition for hover effect */
   margin-left: 20px; /* Space between the button and links */
+  font-size: 1rem;
 }
 
 .shiningButton:hover {
-  background-color: #e65c52; /* Darker shade on hover */
+  box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }

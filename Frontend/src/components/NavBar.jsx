@@ -36,9 +36,9 @@ const NavBar = ({ text, enroll }) => {
     ];
 
   return (
-    <nav className="navBar" aria-label="Main Navigation">
+    <nav className="navBar" style={{position: 'sticky', top: '0', width: '100%', zIndex: '1000'}} aria-label="Main Navigation">
       <div className="logo">
-        <img src={logo} alt="Company Logo" style={{ height: "50px" }} onError={(e) => e.target.src = 'fallback-image-url'} /> {/* Fallback image if needed */}
+        <img src={logo} alt="Company Logo" style={{ height: "100" }} onError={(e) => e.target.src = 'fallback-image-url'} /> {/* Fallback image if needed */}
       </div>
       <ul className="navLinks">
         {links.map((link) => (
@@ -52,7 +52,7 @@ const NavBar = ({ text, enroll }) => {
           </li>
         ))}
         <li>
-          <Button className="shiningButton" text="Start for INR 149" />
+          <a href="/super_daily_app_program" target="_blank"><Button className="shiningButton" text="Start for INR 149"/></a>
         </li>
       </ul>
     </nav>
