@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "../superDailyProgram/Slider";
+import Slider from "../comman/Slider";
 import "./Premium.css";
 import Iframe from "react-iframe";
 import Step from "./Step";
