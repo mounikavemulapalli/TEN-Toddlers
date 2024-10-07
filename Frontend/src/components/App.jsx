@@ -6,7 +6,6 @@ import "../Styles/About.css";
 import "./App.css";
 import Step from "./premium/Step";
 import SuccessStory from "../components/Home/SuccessStory";
-import Layout from "../components/Layout";
 import Footer from "../components/footer/Footer";
 import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";

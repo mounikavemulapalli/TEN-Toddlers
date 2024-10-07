@@ -1,6 +1,6 @@
 import aboutImage from "/src/assets/images/1.webp";
 import additionalImage from "/src/assets/images/2.webp";
-import Slider from "../Slider.jsx";
+import Slider from "../comman/Slider.jsx";
 import Iframe from "react-iframe";
 import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
 import "../../Styles/About.css";
