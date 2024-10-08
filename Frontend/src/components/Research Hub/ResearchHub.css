@@ -192,25 +192,25 @@
     margin-inline: auto;
 }
 
-.carousel-card {
+.carousel-card1 {
     padding: .75rem;
     position: relative;
     height: 31.25rem;
 }
 
-.carousel-card iframe {
+.carousel-card1 iframe {
     border-radius: 0;
     width: 312px;
 }
 
-.carousel-card img {
+.carousel-card1 img {
     left: 0;
     padding-inline: 1.2rem;
     position: absolute;
     cursor: pointer;
 }
 
-.carousel-card p {
+.carousel-card1 p {
     color: var(--Primary-Font);
     line-height: 1.75rem;
     letter-spacing: -.02rem;

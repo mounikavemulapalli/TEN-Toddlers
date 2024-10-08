@@ -320,11 +320,11 @@ export default function ResearchHub() {
 
                         <div className="carousel" style={{ width: '81%' }} ref={carouselRef}>
                             {cards.map((card, index) => (
-                                <div className="carousel-card" key={index}>
+                                <div className="carousel-card1" key={index}>
                                     <iframe
                                         height='190'
                                         src={card.videoUrl}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
                                     ></iframe>
                                     <img height='190' src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
