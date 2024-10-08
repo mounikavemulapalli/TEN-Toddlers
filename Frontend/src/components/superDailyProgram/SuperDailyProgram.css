@@ -133,75 +133,6 @@
   border-radius: 10px;
 }
 
-/*                         Super Peek Section Styles */
-.super-peek {
-  background: #5a40c4;
-  background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
-  width: 100%;
-  padding: 48px 0 100px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.super-peek h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  color: white;
-  margin-bottom: 2rem;
-}
-
-.super-peek-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.super-peek-cards {
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  gap: 1rem;
-  scroll-snap-type: x mandatory;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.super-peek-cards::-webkit-scrollbar {
-  display: none;
-}
-
-.super-peek-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.super-peek-card {
-  width: 30%;
-  background: white;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 0 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: start;
-}
-
-.super-peek-card h2 {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  text-align: start;
-  font-weight: 400;
-  color: darkblue;
-}
-
-.super-peek-card iframe {
-  text-align: center;
-  border-radius: 20px;
-}
-
 /*                           Super Baby Offers Styles */
 .super-offers {
   width: 100%;
@@ -291,353 +222,6 @@
   text-decoration: none;
 }
 
-/*                           Brilliant Minds Styles */
-.super-brilliant-minds {
-  width: 100%;
-  background: #e9dfdf;
-  padding: 1rem 0;
-}
-
-.super-brilliant-minds h1 {
-  font-size: 2.5rem;
-  margin: 2rem 0;
-  text-align: center;
-  color: darkblue;
-}
-
-.super-brilliant-minds h1 span {
-  font-weight: 400;
-}
-
-.super-brilliant-minds-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-.super-brilliant-minds-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.super-brilliant-minds-cards {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1rem;
-}
-
-.super-brilliant-minds-cards::-webkit-scrollbar {
-  display: none;
-}
-
-.super-brilliant-minds-card {
-  width: 30%;
-  background: white;
-  border-radius: 10px;
-  margin: 0 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: start;
-}
-
-.super-brilliant-minds-card-image img {
-  width: 350px;
-  text-align: center;
-}
-
-.super-brilliant-minds-card-content {
-  width: 90%;
-  margin: 1.5rem auto;
-  line-height: 30px;
-}
-
-.super-brilliant-minds-card-content h3 {
-  font-size: 1.2rem;
-  color: darkblue;
-}
-
-.super-brilliant-minds-card-content p {
-  font-size: 1rem;
-  margin: 0;
-  color: darkblue;
-}
-
-/*                           Line Section Styles */
-.super-line-section {
-  width: 100%;
-  text-align: center;
-  padding: 4rem 0;
-  background: #e9dfdf;
-}
-
-/*                             Happy Parents Section Styles */
-.super-happy-parents {
-  width: 100%;
-  background: #e9dfdf;
-}
-
-.super-happy-parents h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  color: darkblue;
-}
-
-.super-happy-parents h1 span {
-  font-weight: 400;
-}
-
-.super-happy-parents h4 {
-  font-size: 1.75rem;
-  text-align: center;
-  color: darkblue;
-  font-style: normal;
-  font-weight: 400;
-  margin: 1rem 0;
-}
-
-.super-happy-parents-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.super-happy-parents-cards {
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  gap: 1rem;
-  scroll-snap-type: x mandatory;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.super-happy-parents-cards::-webkit-scrollbar {
-  display: none;
-}
-
-.super-happy-parents-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.super-happy-parents-card {
-  width: 30%;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
-  margin-left: 2rem;
-}
-
-.super-happy-parents-card iframe {
-  padding: 1rem;
-  text-align: center;
-}
-
-.super-happy-parent-quote {
-  position: relative;
-  padding-top: 10px;
-}
-
-.super-happy-parents-card p {
-  font-size: 20px;
-  color: darkblue;
-  padding-left: 10px;
-}
-
-.child-development-button {
-  width: 100%;
-  background: #e9dfdf;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.child-development-button a {
-  background-color: #ff5766;
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  text-decoration: none;
-}
-
-.child-development-button a:hover {
-  box-shadow: 0px 0px 20px rgb(140, 140, 140);
-}
-
-/*                            Top Global Experts Styles*/
-.super-doctor-review {
-  width: 100%;
-  padding: 2rem 0;
-}
-
-.super-doctor-review h1 {
-  font-size: 2.75rem;
-  text-align: center;
-  color: darkblue;
-}
-
-.super-doctor-review h4 {
-  font-size: 1.5rem;
-  text-align: center;
-  color: darkblue;
-  font-style: normal;
-  font-weight: 300;
-  margin: 1rem 0;
-}
-
-.super-doctor-review-list {
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-top: 2rem;
-}
-
-.super-doctor-review-cards {
-  display: flex;
-  padding-left: 10%;
-  animation: marquee 20s linear infinite;
-  white-space: nowrap;
-}
-.paused {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.super-doctor-review-card {
-  min-width: 260px;
-  height: 470px;
-  border-radius: 12px;
-  background: #f5f5f5;
-  margin-left: 21px;
-  white-space: wrap;
-}
-
-.super-doctor-review-image-part {
-  position: relative;
-}
-
-.super-doctor-review-image-part img {
-  width: 100%;
-  border-radius: 12px 12px 0 0;
-}
-
-.super-doctor-review-image-part div {
-  position: absolute;
-  width: 100%;
-  background: #5a40c4;
-  padding: 10px 22px;
-  bottom: -10px;
-}
-
-.super-doctor-review-image-part div h3 {
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.8px;
-}
-
-.super-doctor-review-image-part div h6 {
-  color: #fff;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.56px;
-  margin-top: 1px;
-}
-
-.super-doctor-review-quote {
-  padding: 22px 22px 34px;
-}
-
-/*                             Mentors Styles */
-.super-mentors {
-  width: 100%;
-  padding: 38px 0 65px;
-  background: #fffbfb;
-}
-
-.super-mentors h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  color: darkblue;
-}
-
-.super-mentors h1 span {
-  font-weight: 400;
-  padding: 0;
-}
-
-.mentors-list {
-  margin: auto;
-  margin-top: 38px;
-  display: flex;
-  width: 82%;
-  overflow-x: scroll;
-  margin-bottom: 79px;
-}
-
-.super-mentors-card {
-  border-radius: 12px;
-  border: 1px solid #d9d9d9;
-  min-width: 205px;
-  text-align: center;
-  padding: 23px 19px 36px;
-  margin-left: 23px;
-  margin-bottom: 20px;
-}
-
-.super-mentors-card:first-of-type {
-  margin-left: 0;
-}
-
-.super-mentors-card img {
-  width: 120px;
-  height: 120px;
-}
-
-.super-mentors-card img {
-  width: 75%;
-}
-
-.super-mentors-card h3 {
-  text-align: center;
-}
-
-.super-mentors-card h5 {
-  font-weight: 500;
-}
-
-.super-featured {
-  width: 70%;
-  margin: auto;
-  margin-top: 1rem;
-}
-
-.super-featured img {
-  width: 100%;
-}
-
 /*                           About Styles */
 .super-about {
   background-color: darkblue;
@@ -694,10 +278,6 @@
     height: 75%;
   }
 
-  .super-peek-card {
-    width: 40%;
-  }
-
   .super-offers-cards {
     width: 90%;
   }
@@ -710,25 +290,6 @@
   .super-offers-card-lastDiv a {
     padding: 1rem 1rem;
     font-size: 1rem;
-  }
-
-  .super-brilliant-minds-card {
-    width: 40%;
-  }
-  .super-brilliant-minds-card-image img {
-    width: 300px;
-  }
-
-  .super-happy-parents-card {
-    width: 40%;
-  }
-
-  .super-doctor-review h1 {
-    font-size: 2.5rem;
-  }
-
-  .super-mentors h1 {
-    font-size: 2rem;
   }
 }
 
@@ -756,10 +317,6 @@
     flex-direction: column;
   }
 
-  .super-peek-card {
-    width: 60%;
-  }
-
   .super-offers-card {
     width: 100%;
   }
@@ -769,24 +326,6 @@
   .super-offers-card-lastDiv {
     text-align: center;
     padding: 1rem 0;
-  }
-
-  .super-brilliant-minds-card {
-    width: 60%;
-  }
-
-  .super-happy-parents-card {
-    width: 60%;
-  }
-  .super-happy-parents h1 {
-    font-size: 2rem;
-  }
-  .super-happy-parents h4 {
-    font-size: 1.25rem;
-  }
-
-  .super-doctor-review h1 {
-    font-size: 1.75rem;
   }
 }
 
@@ -827,14 +366,6 @@
     text-align: center;
   }
 
-  .super-peek h1 {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  .super-peek-card {
-    width: 100%;
-  }
-
   .super-offers {
     background-color: #ffe4d0;
   }
@@ -865,34 +396,6 @@
   }
   .super-offers-card-lastDiv h2 {
     font-size: 1.25rem;
-  }
-
-  .super-brilliant-minds h1 {
-    font-size: 1.5rem;
-    padding: 0 10px;
-  }
-  .super-brilliant-minds-card {
-    width: 100%;
-  }
-
-  .super-happy-parents-card {
-    width: 100%;
-  }
-
-  .super-doctor-review h1 {
-    font-size: 1.25rem;
-  }
-  .super-doctor-review h4 {
-    display: none;
-  }
-
-  .super-mentors h1 {
-    width: 80%;
-    font-size: 1.25rem;
-    margin: 0 auto;
-  }
-  .super-featured {
-    width: 90%;
   }
 
   .super-about {

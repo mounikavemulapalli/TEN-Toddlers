@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import Button from "../../components/Home/HomeButton.jsx";
-import Slider from "../Slider.jsx";
+import Slider from "../comman/Slider.jsx";
 import Modal from "../Modal.jsx";
 import { FaqProgram, FaqBabyKit, Enrollment } from "../../assets/Lists/faq.js";
 import { premiumProgram } from "../../assets/Lists/premiumProgram.js";
