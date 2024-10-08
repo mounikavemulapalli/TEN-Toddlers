@@ -30,6 +30,7 @@
 }
 .Home-page ul {
   margin-top: 50px;
+  list-style-type: none;
 }
 .Home-page ul li {
   margin: 15px 0 15px;
@@ -37,6 +38,22 @@
 .Home-page ul li span {
   margin-left: 10px;
 }
+
+.Home-button {
+  border-radius: 8px;
+  background: #ff5766;
+  width: 198px;
+  height: 54px;
+  color: #fff;
+  font-family: "DM Sans";
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.62rem;
+  letter-spacing: -.05rem;
+  border: none;
+  cursor: pointer;
+}
+
 .banner-image {
   padding-top: 50px;
 }

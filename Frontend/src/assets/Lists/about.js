@@ -1,5 +1,5 @@
 let mentorsListScrollTimer;
-const scrollSpeed = 2; // Adjust this value for the scrolling speed
+const scrollSpeed = 1; // Adjust this value for the scrolling speed
 
 function scrollMentorsList() {
     const list = document.querySelector(".mentors-list");

@@ -220,8 +220,8 @@ const Home = ({ bookingText, explore, start, enroll }) => {
               <li>
                 <FaCheckCircle /> <span>One Stop Parenting Solution</span>
               </li>
+              <Button text='Book a Demo Slot' />
             </ul>
-            <Button text={bookingText} />
           </div>
           <div className="banner-image">
             <img
