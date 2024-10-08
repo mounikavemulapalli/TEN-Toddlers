@@ -4,9 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 import '../Styles/NavBar.css';
 import logo from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
 
-const NavBar = ({ text, enroll }) => {
+export default function NavBar({ text, enroll }) {
   const location = useLocation();
-  const [currentPage, setCurrentPage] = useState(location.pathname === '/' ? 'home' : (location.pathname).substring(1));
+  const homeRouteNames = ['/', '/home', '/research', '/contact-us'];
+  const [currentPage, setCurrentPage] = useState((homeRouteNames.includes(location.pathname)) ? 'home' : (location.pathname).substring(1));
 
   useEffect(() => {
     setCurrentPage(currentPage);
@@ -36,7 +37,7 @@ const NavBar = ({ text, enroll }) => {
     ];
 
   return (
-    <nav className="navBar" style={{position: 'sticky', top: '0', width: '100%', zIndex: '1000'}} aria-label="Main Navigation">
+    <nav className="navBar" style={{ position: 'sticky', top: '0', width: '100%', zIndex: '1000' }} aria-label="Main Navigation">
       <div className="logo">
         <img src={logo} alt="Company Logo" style={{ height: "100" }} onError={(e) => e.target.src = 'fallback-image-url'} /> {/* Fallback image if needed */}
       </div>
@@ -52,11 +53,9 @@ const NavBar = ({ text, enroll }) => {
           </li>
         ))}
         <li>
-          <a href="/super_daily_app_program" target="_blank"><Button className="shiningButton" text="Start for INR 149"/></a>
+          <a href="/super_daily_app_program" target="_blank"><Button className="shiningButton" text="Start for INR 149" /></a>
         </li>
       </ul>
     </nav>
   );
 };
-
-export default NavBar;

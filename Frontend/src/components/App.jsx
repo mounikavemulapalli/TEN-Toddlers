@@ -15,6 +15,7 @@ import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
 import ResearchHub from "../components/Research Hub/ResearchHub";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
+import Contact from './contact_us/contactPage'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           element={<SuperDailyProgram />}
         />
         <Route path="/research" element={<ResearchHub />} />
+        <Route path="/contact-us" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
