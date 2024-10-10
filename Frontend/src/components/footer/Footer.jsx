@@ -95,6 +95,15 @@ const Footer = () => {
               Super Daily Program
             </a>
           </li>
+          <li>
+            <a
+              id="homeScreenToSuperDailyViaFooter"
+              href="/subscription_box"
+              target="_blank"
+            >
+              Subscription Box
+            </a>
+          </li>
         </div>
         <div className="footer-card" id="footer-card-with-applinks">
           <h3>Download App now</h3>

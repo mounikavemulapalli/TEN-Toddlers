@@ -1,8 +1,6 @@
 import React from "react";
 import "./Career.css";
-import baby2 from "../../assets/images/subscription/baby2.webp";
 import airtel_logo from "../../assets/images/airtel_logo.jpg";
-import PopUp from "../subscriptionBox/PopUp";
 import ApplicationForm from "./ApplicationForm";
 import { careerAbout } from "../../assets/data/careerAbout";
 import { teamCards } from "../../assets/data/teamCards";
@@ -88,13 +86,6 @@ function Career() {
             alt="Employees Photos"
           />
         </div>
-      </div>
-
-      {/* Kits PopUp Section */}
-      <div className="career-kit-popup">
-        <h1>Buy Baby's Developmental Kit For Your Baby</h1>
-        <img src={baby2} alt="Kits Photo" />
-        <PopUp />
       </div>
 
       {/* Team Section */}

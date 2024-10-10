@@ -11,10 +11,11 @@ import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
+import SubscriptionBox from "./subscriptionBox/SubscriptionBox";
 import ResearchHub from "../components/Research Hub/ResearchHub";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
-import Contact from './contact_us/contactPage'
+import Contact from "./contact_us/contactPage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           path="/super_daily_app_program"
           element={<SuperDailyProgram />}
         />
+        <Route path="/subscription_box" element={<SubscriptionBox />} />
         <Route path="/research" element={<ResearchHub />} />
         <Route path="/contact-us" element={<Contact />} />
       </Routes>
