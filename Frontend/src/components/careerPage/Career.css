@@ -217,13 +217,13 @@
 }
 
 .career-mentor-card h2 {
-  font-weight: 300;
+  font-weight: 500;
   margin-top: 1rem;
 }
 
 .career-mentor-card h3 {
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -321,6 +321,10 @@
   font-size: 1.2rem;
 }
 
+.career-footer-lastDiv h4 {
+  color: white;
+}
+
 .career-footer-lastDiv span {
   color: red;
 }
@@ -341,7 +345,7 @@
   }
 
   .career-mentor-card {
-    width: 30%;
+    width: 20%;
   }
   .career-mentor-card h2 {
     font-size: 1.25rem;
@@ -384,11 +388,11 @@
     justify-content: space-between;
   }
   .career-team-card {
-    width: 46%;
+    width: 47%;
   }
 
   .career-mentor-card {
-    width: 30%;
+    width: 25%;
   }
   .career-mentor-card h2 {
     font-size: 1.25rem;
@@ -461,9 +465,14 @@
     font-size: 1rem;
   }
 
+  .career-footer-about p,
+  .career-footer-journey p {
+    letter-spacing: 0;
+  }
   .career-footer-icons {
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
   }
   .career-footer-icons img {
     width: 14%;

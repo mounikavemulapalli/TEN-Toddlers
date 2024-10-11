@@ -41,3 +41,38 @@ h4 {
     border-radius: 20px;
     margin-block: 3.12rem;
 }
+
+@media (max-width: 1330px) {
+    #location-container h1 {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #location-container {
+        padding: 3em 6em;
+    }
+}
+
+@media (max-width: 650px) {
+    #location-container > div {
+        flex-direction: column;
+        margin-top: 1.2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    #location-container {
+        padding: 2em 4em;
+    }
+
+    #location-container h1 {
+        width: 90%;
+    }
+}
+
+@media (max-width: 425px) {
+    #location-container {
+        padding: 1em 2em;
+    }
+}

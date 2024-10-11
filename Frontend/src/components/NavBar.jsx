@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Button from "./premium/premiumButton";
 import { Link, useLocation } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 import '../Styles/NavBar.css';
 import logo from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
 
 export default function NavBar({ text, enroll }) {
   const location = useLocation();
-  const homeRouteNames = ['/', '/home', '/research', '/contact-us'];
+  const homeRouteNames = ['/', '/home', '/research', '/contact-us', '/super_daily_app_program'];
   const [currentPage, setCurrentPage] = useState((homeRouteNames.includes(location.pathname)) ? 'home' : (location.pathname).substring(1));
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   useEffect(() => {
     setCurrentPage(currentPage);
-  });
+  }, [currentPage]);
 
   const premiumPageNav = (link) => {
-    if (location.hash == link) return 'active'
-    if (location.hash == '') {
+    if (location.hash === link) return 'active';
+    if (location.hash === '') {
       location.hash = '#root';
       return 'active';
     }
-  }
+  };
 
   const links = currentPage === "premium"
     ? [
@@ -36,24 +42,43 @@ export default function NavBar({ text, enroll }) {
       { to: "/blog", label: "Blog" }
     ];
 
+  const isDesktopScreen = useMediaQuery({ minWidth: 850 });
+
   return (
-    <nav className="navBar" style={{ position: 'sticky', top: '0', width: '100%', zIndex: '1000' }} aria-label="Main Navigation">
+    <nav className="navBar" aria-label="Main Navigation">
+      <img className="hamburger" onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
       <div className="logo">
-        <img src={logo} alt="Company Logo" style={{ height: "100" }} onError={(e) => e.target.src = 'fallback-image-url'} /> {/* Fallback image if needed */}
+        <img src={logo} style={{ height: "100" }} />
       </div>
-      <ul className="navLinks">
+
+      {isMenuOpen && (<ul className="mobileNavLinks">
         {links.map((link) => (
-          <li key={link.to || link.href} className="navLink">
+          <li key={link.to || link.href} className="mobileNavLink" >
             {link.href ? (
               <a href={link.href} className={premiumPageNav(link.href)}>{link.label}</a>
             ) : (
-              <Link to={link.to} className={decodeURIComponent(currentPage) == (link.label).toLowerCase() ? 'active' : ''} target={currentPage != 'premium' ? '_blank' : ''}>
+              <Link to={link.to} className={decodeURIComponent(currentPage) == (link.label).toLowerCase() ? 'active' : ''} target={currentPage !== 'premium' ? '_blank' : ''}>
                 {link.label}
-              </Link>)}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>)}
+
+      <ul className='navLinks'>
+        {links.map((link) => (
+          <li key={link.to || link.href} className="navLink" style={isDesktopScreen ? { display: 'flex' } : { display: 'none' }}>
+            {link.href ? (
+              <a href={link.href} className={premiumPageNav(link.href)}>{link.label}</a>
+            ) : (
+              <Link to={link.to} className={decodeURIComponent(currentPage) == (link.label).toLowerCase() ? 'active' : ''} target={currentPage !== 'premium' ? '_blank' : ''}>
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
         <li>
-          <a href="/super_daily_app_program" target="_blank"><Button className="shiningButton" text="Start for INR 149" /></a>
+          <a href="/super_daily_app_program" target="_blank"><Button text="Start for INR 449" /></a>
         </li>
       </ul>
     </nav>

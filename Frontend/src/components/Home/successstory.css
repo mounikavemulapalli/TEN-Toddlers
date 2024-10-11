@@ -552,46 +552,7 @@
   font-weight: 400;
 }
 
-/* Start Now section */
-.start-now-banner {
-  background: #5a40c4;
-  padding: 48px 14%;
-  display: flex;
-  justify-content: space-between;
-}
 
-.start-now-banner h3 {
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-  letter-spacing: -0.8px;
-  width: 70%;
-}
-
-.start-now-banner button {
-  padding: 0px 20px;
-  height: 54px;
-  border-radius: 8px;
-  background: #ff5766;
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  border: none;
-  cursor: pointer;
-}
-
-.start-now-banner button:hover {
-  letter-spacing: 0.5px;
-  -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s;
-}
 
 /* doctor reveiew */
 

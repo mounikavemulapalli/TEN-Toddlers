@@ -5,6 +5,16 @@
   padding-inline: 40px; /* Overall padding for the navbar */
   background-color: white; /* Background color of navbar */
   padding-block: .2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  max-width: 100%;
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  width: 30px
 }
 
 .navLinks {
@@ -14,6 +24,7 @@
 }
 
 .navLink {
+  list-style-type: none;
   display: flex; /* Align items in a flex container */
   align-items: center; /* Center items vertically */
 }
@@ -31,24 +42,88 @@
   font-weight: bold;
 }
 
-.shiningButton {
-  background-color: #ff5766; /* Button background color */
-  color: white; /* Button text color */
-  width: 11rem;
-  height: 3rem;
-  font-family: 'DM Sans';
-  font-weight: 700;
-  line-height: 1.62rem;
-  padding: 10px 20px; /* Equal padding for the button */
-  border: none;
-  border-radius: .5rem; /* Rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s; /* Transition for hover effect */
-  margin-left: 20px; /* Space between the button and links */
-  font-size: 1rem;
+.navLinks Button {
+  width: 8.1rem !important;
+  text-wrap: nowrap;
+  font-size: .8rem;
+  letter-spacing: -.56px;
+  height: 48px !important;
 }
 
-.shiningButton:hover {
-  box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s;
+.mobileNavLinks {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .hamburger {
+    display: block;
+  }
+
+  .mobileNavLinks {
+    background: white;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: -20px;
+    border-radius: 0 0 12px 12px;
+    width: 200px;
+    padding: 1.25rem;
+    list-style-type: none;
+    display: block !important;
+  }
+
+  .mobileNavLink a {
+    background: inherit;
+    text-decoration: none;
+    color: black; /* Link color */
+    font-weight: normal;
+    padding: 10px 20px; /* Equal padding for links */
+  }
+
+  .mobileNavLink {
+    list-style-type: none;
+    display: flex; /* Align items in a flex container */
+    align-items: center; /* Center items vertically */
+  }
+
+  .mobileNavLink a.active {
+    color: #ff6f61; /* Active link color */
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 980px) {
+  .navLinks {
+    gap: 0;
+  }
+
+  .navBar {
+    padding-inline: 20px;
+  }
+
+  .navLink a{
+    padding-inline: 16px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .navBar {
+    padding: 0 .9rem;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .logo img {
+    width: 70%;
+  }
+
+  .hamburger {
+    width: 5%;
+  }
+
+  .navBar Button {
+    height: 35px !important;
+  }
 }

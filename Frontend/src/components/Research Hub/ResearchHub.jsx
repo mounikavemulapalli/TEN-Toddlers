@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './ResearchHub.css';
 import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
 import cards from '../../assets/Lists/expertTalksCards.json';
+import Button from '../Home/HomeButton';
 
 export default function ResearchHub() {
     const [isHovered, setIsHovered] = useState(false);
@@ -46,12 +47,12 @@ export default function ResearchHub() {
         <>
             <section className='research-banner'>
                 <div style={{ lineHeight: '5rem' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: '500' }}>A Dedicated Research Centre</h1>
+                    <h1>A Dedicated Research Centre</h1>
                     <h2>Led by Top Minds from IITs, AIIMS, and MIT</h2>
                     <p style={{ lineHeight: '1.5rem' }}>UpTodd's in-house research team, composed of leading experts from IITs, AIIMS, and MIT, delves into the science behind baby brain development. Our UpTodd research-backed approach unlocks the secrets of early intervention and stimulation, ensuring that our program provides you with the best tools to nurture your child's potential.</p>
                 </div>
                 <div>
-                    <img src="https://www.uptodd.com/images/newWebsite/research-banner-image.webp" />
+                    <img src="https://www.uptodd.com/images/newWebsite/research-banner-image.webp" width='100%' />
                 </div>
             </section>
 
@@ -91,17 +92,17 @@ export default function ResearchHub() {
             <section className='start-now-banner'>
                 <div className="start-now-banner-grid">
                     <h3>Team analysed 10,000+ research studied to derive everything in the program, ranging from Colours, Music, Touch, Sounds and every things involved.</h3>
-                    <button>View White Papers</button>
+                    <Button text='View White Papers' />
                 </div>
             </section>
             <section className='building-brain-impact'>
                 <div className="building">
                     <iframe
-                        style={{ textAlign: 'center' }}
+                        style={{ textAlign: 'center', maxWidth: '100%' }}
                         loading="lazy"
                         width="853"
                         height="480"
-                        srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' className='full' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
+                        srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow:hidden}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' className='full' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen=""
@@ -244,9 +245,9 @@ export default function ResearchHub() {
                 </div>
             </section>
 
-            <section className='super-daily-why-upload'>
+            <section className='super-daily-why-uptodd'>
                 <h1>UpTodd's Philosphies</h1>
-                <div className='super-daily-why-upload-cards'>
+                <div className='super-daily-why-uptodd-cards'>
                     <SuperDailyUspCard
                         imgSrc='https://www.uptodd.com/images/newWebsite/philosophies/1.webp'
                         heading='Expert-Guided Personalisation for Your Child'
@@ -320,8 +321,9 @@ export default function ResearchHub() {
 
                         <div className="carousel" style={{ width: '81%' }} ref={carouselRef}>
                             {cards.map((card, index) => (
-                                <div className="carousel-card1" key={index}>
+                                <div className="carousel-card" style={{ height: '31.25rem' }} key={index}>
                                     <iframe
+                                        style={{ width: '100%' }}
                                         height='190'
                                         src={card.videoUrl}
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
