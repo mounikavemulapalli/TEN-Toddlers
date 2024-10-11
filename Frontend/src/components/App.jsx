@@ -8,7 +8,7 @@ import Step from "./premium/Step";
 import SuccessStory from "../components/Home/SuccessStory";
 import Footer from "../components/footer/Footer";
 import Premium from "./premium/Premium";
-// import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import Career from "../components/careerPage/Career";
 import SuperDailyProgram from "./superDailyProgram/SuperDailyProgram";
 import SubscriptionBox from "./subscriptionBox/SubscriptionBox";
@@ -20,7 +20,7 @@ import Contact from "./contact_us/contactPage";
 function App() {
   return (
     <Router>
-      {/* {<NavBar />} */}
+      {<NavBar />}
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route index element={<Home />} />
