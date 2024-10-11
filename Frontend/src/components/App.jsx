@@ -22,24 +22,24 @@ function App() {
     <Router>
       {<NavBar />}
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Apply" element={<ApplicationForm />} />
-        <Route path="/step" element={<Step />} />
-        <Route path="/success story" element={<SuccessStory />} />
-        <Route path="/premium" element={<Premium />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-conditions" element={<TermsCondition />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/Apply' element={<ApplicationForm />} />
+        <Route path='/step' element={<Step />} />
+        <Route path='/success story' element={<SuccessStory />} />
+        <Route path='/premium' element={<Premium />} />
+        <Route path='/Home' element={<Home />} />
+        <Route path='/career' element={<Career />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/terms-conditions' element={<TermsCondition />} />
         <Route
-          path="/super_daily_app_program"
+          path='/super_daily_app_program'
           element={<SuperDailyProgram />}
         />
-        <Route path="/subscription_box" element={<SubscriptionBox />} />
-        <Route path="/research" element={<ResearchHub />} />
-        <Route path="/contact-us" element={<Contact />} />
+        <Route path='/subscription_box' element={<SubscriptionBox />} />
+        <Route path='/research' element={<ResearchHub />} />
+        <Route path='/contact-us' element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
