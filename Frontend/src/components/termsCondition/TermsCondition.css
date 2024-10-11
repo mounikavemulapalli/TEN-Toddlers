@@ -5,6 +5,7 @@
 .terms-container h3 {
   font-size: 1.5rem;
   text-align: center;
+  padding-top: 2rem;
 }
 
 .terms-container h5 {
@@ -64,6 +65,9 @@
 @media (max-width: 480px) {
   .terms-container {
     padding: 1rem 0.5rem;
+  }
+  .terms-container-para {
+    text-align: center;
   }
   .terms-container h3 {
     font-size: 1.25rem;
