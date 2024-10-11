@@ -171,17 +171,15 @@
 .access-button {
     background-color: #ff5766; /* Button background color */
     color: white; /* Button text color */
-    width: 11rem;
-    height: 100% !important;
     font-family: 'DM Sans';
     font-weight: 700;
-    line-height: 1.62rem !important;
+    padding: 10px 20px;
     border: none;
     border-radius: .5rem; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s; /* Transition for hover effect */
-    margin-left: 20px; /* Space between the button and links */
     font-size: 1rem;
+    text-wrap: nowrap;
 }
 
 .access-button:hover {
