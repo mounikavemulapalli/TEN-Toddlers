@@ -220,7 +220,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
               <li>
                 <FaCheckCircle /> <span>One Stop Parenting Solution</span>
               </li>
-              <Button text='Book a Demo Slot' />
+              <Button id='banner-btn' text='Book a Demo Slot' />
             </ul>
           </div>
           <div className="banner-image">
@@ -403,9 +403,8 @@ const Home = ({ bookingText, explore, start, enroll }) => {
                 <div
                   key={value.id}
                   onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${
-                    clickedCardId === value.id ? "active" : ""
-                  }`}
+                  className={`development-card ${clickedCardId === value.id ? "active" : ""
+                    }`}
                 >
                   <h2>{value.title}</h2>
                   <div className="four-pillars-list">
@@ -448,11 +447,10 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             </p>
           </div>
         </section>
-        <section className="start-now-banner">
-          Stop overspending on generic and hamful toys, filled with Chlorinated
-          Paraffin-{">"} <br /> Toxic for your baby brain growth
-          <div>
-            <Button text={start} />
+        <section className='start-now-banner'>
+          <div className="start-now-banner-grid">
+            <h3>Stop overspending on generic and hamful toys, filled with Chlorinated Paraffin {`->`} Toxic for your baby brain growth</h3>
+            <Button text='Start Now' />
           </div>
         </section>
         <section className="product-and-cost">
@@ -649,9 +647,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             />
           </div>
           <div className="happy-parents-button">
-            <button id="homeScreenHappyParentsSection">
-              Fuel Your Child's Development!
-            </button>
+            <Button text="Fuel Your Child's Development!" />
           </div>
         </section>
         <section className="doctor-review" id="doctorreview">

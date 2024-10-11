@@ -28,7 +28,7 @@
 .Home-page p {
   margin: 10px 0;
 }
-.Home-page ul {
+.Home-page ul:not(#banner-btn) {
   margin-top: 50px;
   list-style-type: none;
 }
@@ -42,19 +42,24 @@
 .Home-button {
   border-radius: 8px;
   background: #ff5766;
-  width: 198px;
-  height: 54px;
   color: #fff;
+  font-size: 1rem;
+  letter-spacing: -.8px;
   font-family: "DM Sans";
-  font-size: 1.25rem;
   font-weight: bold;
   line-height: 1.62rem;
-  letter-spacing: -.05rem;
   border: none;
   cursor: pointer;
+  text-wrap: wrap;
+  margin: auto;
 }
 
-.banner-image {
+.Home-button:hover {
+  box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+.image {
   padding-top: 50px;
 }
 .banner-image img {
@@ -712,30 +717,7 @@
   text-align: center;
   margin-top: 38px;
 }
-.happy-parents-button button {
-  width: 316px;
-  height: 54px;
-  border-radius: 8px;
-  background: #ff5766;
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  transition: 0.5s;
-  font-weight: 500;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  border: none;
-}
-.happy-parents-button button:hover {
-  background-color: #ff818c;
-  box-shadow: 0px 15px 20px #ff4252;
-  color: #fff;
-  transform: translateY(-7px);
-}
 
-.happy-parents-button button:active {
-  transform: translateY(-1px);
-}
 .doctor-review {
   width: 100%;
   padding: 46px 0 80px;
@@ -1211,4 +1193,45 @@ li {
   display: list-item;
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
+}
+
+@media (max-width: 900px) {
+  .building {
+      width: 90%;
+      height: 70%;
+      margin: auto;
+      display: flex;
+  }
+}
+
+@media (max-width: 750px) {
+  .building {
+    justify-content: center;
+  }
+  
+  .building iframe {
+    width: 100%;
+  }
+
+  .doctor-review {
+    padding: 1.87rem 0 3.75rem;
+  }
+  
+  .doctor-review h1 {
+    width: 100%;
+  }
+
+  .our-mentors h1 h1:nth-child(2) {
+    font-size: 1.56rem;
+  }
+  
+  .mentors-list {
+    width: 100%;
+    margin-bottom: 2.81rem;
+  }
+  
+  .our-mentors h1:nth-child(2) {
+    line-height: 2.5rem;
+    letter-spacing: -1px;
+  }
 }

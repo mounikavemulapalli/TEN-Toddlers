@@ -1,9 +1,9 @@
 import React from 'react';
 import './step.css';
 
-const Button = ({ text, className, onClick }) => {
+const Button = ({ text, onClick }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className='access-button' onClick={onClick}>
       {text}
     </button>
   );

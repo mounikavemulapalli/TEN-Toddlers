@@ -169,18 +169,22 @@
 }
 
 .access-button {
-  display: block;         /* Ensures the button takes the full width of its container */
-  margin: 0 auto;         /* Centers horizontally */
-  border-radius: 8px;
-  background: #ff5766;
-  width: 198px;
-  height: 54px;
-  color: #fff;
-  font-family: "DM Sans";
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: -.8px;
-  border: none;
-  cursor: pointer;
+    background-color: #ff5766; /* Button background color */
+    color: white; /* Button text color */
+    width: 11rem;
+    height: 100% !important;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    line-height: 1.62rem !important;
+    border: none;
+    border-radius: .5rem; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin-left: 20px; /* Space between the button and links */
+    font-size: 1rem;
 }
+
+.access-button:hover {
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+  }
