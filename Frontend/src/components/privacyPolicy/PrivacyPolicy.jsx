@@ -344,7 +344,9 @@ function PrivacyPolicy() {
         <h2>CONTACT INFORMATION</h2>
         <p>email: support@Uptodd.com</p>
       </div>
-      <h6>© 2024, made with Love by UpTodd Care Private Limited.</h6>
+      <h6 className="privacy-container-para">
+        © 2024, made with Love by UpTodd Care Private Limited.
+      </h6>
     </div>
   );
 }
