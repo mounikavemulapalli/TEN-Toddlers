@@ -5,6 +5,8 @@ import baby2 from "../../assets/images/subscription/baby2.webp";
 import baby3 from "../../assets/images/subscription/baby3.webp";
 import YouTube from "react-youtube";
 import Mentors from "../comman/Mentors";
+import { awardData } from "../../assets/data/awardData";
+import { parentsData } from "../../assets/data/parentsData";
 
 function SubscriptionBox() {
   const [kitsData, setKitsData] = useState(null);
@@ -86,76 +88,6 @@ function SubscriptionBox() {
   const onVideoReady = (event) => {
     event.target.pauseVideo();
   };
-
-  const awardData = [
-    {
-      id: 0,
-      image: baby1,
-      name: "Dhruvut | Kalam's World Record",
-      age: "8 Months Old Baby",
-      about:
-        "UpTodd's Little Genius identified 416 Flashcards within 10 Minutes",
-    },
-    {
-      id: 1,
-      image: baby1,
-      name: "Aastik | International Book of REX Award",
-      age: "10 Months Old Baby",
-      about:
-        "UpTodd's Little Genius spoke 103 words of Animals, Flowers, Flags etc. within 23 Minutes",
-    },
-    {
-      id: 2,
-      image: baby1,
-      name: "Tejas | New York Times - World Record",
-      age: "1 year & 6 Months Old Baby",
-      about:
-        "UpTodd's Little Genius spoke 800 different words of variety of things within 29 Minutes",
-    },
-  ];
-
-  const parentsData = [
-    {
-      id: 0,
-      image: baby1,
-      name: "Kedar, 7 Months Old",
-      about:
-        "I am super happy with kit, and its highly recommended for all parents. Things which I liked most are dashboard tutorials, high quality finish in the materials, milestone tracker and diet plan. Its completely worth it to the investment I made, at this cost nothing can be better than this.",
-      parent: "- Kedar's Mother",
-    },
-    {
-      id: 1,
-      image: baby1,
-      name: "Aahana, 2 Years and 8 Months Old",
-      about:
-        "We found out that our daughter is not active at all, neither in terms of physical activity nor she likes the presence of anyone apart from me. But this kit has provided exceptional support to me in the journey and its just wow.",
-      parent: "- Aahana's Mother",
-    },
-    {
-      id: 2,
-      image: baby1,
-      name: "Miss Sandhya's baby, 1.5 Weeks Old",
-      about:
-        "UpTodd kit is just great, I really liked the quality of materials and scientific aspects behind it. Overall package looks very complete as every essentials are covered.",
-      parent: "- Miss Sandhya",
-    },
-    {
-      id: 3,
-      image: baby1,
-      name: "Aesha, 1.5 Years old",
-      about:
-        "Its much better than any kit purchased by me till date, best part is the linkage of kit with the dashboard is just amazing. Overall its amazing with milestones, diet and parenting intro program.",
-      parent: "- Aesha’s Father",
-    },
-    {
-      id: 4,
-      image: baby1,
-      name: "Faria, 6 Months Old",
-      about:
-        "Thanks to my Dr Pradeep for suggesting such an amazing kit, my girl is doing excellent now in all the terms. This is wonderful kit with every thing arranged and provided in the best shape.",
-      parent: "- Faria’s Mother",
-    },
-  ];
 
   return (
     <>
@@ -283,13 +215,12 @@ function SubscriptionBox() {
         {/* Video Section */}
         <h1 className="heading">Parent Unboxing UpTodd's Kit</h1>
 
-        <div className="sub-videos">
+        <div className="sub-videos-div">
           <div
+            className="sub-video"
             style={{
               borderRadius: "1rem",
               overflow: "hidden",
-              width: "640px",
-              height: "390px",
             }}
           >
             <YouTube
@@ -299,11 +230,10 @@ function SubscriptionBox() {
             />
           </div>
           <div
+            className="sub-video"
             style={{
               borderRadius: "1rem",
               overflow: "hidden",
-              width: "640px",
-              height: "390px",
             }}
           >
             <YouTube
@@ -336,11 +266,10 @@ function SubscriptionBox() {
         </h1>
         <div className="sub-stories">
           <div
+            className="sub-stories-video"
             style={{
               borderRadius: "1rem",
               overflow: "hidden",
-              width: "640px",
-              height: "300px",
             }}
           >
             <YouTube videoId="Kj6ZzR0LKpg" opts={videoOptions} />
