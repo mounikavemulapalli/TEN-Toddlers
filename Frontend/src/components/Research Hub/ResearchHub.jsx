@@ -329,9 +329,9 @@ export default function ResearchHub() {
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
                                     ></iframe>
-                                    <img height='190' src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
-                                    <img height='19' style={{ position: 'relative' }} src="https://www.uptodd.com/images/newWebsite/quote.svg" />
-                                    <p>{card.text}<br /><br />{card.quoteAuthor}</p>
+                                    <img height='190' style={{ paddingInline: 'inherit'}} src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
+                                    <img style={{marginBlock: '.2rem', marginInline: '0', paddingLeft: '.4rem',  height: '3%', width: 'auto', position: 'relative', float: 'left' }} src="https://www.uptodd.com/images/newWebsite/quote.svg" />
+                                    <p style={{marginTop: '.7rem'}}>{card.text}<br /><br />{card.quoteAuthor}</p>
                                 </div>
                             ))}
                         </div>

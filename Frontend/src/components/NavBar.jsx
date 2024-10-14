@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import '../Styles/NavBar.css';
 import logo from '../assets/images/footer/logo.webp'; // Adjust the path based on where your logo image is stored
 
-export default function NavBar({ text, enroll }) {
+export default function NavBar() {
   const location = useLocation();
   const homeRouteNames = ['/', '/home', '/research', '/contact-us', '/super_daily_app_program'];
   const [currentPage, setCurrentPage] = useState((homeRouteNames.includes(location.pathname)) ? 'home' : (location.pathname).substring(1));
@@ -45,10 +45,10 @@ export default function NavBar({ text, enroll }) {
   const isDesktopScreen = useMediaQuery({ minWidth: 850 });
 
   return (
-    <nav className="navBar" aria-label="Main Navigation">
+    <nav className="navBar" style={(currentPage == 'blog' ? { background: '#f5f5f5' } : { background: 'white' })} aria-label="Main Navigation">
       <img className="hamburger" onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
       <div className="logo">
-        <img src={logo} style={{ height: "100" }} />
+        <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
       </div>
 
       {isMenuOpen && (<ul className="mobileNavLinks">
@@ -66,7 +66,7 @@ export default function NavBar({ text, enroll }) {
       </ul>)}
 
       <ul className='navLinks'>
-        {links.map((link) => (
+        {(currentPage != 'blog') && (links.map((link) => (
           <li key={link.to || link.href} className="navLink" style={isDesktopScreen ? { display: 'flex' } : { display: 'none' }}>
             {link.href ? (
               <a href={link.href} className={premiumPageNav(link.href)}>{link.label}</a>
@@ -76,9 +76,9 @@ export default function NavBar({ text, enroll }) {
               </Link>
             )}
           </li>
-        ))}
+        )))}
         <li>
-          <a href="/super_daily_app_program" target="_blank"><Button text="Start for INR 449" /></a>
+          <a href={currentPage == 'blog' ? '/' : "/super_daily_app_program"} target="_blank">{currentPage != 'blog' ? <Button text="Start for INR 449" /> : <button className={isDesktopScreen ? 'blogPageBtn' : ''}>EXPLORE PROGRAMS</button>}</a>
         </li>
       </ul>
     </nav>

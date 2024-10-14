@@ -1,0 +1,83 @@
+#heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1rem;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+#line {
+    border-bottom-style: solid;
+    max-width: 8%;
+    margin: auto;
+    border-bottom-width: 3px;
+    border-bottom-color: #fb2056;
+}
+
+#heading,
+#line {
+    margin-bottom: 1.25rem;
+}
+
+#blogs-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: .9rem;
+    justify-content: center;
+}
+
+.blog {
+    height: 578.22px;
+    background: white;
+    max-width: 363.33px;
+    width: 363.33px;
+    overflow: hidden;
+}
+
+#blog-img {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden
+}
+
+.blog:hover #blog-img img {
+    scale: 1.12;
+}
+
+#blog-img img {
+    width: inherit;
+    object-fit: cover;
+    transition: all .5s ease-out;
+}
+
+.blog-content{
+    padding: 1.8rem;
+    line-height: 1.7em;
+}
+
+.blog-content a {
+    text-decoration: none;
+    color: black;
+}
+
+.blog-content p {
+    color: #969696;
+    margin: 0;
+    margin-top: .6rem;
+}
+
+.blog-content button {
+    padding: .6rem 1.25rem .6rem 1.25rem;
+    border: none;
+    background: #DF2F2F;
+    color: white;
+    margin-top: 1.4rem;
+    line-height: 1.7em !important;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.blog-content button:hover {
+    background: black;
+}

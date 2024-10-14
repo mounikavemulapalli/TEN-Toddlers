@@ -16,6 +16,7 @@ import ResearchHub from "../components/Research Hub/ResearchHub";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 import Contact from "./contact_us/contactPage";
+import Blog from './Blog/Blog'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           path='/super_daily_app_program'
           element={<SuperDailyProgram />}
         />
+        <Route path="/blog" element={<Blog />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />

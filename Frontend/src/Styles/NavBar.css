@@ -10,6 +10,7 @@
   z-index: 1000;
   max-width: 100%;
   width: 100%;
+  min-height: 30px;
 }
 
 .hamburger {
@@ -42,12 +43,39 @@
   font-weight: bold;
 }
 
-.navLinks Button {
+.navLinks Button:not(.blogPageBtn) {
   width: 8.1rem !important;
   text-wrap: nowrap;
   font-size: .8rem;
   letter-spacing: -.56px;
   height: 48px !important;
+}
+
+.blogPageBtn {
+  padding: 1rem 2.5rem;
+  font-size: .875rem;
+  background: #fb2056;
+  color: white;
+  border-width: 0;
+  line-height: 1em;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.blogPageBtn:hover {
+  background: #da1c4b;
+}
+
+.blogPageMobileBtn {
+  background: #fb2056;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 1.5em;
+  line-height: 1.8;
+  padding: .5em;
 }
 
 .mobileNavLinks {
