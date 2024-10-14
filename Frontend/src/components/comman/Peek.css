@@ -1,9 +1,27 @@
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.prev {
+  left: 8%;
+}
+
+.next {
+  right: 8%;
+}
+
 /*                         Super Peek Section Styles */
 .super-peek {
   background: #5a40c4;
   background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
   width: 100%;
-  padding: 48px 0 100px;
+  padding: 48px 0 100px 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,10 +73,9 @@
 }
 
 .super-peek-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-top: 10px;
   text-align: start;
-  font-weight: 400;
   color: darkblue;
 }
 
@@ -79,15 +96,39 @@
   .super-peek-card {
     width: 60%;
   }
+
+  .super-peek h1 {
+    font-size: 2.25rem;
+  }
 }
 
 /*                            Media Queries for responsiveness ( 480px )*/
 @media (max-width: 480px) {
+  .prev {
+    left: 0%;
+  }
+  .next {
+    right: 0%;
+  }
+
+  .super-peek {
+    padding: 45px 0 60px;
+  }
+
   .super-peek h1 {
     font-size: 1.25rem;
-    font-weight: 400;
   }
+
+  .super-peek-cards {
+    width: 90%;
+  }
+
   .super-peek-card {
     width: 100%;
+  }
+
+  .super-peek-card iframe {
+    width: 250px;
+    height: 200px;
   }
 }
