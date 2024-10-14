@@ -9,7 +9,8 @@
   width: 100%;
   font-weight: 400;
   color: darkblue;
-  margin-bottom: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
 }
 
 .slider-container h1 span {
@@ -21,14 +22,15 @@
   margin: 0 auto;
   width: 50%;
   height: 120px;
-  background-color: #f2f8f6;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fff;
+  box-shadow: 0 3px 17px rgb(0 0 0 / 25%);
   border-radius: 50%;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  padding: 5px;
 }
 
 .slider-image.active {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 .image-name {
@@ -46,6 +48,7 @@
   width: 90%;
   height: auto;
   margin: 2rem auto;
+  padding-bottom: 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -77,6 +80,7 @@
 /*                            Media Queries for responsiveness ( 1024px )*/
 @media (max-width: 1024px) {
   .slide-item img {
+    width: 60%;
     height: 100px;
   }
 
@@ -97,7 +101,7 @@
     font-size: 1.5rem;
   }
   .slide-item img {
-    height: 80px;
+    height: 75px;
   }
   .image-name {
     font-size: 1.25rem;
@@ -125,7 +129,10 @@
     font-size: 1.25rem;
   }
   .slide-item img {
-    height: 70px;
+    height: 60px;
+  }
+  .slider-image.active {
+    transform: scale(1.5);
   }
   .image-name {
     font-size: 1rem;
@@ -136,5 +143,12 @@
   }
   .super-objective-card img {
     width: 40%;
+  }
+}
+
+/*                            Media Queries for responsiveness ( 320px )*/
+@media (max-width: 320px) {
+  .slide-item img {
+    height: 50px;
   }
 }

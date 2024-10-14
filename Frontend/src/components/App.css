@@ -5,6 +5,11 @@
   font-family: "DM Sans";
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Header.css */
 .header {
   display: flex;
