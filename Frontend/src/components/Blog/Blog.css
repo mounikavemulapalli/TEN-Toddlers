@@ -1,3 +1,7 @@
+body {
+    line-height: 1.7em;
+}
+
 #heading {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.1rem;
@@ -23,6 +27,7 @@
     grid-template-columns: auto auto auto;
     gap: .9rem;
     justify-content: center;
+    padding-bottom: 6.25rem; 
 }
 
 .blog {
@@ -50,7 +55,7 @@
     transition: all .5s ease-out;
 }
 
-.blog-content{
+.blog-content {
     padding: 1.8rem;
     line-height: 1.7em;
 }
@@ -80,4 +85,36 @@
 
 .blog-content button:hover {
     background: black;
+}
+
+footer {
+    color: white;
+    background: #9150af;
+    padding: 1.8rem 4%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+}
+
+footer p {
+    margin: 0;
+    margin-bottom: 1.75em;
+}
+
+footer > ul {
+    color: #404040;
+    list-style: disc;
+}
+
+footer > ul > li {
+    margin-bottom: .6rem;
+}
+
+footer ul > li > a {
+    text-decoration: none;
+    color: white;
 }

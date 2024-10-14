@@ -1,6 +1,7 @@
 import React from "react";
 import './Blog.css';
 import blogData from './blogs.json';
+import BlogFooter from './BlogFooter'
 
 const Blog = () => {
   return (
@@ -19,6 +20,7 @@ const Blog = () => {
           </div>
         ))}
       </div>
+      <BlogFooter />
     </div>
   );
 };

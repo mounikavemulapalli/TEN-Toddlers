@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ApplicationForm from "../components/careerPage/ApplicationForm"; // Move the form component to a separate file
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import ApplicationForm from "../components/careerPage/ApplicationForm";
 import About from "./About/About";
 import Home from "./Home/Home";
 import "../Styles/About.css";
@@ -16,12 +16,22 @@ import ResearchHub from "../components/Research Hub/ResearchHub";
 import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 import Contact from "./contact_us/contactPage";
-import Blog from './Blog/Blog'
+import Blog from './Blog/Blog';
 
-function App() {
+export default function App() {
   return (
     <Router>
-      {<NavBar />}
+      <NavBar />
+      <MainRoutes />
+    </Router>
+  );
+}
+
+function MainRoutes() {
+  const location = useLocation();
+  
+  return (
+    <>
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route index element={<Home />} />
@@ -30,22 +40,16 @@ function App() {
         <Route path='/step' element={<Step />} />
         <Route path='/success story' element={<SuccessStory />} />
         <Route path='/premium' element={<Premium />} />
-        <Route path='/Home' element={<Home />} />
         <Route path='/career' element={<Career />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-conditions' element={<TermsCondition />} />
-        <Route
-          path='/super_daily_app_program'
-          element={<SuperDailyProgram />}
-        />
+        <Route path='/super_daily_app_program' element={<SuperDailyProgram />} />
         <Route path="/blog" element={<Blog />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />
       </Routes>
-      <Footer />
-    </Router>
+      {location.pathname !== '/blog' && <Footer />}
+    </>
   );
 }
-
-export default App;
