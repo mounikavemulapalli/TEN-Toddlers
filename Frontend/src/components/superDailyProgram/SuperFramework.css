@@ -2,7 +2,6 @@
   width: 100%;
   display: flex;
   padding: 4rem;
-  color: darkblue;
 }
 
 .super-framework-info {
@@ -11,18 +10,18 @@
 
 .super-framework-info h4 {
   font-size: 1.25rem;
+  color: darkblue;
 }
 
 .super-framework-info h1 {
   font-size: 2.75rem;
-  font-weight: 500;
+  color: darkblue;
 }
 
 .super-framework-info h3 {
   font-size: 1.25rem;
-  font-weight: 500;
-  opacity: 70%;
   padding-top: 1rem;
+  color: #5c6a7e;
 }
 
 .super-framework-info-list {
@@ -79,6 +78,11 @@
   border-radius: 12px;
 }
 
+.super-framework-join1 h4 {
+  font-size: 1rem;
+  color: darkblue;
+}
+
 .super-framework-join2 {
   padding: 1.5rem;
   border-radius: 12px;
@@ -88,12 +92,14 @@
 .super-framework-join2 h3 {
   text-align: center;
   font-size: 1.5rem;
+  color: darkblue;
 }
 
 .super-framework-join2 h4 {
   text-align: center;
   font-size: 2rem;
   margin-top: 12px;
+  color: darkblue;
 }
 
 .super-framework-join2 span {
@@ -124,6 +130,30 @@
   margin: 0;
 }
 
+/*                            Media Queries for responsiveness ( 1024px )*/
+@media (max-width: 1024px) {
+  .super-framework-info-list ul {
+    font-size: 18px;
+  }
+
+  .super-framework-join {
+    padding: 0 1.5rem;
+  }
+
+  .super-framework-join h4 {
+    font-size: 15px;
+  }
+
+  .super-framework-join2 h3 {
+    font-size: 1.25rem;
+  }
+
+  .super-framework-join2 h4 {
+    font-size: 1.75rem;
+  }
+}
+
+/*                               Media Queries for responsiveness ( 768px )*/
 @media (max-width: 768px) {
   .super-framework {
     flex-direction: column;
@@ -148,6 +178,7 @@
   }
 }
 
+/*                                   Media Queries for responsiveness ( 480px )*/
 @media (max-width: 480px) {
   .super-framework {
     padding: 1rem 1rem;
