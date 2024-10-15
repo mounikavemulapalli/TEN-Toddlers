@@ -1,3 +1,21 @@
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.prev {
+  left: 8%;
+}
+
+.next {
+  right: 8%;
+}
+
 /*                           Brilliant Minds Styles */
 .super-brilliant-minds {
   width: 100%;
@@ -21,6 +39,7 @@
   align-items: center;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .super-brilliant-minds-button {
@@ -79,6 +98,7 @@
   .super-brilliant-minds-card {
     width: 40%;
   }
+
   .super-brilliant-minds-card-image img {
     width: 300px;
   }
@@ -89,15 +109,44 @@
   .super-brilliant-minds-card {
     width: 60%;
   }
+
+  .super-brilliant-minds h1 {
+    font-size: 2.25rem;
+  }
 }
 
 /*                            Media Queries for responsiveness ( 480px )*/
 @media (max-width: 480px) {
+  .prev {
+    left: 0%;
+  }
+  .next {
+    right: 0%;
+  }
+
   .super-brilliant-minds h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0 10px;
   }
+
+  .super-brilliant-minds-cards {
+    width: 90%;
+    gap: 0;
+  }
+
   .super-brilliant-minds-card {
     width: 100%;
+  }
+
+  .super-brilliant-minds-card-image img {
+    width: 285px;
+  }
+
+  .super-brilliant-minds-card-content h3 {
+    font-size: 18px;
+  }
+
+  .super-brilliant-minds-card-content p {
+    font-size: 15px;
   }
 }
