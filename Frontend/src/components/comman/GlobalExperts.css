@@ -1,7 +1,7 @@
 /*                            Top Global Experts Styles*/
 .super-doctor-review {
   width: 100%;
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 
 .super-doctor-review h1 {
@@ -16,7 +16,7 @@
   color: darkblue;
   font-style: normal;
   font-weight: 300;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .super-doctor-review-list {
@@ -73,22 +73,15 @@
 }
 
 .super-doctor-review-image-part div h3 {
-  color: #fff;
+  color: white;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.8px;
 }
 
 .super-doctor-review-image-part div h6 {
-  color: #fff;
+  color: white;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: -0.56px;
-  margin-top: 1px;
 }
 
 .super-doctor-review-quote {
@@ -99,6 +92,10 @@
 @media (max-width: 1024px) {
   .super-doctor-review h1 {
     font-size: 2.5rem;
+  }
+
+  .super-doctor-review h4 {
+    font-size: 22px;
   }
 }
 
@@ -114,6 +111,7 @@
   .super-doctor-review h1 {
     font-size: 1.25rem;
   }
+
   .super-doctor-review h4 {
     display: none;
   }
