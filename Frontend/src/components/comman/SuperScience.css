@@ -1,7 +1,7 @@
 /*                             Science Styles */
 .super-science {
   width: 100%;
-  padding: 2rem 0;
+  padding: 4rem 0;
   background: #f6fcfe;
 }
 
@@ -16,12 +16,12 @@
 }
 
 .super-science h5 {
-  font-size: 1.75rem;
+  font-size: 21px;
   text-align: center;
   color: darkblue;
   font-style: normal;
   font-weight: 400;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .super-science1,
@@ -63,22 +63,30 @@
 }
 .super-science2-header {
   background: #ff3f4e;
+  left: 33%;
 }
 
-.super-science1-header,
+.super-science1-header h4,
 .super-science2-header h4 {
-  color: #fff;
+  color: white;
   text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
+  font-size: 1.5rem;
+  line-height: 55px;
   letter-spacing: -0.96px;
 }
 
 .super-science1-mobile,
 .super-science2-mobile {
   display: none;
+}
+
+/*                          Responsive Screen for 1024px */
+@media (max-width: 1024px) {
+  .super-science1-header h4,
+  .super-science2-header h4 {
+    font-size: 1.25rem;
+    line-height: 45px;
+  }
 }
 
 /*                          Responsive Screen for 768px */
@@ -89,7 +97,8 @@
   }
 
   .super-science h1 {
-    font-size: 1.5rem;
+    /* font-size: 2rem; */
+    line-height: 2.25rem;
   }
 
   .super-science h5 {
@@ -127,10 +136,7 @@
   .super-science2-mobile div h4 {
     color: #fff;
     text-align: center;
-    font-family: "DM Sans";
     font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
     line-height: 22px;
     letter-spacing: -0.56px;
   }
@@ -152,11 +158,9 @@
   }
 
   .super-science2-mobile-list h3 {
-    color: #000;
+    color: black;
     text-align: center;
-    font-family: "DM Sans";
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: -0.4px;
@@ -167,7 +171,7 @@
   }
 
   .super-science2-mobile-list img {
-    width: 100px;
+    width: 125%;
   }
 
   .super-science2-mobile-list img:first-of-type {
@@ -186,12 +190,14 @@
     font-size: 20px;
     line-height: 30px;
     letter-spacing: -0.8px;
+    padding: 0 1rem;
   }
 
   .super-science h5 {
     font-size: 14px;
     line-height: 22px;
     letter-spacing: -0.56px;
+    padding: 0 4rem;
   }
 
   .super-science1-mobile,
@@ -216,10 +222,14 @@
 
   .super-science1-mobile div h4,
   .super-science2-mobile div h4 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .super-science1-mobile img {
     width: 90%;
+  }
+
+  .super-science2-mobile-list img {
+    width: 100%;
   }
 }
