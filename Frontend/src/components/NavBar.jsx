@@ -20,6 +20,11 @@ export default function NavBar() {
       : location.pathname.substring(1)
   );
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isSearchClicked, setSearchClicked] = useState(false);
+
+  const toggleSearchBtn = () => {
+    setSearchClicked(!isSearchClicked);
+  }
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -56,16 +61,48 @@ export default function NavBar() {
   const isDesktopScreen = useMediaQuery({ minWidth: 850 });
 
   return (
-    <nav className="navBar" style={(currentPage == 'blog' ? { background: '#f5f5f5' } : { background: 'white' })} aria-label="Main Navigation">
-      <img className="hamburger" onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
-      <div className="logo">
-        <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
-      </div>
+    <>
+      <nav className="navBar" style={(currentPage == 'blog' ? { background: '#f5f5f5' } : { background: 'white' })} aria-label="Main Navigation">
+        <img className="hamburger" style={currentPage != 'blog' ? { order: '0' } : { order: '2' }} onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
+        {(!isDesktopScreen && (currentPage == 'blog')) && <div id="search">
+          <div>
+            {isSearchClicked && <input type="text" placeholder="Search..." />}
+            <img src="https://e7.pngegg.com/pngimages/461/616/png-clipart-web-development-real-estate-search-engine-optimization-multiple-listing-service-business-search-search-engine-optimization-web-design.png" height='15' onClick={toggleSearchBtn} />
+          </div>
+        </div>}
+        <div className="logo">
+          <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
+        </div>
 
-      {isMenuOpen && (
-        <ul className='mobileNavLinks'>
-          {links.map((link) => (
-            <li key={link.to || link.href} className='mobileNavLink'>
+        {(isMenuOpen && (currentPage != 'blog')) && (
+          <ul className='mobileNavLinks'>
+            {links.map((link) => (
+              <li key={link.to || link.href} className='mobileNavLink'>
+                {link.href ? (
+                  <a href={link.href} className={premiumPageNav(link.href)}>
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.to}
+                    className={
+                      decodeURIComponent(currentPage) == link.label.toLowerCase()
+                        ? "active"
+                        : ""
+                    }
+                    target={currentPage !== "premium" ? "_blank" : ""}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <ul className='navLinks'>
+          {(currentPage != 'blog') && (links.map((link) => (
+            <li key={link.to || link.href} className="navLink" style={isDesktopScreen ? { display: 'flex' } : { display: 'none' }}>
               {link.href ? (
                 <a href={link.href} className={premiumPageNav(link.href)}>
                   {link.label}
@@ -84,36 +121,13 @@ export default function NavBar() {
                 </Link>
               )}
             </li>
-          ))}
-        </ul>
-      )}
-
-      <ul className='navLinks'>
-        {(currentPage != 'blog') && (links.map((link) => (
-          <li key={link.to || link.href} className="navLink" style={isDesktopScreen ? { display: 'flex' } : { display: 'none' }}>
-            {link.href ? (
-              <a href={link.href} className={premiumPageNav(link.href)}>
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                to={link.to}
-                className={
-                  decodeURIComponent(currentPage) == link.label.toLowerCase()
-                    ? "active"
-                    : ""
-                }
-                target={currentPage !== "premium" ? "_blank" : ""}
-              >
-                {link.label}
-              </Link>
-            )}
+          )))}
+          <li>
+            <a href={currentPage == 'blog' ? '/' : "/super_daily_app_program"} target="_blank">{currentPage != 'blog' ? <Button text="Start for INR 449" /> : <button className='blogPageBtn'>EXPLORE PROGRAMS</button>}</a>
           </li>
-        )))}
-        <li>
-          <a href={currentPage == 'blog' ? '/' : "/super_daily_app_program"} target="_blank">{currentPage != 'blog' ? <Button text="Start for INR 449" /> : <button className={isDesktopScreen ? 'blogPageBtn' : ''}>EXPLORE PROGRAMS</button>}</a>
-        </li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+      {(isMenuOpen && (currentPage == 'blog')) && <div className="blog-page-mobile-navlink"><a href="/blog">Home</a></div>}
+    </>
   );
 }
