@@ -1,3 +1,7 @@
+body {
+  overflow: visible;
+}
+
 .navBar {
   display: flex;
   align-items: center;

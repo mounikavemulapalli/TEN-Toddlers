@@ -40,18 +40,18 @@ export default function NavBar() {
   const links =
     currentPage === "premium"
       ? [
-          { href: "#root", label: "Home" },
-          { href: "#product-and-cost", label: "Premium" },
-          { href: "#genius-babies", label: "Success Story" },
-          { href: "#why-uptodd", label: "About" },
-        ]
+        { href: "#root", label: "Home" },
+        { href: "#product-and-cost", label: "Premium" },
+        { href: "#genius-babies", label: "Success Story" },
+        { href: "#why-uptodd", label: "About" },
+      ]
       : [
-          { to: "/home", label: "Home" },
-          { to: "/premium", label: "Premium" },
-          { to: "/success story", label: "Success Story" },
-          { to: "/about", label: "About" },
-          { to: "/blog", label: "Blog" },
-        ];
+        { to: "/home", label: "Home" },
+        { to: "/premium", label: "Premium" },
+        { to: "/success story", label: "Success Story" },
+        { to: "/about", label: "About" },
+        { to: "/blog", label: "Blog" },
+      ];
 
   const isDesktopScreen = useMediaQuery({ minWidth: 850 });
 
