@@ -15,12 +15,11 @@
 }
 
 .super-happy-parents h4 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-align: center;
   color: darkblue;
-  font-style: normal;
   font-weight: 400;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .super-happy-parents-wrapper {
@@ -53,15 +52,12 @@
 
 .super-happy-parents-card {
   width: 30%;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
-  margin-left: 2rem;
-}
-
-.super-happy-parents-card iframe {
+  border-radius: 10px;
+  background: white;
   padding: 1rem;
-  text-align: center;
+  margin: 0 1rem;
+  box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
+  scroll-snap-align: start;
 }
 
 .super-happy-parent-quote {
@@ -101,6 +97,14 @@
   .super-happy-parents-card {
     width: 40%;
   }
+
+  .super-happy-parents h1 {
+    font-size: 2rem;
+  }
+
+  .super-happy-parents h4 {
+    font-size: 1.25rem;
+  }
 }
 
 /*                            Media Queries for responsiveness ( 768px )*/
@@ -108,17 +112,49 @@
   .super-happy-parents-card {
     width: 60%;
   }
+
   .super-happy-parents h1 {
-    font-size: 2rem;
-  }
-  .super-happy-parents h4 {
-    font-size: 1.25rem;
+    line-height: 2.25rem;
   }
 }
 
 /*                            Media Queries for responsiveness ( 480px )*/
 @media (max-width: 480px) {
+  .prev {
+    left: 0%;
+  }
+  .next {
+    right: 0%;
+  }
+
+  .super-happy-parents h1 {
+    font-size: 1.25rem;
+  }
+
+  .super-happy-parents h4 {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin: 1rem 0;
+  }
+
+  .super-happy-parents-cards {
+    width: 90%;
+    gap: 0;
+  }
+
   .super-happy-parents-card {
     width: 100%;
+  }
+
+  .super-happy-parents-card p {
+    font-size: 18px;
+  }
+
+  .super-happy-parents-card iframe {
+    width: 250px;
+  }
+
+  .child-development-button a {
+    font-size: 1rem;
   }
 }
