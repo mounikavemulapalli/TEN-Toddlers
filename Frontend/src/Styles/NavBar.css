@@ -86,7 +86,7 @@ body {
 }
 
 #search img {
-  position: fixed;
+  positioN: sticky;
   right: 10%;
   top: 4%;
   padding-inline: 10px;

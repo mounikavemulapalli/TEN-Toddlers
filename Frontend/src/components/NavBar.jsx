@@ -5,7 +5,8 @@ import { useMediaQuery } from "react-responsive";
 import "../Styles/NavBar.css";
 import logo from "../assets/images/footer/logo.webp"; // Adjust the path based on where your logo image is stored
 
-export default function NavBar() {
+
+export default function NavBar({ inputState, setSearchedKeyword }) {
   const location = useLocation();
   const homeRouteNames = [
     "/",
@@ -21,13 +22,27 @@ export default function NavBar() {
   );
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSearchClicked, setSearchClicked] = useState(false);
+  const { inputKeyword, setInputKeyword } = inputState;
 
-  const toggleSearchBtn = () => {
-    setSearchClicked(!isSearchClicked);
+  const enterKey = e => {
+    if (e.key == 'Enter') {
+      toggleSearchBtn();
+    }
   }
+
+  document.addEventListener('keydown', enterKey);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearch = (e) => {
+    setInputKeyword(e.target.value);
+  }
+
+  const toggleSearchBtn = () => {
+    setSearchedKeyword(inputKeyword);
+    setSearchClicked(!isSearchClicked);
   };
 
   useEffect(() => {
@@ -66,12 +81,14 @@ export default function NavBar() {
         <img className="hamburger" style={currentPage != 'blog' ? { order: '0' } : { order: '2' }} onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
         {(!isDesktopScreen && (currentPage == 'blog')) && <div id="search">
           <div>
-            {isSearchClicked && <input type="text" placeholder="Search..." />}
+            {isSearchClicked && <input type="text" onChange={handleSearch} placeholder="Search..." />}
             <img src="https://e7.pngegg.com/pngimages/461/616/png-clipart-web-development-real-estate-search-engine-optimization-multiple-listing-service-business-search-search-engine-optimization-web-design.png" height='15' onClick={toggleSearchBtn} />
           </div>
         </div>}
         <div className="logo">
-          <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
+          <a href="/blog">
+            <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
+          </a>
         </div>
 
         {(isMenuOpen && (currentPage != 'blog')) && (

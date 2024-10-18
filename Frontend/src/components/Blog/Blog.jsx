@@ -1,16 +1,22 @@
 import React from "react";
 import './Blog.css';
 import blogData from './blogs.json';
-import BlogFooter from './BlogFooter'
+import BlogFooter from './BlogFooter';
 
-const Blog = () => {
+export default function Blog({ searchedKeyword }) {
+
+  const filteredBlogs = blogData.filter(blog =>
+    blog.title.toUpperCase().includes(searchedKeyword.toUpperCase()) ||
+    blog.text.toUpperCase().includes(searchedKeyword.toUpperCase())
+  );
+
   return (
-    <div style={{ background: '#f5f5f5' }}>
+    <div>
       <div id="container">
-        <h2 id='heading'>UPTODD PARENTING BLOGS</h2>
+        {searchedKeyword == '' ? <h2 id='heading'>UPTODD PARENTING BLOGS</h2> : <h2 id="search-result-heading">SEARCH RESULTS FOR: {searchedKeyword.toUpperCase()}</h2>}
         <div id='line'></div>
         <div id="blogs-container">
-          {blogData.map((blog) => (
+          {filteredBlogs.map((blog) => (
             <div className="blog">
               <a id="blog-img" href="#"><img src={blog.img} /></a>
               <div className="blog-content">
@@ -26,5 +32,3 @@ const Blog = () => {
     </div>
   );
 };
-
-export default Blog;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import ApplicationForm from "../components/careerPage/ApplicationForm";
 import About from "./About/About";
@@ -19,17 +20,22 @@ import Contact from "./contact_us/contactPage";
 import Blog from './Blog/Blog';
 
 export default function App() {
+
+  // States for blog page search bar
+  const [inputKeyword, setInputKeyword] = useState('');
+  const [searchedKeyword, setSearchedKeyword] = useState('');
+
   return (
     <Router>
-      <NavBar />
-      <MainRoutes />
+      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} />
+      <MainRoutes searchedKeyword={searchedKeyword} />
     </Router>
   );
 }
 
-function MainRoutes() {
+function MainRoutes({ searchedKeyword }) {
   const location = useLocation();
-  
+
   return (
     <>
       <Routes>
@@ -44,12 +50,12 @@ function MainRoutes() {
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-conditions' element={<TermsCondition />} />
         <Route path='/super_daily_app_program' element={<SuperDailyProgram />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog searchedKeyword={searchedKeyword} />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />
       </Routes>
-      {location.pathname !== '/blog' && <Footer />}
+      {location.pathname != '/blog' && <Footer />}
     </>
   );
 }

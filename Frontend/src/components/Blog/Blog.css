@@ -1,5 +1,11 @@
 body {
     line-height: 1.7em;
+    background: #f5f5f5;
+}
+
+.navBar {
+    max-width: 1502px;
+    margin: auto;
 }
 
 #heading {
@@ -21,6 +27,15 @@ body {
 #heading,
 #line {
     margin-bottom: 1.25rem;
+}
+
+#search-result-heading {
+    color: #fb2056;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: .2rem;
+    line-height: 1.2;
+    padding: .7em;
 }
 
 #container {
@@ -112,16 +127,16 @@ footer p {
     margin-bottom: 1.75em;
 }
 
-footer > ul {
+footer>ul {
     color: #404040;
     list-style: disc;
 }
 
-footer > ul > li {
+footer>ul>li {
     margin-bottom: .6rem;
 }
 
-footer ul > li > a {
+footer ul>li>a {
     text-decoration: none;
     color: white;
 }
