@@ -200,10 +200,9 @@ const Home = ({ bookingText, explore, start, enroll }) => {
       <div className="home-section">
         <section className="Home-page">
           <div className="banner-text">
-            <h1>Give Your Baby the</h1>
-            <h1>Best Possible Start!</h1>
-            <h2>Nurture your baby's developing Brain</h2>
-            <p>Expert Guided Personalised Program - Just For Your Baby</p>
+            <h1>Give Your Baby the Best Possible Start!</h1>
+            <h3>Nurture your baby's developing Brain</h3>
+            <h5>Expert Guided Personalised Program - Just For Your Baby</h5>
             <ul>
               <li>
                 <FaCheckCircle /> <span> No Pressure - No testing </span>
@@ -299,33 +298,31 @@ const Home = ({ bookingText, explore, start, enroll }) => {
           <div className="genius-section">
             <div className="genius-header">
               <h1>Inside Your Baby's Genius - Building Baby Brain</h1>
-              <h2>Every Baby is born with infinite Potential</h2>
+              <h5>Every Baby is born with infinite Potential</h5>
             </div>
             <div className="genius-container">
               <ul className="genius-text">
                 <li>
-                  <span>100 Bn</span>Every baby is born with 100 Billion of
-                  Neurons
+                  <span>100 Bn</span><span>Every baby is born with 100 Billion of
+                    Neurons</span>
                 </li>
                 <li>
-                  <span>1 Mn</span>One million neural connections are formed
-                  every second in the early years
+                  <span>1 Mn</span><span>One million neural connections are formed
+                    every second in the early years</span>
                 </li>
                 <li>
-                  <span>90%</span>Ninety percentage of our brain develops by age
-                  5
+                  <span>90%</span><span>Ninety percentage of our brain develops by age
+                    5</span>
                 </li>
                 <li>
                   <span>60%</span>
-                  60% of baby's energy goes in brain development
+                  <span>60% of baby's energy goes in brain development</span>
                 </li>
               </ul>
               <div className="building">
                 <iframe
                   loading="lazy"
-                  width="853"
-                  height="480"
-                  srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' className='full' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
+                  srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -338,8 +335,8 @@ const Home = ({ bookingText, explore, start, enroll }) => {
                 <p>Ref. Harvard University | developingchild.harvard.edu</p>
               </div>
             </div>
-            <div>
-              <Button text={explore} />
+            <div id="genius-section-btn-container">
+              <Button text='Explore the Details' />
             </div>
           </div>
         </section>
@@ -354,7 +351,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             </div>
 
             <div className="carousel-wrapper">
-              <button className="carousel-button prev" onClick={handlePrev}>
+              <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
                 <img
                   src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
                   alt="Previous"
@@ -390,12 +387,15 @@ const Home = ({ bookingText, explore, start, enroll }) => {
         </section>
         <section className="developmental-pillars">
           <div className="development-head">
-            <h1>UpTodd Expert Personalised Program -</h1>
-            <h2>Nurture your baby's genius potential</h2>
-            <p>
+            <h1>
+              UpTodd Expert Personalised Program -
+              <br />
+              <span>Nurture your baby's genius potential</span>
+            </h1>
+            <h5>
               Holistic Approach of baby brain development on complete
               foundational Pillars - <span> Just 10 Minutes a day</span>
-            </p>
+            </h5>
           </div>
           <div className="development-container">
             <div className="development-lest">
@@ -406,7 +406,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
                   className={`development-card ${clickedCardId === value.id ? "active" : ""
                     }`}
                 >
-                  <h2>{value.title}</h2>
+                  <h3>{value.title}</h3>
                   <div className="four-pillars-list">
                     <ul>
                       <li>
@@ -435,12 +435,11 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             <div className="development-image">
               <img
                 src="https://www.uptodd.com/images/newWebsite/expert-personalised-program.webp"
-                alt=""
               />
             </div>
           </div>
           <div className="developmental-pillars-footer">
-            <Button text={explore} />
+            <Button text='Explore the Details' />
             <p>
               Create Brain stimulating home envrionment for your baby, by best
               on the Planet. We have your back in this journey
@@ -456,36 +455,34 @@ const Home = ({ bookingText, explore, start, enroll }) => {
         <section className="product-and-cost">
           <div className="product-and-cost-header">
             <h1>UpTodd™ Genius Premium Program</h1>
-            <h2>
+            <h5>
               Exclusive Parenting Program for Overall Baby Brain Development
-            </h2>
-            <h3>
+            </h5>
+            <h5>
               Exclusive Mega KIT + World's Only True Personalised APP + Brain
               Dev. Report & Support from World's Top Experts
-            </h3>
+            </h5>
           </div>
-          <div className="product-and-cost-container">
-            <ul className="product-and-cost-list">
-              <li>
-                <FaCheckCircle /> <span>Dedicated R&D Team Care</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>Research Backed Growth System</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>Personalised Organic Mega Kit</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>One-Stop Personalised APP</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>Holistic Tracking & Brain Reports</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>Recognitions & Certifications</span>
-              </li>
-            </ul>
-          </div>
+          <ul className="product-and-cost-container">
+            <li>
+              <FaCheckCircle /> <span>Dedicated R&D Team Care</span>
+            </li>
+            <li>
+              <FaCheckCircle /> <span>Research Backed Growth System</span>
+            </li>
+            <li>
+              <FaCheckCircle /> <span>Personalised Organic Mega Kit</span>
+            </li>
+            <li>
+              <FaCheckCircle /> <span>One-Stop Personalised APP</span>
+            </li>
+            <li>
+              <FaCheckCircle /> <span>Holistic Tracking & Brain Reports</span>
+            </li>
+            <li>
+              <FaCheckCircle /> <span>Recognitions & Certifications</span>
+            </li>
+          </ul>
           <div className="product-and-cost-container-card">
             {premiumProgram.map((card, index) => (
               <div key={index} className="product-and-cost-card">
@@ -497,9 +494,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
                 </div>
                 <h3>{card.discountPrice}</h3>
                 <del>{card.deletePrice} </del>
-                <div className="enroll-btn">
-                  <Button text={enroll} />
-                </div>
+                <Button text='Enroll Now' />
               </div>
             ))}
           </div>
@@ -914,36 +909,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             />
           </div>
         </section>
-        <section className="faqs">
-          <h1>FAQs</h1>
-          <div className="faq-list">
-            <div className="faq-category-list">
-              <div>
-                <button
-                  className="faqBtn"
-                  onClick={() => setActiveContent("faqProgram")}
-                >
-                  Program
-                </button>
-                <button
-                  className="faqBtn"
-                  onClick={() => setActiveContent("faqBabyKit")}
-                >
-                  BabyKit
-                </button>
-                <button
-                  className="faqBtn"
-                  onClick={() => setActiveContent("enrollment")}
-                >
-                  enrollment
-                </button>
-              </div>
-            </div>
-            <div>{content[activeContent]}</div>
-          </div>
-        </section>
       </div>
-      );
     </div>
   );
 };

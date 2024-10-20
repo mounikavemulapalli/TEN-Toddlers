@@ -14,7 +14,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  max-width: 100%;
   width: 100%;
   min-height: 30px;
 }
@@ -60,7 +59,7 @@ body {
   text-wrap: nowrap;
   font-size: .8rem;
   letter-spacing: -.56px;
-  height: 48px !important;
+  height: 48px;
 }
 
 #search {
@@ -237,8 +236,13 @@ body {
     padding: 0 .9rem;
   }
 
+  .logo {
+    text-align: center;
+  }
+
   .logo img {
     width: 55%;
+    margin: auto;
   }
 
   .hamburger {

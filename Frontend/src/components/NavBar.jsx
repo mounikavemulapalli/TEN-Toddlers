@@ -86,7 +86,7 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
           </div>
         </div>}
         <div className="logo">
-          <a href="/blog">
+          <a href={currentPage == 'blog' ? "/blog" : '/'}>
             <img src={currentPage != 'blog' ? logo : 'https://blog.uptodd.com/wp-content/uploads/2023/06/cropped-cropped-cropped-uptodd-logo1-150x48.png'} style={{ height: "100" }} />
           </a>
         </div>

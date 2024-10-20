@@ -3,37 +3,47 @@
 }
 .Home-page:not(.banner-text Button) {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: space-evenly;
-  padding: 2rem;
   background: linear-gradient(
     324deg,
     rgba(226, 65, 226, 1) 0%,
     rgba(17, 89, 228, 1) 82%
   );
   color: #fff;
+  padding: 3rem 8.1rem 4.3rem 7rem;
 }
+
+.banner-text {
+  width: 62%;
+}
+
 .Home-page h1 {
-  font-size: 4rem;
+  font-size: 4.1rem;
   line-height: 80px;
-  font-weight: 600;
-  letter-spacing: -1px;
+  letter-spacing: -1.3px;
 }
-.Home-page h2 {
-  margin: 10px 0;
-  font-size: 28px;
-  font-weight: 600;
+.Home-page h3 {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  letter-spacing: -.6px;
 }
-.Home-page p {
-  margin: 10px 0;
+.Home-page h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  letter-spacing: -.32px;
+  margin-top: .7rem;
 }
 .Home-page ul {
-  margin-top: 50px;
+  padding: 1.3rem 0;
   list-style-type: none;
 }
 .Home-page ul li {
-  margin: 15px 0 15px;
+  font-weight: 500;
+  line-height: 1.6rem;
+  letter-spacing: -.32px;
+  padding: .6rem 0;
 }
 .Home-page ul li span {
   margin-left: 10px;
@@ -66,8 +76,13 @@
 .image {
   padding-top: 50px;
 }
+
+.banner-image {
+  width: 38%;
+}
+
 .banner-image img {
-  width: 450px;
+  width: 100%;
 }
 /*---------- slider */
 
@@ -79,28 +94,33 @@
 /* --------Possibilities */
 .Possibilities {
   width: 100%;
-  height: 100%;
-  padding: 50px;
+  padding: 4rem 10% 5.2rem;
   background-color: #fffbfb;
 }
 .Possibilities-heading {
   width: 100%;
-  height: 20vh;
   text-align: center;
 }
 .Possibilities-heading h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #002863;
-  font-weight: 500;
+  line-height: 2.9rem;
+  letter-spacing: -1.44px;
 }
 .Possibilities-heading p {
-  font-size: 1.2rem;
-  margin-top: 20px;
+  font-size: 1.5rem;
+  margin-top: 1.1rem;
   color: #002863;
-  font-weight: 500;
+  line-height: 2.1rem;
+  letter-spacing: -.96px;
 }
+
+.Possibilities-image {
+  width: 38%;
+}
+
 .Possibilities-image img {
-  width: 400px;
+  width: 100%;
 }
 
 .Possibilities-container {
@@ -113,13 +133,22 @@
 }
 .Possibilities-card {
   display: flex;
-  height: 10vh;
-  margin: 80px 0;
+  margin-top: 1.6rem;
 }
+
+.Possibilities-card:first-of-type {
+  margin: 0;
+}
+
 .Possibilities-card img {
   width: 200px;
   object-fit: contain;
 }
+
+.Possibilities-list {
+  width: 58% !important;
+}
+
 .card-text h2 {
   font-weight: 500;
   margin-bottom: 10px;
@@ -154,43 +183,58 @@
 .solution-container ul li span {
   margin: 15px;
 }
+
+.solution-image {
+  width: 45%;
+}
+
 .solution-image img {
-  width: 500px;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 12px;
 }
 /* -------genius-section */
 .genius-header {
   width: 100%;
-  height: 20vh;
   text-align: center;
   line-height: 50px;
 }
 .genius-header h1 {
   font-size: 2.2rem;
   color: #002863;
-  letter-spacing: -1px;
-  font-weight: 500;
+  letter-spacing: -1.4px;
+  line-height: 2.8rem;
 }
-.genius-header h2 {
+.genius-header h5 {
   color: #002863;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 2.1rem;
+  letter-spacing: -.96px;
+  margin-top: 1.1rem;
 }
 .genius-section {
-  padding: 2rem;
+  padding: 2.7rem 10% 3.4rem;
 }
 .genius-container {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 3.6rem;
 }
+
+#genius-section-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .building {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
   overflow: hidden;
+  text-align: center;
 }
 .building iframe {
-  width: 480px;
   height: 320px;
   border-radius: 12px;
 }
@@ -198,26 +242,33 @@
   width: 80%;
   height: 80%;
 }
-.building iframe p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  unicode-bidi: isolate;
+.building p {
+  text-align: center;
 }
 .genius-text {
-  padding: 0 150px;
+  width: 45%;
+  list-style-type: none;
 }
 .genius-text li {
   margin: 40px 0;
 }
 .genius-text li span {
-  font-size: 2rem;
-  margin-right: 20px;
+  font-size: 2.2rem;
   color: #ff3f4e;
-  font-weight: 600;
+  font-weight: bold;
+  letter-spacing: -.72px;
+  margin-inline: 1.3rem;
 }
+.genius-text li span, .genius-text li span:nth-last-of-type(2) {
+  line-height: 1.6rem;
+}
+.genius-text li span:nth-of-type(2) {
+  color: #002863;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -.32px;
+}
+
 /* -------genius-babies */
 .carousel-container {
   background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
@@ -323,46 +374,52 @@
 }
 /* ------------developmental-pillars */
 .developmental-pillars {
-  padding: 50px;
+  padding: 2.9rem 10%;
   background: #fffbfb;
   width: 100%;
-  height: 100%;
   color: #002863;
 }
 .development-head {
   text-align: center;
-  width: 100%;
-  height: 20vh;
 }
 .development-head h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: -3px;
+  font-size: 2.7rem;
+  line-height: 3.4rem;
+  letter-spacing: -.8px;
+  margin-top: 1rem;
 }
-.development-head h2 {
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 20px;
+.development-head h1 > span {
+  font-weight: normal;
 }
-.development-head p {
-  margin-top: 30px;
+.development-head h5 {
+  margin-top: 1rem;
   font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.9rem;
+  letter-spacing: -.8px;
+}
+.development-head h5 > span {
+  font-weight: bold;
 }
 .development-head p span {
   font-weight: 600;
 }
 .development-container {
   display: flex;
-  width: 100%;
-  margin-top: 80px;
-  justify-content: space-around;
+  margin-top: 2.9rem;
+  justify-content: space-between;
 }
+
+.development-lest {
+  width: 52%;
+}
+
 .development-card {
   border: 1px solid #002863;
+  background: white !important;
   border-radius: 10px;
   padding-left: 20px;
   padding-top: 10px;
-  width: 600px;
   cursor: pointer;
   margin-bottom: 20px;
   transition: 0.5s;
@@ -376,16 +433,21 @@
   padding: 0px 10px;
   display: flex;
 }
-.development-card h2 {
-  font-weight: 400;
+.development-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  letter-spacing: -.4px;
 }
 .development-image {
-  margin-top: 100px;
+  margin-block: auto;
+  width: 42%;
 }
 .development-image img {
-  width: 450px;
+  width: 100%;
 }
 .four-pillars-list {
+  padding: .9rem 1.75rem;
   margin: 15px 0;
   display: flex;
 }
@@ -417,12 +479,8 @@
   width: 100%;
   background: #5a40c4;
 }
+
 /* -------------------------product-and-cost */
-.product-and-cost {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-}
 .product-and-cost-header {
   padding-bottom: 50px;
   width: 100%;
@@ -435,49 +493,47 @@
   margin-bottom: 20px;
   letter-spacing: -3px;
 }
-.product-and-cost-header h2 {
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-.product-and-cost-header h3 {
-  font-weight: 300;
-}
-.product-and-cost-list {
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 .product-and-cost-container {
-  display: flex;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: repeat(3, auto);
   color: #002863;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  margin: auto;
+  gap: .9rem 1.2rem;
+  margin-top: 1.7rem;
 }
 .product-and-cost-list li {
   margin-right: 50px;
   font-size: 20px;
 }
 .product-and-cost-container-card {
-  width: 100%;
+  margin: auto;
   margin-top: 50px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  width: 70%;
+  justify-content: space-between;
 }
 .product-and-cost-card {
+  width: 47.3%;
   padding: 20px 15px;
   border: 2px solid #5a40c4;
   border-radius: 15px;
   color: #002863;
-  height: 400px;
   text-align: center;
-  width: 460px;
 }
+
+.product-and-cost-card Button {
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+  width: 100%;
+}
+
 .product-and-cost-card h1 {
-  color: #ff3f4e;
-  font-size: 25px;
+  color: #ff3f4e !important;
+  font-size: 1.5rem !important;
   margin-bottom: 10px;
   letter-spacing: -2px;
   font-weight: 500;
@@ -530,8 +586,6 @@
   display: flex;
   margin-bottom: 50px;
   justify-content: space-evenly;
-  width: 100%;
-  height: 20vh;
 }
 .kit-intro {
   width: 463px;
@@ -1199,29 +1253,161 @@ li {
   unicode-bidi: isolate;
 }
 
+@media (max-width: 1250px) {
+  .Home-page {
+    padding: 3rem 6.2rem 4.3rem 5.6rem !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Possibilities {
+    padding: 4rem 6% 5.2reml
+  }
+}
+
+@media (max-width: 1100px) {
+  .Possibilities {
+    padding: 2.7rem 6% 3.4rem;
+  }
+
+  .genius-text {
+    width: 50%;
+  }
+
+  .genius-text li span {
+    font-size: 2rem;
+    line-height: 1.4rem;
+    letter-spacing: -.62px;
+  }
+
+  .building {
+    width: 390px;
+    height: 260px;
+  }
+
+  .developmental-pillars {
+    padding-inline: 6%;
+  }
+
+  .development-card {
+    padding: .7rem 1.4rem;
+  }
+
+  .development-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    letter-spacing: -.35px;
+  }
+
+  .development-image {
+    width: 46%;
+  }
+
+  .product-and-cost-container {
+    width: 90%;
+  }
+
+  .product-and-cost-container-card {
+    width: 80%;
+  }
+}
+
 @media (max-width: 970px) {
   .banner-text Button {
     width: 170px;
     height: 45px;
   }
+
+  .Home-page {
+    padding: 3rem 2.5rem 4.3rem 2.5rem !important;
+  }
+
+  .Home-page h1 {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.12px;
+  }
+
+  .Home-page h3 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: -.4px;
+  }
+
+  .Home-page h5 {
+    font-size: .9rem;
+    line-height: 1.2rem;
+    letter-spacing: -.2px;
+  }
+
+  .Home-page ul li {
+    font-size: .8rem;
+    padding: .2rem;
+  }
 }
 
 @media (max-width: 900px) {
+  .genius-text li span {
+    font-size: 1.8rem;
+    line-height: 1.3rem;
+    letter-spacing: -.57px;
+  }
+
   .building {
       width: 90%;
-      height: 70%;
-      margin: auto;
       display: flex;
+      justify-content: center;
+  }
+
+  .building iframe {
+    width: 345px;
+    height: 230px;
+  }
+
+  .product-and-cost-container {
+    width: 80%;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: auto auto;
+  }
+
+  .product-and-cost-container-card {
+    width: 95%;
   }
 }
 
 @media (max-width: 750px) {
+  .Possibilities {
+    padding: 2.7rem 10% 3.4rem;
+  }
+
+  .Possibilities-heading h1 {
+    font-size: 1.9rem;
+    line-height: 2.5rem;
+    letter-spacing: -1.3px;
+  }
+
+  .genius-text li span {
+    font-size: 2.2rem;
+  }
+
   .building {
     justify-content: center;
+    width: 100% !important;
   }
-  
+
   .building iframe {
     width: 100%;
+    height: 320px;
+  }
+
+  .developmental-pillars {
+    padding-inline: 10%;
+  }
+
+  .development-head h1 {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    letter-spacing: -1.45px;
   }
 
   .doctor-review {
@@ -1244,5 +1430,277 @@ li {
   .our-mentors h1:nth-child(2) {
     line-height: 2.5rem;
     letter-spacing: -1px;
+  }
+
+  .Possibilities-container {
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .Possibilities-image {
+    width: 100%;
+  }
+
+  .Possibilities-list {
+    width: 100% !important;
+  }
+
+  .genius-header h1 {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    letter-spacing: -1.3px;
+  }
+
+  .genius-header h5 {
+    font-size: 1.1rem;
+    letter-spacing: -.65px;
+  }
+
+  .genius-container {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .genius-text {
+    width: 100%;
+    margin-top: 1.8rem;
+  }
+
+  .development-container {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin-top: 1.9rem;
+  }
+
+  .development-lest {
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+
+  .development-image {
+    width: 100%;
+  }
+
+  .product-and-cost-container {
+    width: 90%;
+  }
+
+  .product-and-cost-container-card {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.4rem;
+  }
+
+  .product-and-cost-card:first-of-type {
+    margin-bottom: 1.2rem;
+  }
+
+  .product-and-cost-card {
+    width: 100%;
+    padding: 1.6rem 1.4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .Home-page {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .banner-text, .banner-image {
+    width: 100%;
+    padding: 0 8% 0 3.5%;
+    margin-bottom: 3.8rem;
+  }
+
+  .Home-page h1 {
+    font-size: 3.4rem;
+    line-height: 3.7rem;
+    letter-spacing: 1.2px;
+  }
+
+  .Home-page h3 {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    letter-spacing: -.32px;
+  }
+
+  .Home-page h5 {
+    line-height: 1.6rem;
+    letter-spacing: -.28px;
+  }
+
+  .Home-page ul li {
+    font-size: 1rem;
+    padding: .5rem 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .Home-page h1 {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    letter-spacing: .72px;
+  }
+
+  .Home-page h3 {
+    font-size: 1.2rem;
+  }
+
+  .Possibilities {
+    padding: 1.9rem 1.2rem 2.8rem;
+  }
+
+  .Possibilities-heading h1 {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    letter-spacing: -1px;
+  }
+
+  .genius-header h1 {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    letter-spacing: -1px;
+  }
+
+  .genius-header h5 {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    letter-spacing: -.6px;
+  }
+
+  .genius-text li span {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    letter-spacing: -.48px;
+  }
+
+  .genius-text li span:nth-of-type(2) {
+    font-size: .9rem;
+    line-height: 1.4rem;
+    letter-spacing: -.28px;
+  }
+
+  .building iframe {
+    height: 260px;
+  }
+
+  #genius-section-btn-container Button {
+    width: 100%;
+  }
+
+  .developmental-pillars {
+    padding: 1.7rem 1.2rem;
+  }
+
+  .development-head h1 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    letter-spacing: -.8px;
+  }
+
+  .development-head h5 {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    letter-spacing: -.56px;
+  }
+
+  .development-container {
+    margin-top: 1.5rem;
+  }
+
+  .development-card h3 {
+    line-height: 1.6rem;
+    letter-spacing: -.32px;
+  }
+
+  .product-and-cost-container {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+
+  .happy-parents-button Button {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .navLinks Button:not(.blogPageBtn) {
+    height: 35px !important;
+    font-size: .8rem !important;
+    letter-spacing: -.56px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .happy-parents-button {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .Home-page h1 {
+    font-size: 2.25rem;
+    line-height: 2.8rem;
+    letter-spacing: -.72px;
+  }
+
+  .Home-page h3 {
+    font-size: 1rem;
+  }
+
+  .Home-page h5 {
+    font-size: .8rem;
+  }
+
+  .Home-page ul li {
+    font-size: .8rem;
+    letter-spacing: -.28px;
+  }
+
+  .Possibilities {
+    padding: 1.5rem .9rem 2.4rem;
+  }
+
+  .genius-header h1, .Possibilities-heading h1, .development-head h1 {
+    font-size: 1.2rem;
+  }
+
+  .Possibilities-heading h1 {
+    line-height: 1.7rem;
+    letter-spacing: -.8px;
+  }
+
+  .genius-header h1 {
+    line-height: 1.7rem;
+    letter-spacing: -.8px;
+  }
+
+  .genius-header h5 {
+    font-size: .8rem;
+    line-height: 1.4rem;
+  }
+
+  .genius-text li span {
+    font-size: 1.5rem;
+  }
+
+  .genius-text li span:nth-of-type(2) {
+    font-size: .8rem;
+  }
+
+  .building iframe {
+    height: 230px;
+  }
+
+  .development-head h5 {
+    font-size: .8rem;
+  }
+
+  .development-card h3 {
+    font-size: 1rem;
   }
 }
