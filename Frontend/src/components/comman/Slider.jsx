@@ -95,7 +95,11 @@ function SliderComponent() {
           Program curated by
           <span> Medical experts, Researchers, & IITians</span>
         </h1>
+<<<<<<< HEAD
         <Slider {...settings}>
+=======
+        <Slider {...settings} className="adjust-slider">
+>>>>>>> 1795f39 (commit by anurag)
           {institutions.map((inst, index) => (
             <div
               key={index}
@@ -124,8 +128,15 @@ function SliderComponent() {
       <div className="super-objective-cards">
         {objective.map((data) => (
           <div key={data.id} className="super-objective-card">
+<<<<<<< HEAD
             <img src={data.image} alt="Super Objective Images" />
             <h5>{data.name}</h5>
+=======
+            <div className="super-organise">
+            <img src={data.image} alt="Super Objective Images" />
+            <h5 style={{fontSize: "1.2rem"}}>{data.name}</h5>
+            </div>
+>>>>>>> 1795f39 (commit by anurag)
           </div>
         ))}
       </div>
