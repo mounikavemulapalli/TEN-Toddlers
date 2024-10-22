@@ -1,34 +1,31 @@
 import React, { useState } from "react";
-import "./SuperQA.css";
 import { superQA } from "../../assets/data/superQA";
 
 function SuperQA() {
-  const [activeQuestion, setActiveQuestion] = useState(null);
+  const [activeQuestion, setActiveQuestion] = useState(0);
 
-  const toggleQuestion = (id) => {
-    setActiveQuestion((prev) => (prev === id ? null : id));
+  const toggleQuestion = id => {
+    setActiveQuestion(prev => (prev === id ? null : id));
   };
 
   return (
-    <div className="super-qa">
+    <section id='faqs'>
       <h1>FQAs</h1>
-      <div className="super-qa-list">
-        <button className="super-qa-list-btn">Program</button>
-        <div className="super-qa-cards">
-          {superQA.map((data) => (
-            <div
-              key={data.id}
-              className={`super-qa-card ${
-                activeQuestion === data.id ? "active" : ""
-              }`}
-            >
-              <h2 onClick={() => toggleQuestion(data.id)}>{data.ques}</h2>
-              {activeQuestion === data.id && <p>{data.ans}</p>}
-            </div>
-          ))}
+      <div id="faq-list">
+        <div id="faq-category-list">
+          <button className="faq-category-button active-faq-category">Program</button>
         </div>
+        {superQA.map(data => (
+          <div
+            key={data.id}
+            className={`faq-card programFaq ${activeQuestion === data.id ? "faq-active-card" : ""}`}
+            onClick={() => toggleQuestion(data.id)}>
+            <h3>{data.ques}</h3>
+            {activeQuestion === data.id && <p>{data.ans}</p>}
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

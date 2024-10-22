@@ -20,7 +20,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
   const awaredBabyRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
 
-  const [activeContent, setActiveContent] = useState("enrollment");
+  const [activeContent, setActiveContent] = useState("Program");
   const [isHovered, setIsHovered] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -34,9 +34,9 @@ const Home = ({ bookingText, explore, start, enroll }) => {
     setClickedCardId(id);
   };
   const handleCardClickForFaq = (id) => {
+    setFaqProgramId(id);
     setFaqBabyKitId(id);
     setFaqEnrollment(id);
-    setFaqProgramId(id);
   };
   const handlePrev = () => {
     if (carouselRef.current) {
@@ -141,45 +141,43 @@ const Home = ({ bookingText, explore, start, enroll }) => {
   const content = {
     faqProgram: (
       <>
-        {FaqProgram.map((faqEle) => (
+        {FaqProgram.map(faqEle => (
           <div
             key={faqEle.id}
             onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card ${faqProgramId === faqEle.id ? "active" : ""}`}
+            className={`faq-card programFaq ${faqProgramId === faqEle.id ? "faq-active-card" : ""}`}
           >
             <h3>{faqEle.qus}</h3>
             <p>{faqEle.ans}</p>
             <p>{faqEle.ans1}</p>
             <p>{faqEle.ans2}</p>
-            {console.log("program")}
           </div>
         ))}
       </>
     ),
     faqBabyKit: (
       <>
-        {FaqBabyKit.map((faqEle) => (
+        {FaqBabyKit.map(faqEle => (
           <div
             key={faqEle.id}
             onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card ${faqBabyKit === faqEle.id ? "active" : ""}`}
+            className={`faq-card programFaq ${faqBabyKit === faqEle.id ? "faq-active-card" : ""}`}
           >
             <h3>{faqEle.qus}</h3>
             <p>{faqEle.ans}</p>
             <p>{faqEle.ans1}</p>
             <p>{faqEle.ans2}</p>
-            {console.log("babykit")}
           </div>
         ))}
       </>
     ),
     enrollment: (
       <>
-        {Enrollment.map((faqEle) => (
+        {Enrollment.map(faqEle => (
           <div
             key={faqEle.id}
             onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card ${enrollment === faqEle.id ? "active" : ""}`}
+            className={`faq-card programFaq ${enrollment === faqEle.id ? "faq-active-card" : ""}`}
           >
             <h3>{faqEle.qus}</h3>
             <p>{faqEle.ans}</p>
@@ -195,6 +193,27 @@ const Home = ({ bookingText, explore, start, enroll }) => {
       </>
     ),
   };
+
+  const Faq = ({ content, categories }) => {
+
+    return (
+      <section id="faqs">
+        <h1>FAQs</h1>
+        <div id="faq-list">
+          <div id="faq-category-list">
+            {categories.map((category, index) => {
+              return (<button className={`faq-category-button ${activeContent == category ? 'active-faq-category' : ''}`} onClick={() => { setActiveContent(category) }}>{category}</button>)
+            })}
+          </div>
+
+          {activeContent == 'Program' && content.faqProgram}
+          {activeContent == 'Baby Kit' && content.faqBabyKit}
+          {activeContent == 'Enrollment' && content.enrollment}
+        </div>
+      </section>
+    )
+  }
+
   return (
     <div>
       <div className="home-section">
@@ -909,6 +928,9 @@ const Home = ({ bookingText, explore, start, enroll }) => {
             />
           </div>
         </section>
+
+        <Faq content={content} categories={['Program', 'Baby Kit', 'Enrollment']} />
+
       </div>
     </div>
   );

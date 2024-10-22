@@ -2713,15 +2713,13 @@ section {
 
 
 /* Your Frequently Asked Questions */
-
-
-.faqs {
+#faqs {
     width: 100%;
     padding: 53px 0 81px;
     background: #f5f5f5
 }
 
-.faqs h1 {
+#faqs h1 {
     color: var(--Primary-Font, #002863);
     text-align: center;
     font-family: "DM Sans";
@@ -2732,13 +2730,13 @@ section {
     letter-spacing: -1.44px
 }
 
-.faq-list {
+#faq-list {
     width: 70%;
     margin: auto;
     margin-top: 30px
 }
 
-.faq-category-list {
+#faq-category-list {
     margin-bottom: 45px
 }
 
@@ -2755,7 +2753,13 @@ section {
     letter-spacing: -.64px;
     padding: 13px 17px;
     border: none;
-    margin-left: 15px
+    margin-left: 15px;
+    cursor: pointer;
+    transition: all .4s ease 0s;
+}
+
+.faq-category-button:hover {
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
 }
 
 .faq-category-button:first-of-type {
@@ -2818,6 +2822,16 @@ section {
 
 .faq-active-card p {
     display: block
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -2905,11 +2919,11 @@ section {
 .plain-footer {
     width: 100%;
     padding: 53px 80px 31px;
-    background: #5a40c4
+    background: #5a40c4;
+    color: white
 }
 
 .plain-footer h1 {
-    color: var(--Primary-Font, white);
     font-family: "DM Sans";
     font-size: 30px;
     font-style: normal;
@@ -2920,7 +2934,6 @@ section {
 
 .plain-footer p,
 .plain-footer h5 {
-    color: var(--Primary-Font, white);
     font-family: "DM Sans";
     font-size: 17px;
     font-style: normal;
@@ -2955,7 +2968,6 @@ section {
 
 .plain-footer-bottom h3,
 .plain-footer-bottom h3 span {
-    color: var(--Primary-Font, white);
     font-family: "DM Sans";
     font-size: 18px;
     font-style: normal;
@@ -2965,7 +2977,7 @@ section {
 }
 
 .plain-footer-bottom h3 b {
-    color: var(--Primary-Font, red)
+    color: red;
 }
 
 @media (max-width: 750px) {
@@ -2984,5 +2996,15 @@ section {
 
     .plain-footer-bottom h3:first-of-type {
         margin-bottom: 20px
+    }
+
+    #faq-category-list {
+        margin-bottom: 1.1rem;
+        overflow-x: scroll;
+        display: flex;
+    }
+
+    #faq-category-list::-webkit-scrollbar {
+        background: transparent;
     }
 }

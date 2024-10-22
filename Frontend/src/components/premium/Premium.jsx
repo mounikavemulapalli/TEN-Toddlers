@@ -3,6 +3,46 @@ import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
 import Iframe from "react-iframe";
 import Step from "./Step";
+import Faq from '../Home/Home.jsx';
+
+export const Footer = () => (
+  <section className="plain-footer">
+    <h1>About Uptodd</h1>
+    <p>
+      At UpTodd, we've carefully curated our approach by leveraging insights
+      from over 10,000+ research papers and tapping into the expertise of
+      professionals from prestigious institutions like MIT, Stanford, IITs,
+      and AIIMS. Our program integrates techniques from globally recognized
+      methodologies, including early stimulation from Glenn Doman,
+      Montessori's emphasis on independence and exploration, Howard Gardner's
+      theory of multiple intelligences from Harvard University, Waldorf's
+      holistic approach, the Reggio Emilia Approach's focus on creativity,
+      indigenous parenting and mindful parenting. This comprehensive approach
+      empowers babies worldwide to thrive and reach their full potential with
+      evidence-based guidance.
+    </p>
+    <h5>
+      "Join us on this captivating journey, where every child is truly
+      special, and every family's dreams matter"
+      <span>Your's UpTodd Family</span>
+    </h5>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1361"
+      height="2"
+      viewBox="0 0 1361 2"
+      fill="none"
+    >
+      <path d="M0 1H1361" stroke="#492EB4" strokeWidth="0.5"></path>
+    </svg>
+    <div className="plain-footer-bottom">
+      <h3>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h3>
+      <h3>
+        Made with Love <b>❤</b>
+      </h3>
+    </div>
+  </section>
+);
 
 const Premium = () => (
   <>
@@ -1660,166 +1700,11 @@ const Premium = () => (
 
     {/* Your Frequently Asked Questions */}
 
-    <section className="faqs">
-      <h1>Your Frequently Asked Questions</h1>
-      <div className="faq-list">
-        <div className="faq-category-list">
-          <button className="faq-category-button active-faq-category">
-            Program
-          </button>
-          <button className="faq-category-button">Baby Kit</button>
-          <button className="faq-category-button">Enrollment</button>
-        </div>
-
-        <div className="faq-card programFaq faq-active-card">
-          <h3>Will there be any screen time for the child in the program?</h3>
-          <p>
-            UpTodd promotes zero screen time with its approach, providing
-            high-quality, copyrighted learning books and story builders to
-            reduce existing screen time for children to zero. This is a core
-            aspect of our parenting program for baby brain development.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>How much time will I require to invest in a day?</h3>
-          <p>
-            Our program for babies is specifically designed for busy parents,
-            requiring just 10 minutes daily and 20 minutes on weekends. It
-            perfectly aligns with busy schedules. Additionally, it's fully
-            customizable for working parents, ensuring time is never a barrier.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>What is the ideal age to join this program?</h3>
-          <p>
-            We recommend joining as early as possible. The earlier you join, the
-            better we can nurture your baby brain and ensure controlled synaptic
-            pruning. However, any baby who is less than 5 years old can join our
-            program.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>
-            What kind of activities and other features are provided in the App?
-          </h3>
-          <p>
-            UpTodd provides you with activities, sessions, music, boosters, etc.
-            We have 30+ powerful features as listed in product features to
-            strengthen babies' brain architecture in the right shape.
-            <br />
-            Each and every feature is completely customized and personalized for
-            your baby and developmental needs. We also consider your busy
-            schedule, and therefore you only have to invest 10-20 minutes daily
-            in exploring these features.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>
-            How are UpTodd flashcards, learning books, and story builders
-            different from others?
-          </h3>
-          <p>
-            UpTodd flashcards use reflection technology to curate them in a way
-            that seeks a baby's attention by stimulating the optic nerve, which
-            normal flashcards cannot do. Additionally, UpTodd's cards are linked
-            with an app tutorial where you are guided to correlate stories and
-            use steps to ensure that you get the most out of these flashcards.
-            Additionally, there are two types of flashcards available: sensory
-            and learning.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>What are the outcomes I can expect from the program?</h3>
-          <p>
-            You can expect that a team of experts from IIT, AIIMS, MIT, and
-            Stanford will become a part of your family, nurturing your baby
-            brain at every step. We believe it is our duty to uphold the trust
-            of our parents and take responsibility for your baby's growth.
-            Therefore, you can expect our 100% commitment to ensuring your baby
-            has the best future.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>Is there any certification which a parent gets?</h3>
-          <p>
-            Yes, in Premium programs—on the registered name, the parent gets
-            super parenting certification every 3 months.
-          </p>
-        </div>
-
-        <div className="faq-card programFaq">
-          <h3>Why is UpTodd the most preferred program?</h3>
-          <p>
-            UpTodd has a highly strong research-backed team, with quality
-            published research papers from top-rated professionals from IITs,
-            AIIMS, MIT, and other institutions. Additionally, the UpTodd program
-            is the most cost-effective, costing only INR 2k-3K/month while
-            covering all toy and parenting needs for your baby brain
-            development. Alongside, we specialize in customization due to our
-            superior technology.
-            <br />
-            <br />
-            We openly discuss and educate our parents on the science behind the
-            program. Our demo and counseling are provided free of charge because
-            we do not want to put a financial burden on parents by asking them
-            to pay for program introduction. We are strongly committed to making
-            an impact and providing long-term services with a strong support
-            structure.
-            <br />
-            <br />
-            Refer to UpTodd’s <a href="/research">research hub</a> and{" "}
-            <a href="/uptodd-luminary-pathway-explained">product description</a>{" "}
-            to know more about UpTodd. Ranked-1 Parenting Program by 100 Open
-            Startups.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Faq />
 
     {/* Footer */}
+    <Footer />
 
-    <section className="plain-footer">
-      <h1>About Uptodd</h1>
-      <p>
-        At UpTodd, we've carefully curated our approach by leveraging insights
-        from over 10,000+ research papers and tapping into the expertise of
-        professionals from prestigious institutions like MIT, Stanford, IITs,
-        and AIIMS. Our program integrates techniques from globally recognized
-        methodologies, including early stimulation from Glenn Doman,
-        Montessori's emphasis on independence and exploration, Howard Gardner's
-        theory of multiple intelligences from Harvard University, Waldorf's
-        holistic approach, the Reggio Emilia Approach's focus on creativity,
-        indigenous parenting and mindful parenting. This comprehensive approach
-        empowers babies worldwide to thrive and reach their full potential with
-        evidence-based guidance.
-      </p>
-      <h5>
-        "Join us on this captivating journey, where every child is truly
-        special, and every family's dreams matter"
-        <span>Your's UpTodd Family</span>
-      </h5>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1361"
-        height="2"
-        viewBox="0 0 1361 2"
-        fill="none"
-      >
-        <path d="M0 1H1361" stroke="#492EB4" strokeWidth="0.5"></path>
-      </svg>
-      <div className="plain-footer-bottom">
-        <h3>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h3>
-        <h3>
-          Made with Love <b>❤</b>
-        </h3>
-      </div>
-    </section>
   </>
 );
 

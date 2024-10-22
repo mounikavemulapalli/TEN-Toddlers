@@ -35,6 +35,7 @@ export default function App() {
 
 function MainRoutes({ searchedKeyword }) {
   const location = useLocation();
+  const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
 
   return (
     <>
@@ -55,7 +56,7 @@ function MainRoutes({ searchedKeyword }) {
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />
       </Routes>
-      {location.pathname != '/blog' && <Footer />}
+      {!(hideFooterRoutes.includes(location.pathname)) && <Footer />}
     </>
   );
 }

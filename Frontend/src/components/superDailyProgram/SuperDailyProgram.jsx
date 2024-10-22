@@ -15,6 +15,7 @@ import SuperScience from "../comman/SuperScience.jsx";
 import SuperBanner from "./SuperBanner.jsx";
 import SuperFramework from "./SuperFramework.jsx";
 import SuperQA from "./SuperQA.jsx";
+import Footer from '../premium/Premium.jsx';
 
 function SuperDailyProgram() {
   const [date, setDate] = useState("");
@@ -169,34 +170,7 @@ function SuperDailyProgram() {
       <SuperQA />
 
       {/* About Section */}
-      <div className="super-about">
-        <h1>About Uptodd</h1>
-        <p>
-          At UpTodd, we've carefully curated our approach by leveraging insights
-          from over 10,000+ research papers and tapping into the expertise of
-          professionals from prestigious institutions like MIT, Stanford, IITs,
-          and AIIMS. Our program integrates techniques from globally recognized
-          methodologies, including early stimulation from Glenn Doman,
-          Montessori's emphasis on independence and exploration, Howard
-          Gardner's theory of multiple intelligences from Harvard University,
-          Waldorf's holistic approach, the Reggio Emilia Approach's focus on
-          creativity, indigenous parenting and mindful parenting. This
-          comprehensive approach empowers babies worldwide to thrive and reach
-          their full potential with evidence-based guidance.
-        </p>
-        <h4>
-          "Join us on this captivating journey, where every child is truly
-          special, and every family's dreams matter"
-        </h4>
-        <h5>Your's UpTodd Family</h5>
-        <hr />
-        <div className="super-about-footer">
-          <h4>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h4>
-          <h4>
-            Made with Love <span>❤</span>
-          </h4>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
