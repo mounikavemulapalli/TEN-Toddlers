@@ -15,7 +15,7 @@ import SuperScience from "../comman/SuperScience.jsx";
 import SuperBanner from "./SuperBanner.jsx";
 import SuperFramework from "./SuperFramework.jsx";
 import SuperQA from "./SuperQA.jsx";
-import Footer from '../premium/Premium.jsx';
+import { Footer } from '../premium/Premium.jsx';
 
 function SuperDailyProgram() {
   const [date, setDate] = useState("");

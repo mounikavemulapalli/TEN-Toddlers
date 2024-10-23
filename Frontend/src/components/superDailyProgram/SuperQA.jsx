@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { superQA } from "../../assets/data/superQA";
+import { superQA } from "../../assets/data/superQA.js";
 
-function SuperQA() {
+export default function SuperQA() {
   const [activeQuestion, setActiveQuestion] = useState(0);
 
   const toggleQuestion = id => {
@@ -28,5 +28,3 @@ function SuperQA() {
     </section>
   );
 }
-
-export default SuperQA;

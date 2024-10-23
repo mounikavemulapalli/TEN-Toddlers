@@ -1,9 +1,8 @@
 import React from "react";
 import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
-import Iframe from "react-iframe";
 import Step from "./Step";
-import Faq from '../Home/Home.jsx';
+import { Faq } from '../Faq.jsx';
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -1699,7 +1698,6 @@ const Premium = () => (
     </section>
 
     {/* Your Frequently Asked Questions */}
-
     <Faq />
 
     {/* Footer */}

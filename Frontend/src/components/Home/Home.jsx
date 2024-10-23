@@ -3,7 +3,6 @@ import { FaCheckCircle } from "react-icons/fa";
 import Button from "../../components/Home/HomeButton.jsx";
 import Slider from "../comman/Slider.jsx";
 import Modal from "../Modal.jsx";
-import { FaqProgram, FaqBabyKit, Enrollment } from "../../assets/Lists/faq.js";
 import { premiumProgram } from "../../assets/Lists/premiumProgram.js";
 import { list } from "../../assets/Lists/list.js";
 import { cards } from "../../assets/Lists/card.js";
@@ -12,15 +11,14 @@ import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import { boardMembers } from "../../assets/Lists/boardMembers.js";
 import { happyParent } from "../../assets/Lists/happyParent.js";
 import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
+import { Faq } from '../Faq.jsx';
 
-const Home = ({ bookingText, explore, start, enroll }) => {
+export default function Home() {
   const carouselRef = useRef(null);
   const happyParentRef = useRef(null);
   const boardMembersRef = useRef(null);
   const awaredBabyRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-
-  const [activeContent, setActiveContent] = useState("Program");
   const [isHovered, setIsHovered] = useState(false);
   const openModal = () => {
     setShowModal(true);
@@ -33,11 +31,7 @@ const Home = ({ bookingText, explore, start, enroll }) => {
   const handleCardClick = (id) => {
     setClickedCardId(id);
   };
-  const handleCardClickForFaq = (id) => {
-    setFaqProgramId(id);
-    setFaqBabyKitId(id);
-    setFaqEnrollment(id);
-  };
+
   const handlePrev = () => {
     if (carouselRef.current) {
       const cardWidth =
@@ -133,86 +127,6 @@ const Home = ({ bookingText, explore, start, enroll }) => {
   };
 
   const [clickedCardId, setClickedCardId] = useState(pillarsList[0].id);
-
-  const [faqProgramId, setFaqProgramId] = useState(FaqProgram[0].id);
-  const [faqBabyKit, setFaqBabyKitId] = useState(FaqBabyKit[0].id);
-  const [enrollment, setFaqEnrollment] = useState(Enrollment[0].id);
-
-  const content = {
-    faqProgram: (
-      <>
-        {FaqProgram.map(faqEle => (
-          <div
-            key={faqEle.id}
-            onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card programFaq ${faqProgramId === faqEle.id ? "faq-active-card" : ""}`}
-          >
-            <h3>{faqEle.qus}</h3>
-            <p>{faqEle.ans}</p>
-            <p>{faqEle.ans1}</p>
-            <p>{faqEle.ans2}</p>
-          </div>
-        ))}
-      </>
-    ),
-    faqBabyKit: (
-      <>
-        {FaqBabyKit.map(faqEle => (
-          <div
-            key={faqEle.id}
-            onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card programFaq ${faqBabyKit === faqEle.id ? "faq-active-card" : ""}`}
-          >
-            <h3>{faqEle.qus}</h3>
-            <p>{faqEle.ans}</p>
-            <p>{faqEle.ans1}</p>
-            <p>{faqEle.ans2}</p>
-          </div>
-        ))}
-      </>
-    ),
-    enrollment: (
-      <>
-        {Enrollment.map(faqEle => (
-          <div
-            key={faqEle.id}
-            onClick={() => handleCardClickForFaq(faqEle.id)}
-            className={`faq-card programFaq ${enrollment === faqEle.id ? "faq-active-card" : ""}`}
-          >
-            <h3>{faqEle.qus}</h3>
-            <p>{faqEle.ans}</p>
-            <p>{faqEle.ans1}</p>
-            <p>{faqEle.ans2}</p>
-            <p>{faqEle.ans3}</p>
-            <p>{faqEle.ans4}</p>
-            <p>{faqEle.ans5}</p>
-            <p>{faqEle.ans6}</p>
-            <p>{faqEle.ans7}</p>
-          </div>
-        ))}
-      </>
-    ),
-  };
-
-  const Faq = ({ content, categories }) => {
-
-    return (
-      <section id="faqs">
-        <h1>FAQs</h1>
-        <div id="faq-list">
-          <div id="faq-category-list">
-            {categories.map((category, index) => {
-              return (<button className={`faq-category-button ${activeContent == category ? 'active-faq-category' : ''}`} onClick={() => { setActiveContent(category) }}>{category}</button>)
-            })}
-          </div>
-
-          {activeContent == 'Program' && content.faqProgram}
-          {activeContent == 'Baby Kit' && content.faqBabyKit}
-          {activeContent == 'Enrollment' && content.enrollment}
-        </div>
-      </section>
-    )
-  }
 
   return (
     <div>
@@ -929,11 +843,9 @@ const Home = ({ bookingText, explore, start, enroll }) => {
           </div>
         </section>
 
-        <Faq content={content} categories={['Program', 'Baby Kit', 'Enrollment']} />
+        <Faq />
 
       </div>
     </div>
   );
 };
-
-export default Home;
