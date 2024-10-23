@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .slider-container h1 {
   color: var(--Primary-Font, #002863);
   text-align: center;
@@ -20,12 +21,28 @@
 .border-bottom-custom {
   border-bottom: 2px solid grey; /* You can change the color and width as needed */
   padding-bottom: 0.5rem; /* Optional: add some padding to space it out */
+=======
+.slider-container {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.slider-container h1 {
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 400;
+  color: darkblue;
+  margin: 2.5rem 0;
+  text-align: center;
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
 }
 
 .slider-container h1 span {
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .adjust-slider {
   max-width: 65%;
   margin: 3rem auto;
@@ -35,27 +52,46 @@
   display: block;
   margin: 0 auto;
   width: 120px;
+=======
+.slide-item img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
   height: 120px;
   background-color: #fff;
   box-shadow: 0 3px 17px rgb(0 0 0 / 25%);
   border-radius: 50%;
+<<<<<<< HEAD
   padding: 5px;
   margin-top: 3rem;
 }
 
 .slider-image.active {
   transform: scale(1.35);
+=======
+  margin-top: 1.5rem;
+  padding: 5px;
+}
+
+.slider-image.active {
+  transform: scale(1.25);
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
 }
 
 .image-name {
   font-size: 1.5rem;
   font-weight: 400;
   padding: 1rem 0;
+<<<<<<< HEAD
   margin-top: 1.5rem;
+=======
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
   text-align: center;
 }
 
 .slider-container hr {
+<<<<<<< HEAD
   margin-top: 3rem;
   max-width: 80%;
   border: 1px solid lightgray;
@@ -65,6 +101,13 @@
 
 .super-objective-cards {
   width: 80%;
+=======
+  margin: 1rem 0;
+}
+
+.super-objective-cards {
+  width: 90%;
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
   height: auto;
   margin: 2rem auto;
   padding-bottom: 2rem;
@@ -82,6 +125,7 @@
 }
 
 .super-objective-card img {
+<<<<<<< HEAD
   width: 3.7rem;
 }
 
@@ -90,6 +134,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+=======
+  width: 25%;
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
 }
 
 .super-objective-card h5 {

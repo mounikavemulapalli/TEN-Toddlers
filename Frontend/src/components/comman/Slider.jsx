@@ -95,7 +95,11 @@ function SliderComponent() {
           Program curated by
           <span> Medical experts, Researchers, & IITians</span>
         </h1>
+<<<<<<< HEAD
         <Slider {...settings} className="adjust-slider">
+=======
+        <Slider {...settings}>
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
           {institutions.map((inst, index) => (
             <div
               key={index}
@@ -124,10 +128,15 @@ function SliderComponent() {
       <div className="super-objective-cards">
         {objective.map((data) => (
           <div key={data.id} className="super-objective-card">
+<<<<<<< HEAD
             <div className="super-organise">
             <img src={data.image} alt="Super Objective Images" />
             <h5 style={{fontSize: "1.2rem"}}>{data.name}</h5>
             </div>
+=======
+            <img src={data.image} alt="Super Objective Images" />
+            <h5>{data.name}</h5>
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
           </div>
         ))}
       </div>

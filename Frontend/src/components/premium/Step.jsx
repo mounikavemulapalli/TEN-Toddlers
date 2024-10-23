@@ -25,14 +25,19 @@ export default function Step() {
     ];
 
     return (
+<<<<<<< HEAD
         <div className='how-it-works'>
             <h1>How our Program Works !!</h1>
             <div style={{display: "flex"}}>
+=======
+        <div>
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
             <div className="step-container">
                 <div className="step-list">
                     {steps.map(step => (
                         <div
                             key={step.id}
+<<<<<<< HEAD
                             className={`step-item ${selectedStep === step.id ? 'active-step-item' : 'border-gray-300'} ${selectedStep === step.id ? 'flex' : 'hidden'}`}
                             onClick={() => handleStepChange(step.id)}
                         >
@@ -41,6 +46,13 @@ export default function Step() {
                     STEP
                 </h4>
 
+=======
+                            className={`step-item ${selectedStep === step.id ? 'border-green-500' : 'border-gray-300'} ${selectedStep === step.id ? 'flex' : 'hidden'}`}
+                            onClick={() => handleStepChange(step.id)}
+                        >
+                            <div className='step-header'>
+                                <h4 className='step-title'>STEP</h4>
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
                                 <h3 className='step-number'>{step.title}</h3>
                             </div>
                             <svg className='step-divider' xmlns="http://www.w3.org/2000/svg" width="1" height="60" viewBox="0 0 1 60" fill="none">
@@ -54,7 +66,11 @@ export default function Step() {
                         </div>
                     ))}
                 </div>
+<<<<<<< HEAD
                 <div className="step-image-container col">
+=======
+                <div className="step-image-container">
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
                     <div className='step-image-wrapper'>
                         <div className='step-image-inner'>
                             {steps.map((step) => (
@@ -70,7 +86,11 @@ export default function Step() {
                             {steps.map((step) => (
                                 <span
                                     key={step.id}
+<<<<<<< HEAD
                                     className={`step-indicator ${selectedStep === step.id ? 'bg-blue-500' : 'bg-white-700'}`}
+=======
+                                    className={`step-indicator ${selectedStep === step.id ? 'bg-green-500' : 'bg-gray-700'}`}
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
                                     onClick={() => handleStepChange(step.id)}
                                 ></span>
                             ))}
@@ -78,6 +98,7 @@ export default function Step() {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
 <div className='button-center'>
             {/* Correct Button Component */}
@@ -86,13 +107,25 @@ export default function Step() {
                 text="Access this Program"
                 onClick={handleOpenPopup} // Ensure you're handling the click event
             > Access Baby's Program </button>
+=======
+
+            {/* Correct Button Component */}
+            <Button
+                text="Access this Program"
+                className="access-button"
+                onClick={handleOpenPopup} // Ensure you're handling the click event
+            />
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
 
             {/* Popup Logic */}
             {isPopupOpen && (
                 <Popup closePopup={handleOpenPopup} />
             )}
+<<<<<<< HEAD
             
 </div>
+=======
+>>>>>>> 743f27834eea04e51330dbcb3c7bc568feb4979e
         </div>
     );
 }
