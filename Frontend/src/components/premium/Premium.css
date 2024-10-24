@@ -2752,16 +2752,13 @@ section {
 
 
 /* Your Frequently Asked Questions */
-/* Your Frequently Asked Questions */
-
-
-.faqs {
+#faqs {
     width: 100%;
     padding: 53px 0 81px;
     background: #f5f5f5
 }
 
-.faqs h1 {
+#faqs h1 {
     color: var(--Primary-Font, #002863);
     text-align: center;
     font-family: "DM Sans";
@@ -2772,13 +2769,13 @@ section {
     letter-spacing: -1.44px
 }
 
-.faq-list {
+#faq-list {
     width: 70%;
     margin: auto;
     margin-top: 30px
 }
 
-.faq-category-list {
+#faq-category-list {
     margin-bottom: 45px
 }
 
@@ -2795,7 +2792,23 @@ section {
     letter-spacing: -.64px;
     padding: 13px 17px;
     border: none;
-    margin-left: 15px
+    margin-left: 15px;
+    cursor: pointer;
+    transition: .4s ease
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.faq-category-button:hover {
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57)
 }
 
 .faq-category-button:first-of-type {
@@ -2861,29 +2874,29 @@ section {
 }
 
 @media (max-width: 1000px) {
-    .faq-list {
+    #faq-list {
         width: 85%
     }
 }
 
 @media (max-width: 750px) {
-    .faqs {
+    #faqs {
         padding: 40px 0 50px
     }
 
-    .faq-list {
+    #faq-list {
         width: 100%;
         padding: 0 21px;
         margin-top: 39px
     }
 
-    .faq-category-list {
+    #faq-category-list {
         margin-bottom: 18px;
         overflow-x: scroll;
         display: flex
     }
 
-    .faq-category-list::-webkit-scrollbar {
+    #faq-category-list::-webkit-scrollbar {
         display: none
     }
 
@@ -2891,7 +2904,7 @@ section {
         min-width: 120px
     }
 
-    .faqs h1 {
+    #faqs h1 {
         font-size: 25px;
         line-height: 40px;
         letter-spacing: -1px
@@ -2916,7 +2929,7 @@ section {
 }
 
 @media (max-width: 450px) {
-    .faqs h1 {
+    #faqs h1 {
         font-size: 20px;
         line-height: 30px;
         letter-spacing: -.8px
