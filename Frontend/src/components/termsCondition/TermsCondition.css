@@ -34,6 +34,7 @@
 .terms-content p {
   padding-left: 1.5rem;
   opacity: 70%;
+  font-size: 18px;
   word-spacing: 2px;
 }
 
@@ -56,15 +57,9 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .terms-content h2 {
-    font-size: 1.25rem;
-  }
-}
-
 @media (max-width: 480px) {
   .terms-container {
-    padding: 1rem 0.5rem;
+    padding: 1rem;
   }
   .terms-container-para {
     text-align: center;
