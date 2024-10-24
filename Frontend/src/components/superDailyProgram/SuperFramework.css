@@ -16,6 +16,7 @@
 .super-framework-info h1 {
   font-size: 2.75rem;
   color: darkblue;
+  line-height: 2.5rem;
 }
 
 .super-framework-info h3 {
@@ -179,24 +180,22 @@
 }
 
 /*                                   Media Queries for responsiveness ( 480px )*/
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .super-framework {
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
   }
 
   .super-framework-info h4 {
-    font-size: 1rem;
+    font-size: 18px;
   }
 
   .super-framework-info h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.75rem;
   }
 
   .super-framework-info h3 {
-    font-size: 1em;
-    font-weight: 500;
-    opacity: 70%;
+    font-size: 18px;
+    opacity: 80%;
     padding-top: 1rem;
   }
 
@@ -208,7 +207,7 @@
     width: 100%;
     flex-wrap: nowrap;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 18px;
     gap: 0.5rem;
   }
 
