@@ -35,11 +35,12 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 4rem 5rem;
+  padding: 4rem 1rem 4rem 5rem;
 }
 
 .super-main-content h1 {
   font-size: 4rem;
+  line-height: 3.5rem;
   color: red;
 }
 
@@ -119,6 +120,10 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media (max-width: 998px) {
+    flex-direction: column;
+  }
 }
 
 .super-countdown-date h2 {
@@ -305,6 +310,16 @@
   }
 }
 
+/*                            Media Queries for responsiveness ( 898px )*/
+@media (max-width: 898px) {
+  .super-offers-cards {
+    justify-content: space-evenly;
+  }
+  .super-offers-card {
+    width: 45%;
+  }
+}
+
 /*                            Media Queries for responsiveness ( 768px )*/
 @media (max-width: 768px) {
   .super-main-image img {
@@ -325,10 +340,10 @@
     font-size: 1.2rem;
   }
 
-  .super-countdown {
-    flex-direction: column;
+  .super-offers h1 {
+    padding: 0 1rem;
+    line-height: 2.25rem;
   }
-
   .super-offers-card {
     width: 100%;
   }
@@ -358,6 +373,9 @@
     width: 100%;
     padding: 0 2rem;
   }
+  .super-main-content h1 {
+    line-height: 2rem;
+  }
   .super-main-content p {
     font-size: 1rem;
     font-weight: 600;
@@ -382,6 +400,7 @@
 
   .super-countdown-date h2 {
     font-size: 1.25rem;
+    padding: 0 8px;
     text-align: center;
   }
 
