@@ -113,6 +113,7 @@ function Career() {
           ))}
         </div>
 
+        {/* Mentor Section */}
         <div className="career-mentor">
           <h1>Meet our Mentors & Curators | 100+ Curators R&D Team</h1>
           <div className="career-mentor-cards">
@@ -127,6 +128,7 @@ function Career() {
         </div>
       </div>
 
+      {/* ApplicationForm Section */}
       <ApplicationForm />
 
       {/* Career Footer Section */}

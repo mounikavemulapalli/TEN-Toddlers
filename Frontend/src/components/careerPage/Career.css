@@ -344,6 +344,11 @@
     font-size: 1rem;
   }
 
+  .career-mentor h1 {
+    font-size: 2.25rem;
+    padding: 0 1rem;
+    line-height: 2.5rem;
+  }
   .career-mentor-card {
     width: 20%;
   }
@@ -453,7 +458,7 @@
   }
 
   .career-mentor h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .career-mentor-card {
     width: 45%;
