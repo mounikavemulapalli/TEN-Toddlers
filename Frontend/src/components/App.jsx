@@ -18,6 +18,7 @@ import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 import Contact from "./contact_us/contactPage";
 import Blog from './Blog/Blog';
+import { Article } from './Blog/Blog.jsx';
 
 export default function App() {
 
@@ -25,15 +26,18 @@ export default function App() {
   const [inputKeyword, setInputKeyword] = useState('');
   const [searchedKeyword, setSearchedKeyword] = useState('');
 
+  // State to open article in blog page
+  const [selectedTitle, setSelectedTitle] = useState('Article not found');
+
   return (
     <Router>
       <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} />
-      <MainRoutes searchedKeyword={searchedKeyword} />
+      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} />
     </Router>
   );
 }
 
-function MainRoutes({ searchedKeyword }) {
+function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
   const location = useLocation();
   const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
 
@@ -51,7 +55,8 @@ function MainRoutes({ searchedKeyword }) {
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-conditions' element={<TermsCondition />} />
         <Route path='/super_daily_app_program' element={<SuperDailyProgram />} />
-        <Route path="/blog" element={<Blog searchedKeyword={searchedKeyword} />} />
+        <Route path="/blog" element={<Blog searchedKeyword={searchedKeyword} setSelectedTitle={setSelectedTitle} />} />
+        <Route path={'/blog/:title'} element={<Article />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />

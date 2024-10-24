@@ -67,7 +67,7 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
       ]
       : [
         { to: "/home", label: "Home" },
-        { to: "/premium", label: "Premium" },
+        { to: "/premium", label: "Premium Program" },
         { to: "/success story", label: "Success Story" },
         { to: "/about", label: "About" },
         { to: "/blog", label: "Blog" },

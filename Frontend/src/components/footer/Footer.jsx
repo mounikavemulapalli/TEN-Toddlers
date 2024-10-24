@@ -69,7 +69,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://blog.uptodd.com/" target="_blank">
+            <a href="/blog" target="_blank">
               Blog
             </a>
           </li>
@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="footer-card">
           <h3>Program</h3>
           <li>
-            <a href="/personalised_premium_program" target="_blank">
+            <a href="/premium" target="_blank">
               Personalised Premium Program
             </a>
           </li>
