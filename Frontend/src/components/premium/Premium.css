@@ -54,8 +54,7 @@ section {
     width: 45%;
     display: flex; /* Enables flex properties for inner elements */
     flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers child elements horizontally */
-    text-align: center;
+    justify-content: start;
 }
 
 .image-banner-part {
@@ -86,10 +85,15 @@ section {
     letter-spacing: -.32px;
     padding: 9px 0;
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
-.text-banner-part li i {
+.text-banner-part ul {
+    list-style: none;
+    padding: 21px 0;
+}
+
+.icon {
     font-size: 24px;
     margin-right: 11px
 }
@@ -156,7 +160,7 @@ section {
         width: 170px;
         height: 45px;
         font-size: 17px;
-        line-height: 20px
+        line-height: 20px;
     }
 }
 
@@ -201,13 +205,6 @@ section {
 
     .text-banner-part li i {
         font-size: 24px
-    }
-
-    .text-banner-part button {
-        width: 198px;
-        height: 54px;
-        font-size: 20px;
-        line-height: 26px
     }
 }
 
@@ -347,6 +344,7 @@ section {
 
     .curation-objective {
         padding: 43px 10px 0;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center
     }
@@ -934,6 +932,13 @@ section {
     letter-spacing: -1.6px
 }
 
+.why-uptodd-usps{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
 .why-uptodd h5 {
     color: var(--Primary-Font, #002863);
     text-align: center;
@@ -943,15 +948,8 @@ section {
     font-weight: 400;
     line-height: 28px;
     letter-spacing: -.8px;
-    margin-top: 27px
-}
-
-.why-uptodd-usps {
-    margin-top: 39px;
-    display: grid;
-    grid-template-columns: 48% 48%;
-    grid-template-rows: auto auto;
-    grid-gap: 27px 45px
+    margin-top: 27px;
+    margin-bottom: 27px;
 }
 
 .usp-card {
@@ -959,6 +957,9 @@ section {
     background: #fff;
     box-shadow: 0 4px 6px 0 rgb(0 0 0 / .06);
     display: flex;
+    width: 45%;
+    margin: .5rem;
+    align-items: center;
     padding: 25px
 }
 
@@ -987,10 +988,6 @@ section {
     line-height: 22px;
     letter-spacing: -.56px;
     margin-top: 6px
-}
-
-.why-uptodd-slider-icons-mobile {
-    display: none
 }
 
 @media (max-width: 1150px) {
@@ -1028,54 +1025,67 @@ section {
 
 @media (max-width: 750px) {
     .why-uptodd {
-        padding: 30px 15px 35px
+        padding: 30px 15px 3,5px
+    }
+
+    .usp-card{
+        width: 100%;
+    }
+
+    .start-now-banner h3{
+        width: 100%;
+        margin: 0;
+    }
+
+    .start-now-banner .h3-heading{
+        margin: 0;
+        width: 100%;
+    }
+    .why-uptodd-usps {
+        display: flex;
+        flex-direction: column;
     }
 
     .why-uptodd h1 {
-        font-size: 30px
+        font-size: 28px;
+        line-height: 32px;
     }
 
     .why-uptodd h5 {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 24px;
-        margin-top: 27px
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
-    .why-uptodd-usps {
-        display: flex;
-        overflow-x: hidden
+
+    .slider-round-circle {
+        height: 12px;
+        width: 12px;
+        background-color: #ddd;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
     }
 
-    .usp-card {
-        padding: 25px;
-        min-height: 155px;
-        min-width: 100%;
-        display: none;
-        animation-name: fade;
-        animation-duration: 0.6s;
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 0.6s
-    }
-
-    .why-uptodd-slider-icons-mobile {
-        display: block;
-        text-align: center;
-        margin-top: 27px
+    .active-slider-round-circle {
+        background-color: #555; /* Active dot color */
     }
 }
 
 @media (max-width: 550px) {
     .why-uptodd h1 {
         font-size: 22px;
-        line-height: 30px;
+        line-height: 28px;
         letter-spacing: -.4px
     }
 
     .why-uptodd h5 {
         font-size: 14px;
         line-height: 22px;
-        letter-spacing: -.56px;
-        margin-top: 11px
+        letter-spacing: -.4px;
+        margin-top: 10px
     }
 
     .usp-card {
@@ -1085,20 +1095,17 @@ section {
     .usp-card img {
         width: 67px;
         height: 67px;
-        margin-right: 19px
+        margin-right: 15px
     }
 
     .usp-card h3 {
         font-size: 18px;
-        line-height: 28px;
-        letter-spacing: -.72px
+        line-height: 24px;
     }
 
     .usp-card p {
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: -.56px;
-        margin-top: 3px
+        font-size: 13px;
+        line-height: 18px;
     }
 }
 
@@ -1110,10 +1117,11 @@ section {
     background: #5a40c4;
     padding: 48px 14%;
     display: flex;
-    justify-content: space-between
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.start-now-banner h3 {
+.start-now-banner .h3-heading {
     color: #fff;
     font-family: "DM Sans";
     font-size: 20px;
@@ -1121,12 +1129,13 @@ section {
     font-weight: 500;
     line-height: 32px;
     letter-spacing: -.8px;
-    width: 70%
+    margin-right: 2.5rem;
 }
 
 .start-now-banner button {
     padding: 0px 20px;
     height: 54px;
+    width: 10rem;
     border-radius: 8px;
     background: #ff5766;
     color: #fff;
@@ -1154,9 +1163,15 @@ section {
         width: 100%
     }
 
+    .start-now-banner .h3-heading{
+        margin: 0;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
     .start-now-banner button {
         margin-top: 34px;
-        width: 100%
     }
 }
 
@@ -1488,6 +1503,10 @@ section {
 @media (max-width: 750px) {
     .happy-parents h1 {
         padding: 0 30px
+    }
+
+    .happy-parents-button{
+        margin: 0;
     }
 
     .happy-parents h1,
@@ -1875,6 +1894,12 @@ section {
         letter-spacing: -1.4px
     }
 
+    .insti-research-mobile div h4,
+    .theory-research-mobile div h4 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
     .research-backed h1 span {
         padding: 0
     }
@@ -1924,7 +1949,7 @@ section {
         color: #fff;
         text-align: center;
         font-family: "DM Sans";
-        font-size: 18px;
+        font-size: 1rem;
         font-style: normal;
         font-weight: 700;
         line-height: 22px;
@@ -2004,11 +2029,6 @@ section {
     .theory-research-mobile-head {
         width: 221px
     }
-
-    .insti-research-mobile div h4,
-    .theory-research-mobile div h4 {
-        font-size: 14px
-    }
 }
 
 /* Bending line */
@@ -2025,7 +2045,7 @@ section {
 
 .product-and-cost {
     width: 100%;
-    padding: 55px 0 67px
+    padding: 3rem 0;
 }
 
 .product-and-cost h1 {
@@ -2120,7 +2140,6 @@ section {
 }
 
 .product-cost-card p {
-    color: var(--Primary-Font, #002863);
     text-align: center;
     font-family: "DM Sans";
     font-size: 16px;
@@ -2128,7 +2147,7 @@ section {
     font-weight: 400;
     line-height: 24px;
     letter-spacing: -.32px;
-    margin-top: 5px
+    margin: 0;
 }
 
 .product-cost-card h6 {
@@ -2148,19 +2167,18 @@ section {
 }
 
 .product-cost-card h2 {
-    color: var(--Primary-Font, #002863);
+    color: #fff;
     text-align: center;
     font-family: "DM Sans";
-    font-size: 30px;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
     line-height: 34px;
     letter-spacing: -.6px;
-    margin-top: 19px
 }
 
 .product-cost-card h2 s {
-    color: var(--Primary-Font, #002863);
+    color: #fff;
     text-align: center;
     font-family: "DM Sans";
     font-size: 16px;
@@ -2170,7 +2188,7 @@ section {
     letter-spacing: -.32px
 }
 
-.product-cost-card button {
+.product-cost-card .btn {
     width: 100%;
     border-radius: 8px;
     background: #ff5766;
@@ -2372,7 +2390,6 @@ section {
         font-size: 14px;
         line-height: 22px;
         letter-spacing: -.28px;
-        margin-top: 10px
     }
 
     .developmental-kit {
@@ -2436,7 +2453,8 @@ section {
     .product-pointers {
         width: 90%;
         grid-template-columns: 100%;
-        grid-template-rows: auto
+        grid-template-rows: auto;
+        padding: 0 3rem;
     }
 
     .product-pointers h3 {
@@ -2625,8 +2643,14 @@ section {
     margin-top: 38px;
     display: flex;
     width: 82%;
-    overflow-x: scroll;
-    margin-bottom: 79px
+    overflow: hidden; /* Hide the scrollbar */
+    margin-bottom: 79px;
+    position: relative;
+}
+
+.mentors-list-inner {
+    display: flex;
+    animation: scroll-loop 30s linear infinite; /* Controls the speed and looping */
 }
 
 .mentor-card {
@@ -2636,7 +2660,8 @@ section {
     text-align: center;
     padding: 23px 19px 36px;
     margin-left: 23px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    flex-shrink: 0; /* Prevents cards from shrinking */
 }
 
 .mentor-card:first-of-type {
@@ -2646,6 +2671,16 @@ section {
 .mentor-card img {
     width: 120px;
     height: 120px
+}
+
+/* Keyframes for infinite scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start from the beginning */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the last card, then loop */
+    }
 }
 
 .mentor-card h3,
@@ -2687,7 +2722,11 @@ section {
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
-        margin-bottom: 45px
+        margin-bottom: 4rem;
+    }
+
+    .mentors-list-inner {
+        animation-duration: 80s; /* Slow down scrolling on mobile for better experience */
     }
 
     .featured-in {
@@ -2713,13 +2752,16 @@ section {
 
 
 /* Your Frequently Asked Questions */
-#faqs {
+/* Your Frequently Asked Questions */
+
+
+.faqs {
     width: 100%;
     padding: 53px 0 81px;
     background: #f5f5f5
 }
 
-#faqs h1 {
+.faqs h1 {
     color: var(--Primary-Font, #002863);
     text-align: center;
     font-family: "DM Sans";
@@ -2730,13 +2772,13 @@ section {
     letter-spacing: -1.44px
 }
 
-#faq-list {
+.faq-list {
     width: 70%;
     margin: auto;
     margin-top: 30px
 }
 
-#faq-category-list {
+.faq-category-list {
     margin-bottom: 45px
 }
 
@@ -2753,13 +2795,7 @@ section {
     letter-spacing: -.64px;
     padding: 13px 17px;
     border: none;
-    margin-left: 15px;
-    cursor: pointer;
-    transition: all .4s ease 0s;
-}
-
-.faq-category-button:hover {
-    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+    margin-left: 15px
 }
 
 .faq-category-button:first-of-type {
@@ -2822,16 +2858,6 @@ section {
 
 .faq-active-card p {
     display: block
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @media (max-width: 1000px) {
@@ -2911,8 +2937,6 @@ section {
         margin-top: 6px
     }
 }
-
-
 /* Footer */
 
 
@@ -3007,4 +3031,34 @@ section {
     #faq-category-list::-webkit-scrollbar {
         background: transparent;
     }
+}
+
+
+/* for mobile scrolling */
+
+@media (max-width: 767px) {
+    /* Hide scrollbar on mobile devices but allow scrolling */
+    body, html {
+        overflow: auto;
+        scrollbar-width: none; /* For Firefox */
+        -ms-overflow-style: none; /* For IE and Edge */
+    }
+
+    /* Hide scroll bar for Webkit browsers (Chrome, Safari, Edge) */
+    body::-webkit-scrollbar,
+    html::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* hide scroll bar in mentors-list */
+.mentors-list {
+    overflow-y: auto; /* Allows vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.mentors-list::-webkit-scrollbar {
+    display: none;
 }

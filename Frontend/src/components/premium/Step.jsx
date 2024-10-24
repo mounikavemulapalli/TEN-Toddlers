@@ -25,23 +25,28 @@ export default function Step() {
     ];
 
     return (
-        <div>
+        <div className='how-it-works'>
+            <h1>How our Program Works !!</h1>
+            <div style={{display: "flex"}}>
             <div className="step-container">
                 <div className="step-list">
                     {steps.map(step => (
                         <div
                             key={step.id}
-                            className={`step-item ${selectedStep === step.id ? 'border-green-500' : 'border-gray-300'} ${selectedStep === step.id ? 'flex' : 'hidden'}`}
+                            className={`step-item ${selectedStep === step.id ? 'active-step-item' : 'border-gray-300'} ${selectedStep === step.id ? 'flex' : 'hidden'}`}
                             onClick={() => handleStepChange(step.id)}
                         >
                             <div className='step-header'>
-                                <h4 className='step-title'>STEP</h4>
+                            <h4 className={`step-title ${selectedStep === step.id ? 'text-red' : 'text-black'}`}>
+                    STEP
+                </h4>
+
                                 <h3 className='step-number'>{step.title}</h3>
                             </div>
                             <svg className='step-divider' xmlns="http://www.w3.org/2000/svg" width="1" height="60" viewBox="0 0 1 60" fill="none">
                                 <path d="M0.5 0V60" stroke="#002863" strokeDasharray="2 2" />
                             </svg>
-                            <div className='step-content'>
+                            <div className={`step-content ${selectedStep === step.id ? 'active-step-content' : 'step-content'}`}>
                                 <p>
                                     {step.content}
                                 </p>
@@ -49,7 +54,7 @@ export default function Step() {
                         </div>
                     ))}
                 </div>
-                <div className="step-image-container">
+                <div className="step-image-container col">
                     <div className='step-image-wrapper'>
                         <div className='step-image-inner'>
                             {steps.map((step) => (
@@ -65,7 +70,7 @@ export default function Step() {
                             {steps.map((step) => (
                                 <span
                                     key={step.id}
-                                    className={`step-indicator ${selectedStep === step.id ? 'bg-green-500' : 'bg-gray-700'}`}
+                                    className={`step-indicator ${selectedStep === step.id ? 'bg-blue-500' : 'bg-white-700'}`}
                                     onClick={() => handleStepChange(step.id)}
                                 ></span>
                             ))}
@@ -73,18 +78,21 @@ export default function Step() {
                     </div>
                 </div>
             </div>
-
+        </div>
+<div className='button-center'>
             {/* Correct Button Component */}
-            <Button
+            <button
+                className="a-btn"
                 text="Access this Program"
-                className="access-button"
                 onClick={handleOpenPopup} // Ensure you're handling the click event
-            />
+            > Access Baby's Program </button>
 
             {/* Popup Logic */}
             {isPopupOpen && (
                 <Popup closePopup={handleOpenPopup} />
             )}
+            
+</div>
         </div>
     );
 }

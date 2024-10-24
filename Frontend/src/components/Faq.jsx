@@ -88,3 +88,4 @@ export const Faq = () => {
         </section>
     )
 }
+export default Faq; 
