@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import { upload } from "./middlewares/multer.js";
 import { sendEmail } from "./utils/sendEmail.js";
 import kitRouter from "./routes/kits.js";
+import bookDemoRoutes from "./routes/bookDemoRoutes.js";
 
 const app = express();
 
@@ -82,7 +83,7 @@ app.post("/test", async (req, res) => {
 
 // Kits API
 app.use("/kits", kitRouter);
-
+app.use("/api", bookDemoRoutes);
 // Start the server
 const port = 3000;
 app.listen(port, () => {

@@ -2,18 +2,44 @@ import { useForm } from "react-hook-form";
 import countryList from "../../assets/Lists/countryCode.json";
 import "./Popup.css";
 import Button from "./Button";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Popup({ closePopup }) {
-  const onSubmit = (e) => {
-    e.preventDefault;
-    console.log("Form submitted");
-  };
+  const [isSubmitting, setIsSubmitting] = useState(null);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     trigger,
   } = useForm();
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    // e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3000/api/book-demo", {
+        fullName: data.fullName,
+        email: data.email,
+        mobile: data.mobile,
+        mobileCode: data.mobileCode,
+        babyAge: data.babyAge,
+      });
+      if (response.status === 200) {
+        alert(
+          `Congratulations ${data.fullName} Your demo discussion slot is booked.Please check your email "${data.email}" for other updates.Our team will contact you soon.`
+        );
+        closePopup();
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("There was a problem booking your demo.Please try again.");
+    }
+    setIsSubmitting(false);
+    // console.log("Form submitted");
+  };
   return (
     <div className="popup-container">
       <div className="popup-overlay"></div>
@@ -25,11 +51,7 @@ export default function Popup({ closePopup }) {
           <h2>Book Demo Session (0-4.5 yrs)</h2>
           <p>Only 4 Spots Left!</p>
         </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="lead-form"
-          method="POST"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="lead-form">
           <div>
             <input
               type="text"
@@ -122,7 +144,7 @@ export default function Popup({ closePopup }) {
             </div>
           </div>
           <Button type="submit" id="registerForSession">
-            Apply Now
+            {isSubmitting ? "Submitting..." : "Apply Now"}
           </Button>
           <p className="form-terms-conditions">
             UpTodd&apos;s{" "}
