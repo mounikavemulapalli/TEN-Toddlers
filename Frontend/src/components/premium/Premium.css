@@ -412,16 +412,6 @@ section {
 /* The Proof is in the Play: Watch How Babies Thrive! */
 
 
-.genius-babies {
-    background: #5a40c4;
-    background-image: url('https://www.uptodd.com/images/newWebsite/genius-babies-background.png');
-    width: 100%;
-    padding: 48px 0 100px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
 .genius-babies h1,.genius-babies h1 span {
     color: #fff;
     text-align: center;
@@ -1486,7 +1476,7 @@ section {
 }
 
 .happy-parents-button button {
-    width: 316px;
+    width: 320px;
     height: 54px;
     border-radius: 8px;
     background: #ff5766;
@@ -3064,14 +3054,3 @@ section {
     }
 }
 
-/* hide scroll bar in mentors-list */
-.mentors-list {
-    overflow-y: auto; /* Allows vertical scrolling */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For IE and Edge */
-}
-
-/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
-.mentors-list::-webkit-scrollbar {
-    display: none;
-}

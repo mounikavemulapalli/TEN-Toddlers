@@ -8,17 +8,6 @@
   box-sizing: border-box;
 }
 
-.carousel-container {
-  background-image: url("../assets/images/successstory/bg/genius-babies-background.png");
-  background-color: #5a40c4;
-  background-size: cover;
-  color: white;
-  padding: 40px 0px 90px 0px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
-
 .genius-babies h1,
 .genius-babies h1 span {
   color: #fff;
