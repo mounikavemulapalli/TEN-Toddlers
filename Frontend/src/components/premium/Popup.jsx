@@ -2,52 +2,35 @@ import { useForm } from "react-hook-form";
 import countryList from "../../assets/Lists/countryCode.json";
 import "./Popup.css";
 import Button from "./Button";
-import axios from "axios";
-import { useState } from "react";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Popup({ closePopup }) {
-  const [isSubmitting, setIsSubmitting] = useState(null);
-
   const {
     register,
     handleSubmit,
+    watch, 
+    setValue,
     formState: { errors },
     trigger,
   } = useForm();
 
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    // e.preventDefault();
+  const selectedAge = watch("babyAge");
 
-    try {
-      const response = await axios.post("http://localhost:3000/api/book-demo", {
-        fullName: data.fullName,
-        email: data.email,
-        mobile: data.mobile,
-        mobileCode: data.mobileCode,
-        babyAge: data.babyAge,
-      });
-      if (response.status === 200) {
-        alert(
-          `Congratulations ${data.fullName} Your demo discussion slot is booked.Please check your email "${data.email}" for other updates.Our team will contact you soon.`
-        );
-        closePopup();
-      }
-    } catch (error) {
-      console.error("Error submitting the form:", error);
-      alert("There was a problem booking your demo.Please try again.");
-    }
-    setIsSubmitting(false);
-    // console.log("Form submitted");
+  const onSubmit = (data) => {
+    console.log("Form submitted:", data);
   };
+
+  const handleRadioChange = (value) => {
+    setValue("babyAge", value);
+  };
+
   return (
     <div className="popup-container">
-      <div className="popup-overlay"></div>
+      <div className="popup-overlay" onClick={closePopup}></div>
       <div className="lead-form-container">
         <div className="lead-form-head">
-          <button onClick={closePopup} className="close-btn">
-            ✕
-          </button>
+          <FontAwesomeIcon icon={faTimes} onClick={closePopup} className="close-btn" />
           <h2>Book Demo Session (0-4.5 yrs)</h2>
           <p>Only 4 Spots Left!</p>
         </div>
@@ -107,44 +90,54 @@ export default function Popup({ closePopup }) {
             )}
           </div>
           <div>
-            <h4>Your Child's Date of Birth</h4>
-            <div className="form-baby-age-group">
-              <input
-                type="radio"
-                id="0-6"
-                value="0-6 Months"
-                {...register("babyAge", {
-                  required: "Please select your child's age group",
-                })}
-              />
-              <label htmlFor="0-6">0-6 Months</label>
+  <h4>Your Child's Date of Birth</h4>
+  <div className="form-baby-age-group">
+    <input
+      type="radio"
+      id="age-group-0-6"
+      value="0-6 Months"
+      {...register("babyAge", {
+        required: "Please select your child's age group",
+      })}
+      onChange={() => handleRadioChange("0-6 Months")}
+    />
+    <label htmlFor="age-group-0-6" onClick={() => handleRadioChange("0-6 Months")}>0-6 Months</label>
 
-              <input
-                type="radio"
-                id="7-24"
-                value="7-24 Months"
-                {...register("babyAge", {
-                  required: "Please select your child's age group",
-                })}
-              />
-              <label htmlFor="7-24">7-24 Months</label>
+    <input
+        type="radio"
+        id="age-group-7-24"
+        value="7-24 Months"
+        {...register("babyAge", {
+          required: "Please select your child's age group",
+        })}
+        onChange={() => handleRadioChange("7-24 Months")}
+      />
+      <label htmlFor="age-group-7-24" onClick={() => handleRadioChange("7-24 Months")}>
+        7-24 Months
+      </label>
 
-              <input
-                type="radio"
-                id="25-48"
-                value="25-48 Months"
-                {...register("babyAge", {
-                  required: "Please select your child's age group",
-                })}
-              />
-              <label htmlFor="25-48">25-48 Months</label>
-              {errors.babyAge && (
-                <p className="error-message">{errors.babyAge.message}</p>
-              )}
-            </div>
-          </div>
+      <input
+        type="radio"
+        id="age-group-25-48"
+        value="25-48 Months"
+        {...register("babyAge", {
+          required: "Please select your child's age group",
+        })}
+        onChange={() => handleRadioChange("25-48 Months")}
+      />
+      <label htmlFor="age-group-25-48" onClick={() => handleRadioChange("25-48 Months")}>
+        25-48 Months
+      </label>
+
+      {errors.babyAge && (
+        <p className="error-message">{errors.babyAge.message}</p>
+      )}
+  </div>
+</div>
+
+
           <Button type="submit" id="registerForSession">
-            {isSubmitting ? "Submitting..." : "Apply Now"}
+            Apply Now
           </Button>
           <p className="form-terms-conditions">
             UpTodd&apos;s{" "}

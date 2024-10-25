@@ -4,12 +4,13 @@ import { pillarsList } from "../../assets/Lists/pillarsList.js";
 import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
 import Button from "../../components/Home/HomeButton.jsx";
+
 import { cards } from "../../assets/Lists/card.js";
 import Faq from "../Faq.jsx"
 import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import Iframe from "react-iframe";
 import { happyParent } from "../../assets/Lists/happyParent.js";
-import Popup from "./Popup.jsx";
+import Popup from './Popup';
 import { FaCheckCircle } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -60,9 +61,6 @@ export const Footer = () => (
 function Premium() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const handleOpenPopup = () => {
-    setIsPopupOpen(!isPopupOpen);
-  };
 
   const carouselRef = useRef(null);
   const happyParentRef = useRef(null);
@@ -74,12 +72,8 @@ function Premium() {
     setShowModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
-  const handleCardClick = (id) => {
-    setClickedCardId(id);
+  const handleOpenPopup = () => {
+    setIsPopupOpen(!isPopupOpen);
   };
 
   const handlePrev = () => {
@@ -222,7 +216,9 @@ function Premium() {
               Schedule a Demo
             </button>
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {isPopupOpen && (
+                <Popup closePopup={handleOpenPopup} />
+            )}
           </div>
 
           {/* Desktop Image */}
@@ -518,7 +514,15 @@ function Premium() {
             />
           </div>
           <div className="happy-parents-button">
-            <Button text="Fuel Your Child's Development!" />
+          <button
+              className="btn"
+              id="premiumScreenSuperPremiumProgram"
+              onClick={handleOpenPopup}
+            >
+              Fuel Your Child's Development!
+            </button>
+            {/* Popup Logic */}
+            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
           </div>
         </section>
 
@@ -1287,6 +1291,13 @@ function Premium() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Correct Button Component */}
+
+            {/* Popup Logic */}
+            {isPopupOpen && (
+                <Popup closePopup={handleOpenPopup} />
+            )}
     </>
   );
 };
