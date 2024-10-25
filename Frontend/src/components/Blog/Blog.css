@@ -151,7 +151,8 @@ body {
     margin-bottom: 1.6em;
 }
 
-#article ul, #article p {
+#article ul,
+#article p {
     color: #404040
 }
 
@@ -159,7 +160,7 @@ body {
     margin: 0 0 1.5em 3em;
 }
 
-iframe {
+#article iframe {
     width: 822px;
     height: 476px
 }
