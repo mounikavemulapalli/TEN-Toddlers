@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./superDailyProgram.css";
+import "./SuperDailyProgram.css";
 import banner from "../../assets/images/super-daily-program-banner.webp";
 import Slider from "../comman/Slider.jsx";
 import Peek from "../comman/Peek.jsx";
@@ -15,7 +15,7 @@ import SuperScience from "../comman/SuperScience.jsx";
 import SuperBanner from "./SuperBanner.jsx";
 import SuperFramework from "./SuperFramework.jsx";
 import SuperQA from "./SuperQA.jsx";
-import { Footer } from '../premium/Premium.jsx';
+import { Footer } from "../premium/Premium.jsx";
 
 function SuperDailyProgram() {
   const [date, setDate] = useState("");
