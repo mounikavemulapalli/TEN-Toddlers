@@ -157,6 +157,7 @@
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
+  background: #fffbfb;
   padding: 2em;
   width: 100%;
   text-align: center;
@@ -219,13 +220,13 @@
 }
 
 .f-1 {
-  background-image: url("../assets/images/successstory/babystory/developmental-wonder-1.png");
+  background-image: url("../../assets/images/successstory/babystory/developmental-wonder-1.png");
 }
 .f-2 {
-  background-image: url("../assets/images/successstory/babystory/developmental-wonder-2.png");
+  background-image: url("../../assets/images/successstory/babystory/developmental-wonder-2.png");
 }
 .f-3 {
-  background-image: url("../assets/images/successstory/babystory/developmental-wonder-3.png");
+  background-image: url("../../assets/images/successstory/babystory/developmental-wonder-3.png");
 }
 
 .front-img {
@@ -254,7 +255,7 @@
   height: 59.6px;
   margin-left: -60px;
   padding: 0 0;
-  background-image: url("../assets/images/successstory/symbols/play_circle.png");
+  background-image: url("../../assets/images/successstory/symbols/play_circle.png");
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -266,7 +267,7 @@
   top: 25px;
   width: 56px;
   height: 56px;
-  background-image: url("../assets/images/successstory/symbols/right-chevy-arrow.png");
+  background-image: url("../../assets/images/successstory/symbols/right-chevy-arrow.png");
   background-repeat: no-repeat;
   background-size: cover;
   flex-shrink: 0;
@@ -288,6 +289,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
+  background: #fffbfb;
 }
 
 /* happy parents section */
