@@ -17,8 +17,22 @@ import sliderPrev from "../../assets/images/successstory/symbols/slider-prev.svg
 import sliderNext from "../../assets/images/successstory/symbols/slider-next.svg";
 import Footer from "../footer/Footer";
 import NavBar from "../../components/NavBar";
+import IFramePopup from "./IFramePopup";
 
 const SuccessStory = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const handleDivClick = (videoClass) => {
+    setSelectedVideo(videoClass); // Set the specific video based on the class clicked
+    setIsOpen(true); // Open the popup
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setSelectedVideo(null);
+  };
+
   const carouselRef = useRef(null); // Ref to track carousel container
   const happyParentRef = useRef(null);
   const awaredBabyRef = useRef(null);
@@ -165,42 +179,44 @@ const SuccessStory = () => {
       <section className="dev-wonder">
         <h1>Developmental Wonders: Early Learning Made Fun</h1>
         <div className="dev-cont">
-          <Link to="https://youtu.be/uGCAGsA1kc8" target="_blank">
             <div className="dev-card">
               <div className="bg-sq">
                 2 Months & <br /> Crawling!
               </div>
-              <div className="front-img f-1">
+              <div className="front-img f-1" onClick={() => handleDivClick('f-1')}>
                 <div className="play-circle"></div>
               </div>
+              {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
             </div>
-          </Link>
           <div className="right-circle"></div>
           <div className="down-circle"></div>
 
-          <Link to="https://youtu.be/2efUMMC5trc" target="_blank">
+          
+
+
+
+          
             <div className="dev-card">
               <div className="bg-sq">
                 10 Months & <br /> Recognising Objects
               </div>
-              <div className="front-img f-2">
+              <div className="front-img f-2" onClick={() => handleDivClick('f-2')}>
                 <div className="play-circle"></div>
               </div>
+              {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
             </div>
-          </Link>
           <div className="right-circle"></div>
           <div className="down-circle"></div>
 
-          <Link to="https://youtu.be/OoHhJZafXsU" target="_blank">
             <div className="dev-card">
               <div className="bg-sq">
                 18 Months & <br /> Reading Pictures
               </div>
-              <div className="front-img f-3">
+              <div className="front-img f-3" onClick={() => handleDivClick('f-3')}>
                 <div className="play-circle"></div>
               </div>
+              {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
             </div>
-          </Link>
         </div>
       </section>
       <div className="curlyline">
