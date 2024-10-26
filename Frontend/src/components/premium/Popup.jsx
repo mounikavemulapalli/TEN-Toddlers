@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function Popup({ closePopup }) {
   const [isSubmitting, setIsSubmitting] = useState(null);
+  const [selectedDialcode, setSelectedDialcode] = useState("+91");
 
   const {
     register,
@@ -18,6 +19,7 @@ export default function Popup({ closePopup }) {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     // e.preventDefault();
+    console.log("Selected baby age:", data.babyAge);
 
     try {
       const response = await axios.post("http://localhost:3000/api/book-demo", {
@@ -78,6 +80,7 @@ export default function Popup({ closePopup }) {
           <div>
             <div className="form-mobile">
               <select
+                defaultValue="+91"
                 name="mobileCode"
                 id="search_categories"
                 {...register("mobileCode", {

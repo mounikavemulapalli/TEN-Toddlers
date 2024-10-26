@@ -2,13 +2,15 @@ import React from "react";
 import { useState } from "react";
 import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
-import Faq from "../Faq.jsx"
+import Faq from "../Faq.jsx";
 import Iframe from "react-iframe";
 import Popup from "./Popup.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Step from "./Step";
+import Button from "./premiumButton.jsx";
+import PopupButton from "./PopupButton.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -96,12 +98,11 @@ const Premium = () => {
                 Starts at INR 1190* per month only
               </li>
             </ul>
-            <button className="btn" onClick={handleOpenPopup}>
-              Schedule a Demo
-            </button>
-            {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            <PopupButton text="Schedule a Demo" />
           </div>
+
+          {/* Popup Logic */}
+          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
 
           {/* Desktop Image */}
           <div className="image-banner-part">
@@ -405,7 +406,7 @@ const Premium = () => {
       {/* How our Program Works !! */}
 
       <Step />
-
+      <PopupButton text="Access this program" />
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
 
@@ -481,8 +482,6 @@ const Premium = () => {
             </div>
           </div>
         </div>
-        
-        
       </section>
 
       {/* Banne-2 */}
@@ -494,14 +493,17 @@ const Premium = () => {
             development that strengthens neural connections and builds a strong
             foundation for their future.
           </h3>
-          <button
+          {/* <button
             id="premiumScreenStartNowBannerBookDemo"
             onClick={handleOpenPopup}
           >
             Start Now
-          </button>
+          </button> */}
           {/* Popup Logic */}
-          {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+          <div className="text-black">
+            <PopupButton text="Start Now" />
+          </div>
         </div>
       </section>
 
@@ -1450,15 +1452,16 @@ const Premium = () => {
             <h2>
               INR 38,900 <s>INR 120,900</s>
             </h2>
-            <button
-              className="btn"
+            {/* <button
+              className="a-btn"
               id="premiumScreenSuperPremiumProgram"
               onClick={handleOpenPopup}
             >
               Enroll Now
-            </button>
+            </button> */}
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <PopupButton className="btn" text="Enroll Now" />
           </div>
           <div className="product-cost-card">
             <h3>Standard Premium Program</h3>
@@ -1471,15 +1474,16 @@ const Premium = () => {
             <h2>
               INR 23,900 <s>INR 70,900</s>
             </h2>
-            <button
+            {/* <button
               className="btn"
               id="premiumScreenStandardPremiumProgram"
               onClick={handleOpenPopup}
             >
               Enroll Now
-            </button>
+            </button> */}
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <PopupButton className="btn" text="Enroll Now" />
           </div>
         </div>
         <div className="see-more-product">
