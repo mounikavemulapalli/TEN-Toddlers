@@ -1,851 +1,436 @@
-import { useRef, useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
-import Button from "../../components/Home/HomeButton.jsx";
-import Slider from "../comman/Slider.jsx";
-import Modal from "../Modal.jsx";
-import { premiumProgram } from "../../assets/Lists/premiumProgram.js";
-import { list } from "../../assets/Lists/list.js";
-import { cards } from "../../assets/Lists/card.js";
-import { pillarsList } from "../../assets/Lists/pillarsList.js";
-import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
-import { boardMembers } from "../../assets/Lists/boardMembers.js";
-import { happyParent } from "../../assets/Lists/happyParent.js";
-import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
-import { Faq } from '../Faq.jsx';
+import { useState } from "react";
+import "./Home.css";
+import Slider from "../../components/home/slider";
+import GLOBESVG from "./GLOBESVG";
+import COSTSVG from "./COSTSVG";
+import COMPLIANCESVG from "./COMPLIANCESVG";
+import CHECKLISTSVG from "./CHECKLISTSVG";
+import MajorBrandsSlider from "./majorbrandsslider";
+import { useTranslation } from "react-i18next";
 
-export default function Home() {
-  const carouselRef = useRef(null);
-  const happyParentRef = useRef(null);
-  const boardMembersRef = useRef(null);
-  const awaredBabyRef = useRef(null);
-  const [showModal, setShowModal] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const openModal = () => {
-    setShowModal(true);
-  };
+import FAQSection from "../FAQ/FAQSection";
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+function Home() {
+  const { t, i18n } = useTranslation();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    countryCode: "+91 IN",
+    phone: "",
+    company: "",
+    inquiry: "PEO & EoR",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      imgSrc: "https://via.placeholder.com/800x400?text=Slide+1",
+      title: "Slide 1",
+      description: "This is the first slide description.",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/800x400?text=Slide+2",
+      title: "Slide 2",
+      description: "This is the second slide description.",
+    },
+    {
+      imgSrc: "https://via.placeholder.com/800x400?text=Slide+3",
+      title: "Slide 3",
+      description: "This is the third slide description.",
+    },
+  ];
 
-  const handleCardClick = (id) => {
-    setClickedCardId(id);
-  };
-
-  const handlePrev = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const handleNext = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-  const handleHappyParentPrev = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleHappyParentNext = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleAwaredBabyNext = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleAwaredBabyPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleBoardMenberPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleBoardMemberNext = () => {
-    if (boardMembersRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const [clickedCardId, setClickedCardId] = useState(pillarsList[0].id);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formSubmission = {
+      access_key: "85452267-67f4-414e-851c-4c986fdfcc3b", // Replace with your actual access key
+      ...formData,
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formSubmission),
+      });
+
+      const result = await response.json();
+      if (response.status === 200) {
+        setFormStatus("Your form has been submitted successfully.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          countryCode: "+91 IN",
+          phone: "",
+          company: "",
+          inquiry: "PEO & EoR",
+          message: "",
+        });
+      } else {
+        setFormStatus(`Failed to submit: ${result.message}`);
+      }
+    } catch (error) {
+      setFormStatus("An error occurred while submitting the form.");
+    }
+  };
 
   return (
-    <div>
-      <div className="home-section">
-        <section className="Home-page">
-          <div className="banner-text">
-            <h1>Give Your Baby the Best Possible Start!</h1>
-            <h3>Nurture your baby's developing Brain</h3>
-            <h5>Expert Guided Personalised Program - Just For Your Baby</h5>
-            <ul>
-              <li>
-                <FaCheckCircle /> <span> No Pressure - No testing </span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>No screen Time</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>10 Minutes Daily</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>Loved by babies</span>
-              </li>
-              <li>
-                <FaCheckCircle /> <span>One Stop Parenting Solution</span>
-              </li>
-            </ul>
-            <Button text='Book a Demo Slot' />
-          </div>
-          <div className="banner-image">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/home-page-banner.webp"
-              alt=""
-            />
-          </div>
-        </section>
-        <section>
-          <Slider />
-        </section>
-        <section className="Possibilities">
-          <div className="Possibilities-heading">
-            <h1>Explore the Possibilities with UpTodd</h1>
-            <p>
-              We have your back in this Journey - Top experts support you in
-              your baby’s brain development journey.
-            </p>
-          </div>
-          <div className="Possibilities-container">
-            <div className="Possibilities-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/possibilites.webp"
-                alt=""
-              />
-            </div>
-            <div className="Possibilities-list">
-              {list.map((value, index) => (
-                <div key={index} className="Possibilities-card">
-                  <img src={value.img} alt="" />
-                  <div className="card-text">
-                    <h2>{value.heading}</h2>
-                    <p>{value.text} </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="Solution-page">
-          <div className="solution-heading">
-            <h1>One Stop Solution for your Baby's Brightest Possible Future</h1>
-            <p>Research-Backed Baby Brain Development Journey</p>
-          </div>
-          <div className="solution-container">
-            <ul>
-              <li>
-                <FaCheckCircle />
-                <span>Parenting made easy: One App, all you need</span>
-              </li>
-              <li>
-                <FaCheckCircle />
-                <span>Holistic Development & Baby Brain Reports</span>
-              </li>
-              <li>
-                <FaCheckCircle />
-                <span> 10,000+ Research Studies, 100+ Top Experts </span>
-              </li>
-              <li>
-                <FaCheckCircle />
-                <span>
-                  Expert Customised Mega Toy based developmental Kits{" "}
-                </span>
-              </li>
-            </ul>
-            <div className="solution-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/one-stop-solution.webp"
-                alt=""
-              />
-            </div>
-          </div>
-        </section>
-        <section>
-          <div className="genius-section">
-            <div className="genius-header">
-              <h1>Inside Your Baby's Genius - Building Baby Brain</h1>
-              <h5>Every Baby is born with infinite Potential</h5>
-            </div>
-            <div className="genius-container">
-              <ul className="genius-text">
-                <li>
-                  <span>100 Bn</span><span>Every baby is born with 100 Billion of
-                    Neurons</span>
-                </li>
-                <li>
-                  <span>1 Mn</span><span>One million neural connections are formed
-                    every second in the early years</span>
-                </li>
-                <li>
-                  <span>90%</span><span>Ninety percentage of our brain develops by age
-                    5</span>
-                </li>
-                <li>
-                  <span>60%</span>
-                  <span>60% of baby's energy goes in brain development</span>
-                </li>
-              </ul>
-              <div className="building">
-                <iframe
-                  loading="lazy"
-                  srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="275573034"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-                <p>Ref. Harvard University | developingchild.harvard.edu</p>
+    <section>
+      <div className='main-container'>
+        <div className='frm-container'>
+          <div className='content'>
+            <div className='text-section'>
+              <div className='avatar-section'>
+                <img
+                  src='https://recruitindo.com/wp-content/uploads/2023/12/icon-ava.png'
+                  alt='Avatars'
+                />
+                <p>{t("Join over 250+ businesses that have grown with us")}</p>
               </div>
-            </div>
-            <div id="genius-section-btn-container">
-              <Button text='Explore the Details' />
-            </div>
-          </div>
-        </section>
-        <section className="genius-babies">
-          <div className="carousel-container">
-            <div className="carousel-header">
-              <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
+              <h1>{t("One platform for hiring Interns")}</h1>
               <p>
-                Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-                Tomorrow
+                {t(
+                  "Hire your team in India immediately without forming a company. We help businesses comply with regulations and streamline their HR processes in Remote Network."
+                )}
               </p>
-            </div>
-
-            <div className="carousel-wrapper">
-              <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                  alt="Previous"
-                />
-              </button>
-
-              <div className="carousel" ref={carouselRef}>
-                {cards.map((card, index) => (
-                  <div className="carousel-card" key={index}>
-                    <iframe
-                      width="300"
-                      height="200"
-                      src={card.videoUrl}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                    <h3>{card.title}</h3>
-                    {card.description && <p>{card.description}</p>}
-                  </div>
-                ))}
-              </div>
-
-              <button className="carousel-button next" onClick={handleNext}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                  alt="Next"
-                />
-              </button>
-            </div>
-          </div>
-        </section>
-        <section className="developmental-pillars">
-          <div className="development-head">
-            <h1>
-              UpTodd Expert Personalised Program -
-              <br />
-              <span>Nurture your baby's genius potential</span>
-            </h1>
-            <h5>
-              Holistic Approach of baby brain development on complete
-              foundational Pillars - <span> Just 10 Minutes a day</span>
-            </h5>
-          </div>
-          <div className="development-container">
-            <div className="development-lest">
-              {pillarsList.map((value) => (
-                <div
-                  key={value.id}
-                  onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${clickedCardId === value.id ? "active" : ""
-                    }`}
+              <p className='scroll-instruction'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 16 16'
+                  fill='none'
+                  className='two_elementor_element'
                 >
-                  <h3>{value.title}</h3>
-                  <div className="four-pillars-list">
-                    <ul>
-                      <li>
-                        <FaCheckCircle />
-                        <span>{value.text1} </span>
-                      </li>
-                      <li>
-                        <FaCheckCircle />
-                        <span>{value.text2}</span>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <FaCheckCircle />
-                        <span>{value.text3}</span>
-                      </li>
-                      <li>
-                        <FaCheckCircle />
-                        <span>{value.text4}</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              ))}
+                  <path
+                    d='M7.99967 3.3335C7.82286 3.3335 7.65329 3.40373 7.52827 3.52876C7.40325 3.65378 7.33301 3.82335 7.33301 4.00016V6.66683C7.33301 6.84364 7.40325 7.01321 7.52827 7.13823C7.65329 7.26326 7.82286 7.3335 7.99967 7.3335C8.17649 7.3335 8.34605 7.26326 8.47108 7.13823C8.5961 7.01321 8.66634 6.84364 8.66634 6.66683V4.00016C8.66634 3.82335 8.5961 3.65378 8.47108 3.52876C8.34605 3.40373 8.17649 3.3335 7.99967 3.3335Z'
+                    fill='#ACB9C1'
+                    className='two_elementor_element'
+                  ></path>
+                  <path
+                    fill-rule='evenodd'
+                    clip-rule='evenodd'
+                    d='M2.6665 5.33333C2.6665 3.91885 3.22841 2.56229 4.2286 1.5621C5.22879 0.561903 6.58535 0 7.99984 0C9.41432 0 10.7709 0.561903 11.7711 1.5621C12.7713 2.56229 13.3332 3.91885 13.3332 5.33333V10.6667C13.3332 12.0812 12.7713 13.4377 11.7711 14.4379C10.7709 15.4381 9.41432 16 7.99984 16C6.58535 16 5.22879 15.4381 4.2286 14.4379C3.22841 13.4377 2.6665 12.0812 2.6665 10.6667V5.33333ZM11.9998 5.33333V10.6667C11.9998 11.7275 11.5784 12.7449 10.8283 13.4951C10.0781 14.2452 9.0607 14.6667 7.99984 14.6667C6.93897 14.6667 5.92156 14.2452 5.17141 13.4951C4.42126 12.7449 3.99984 11.7275 3.99984 10.6667V5.33333C3.99984 4.27247 4.42126 3.25505 5.17141 2.50491C5.92156 1.75476 6.93897 1.33333 7.99984 1.33333C9.0607 1.33333 10.0781 1.75476 10.8283 2.50491C11.5784 3.25505 11.9998 4.27247 11.9998 5.33333Z'
+                    fill='#ACB9C1'
+                    className='two_elementor_element'
+                  ></path>
+                </svg>
+                {t(" scroll to learn more")}
+              </p>
+              <path
+                d='M7.99967 3.3335C7.82286 3.3335 7.65329 3.40373 7.52827 3.52876C7.40325 3.65378 7.33301 3.82335 7.33301 4.00016V6.66683C7.33301 6.84364 7.40325 7.01321 7.52827 7.13823C7.65329 7.26326 7.82286 7.3335 7.99967 7.3335C8.17649 7.3335 8.34605 7.26326 8.47108 7.13823C8.5961 7.01321 8.66634 6.84364 8.66634 6.66683V4.00016C8.66634 3.82335 8.5961 3.65378 8.47108 3.52876C8.34605 3.40373 8.17649 3.3335 7.99967 3.3335Z'
+                fill='#ACB9C1'
+                className='two_elementor_element'
+              ></path>
             </div>
-            <div className="development-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/expert-personalised-program.webp"
-              />
-            </div>
-          </div>
-          <div className="developmental-pillars-footer">
-            <Button text='Explore the Details' />
-            <p>
-              Create Brain stimulating home envrionment for your baby, by best
-              on the Planet. We have your back in this journey
-            </p>
-          </div>
-        </section>
-        <section className='start-now-banner'>
-          <div className="start-now-banner-grid">
-            <h3>Stop overspending on generic and hamful toys, filled with Chlorinated Paraffin {`->`} Toxic for your baby brain growth</h3>
-            <Button text='Start Now' />
-          </div>
-        </section>
-        <section className="product-and-cost">
-          <div className="product-and-cost-header">
-            <h1>UpTodd™ Genius Premium Program</h1>
-            <h5>
-              Exclusive Parenting Program for Overall Baby Brain Development
-            </h5>
-            <h5>
-              Exclusive Mega KIT + World's Only True Personalised APP + Brain
-              Dev. Report & Support from World's Top Experts
-            </h5>
-          </div>
-          <ul className="product-and-cost-container">
-            <li>
-              <FaCheckCircle /> <span>Dedicated R&D Team Care</span>
-            </li>
-            <li>
-              <FaCheckCircle /> <span>Research Backed Growth System</span>
-            </li>
-            <li>
-              <FaCheckCircle /> <span>Personalised Organic Mega Kit</span>
-            </li>
-            <li>
-              <FaCheckCircle /> <span>One-Stop Personalised APP</span>
-            </li>
-            <li>
-              <FaCheckCircle /> <span>Holistic Tracking & Brain Reports</span>
-            </li>
-            <li>
-              <FaCheckCircle /> <span>Recognitions & Certifications</span>
-            </li>
-          </ul>
-          <div className="product-and-cost-container-card">
-            {premiumProgram.map((card, index) => (
-              <div key={index} className="product-and-cost-card">
-                <h1>{card.text1}</h1>
-                <h2>{card.text2} </h2>
-                <p>{card.text3} </p>
-                <div className="card-perMonth">
-                  <span>{card.perMonth}</span>
-                </div>
-                <h3>{card.discountPrice}</h3>
-                <del>{card.deletePrice} </del>
-                <Button text='Enroll Now' />
-              </div>
-            ))}
-          </div>
-          <div className="program-test">
-            <p>
-              Want to know more about program
-              <span onClick={openModal}>see here</span>
-            </p>
-            <Modal show={showModal} onClose={closeModal}></Modal>
-          </div>
-        </section>
-        <section className="developmental-kit">
-          <div className="kit-intro">
-            <div>
-              <h3>Curated Just for You: Mega Kit at Your Doorstep</h3>
-              <p>World's only true personalised system</p>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/kit-shipment.svg"
-              loading="lazy"
-              alt="Personalised Baby Kit"
-            />
-          </div>
-          <div className="kit-video">
-            <iframe
-              loading="lazy"
-              srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/r1SwlfmvuCM?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'><img src='https://www.uptodd.com/images/newWebsite/kit-video.webp' className='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:3%;top:30%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen=""
-              data-gtm-yt-inspected-4="true"
-              data-gtm-yt-inspected-40611628_62="true"
-              id="72071507"
-              data-gtm-yt-inspected-14="true"
-            ></iframe>
-            <h3>SAMPLE Personalised KIT</h3>
-          </div>
-        </section>
-        <section className="awared-babies">
-          <h1>
-            Brilliant Minds: <span> Celebrating Global Baby Champions</span>
-          </h1>
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-button prev"
-              onClick={handleAwaredBabyPrev}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                alt="Previous"
-              />
-            </button>
-            <div className="carousel" ref={awaredBabyRef}>
-              {babyAwardList.map((ele) => (
-                <div
-                  key={ele.id}
-                  className="baby-award-card"
-                  ref={awaredBabyRef}
-                >
-                  <img src={ele.img} alt="" />
-                  <h3>{ele.title} </h3>
-                  <p>{ele.description} </p>
-                </div>
-              ))}
-            </div>
-            <button
-              className="carousel-button next"
-              onClick={handleAwaredBabyNext}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                alt="Next"
-              />
-            </button>
-          </div>
-        </section>
-        <div className="line-section">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="314"
-            height="15"
-            viewBox="0 0 314 15"
-            fill="none"
-          >
-            <path
-              d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
-              stroke="#FF3F4E"
-              strokeWidth="2"
-            ></path>
-          </svg>
-        </div>
-        <section className="happy-parents" id="happy-parents">
-          <h1>
-            Happy Parents, Thriving Tots:
-            <span>Witnessing Their Child's Growth</span>
-          </h1>
-          <h5>
-            Smarter Investment: Personalized Learning vs. Traditional Plastic
-            Toys
-          </h5>
-          <div className="happy-parent-list-container">
-            <div className="happy-parent-list" ref={happyParentRef}>
-              {happyParent.map((review) => (
-                <div key={review.id} className="happy-parents-card">
-                  <div>
-                    <iframe
-                      loading="lazy"
-                      srcDoc={review.surdoc}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen=""
-                      data-gtm-yt-inspected-4="true"
-                      data-gtm-yt-inspected-40611628_62="true"
-                      id="72071507"
-                      data-gtm-yt-inspected-14="true"
-                    ></iframe>
-                  </div>
-                  <div className="quote-container">
-                    <img
-                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                      alt="Quote"
-                      className="quote-mark"
-                    />
-                    <p className="quote-text">{review.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className='form-background'>
+              <div className='form-section'>
+                <form onSubmit={handleSubmit}>
+                  <div className='form-row'>
+                    <div className='form-group'>
+                      <label>{t("First Name *")}</label>
+                      <input
+                        type='text'
+                        name='firstName'
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
 
-            <img
-              className="happy-parents-slider-next"
-              onClick={handleHappyParentNext}
-              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-              loading="lazy"
-              alt="Next Happy Parent"
-            />
-            <img
-              className="happy-parents-slider-prev"
-              onClick={handleHappyParentPrev}
-              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-              loading="lazy"
-              alt="Prev Happy Parent"
-            />
-          </div>
-          <div className="happy-parents-button">
-            <Button text="Fuel Your Child's Development!" />
-          </div>
-        </section>
-        <section className="doctor-review" id="doctorreview">
-          <h1>Recommended by Top Global Experts</h1>
-          <h5>
-            Vetted &amp; Backed by 100+ Doctors, Educationists, Parenting
-            Experts &amp; Professors
-          </h5>
-
-          <div
-            className="doctor-review-list"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div
-              className={`doctor-review-container ${isHovered ? "paused" : ""}`}
-            >
-              {doctorReviews.map((value) => (
-                <div className="doctor-review-card" key={value.id}>
-                  <div className="doctor-review-image-part">
-                    <img src={value.img} loading="lazy" alt="doctor-review" />
-                    <div>
-                      <h3>{value.name}</h3>
-                      <h6>{value.position} </h6>
+                    <div className='form-group'>
+                      <label>{t("Last Name *")}</label>
+                      <input
+                        type='text'
+                        name='lastName'
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                      />
                     </div>
                   </div>
-                  <div className="doctor-review-quote">
-                    <img
-                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                      loading="lazy"
-                      alt="quote"
+
+                  <div className='form-group'>
+                    <label>{t("Email *")}</label>
+                    <input
+                      type='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
-                    <p>{value.description}</p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="research-backed">
-          <h1>
-            Science-Backed Approach: <span>Rooted in Research</span>
-          </h1>
-          <h5>
-            Developed using research from leading Global institutions &amp;
-            Organisations
-          </h5>
-          <div className="insti-research">
-            <div className="insti-head">
-              <h4>Research analysed by institutions from</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/research-insti.webp"
-              loading="lazy"
-              alt="IIT,IIM,MIT,Harvard Research Institutes"
-            />
-            <p>and 35+ other top global institutions</p>
-          </div>
-          <div className="insti-research-mobile">
-            <div className="insti-research-mobile-head">
-              <h4>Research analysed by institutions from</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/research-insti-mobile.webp"
-              loading="lazy"
-              alt="IIT,IIM,MIT,Harvard Research Institutes"
-            />
-          </div>
 
-          <div className="theory-research">
-            <div className="theory-head">
-              <h4>Enriched with top research by</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/researchers/all_researchers.webp"
-              loading="lazy"
-              alt="Research Backed Personalised Program for Baby Development"
-            />
-            <p>and 50+ other top global experts</p>
-          </div>
-          <div className="theory-research-mobile">
-            <div className="theory-research-mobile-head">
-              <h4>Enriched with top research by</h4>
-            </div>
-            <div className="theory-research-mobile-list">
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/glenn-doman.webp"
-                  loading="lazy"
-                  alt="glenn-doman baby development expert"
-                />
-                <h3>Glenn Doman</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/maria-montessori.webp"
-                  loading="lazy"
-                  alt="maria-montessori baby development expert"
-                />
-                <h3>Maria Montessori</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/rudolf-steiner.webp"
-                  loading="lazy"
-                  alt="rudolf-steiner baby development expert"
-                />
-                <h3>Rudolf Steiner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/bf-skinner.webp"
-                  loading="lazy"
-                  alt="bf-skinner baby development expert"
-                />
-                <h3>BF Skinner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/loris-malaguzzi.webp"
-                  loading="lazy"
-                  alt="loris-malaguzzi baby development expert"
-                />
-                <h3>Loris Malaguzzi</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/howard-gardner.webp"
-                  loading="lazy"
-                  alt="howard-gardner baby development expert"
-                />
-                <h3>Howard Gardner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/diana-baumrind.webp"
-                  loading="lazy"
-                  alt="diana-baumrind baby development expert"
-                />
-                <h3>Diana Baumrind</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/swami-vivekanand.webp"
-                  loading="lazy"
-                  alt="swami-vivekanand"
-                />
-                <h3>Swami Vivekanand</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/jean-piaget.webp"
-                  loading="lazy"
-                  alt="jean-piaget baby development expert"
-                />
-                <h3>Jean Piaget</h3>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="our-mentors" id="our-mentors">
-          <h1>
-            Meet our Mentors &amp; Curators |
-            <span>100+ Curators R&amp;D Team</span>
-          </h1>
-          <div className="mentors-list">
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Krishna Vedula MIT"
-              />
-              <h3>
-                Krishna Vedula
-                <br />
-                <span>Professor, MIT, United States</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-              />
-              <h3>
-                Dr. Jaideep Sharma
-                <br />
-                <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Sudhanshu Singh"
-              />
-              <h3>
-                Dr. Sudhanshu
-                <br />
-                <span>MD, DSMA CMC Vellore</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-              />
-              <h3>
-                Manoj Mondal
-                <br />
-                <span>Professor, IIT Kharagpur</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-                loading="lazy"
-                alt="Uptodd mentor PK Mishra IIT BHU"
-              />
-              <h3>
-                Prof. PK Mishra
-                <br />
-                <span>IIT BHU</span>
-              </h3>
-            </div>
-          </div>
-          <h1>UpTodd™ has been Featured In</h1>
-          <div className="featured-in">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
-              loading="lazy"
-              alt="Media Houses Featuring UpTodd"
-            />
-          </div>
-        </section>
-        <section className="board-container happy-parents">
-          <h1>Meet our Other Board Members</h1>
-          <h5>On a mission to empower 10 Million+ families globally by 2026</h5>
-          <div className="board-wrapper">
-            <img
-              id="boardGridPrevBtn"
-              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-              loading="lazy"
-              alt="Previous Board Member"
-              onClick={handleBoardMenberPrev}
-            />
-            <div className="board-grid" ref={boardMembersRef}>
-              {boardMembers.map((ele, index) => (
-                <div key={index} className="board-card">
-                  <img src={ele.img} alt="" />
-                  <h3>{ele.name} </h3>
-                  <span>{ele.position} </span>
-                  <p>{ele.description}</p>
-                </div>
-              ))}
-            </div>
-            <img
-              id="boardGridNextBtn"
-              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-              loading="lazy"
-              onClick={handleBoardMemberNext}
-              alt="Next Board Member"
-            />
-          </div>
-        </section>
+                  <div className='form-row'>
+                    <div className='form-group'>
+                      <label>{t("Country Code *")}</label>
+                      <select
+                        name='countryCode'
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value='+91 IN'>+91 IN</option>
+                        <option value='+1 US'>+1 US</option>
+                        <option value='+44 GB'>+44 GB</option>
+                        <option value='+61 AU'>+61 AU</option>
+                        <option value='+81 JP'>+81 JP</option>
+                        <option value='+49 DE'>+49 DE</option>
+                        <option value='+33 FR'>+33 FR</option>
+                        <option value='+39 IT'>+39 IT</option>
+                        <option value='+86 CN'>+86 CN</option>
+                        <option value='+34 ES'>+34 ES</option>
+                        <option value='+55 BR'>+55 BR</option>
+                        <option value='+7 RU'>+7 RU</option>
+                        <option value='+27 ZA'>+27 ZA</option>
+                        <option value='+64 NZ'>+64 NZ</option>
+                        <option value='+65 SG'>+65 SG</option>
+                        <option value='+971 AE'>+971 AE</option>
+                        <option value='+353 IE'>+353 IE</option>
+                        <option value='+93 AF'>+93 AF</option>
+                        <option value='+355 AL'>+355 AL</option>
+                        <option value='+213 DZ'>+213 DZ</option>
+                        <option value='+376 AD'>+376 AD</option>
+                        <option value='+54 AR'>+54 AR</option>
+                        <option value='+374 AM'>+374 AM</option>
+                        <option value='+994 AZ'>+994 AZ</option>
+                        <option value='+880 BD'>+880 BD</option>
+                        <option value='+32 BE'>+32 BE</option>
+                        <option value='+226 BF'>+226 BF</option>
+                        <option value='+855 KH'>+855 KH</option>
+                        <option value='+1 CA'>+1 CA</option>
+                        <option value='+56 CL'>+56 CL</option>
+                        <option value='+45 DK'>+45 DK</option>
+                        <option value='+20 EG'>+20 EG</option>
+                        <option value='+358 FI'>+358 FI</option>
+                        <option value='+30 GR'>+30 GR</option>
+                        <option value='+852 HK'>+852 HK</option>
+                        <option value='+62 ID'>+62 ID</option>
+                        <option value='+98 IR'>+98 IR</option>
+                        <option value='+964 IQ'>+964 IQ</option>
+                        <option value='+92 PK'>+92 PK</option>
+                        {/* Add more options here */}
+                      </select>
+                    </div>
 
-        <Faq />
+                    <div className='form-group'>
+                      <label>{t("Personal Telephone *")}</label>
+                      <input
+                        type='tel'
+                        name='phone'
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
 
+                  <div className='form-group'>
+                    <label>{t("Company *")}</label>
+                    <input
+                      type='text'
+                      name='company'
+                      value={formData.company}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div className='form-group'>
+                    <label>{t("Reason for inquiry *")}</label>
+                    <select
+                      name='inquiry'
+                      value={formData.inquiry}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value='PEO & EoR'>{t("PEO & EoR")}</option>
+                      <option value='Recruitment'>{t("Recruitment")}</option>
+                      <option value='HR Consulting'>
+                        {t("HR Consulting")}
+                      </option>
+                      <option value='Payroll Payment'>
+                        {t("Payroll Payment")}
+                      </option>
+                      <option value='Managed Services'>
+                        {t("Managed Services")}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div className='form-group'>
+                    <label>{t("How can we help you ?")}</label>
+                    <textarea
+                      name='message'
+                      value={formData.message}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
+
+                  <button type='submit' className='submit-btn'>
+                    {t("Submit Enquiry")}
+                  </button>
+                  {formStatus && <p>{formStatus}</p>}
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Services Section  */}
+
+      <div className='services-section'>
+        <h2>{t("WHAT WE DO")}</h2>
+        <h3>{t("Comprehensive HR and PEO/EoR solutions")}</h3>
+        <div className='slider'>
+          <Slider />
+        </div>
+        {/*partner section*/}
+
+        <div className='partner-section'>
+          <h2 className='partner-title'>{t("WHY PARTNER WITH US")}</h2>
+          {/* <h3 className='partner-subtitle'>Why Partner with Us</h3> */}
+
+          <div className='partner-content'>
+            <div className='partner-text'>
+              <div className='partner-right'>
+                <GLOBESVG className='partner-icon' />
+                <h4 className='partner-expertise'>
+                  {t("Expert Local Knowledge")}
+                </h4>
+              </div>
+              <p className='partner-description'>
+                {t(
+                  `We are local experts who provide on-the-ground support and guidance in Indonesia. From HR specialists to legal advisors, weare equipped to handle any challenge your operation may face. Our local presence means we're always here to support your business with a deep understanding of the Indonesian business climate. Benefit from our expertise and established networks to ensure your Indonesian venture is successful.`
+                )}{" "}
+              </p>
+            </div>
+            <div className='partner-image-container'>
+              <img
+                src='https://recruitindo.com/wp-content/uploads/2023/12/Expert-local-knowledge.png'
+                alt='Expert local knowledge in Indonesia'
+                className='partner-image'
+              />
+            </div>
+          </div>
+
+          <div className='cost-content'>
+            <div className='cost-image-container'>
+              <img
+                src='https://recruitindo.com/wp-content/uploads/2023/12/cost-effective-solutions.png'
+                alt='cost'
+                className='cost-image'
+              />
+            </div>
+            <div className='cost-text'>
+              <div className='cost-left'>
+                <COSTSVG className='cost-icon' />
+                <h4 className='cost-expertise'>
+                  {t("Cost-Effective Solutions")}
+                </h4>
+              </div>
+              <p className='cost-description'>
+                {t(
+                  "Avoid the big expenses and long waits that come with starting a new company in Indonesia. With our help, you can get to work quickly and cut down on legal and setup costs. Put your money and effort into growing your business instead of getting tangled up in complicated paperwork."
+                )}{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className='compliance-content'>
+            <div className='compliance-text'>
+              <div className='compliance-right'>
+                <COMPLIANCESVG className='compliance-icon' />
+                <h4 className='compliance-expertise'>{t("100% Compliance")}</h4>
+              </div>
+              <p className='compliance-description'>
+                {t(
+                  `India's legal environment is unique, with regulations that can be intricate and often change. With our EOR service, you gain access to our in-depth knowledge of Indonesian labor laws, tax regulations, and compliance requirements. We act as your legal buffer, minimizing risks and protecting your business interests. Our team stays abreast of the latest legal updates, providing peace of mind that your operations are always compliant and your business integrity remains intact.`
+                )}{" "}
+              </p>
+            </div>
+            <div className='compliance-image-container'>
+              <img
+                src='https://recruitindo.com/wp-content/uploads/2023/12/compliance.png'
+                alt='Expert local knowledge in Indonesia'
+                className='partner-image'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='one-stop'>
+        <div className='one-stop-text'>
+          <h2>{t("One-stop HR Service For Your Business")}</h2>
+          <p className='one-stop-description'>
+            {t(
+              " HR Consulting now assists you in providing HR Management services starting from PEO services. Our fees are competitively priced, saving you money compared to other service providers. We don’t just offer company incorporation HR services; we are your business partner."
+            )}{" "}
+          </p>
+
+          <ul className='icon-text-list'>
+            <div className='icon-text-row'>
+              <div className='icon-text-column'>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("Regulatory and Tax Compliance")}
+                </li>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("Work Permits")}
+                </li>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("Payroll Processing")}
+                </li>
+              </div>
+              <div className='icon-text-column'>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("Talent recruitment")}
+                </li>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("Employee onboarding and off-boarding")}
+                </li>
+                <li className='icon-text-list-item'>
+                  <CHECKLISTSVG />
+                  {t("HR Consulting Services / Ad-hoc HR Services")}
+                </li>
+              </div>
+            </div>
+          </ul>
+
+          <button className='schedule-btn'>{t("Schedule Now")} →</button>
+        </div>
+
+        <img
+          src='https://recruitindo.com/wp-content/uploads/2023/12/one-stop-hr-services-for-your-business.png'
+          alt='HR Service'
+          className='one-stop-image'
+        />
+      </div>
+
+      <div className='Brands-container'>
+        <h2>{t("We Work With Major Brands Across the World")}</h2>
+        <MajorBrandsSlider className='brand-slider' />
+      </div>
+      <FAQSection />
+    </section>
   );
-};
+}
+
+export default Home;
