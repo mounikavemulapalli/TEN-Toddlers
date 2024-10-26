@@ -412,16 +412,6 @@ section {
 /* The Proof is in the Play: Watch How Babies Thrive! */
 
 
-.genius-babies {
-    background: #5a40c4;
-    background-image: url('https://www.uptodd.com/images/newWebsite/genius-babies-background.png');
-    width: 100%;
-    padding: 48px 0 100px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover
-}
-
 .genius-babies h1,.genius-babies h1 span {
     color: #fff;
     text-align: center;
@@ -1486,7 +1476,7 @@ section {
 }
 
 .happy-parents-button button {
-    width: 316px;
+    width: 320px;
     height: 54px;
     border-radius: 8px;
     background: #ff5766;
@@ -3064,14 +3054,41 @@ section {
     }
 }
 
-/* hide scroll bar in mentors-list */
-.mentors-list {
-    overflow-y: auto; /* Allows vertical scrolling */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For IE and Edge */
+.access-button {
+    background-color: #ff5766;
+    color: white;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
 }
 
-/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
-.mentors-list::-webkit-scrollbar {
-    display: none;
+.button-center {
+    display: flex;
+    justify-content: center;
+}
+
+.access-button:hover {
+    box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+}
+
+
+.a-btn {
+    width: 250px;
+    height: 54px;
+    border-radius: 8px;
+    background: #ff5766;
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    border: none;
+    margin-top: 5rem;
+    text-align: center;
 }

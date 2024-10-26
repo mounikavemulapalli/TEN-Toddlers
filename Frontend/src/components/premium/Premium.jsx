@@ -1,14 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { pillarsList } from "../../assets/Lists/pillarsList.js";
 import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
+import Button from "../../components/Home/HomeButton.jsx";
+
+import { cards } from "../../assets/Lists/card.js";
 import Faq from "../Faq.jsx"
+import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import Iframe from "react-iframe";
-import Popup from "./Popup.jsx";
+import { happyParent } from "../../assets/Lists/happyParent.js";
+import Popup from './Popup';
+import { FaCheckCircle } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Step from "./Step";
+import Mentors from "../comman/Mentors.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -49,12 +57,120 @@ export const Footer = () => (
   </section>
 );
 
-const Premium = () => {
+
+function Premium() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+
+  const carouselRef = useRef(null);
+  const happyParentRef = useRef(null);
+  const boardMembersRef = useRef(null);
+  const awaredBabyRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const openModal = () => {
+    setShowModal(true);
+  };
 
   const handleOpenPopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
+
+  const handlePrev = () => {
+    if (carouselRef.current) {
+      const cardWidth =
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const handleNext = () => {
+    if (carouselRef.current) {
+      const cardWidth =
+        carouselRef.current.querySelector(".carousel-card").offsetWidth;
+      const gap = 20; // Set this to the gap between cards in pixels
+      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+  const handleHappyParentPrev = () => {
+    if (happyParentRef.current) {
+      const cardWidth = happyParentRef.current.querySelector(
+        ".happy-parents-card"
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
+      happyParentRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleHappyParentNext = () => {
+    if (happyParentRef.current) {
+      const cardWidth = happyParentRef.current.querySelector(
+        ".happy-parents-card"
+      ).offsetWidth;
+      const gap = 20;
+      const scrollAmount = cardWidth + gap;
+      happyParentRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleAwaredBabyNext = () => {
+    if (awaredBabyRef.current) {
+      const cardWidth =
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      awaredBabyRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleAwaredBabyPrev = () => {
+    if (awaredBabyRef.current) {
+      const cardWidth =
+        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      awaredBabyRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleBoardMenberPrev = () => {
+    if (awaredBabyRef.current) {
+      const cardWidth =
+        boardMembersRef.current.querySelector(".board-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      boardMembersRef.current.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleBoardMemberNext = () => {
+    if (boardMembersRef.current) {
+      const cardWidth =
+        boardMembersRef.current.querySelector(".board-card").offsetWidth;
+      const gap = 30;
+      const scrollAmount = cardWidth + gap;
+      boardMembersRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const [clickedCardId, setClickedCardId] = useState(pillarsList[0].id);
 
   return (
     <>
@@ -100,7 +216,9 @@ const Premium = () => {
               Schedule a Demo
             </button>
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {isPopupOpen && (
+                <Popup closePopup={handleOpenPopup} />
+            )}
           </div>
 
           {/* Desktop Image */}
@@ -126,282 +244,51 @@ const Premium = () => {
 
       {/* The Proof is in the Play: Watch How Babies Thrive! */}
 
-      <section className="genius-babies" id="genius-babies">
-        <h1>
-          The Proof is in the Play: <span>Watch How Babies Thrive!</span>
-        </h1>
-        <h5>
-          Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-          Tomorrow
-        </h5>
-        <div className="babies-card-container">
-          <div className="babies-card-list">
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/ku6AjmjCcH4?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/rishit.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p style={{ margin: "0" }}>
-                  Rishit can observe 300+ fruits &amp; vegetables, Lets see how
-                  he does?
-                </p>
-              </div>
+      <section className="genius-babies">
+          <div className="carousel-container">
+            <div className="carousel-header">
+              <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
+              <p>
+                Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
+                Tomorrow
+              </p>
             </div>
-            {/* 2 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/2efUMMC5trc?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/freya.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
+
+            <div className="carousel-wrapper">
+              <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
+                <img
+                  src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+                  alt="Previous"
+                />
+              </button>
+
+              <div className="carousel" ref={carouselRef}>
+                {cards.map((card, index) => (
+                  <div className="carousel-card" key={index}>
+                    <iframe
+                      width="300"
+                      height="200"
+                      src={card.videoUrl}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                    <h3>{card.title}</h3>
+                    {card.description && <p>{card.description}</p>}
+                  </div>
+                ))}
               </div>
-              <div class="baby-card-text-part">
-                <p>5 month baby can Identify 100+ flashcards</p>
-              </div>
-            </div>
-            {/* 3 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/EWF1JwqaC74?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/3.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>4.5 months Recognises 100 Animals &amp; Flowers</p>
-              </div>
-            </div>
-            {/* 4 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/ZUe4UV_XWD8?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/samrit.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>
-                  Baby just knows everything, high IQ level- 300+ cards
-                  recognition
-                </p>
-              </div>
-            </div>
-            {/* 5 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/YE4SXS-KukQ?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/kiaansh.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>Just 3 months old and rolling over without any help</p>
-              </div>
-            </div>
-            {/* 6 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/K-b49uIOIUQ?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/cherry.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>
-                  8 months baby can follow complex instructions with ease -
-                  Exceeding all Milestones
-                </p>
-              </div>
-            </div>
-            {/* 7 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/OoHhJZafXsU?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/babies/priyasmita.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>18 months baby is mastering pictorial reading - Wonderful</p>
-              </div>
-            </div>
-            {/* 8 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/OoHhJZafXsU?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/babies/kairav.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>18 months baby is mastering pictorial reading - Wonderful</p>
-              </div>
-            </div>
-            {/* 9 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/4H7X8LBMjLw?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/mayra.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>20 months baby knows 100 animals and their kids</p>
-              </div>
-            </div>
-            {/* 10 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/hd7NOo-AZ_U?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/babies/moma_popsy.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>
-                  Genius twins can identify 500+ insects and animals flashcards
-                </p>
-              </div>
-            </div>
-            {/* 11 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/xzEETY1V6X4?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/babies/shidhaan.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>6.5 months baby can identify 100+ flashcards</p>
-              </div>
-            </div>
-            {/* 12 */}
-            <div class="baby-card">
-              <div class="baby-card-image-part">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/ONi1rXrmcKQ?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/babies/krishiv.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' fill='none' style='width:75px; height:75px; position: relative; top:28%;'><mask id='mask0_303_1647' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='75' height='75'><rect width='75' height='75' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1647)'><path d='M29.6873 51.5623L51.5623 37.4998L29.6873 23.4373V51.5623ZM37.4998 68.7498C33.1768 68.7498 29.1143 67.9294 25.3123 66.2888C21.5102 64.6482 18.2029 62.4216 15.3904 59.6091C12.5779 56.7966 10.3513 53.4893 8.71069 49.6873C7.07007 45.8852 6.24976 41.8227 6.24976 37.4998C6.24976 33.1768 7.07007 29.1143 8.71069 25.3123C10.3513 21.5102 12.5779 18.2029 15.3904 15.3904C18.2029 12.5779 21.5102 10.3513 25.3123 8.71069C29.1143 7.07007 33.1768 6.24976 37.4998 6.24976C41.8227 6.24976 45.8852 7.07007 49.6873 8.71069C53.4893 10.3513 56.7966 12.5779 59.6091 15.3904C62.4216 18.2029 64.6482 21.5102 66.2888 25.3123C67.9294 29.1143 68.7498 33.1768 68.7498 37.4998C68.7498 41.8227 67.9294 45.8852 66.2888 49.6873C64.6482 53.4893 62.4216 56.7966 59.6091 59.6091C56.7966 62.4216 53.4893 64.6482 49.6873 66.2888C45.8852 67.9294 41.8227 68.7498 37.4998 68.7498Z' fill='white'/><path d='M29.5 52V23L52 37.5L29.5 52Z' fill='#FF3F4E'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="baby-card-text-part">
-                <p>Super active and super energetic</p>
-              </div>
+
+              <button className="carousel-button next" onClick={handleNext}>
+                <img
+                  src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+                  alt="Next"
+                />
+              </button>
             </div>
           </div>
-          <img
-            className="baby-card-slider-next"
-            src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-            loading="lazy"
-            alt="Next Brilliant Baby"
-          />
-          <img
-            className="baby-card-slider-prev"
-            src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-            loading="lazy"
-            alt="Prev Brilliant Baby"
-          />
-        </div>
-      </section>
-
+        </section>
       {/* How our Program Works !! */}
 
       <Step />
@@ -420,7 +307,10 @@ const Premium = () => {
           <div className="usp-card">
             <img
               src="https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-1.webp"
-              onError="this.onError=null; this.src='/images/newWebsite/why-uptodd/why-uptodd-1.png'"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-1.png";
+              }}
               loading="lazy"
               alt="Personalised Program"
             />
@@ -436,7 +326,10 @@ const Premium = () => {
           <div className="usp-card">
             <img
               src="https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-2.webp"
-              onError="this.onError=null; this.src='/images/newWebsite/why-uptodd/why-uptodd-2.png'"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-2.png";
+              }}
               loading="lazy"
               alt="Brain Boost"
             />
@@ -452,7 +345,10 @@ const Premium = () => {
           <div className="usp-card">
             <img
               src="https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-3.webp"
-              onError="this.onError=null; this.src='/images/newWebsite/why-uptodd/why-uptodd-3.png'"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-3.png";
+              }}
               loading="lazy"
               alt="Parenting One Stop Solution"
             />
@@ -468,7 +364,10 @@ const Premium = () => {
           <div className="usp-card">
             <img
               src="https://www.uptodd.com/images/newWebsite/why-uptodd/why-uptodd-4.webp"
-              onError="this.onError=null; this.src='/images/newWebsite/why-uptodd/why-uptodd-4.png'"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-4.png";
+              }}
               loading="lazy"
               alt="Expert-Guided"
             />
@@ -508,128 +407,124 @@ const Premium = () => {
       {/* Brilliant Minds: Celebrating Global Baby Champions */}
 
       <section className="awared-babies">
-        <h1>
-          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
-        </h1>
-        <div className="baby-award-list-container">
-          <div className="baby-award-list">
-            <div className="baby-award-card">
+          <h1>
+            Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+          </h1>
+          <div className="carousel-wrapper">
+            <button
+              className="carousel-button prev"
+              onClick={handleAwaredBabyPrev}
+            >
               <img
-                src="https://www.uptodd.com/images/newWebsite/awards/dhruvut.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/dhruvut.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Dhruvut - Kalam's World Record"
+                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+                alt="Previous"
               />
-              <p>
-                Dhruvut - Kalam's World Record<br></br>
-                <span>
-                  UpTodd's Little Genius identified 416 Flashcards within 10
-                  Minutes
-                </span>
-              </p>
+            </button>
+            <div className="carousel" ref={awaredBabyRef}>
+              {babyAwardList.map((ele) => (
+                <div
+                  key={ele.id}
+                  className="baby-award-card"
+                  ref={awaredBabyRef}
+                >
+                  <img src={ele.img} alt="" />
+                  <h3>{ele.title} </h3>
+                  <p>{ele.description} </p>
+                </div>
+              ))}
             </div>
-            <div className="baby-award-card">
+            <button
+              className="carousel-button next"
+              onClick={handleAwaredBabyNext}
+            >
               <img
-                src="https://www.uptodd.com/images/newWebsite/awards/freya.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/freya.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Freya - Young Milestone Achiever"
+                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+                alt="Next"
               />
-              <p>
-                Freya - Young Milestone Achiever<br></br>
-                <span>
-                  UpTodd's Little Genius recorded identification of record 60+
-                  flashcards in 7 minutes
-                </span>
-              </p>
-            </div>
-            <div className="baby-award-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/awards/aastik.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/aastik.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Aastik | International Book of REX Award"
-              />
-              <p>
-                Aastik - International Book of REX Award<br></br>
-                <span>
-                  UpTodd's Little Genius spoke 103 words of Animals, Flowers,
-                  Flags etc. within 23 Minutes
-                </span>
-              </p>
-            </div>
-            <div className="baby-award-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/awards/Tejasawi.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/Tejasawi.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Tejasawi | NYT Times - Little Genius"
-              />
-              <p>
-                Tejasawi - NYT Times - Little Genius<br></br>
-                <span>
-                  UpTodd's Little Genius recorded solving 4 sets of 16 pattern
-                  puzzles in 218 seconds
-                </span>
-              </p>
-            </div>
-            <div className="baby-award-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/awards/kedar.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/kedar.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Kedar | Wall Street - Gloabal Awardee"
-              />
-              <p>
-                Kedar - Wall Street - Gloabal Awardee<br></br>
-                <span>
-                  UpTodd's Little Genius stood as Rank-1 in 10 different events,
-                  among most talented global babies
-                </span>
-              </p>
-            </div>
-            <div className="baby-award-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/awards/manasmita.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/manasmita.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Manasmita | Kalams World Record"
-              />
-              <p>
-                Manasmita - Kalams World Record<br></br>
-                <span>500+ Different objects in 5 minutes</span>
-              </p>
-            </div>
-            <div className="baby-award-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/awards/tejas.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/awards/tejas.png'"
-                loading="lazy"
-                alt="Uptodd genius baby Tejas | New York Times - World Record"
-              />
-              <p>
-                Tejas - New York Times World Record<br></br>
-                <span>
-                  UpTodd's Little Genius spoke 800 different words of variety of
-                  things within 29 Minutes
-                </span>
-              </p>
-            </div>
+            </button>
           </div>
-          <img
-            className="baby-award-slider-next"
-            src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-            loading="lazy"
-            alt="Next Genius Bbay"
-          />
-          <img
-            className="baby-award-slider-prev"
-            src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-            loading="lazy"
-            alt="Prev Genius Baby"
-          />
+        </section>
+        <div className="line-section">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="314"
+            height="15"
+            viewBox="0 0 314 15"
+            fill="none"
+          >
+            <path
+              d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
+              stroke="#FF3F4E"
+              strokeWidth="2"
+            ></path>
+          </svg>
         </div>
-      </section>
+        <section className="happy-parents" id="happy-parents">
+          <h1>
+            Happy Parents, Thriving Tots:
+            <span>Witnessing Their Child's Growth</span>
+          </h1>
+          <h5>
+            Smarter Investment: Personalized Learning vs. Traditional Plastic
+            Toys
+          </h5>
+          <div className="happy-parent-list-container">
+            <div className="happy-parent-list" ref={happyParentRef}>
+              {happyParent.map((review) => (
+                <div key={review.id} className="happy-parents-card">
+                  <div>
+                    <iframe
+                      loading="lazy"
+                      srcDoc={review.surdoc}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen=""
+                      data-gtm-yt-inspected-4="true"
+                      data-gtm-yt-inspected-40611628_62="true"
+                      id="72071507"
+                      data-gtm-yt-inspected-14="true"
+                    ></iframe>
+                  </div>
+                  <div className="quote-container">
+                    <img
+                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
+                      alt="Quote"
+                      className="quote-mark"
+                    />
+                    <p className="quote-text">{review.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <img
+              className="happy-parents-slider-next"
+              onClick={handleHappyParentNext}
+              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+              loading="lazy"
+              alt="Next Happy Parent"
+            />
+            <img
+              className="happy-parents-slider-prev"
+              onClick={handleHappyParentPrev}
+              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+              loading="lazy"
+              alt="Prev Happy Parent"
+            />
+          </div>
+          <div className="happy-parents-button">
+          <button
+              className="btn"
+              id="premiumScreenSuperPremiumProgram"
+              onClick={handleOpenPopup}
+            >
+              Fuel Your Child's Development!
+            </button>
+            {/* Popup Logic */}
+            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+          </div>
+        </section>
 
       {/* Bending line */}
 
@@ -651,319 +546,7 @@ const Premium = () => {
 
       {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth  */}
 
-      <section className="happy-parents" id="happy-parents">
-        <h1>
-          Happy Parents, Thriving Tots:
-          <span>Witnessing Their Child's Growth</span>
-        </h1>
-        <h5>Smarter Investment: Personalized Learning vs. Traditional Toys</h5>
-        <div className="happy-parent-list-container">
-          <div className="happy-parent-list">
-            {/* 1 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/LgQNwsePBBU?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-1.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Audio visual technology is creating a difference and has
-                  become a positive routine in my baby growth.
-                </p>
-              </div>
-            </div>
-            {/* 2 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/9gARbWYs_oA?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-9.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Monthly developmental reports in Uptodd’s parenting program
-                  help me in identifying and resolving gaps in my baby brain
-                  development.
-                </p>
-              </div>
-            </div>
-            {/* 3 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/_VP-LnAATCs?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='	https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-2.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Uptodd is the One place for all Parenting "Needs" and complete
-                  growth of my baby.
-                </p>
-              </div>
-            </div>
-            {/* 4 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/OuCVjrXvQGE?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-3.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Searching for Parenting Problem for baby? One Stop solution -
-                  Only UpTodd
-                </p>
-              </div>
-            </div>
-            {/* 5 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/Oil_sH2wQmQ?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-4.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Unique baby activities - Everyone must try their expert
-                  parenting program
-                </p>
-              </div>
-            </div>
-            {/* 6 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/YI-L4Kl-zvQ?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-5.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Being first-time parents, UpTodd guided us, being first-time
-                  parents, with their comprehensive parenting program for baby
-                  development.
-                </p>
-              </div>
-            </div>
-            {/* 7 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/XPHIwRvVcro?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-6.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Brain boosters and Neural Music remove my baby's anxiety and
-                  help in toddler’s development - genius in making
-                </p>
-              </div>
-            </div>
-            {/* 8 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/j-2dLZ4vdP8?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-7.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  I am happy to see the progress of my baby’s brain growth,
-                  through Uptodd activities.
-                </p>
-              </div>
-            </div>
-            {/* 9 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/yo9kFL29yHU?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-8.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Recognises all the household items through Uptodd flash cards
-                  kit - Happy to see my little baby brain growing
-                </p>
-              </div>
-            </div>
-            {/* 10 */}
-            <div class="happy-parent-card">
-              <div class="happy-parent-image">
-                <iframe
-                  loading="lazy"
-                  srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/Hz--XOAILY4?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/happy-parents/happy-parent-10.png' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:20%;top:35%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
-              </div>
-              <div class="happy-parent-quote">
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  loading="lazy"
-                  alt="quote"
-                />
-                <p>
-                  Proud MOM of International Record Holder at UpTodd, Dhruvut
-                </p>
-              </div>
-            </div>
-          </div>
-          <img
-            className="happy-parents-slider-next"
-            src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-            loading="lazy"
-            alt="Next Happy Parent"
-          />
-          <img
-            className="happy-parents-slider-prev"
-            src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-            loading="lazy"
-            alt="Prev Happy Parent"
-          />
-        </div>{" "}
-        <div className="happy-parents-button">
-          <button
-            className="btn"
-            id="premiumScreenHappyParentsSection"
-            onClick="showBookDemoPopup('happyParents')"
-          >
-            Fuel Your Child's Development!
-          </button>
-        </div>
-      </section>
+      
 
       {/* Recommended by Top Global Experts */}
 
@@ -979,7 +562,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/jaideep_sharma.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/jaideep_sharma.png'"
+                  onError={(e) => {
+                    e.target.onerror = null; 
+                    e.target.src = "/images/newWebsite/doctors/jaideep_sharma.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain growth expert Dr.Jaideep Sharma"
                 />
@@ -1005,7 +591,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/krishna_vedula.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/krishna_vedula.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/krishna_vedula.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain development specialist Krishna Vedula"
                 />
@@ -1031,7 +620,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/manoj_mondal.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/manoj_mondal.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/manoj_mondal.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain development expert Manoj Mondal"
                 />
@@ -1057,7 +649,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/vaishal_sharma.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/vaishal_sharma.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/vaishal_sharma.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain growth expert Vaishal Sharma"
                 />
@@ -1083,7 +678,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/sudhanshu.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/sudhanshu.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/sudhanshu.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain development specialist Sudhanshu Singh"
                 />
@@ -1109,7 +707,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/mani_kapur.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/mani_kapur.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/mani_kapur.png";
+                  }}
                   loading="lazy"
                   alt="Baby brain growth specialist Mani Kapur"
                 />
@@ -1135,7 +736,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/saurabh_khanna.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/saurabh_khanna.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/saurabh_khanna.png";
+                  }}
                   loading="lazy"
                   alt="Baby growth specialist Saurabh Khanna"
                 />
@@ -1161,7 +765,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/sarvesh_thakur.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/sarvesh_thakur.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/sarvesh_thakur.png";
+                  }}
                   loading="lazy"
                   alt="Baby Development Specialist Sarvesh Thakur"
                 />
@@ -1187,7 +794,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/vipul_sehrawat.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/vipul_sehrawat.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/vipul_sehrawat.png";
+                  }}
                   loading="lazy"
                   alt="Baby Growth Expert Vipul Sehrawat"
                 />
@@ -1213,7 +823,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/aditya_sharma.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/aditya_sharma.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/aditya_sharma.png";
+                  }}
                   loading="lazy"
                   alt="Infant brain growth expert Aditya Sharma"
                 />
@@ -1239,7 +852,10 @@ const Premium = () => {
               <div className="doctor-review-image-part">
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/rohit_kalani.webp"
-                  onError="this.onError=null; this.src='/images/newWebsite/doctors/rohit_kalani.png'"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/images/images/newWebsite/doctors/rohit_kalani.png";
+                  }}
                   loading="lazy"
                   alt="Infant growth specialist Rohit Kalani"
                 />
@@ -1283,7 +899,10 @@ const Premium = () => {
           </div>
           <img
             src="https://www.uptodd.com/images/newWebsite/research-insti.webp"
-            onError="this.onError=null; this.src='/images/newWebsite/research-insti.png'"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/images/newWebsite/research-insti.png";
+            }}
             loading="lazy"
             alt="IIT,IIM,MIT,Harvard Research Institutes"
           />
@@ -1295,7 +914,10 @@ const Premium = () => {
           </div>
           <img
             src="https://www.uptodd.com/images/newWebsite/research-insti-mobile.webp"
-            onError="this.onError=null; this.src='/images/newWebsite/research-insti-mobile.png'"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/images/newWebsite/research-insti-mobile.png";
+            }}
             loading="lazy"
             alt="IIT,IIM,MIT,Harvard Research Institutes"
           />
@@ -1307,7 +929,10 @@ const Premium = () => {
           </div>
           <img
             src="https://www.uptodd.com/images/newWebsite/researchers/all_researchers.webp"
-            onError="this.onError=null; this.src='/images/newWebsite/researchers/all_researchers.png'"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/images/newWebsite/researchers/all_researchers.png";
+            }}
             loading="lazy"
             alt="Research Backed Personalised Program for Baby Development"
           />
@@ -1321,7 +946,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/glenn-doman.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/glenn-doman.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/glenn-doman.png";
+                }}
                 loading="lazy"
                 alt="glenn-doman baby development expert"
               />
@@ -1330,7 +958,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/maria-montessori.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/maria-montessori.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/maria-montessori.png";
+                }}
                 loading="lazy"
                 alt="maria-montessori baby development expert"
               />
@@ -1339,7 +970,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/rudolf-steiner.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/rudolf-steiner.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/rudolf-steiner.png";
+                }}
                 loading="lazy"
                 alt="rudolf-steiner baby development expert"
               />
@@ -1348,7 +982,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/bf-skinner.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/bf-skinner.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/bf-skinner.png";
+                }}
                 loading="lazy"
                 alt="bf-skinner baby development expert"
               />
@@ -1357,7 +994,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/loris-malaguzzi.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/loris-malaguzzi.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/loris-malaguzzi.png";
+                }}
                 loading="lazy"
                 alt="loris-malaguzzi baby development expert"
               />
@@ -1366,7 +1006,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/howard-gardner.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/howard-gardner.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/howard-gardner.png";
+                }}
                 loading="lazy"
                 alt="howard-gardner baby development expert"
               />
@@ -1375,7 +1018,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/diana-baumrind.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/diana-baumrind.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/diana-baumrind.png";
+                }}
                 loading="lazy"
                 alt="diana-baumrind baby development expert"
               />
@@ -1384,7 +1030,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/swami-vivekanand.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/swami-vivekanand.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/swami-vivekanand.png";
+                }}
                 loading="lazy"
                 alt="swami-vivekanand"
               />
@@ -1393,7 +1042,10 @@ const Premium = () => {
             <div>
               <img
                 src="https://www.uptodd.com/images/newWebsite/researchers/jean-piaget.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/researchers/jean-piaget.png'"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/images/images/newWebsite/researchers/jean-piaget.png";
+                }}
                 loading="lazy"
                 alt="jean-piaget baby development expert"
               />
@@ -1507,10 +1159,10 @@ const Premium = () => {
               alt="Personalised Baby Kit"
             />
           </div>
-          <div class="kit-video">
+          <div className="kit-video">
             <iframe
               loading="lazy"
-              srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/r1SwlfmvuCM?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' class='full'><img src='https://www.uptodd.com/images/newWebsite/kit-video.webp' class='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:3%;top:30%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
+              srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/r1SwlfmvuCM?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'><img src='https://www.uptodd.com/images/newWebsite/kit-video.webp' className='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:3%;top:30%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1631,155 +1283,7 @@ const Premium = () => {
 
       {/* Meet our Mentors & Curators | 100+ Curators R&D Team */}
 
-      <section className="our-mentors" id="our-mentors">
-        <h1>
-          Meet our Mentors &amp; Curators |
-          <span>100+ Curators R&amp;D Team</span>
-        </h1>
-        <div className="mentors-list">
-          <div className="mentors-list-inner">
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/krishna_vedula.png'"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Krishna Vedula MIT"
-              />
-              <h3>
-                Krishna Vedula
-                <br />
-                <span>Professor, MIT, United States</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/jaideep_sharma.png'"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-              />
-              <h3>
-                Dr. Jaideep Sharma
-                <br />
-                <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/sudhanshu.png'"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Sudhanshu Singh"
-              />
-              <h3>
-                Dr. Sudhanshu
-                <br />
-                <span>MD, DSMA CMC Vellore</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/manoj_mondal.png'"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-              />
-              <h3>
-                Manoj Mondal
-                <br />
-                <span>Professor, IIT Kharagpur</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/PK_Mishra.png'"
-                loading="lazy"
-                alt="Uptodd mentor PK Mishra IIT BHU"
-              />
-              <h3>
-                Prof. PK Mishra
-                <br />
-                <span>IIT BHU</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/krishna_vedula.png'"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Krishna Vedula MIT"
-              />
-              <h3>
-                Krishna Vedula
-                <br />
-                <span>Professor, MIT, United States</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/jaideep_sharma.png'"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-              />
-              <h3>
-                Dr. Jaideep Sharma
-                <br />
-                <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/sudhanshu.png'"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Sudhanshu Singh"
-              />
-              <h3>
-                Dr. Sudhanshu
-                <br />
-                <span>MD, DSMA CMC Vellore</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/manoj_mondal.png'"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-              />
-              <h3>
-                Manoj Mondal
-                <br />
-                <span>Professor, IIT Kharagpur</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-                onError="this.onError=null; this.src='/images/newWebsite/professors/PK_Mishra.png'"
-                loading="lazy"
-                alt="Uptodd mentor PK Mishra IIT BHU"
-              />
-              <h3>
-                Prof. PK Mishra
-                <br />
-                <span>IIT BHU</span>
-              </h3>
-            </div>
-          </div>
-        </div>
-        <h1>UpTodd™ has been Featured In</h1>
-        <div className="featured-in">
-          <img
-            src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
-            onError="this.onError=null; this.src='/images/newWebsite/featured-in.png'"
-            loading="lazy"
-            alt="Media Houses Featuring UpTodd"
-          />
-        </div>
-      </section>
+      <Mentors />
 
       {/* Your Frequently Asked Questions */}
 
@@ -1787,6 +1291,13 @@ const Premium = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Correct Button Component */}
+
+            {/* Popup Logic */}
+            {isPopupOpen && (
+                <Popup closePopup={handleOpenPopup} />
+            )}
     </>
   );
 };
