@@ -6,17 +6,18 @@ import "./Premium.css";
 import Button from "../../components/Home/HomeButton.jsx";
 
 import { cards } from "../../assets/Lists/card.js";
-import Faq from "../Faq.jsx"
+import Faq from "../Faq.jsx";
 import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import Iframe from "react-iframe";
 import { happyParent } from "../../assets/Lists/happyParent.js";
-import Popup from './Popup';
+import Popup from "./Popup";
 import { FaCheckCircle } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import Step from "./Step";
 import Mentors from "../comman/Mentors.jsx";
+import PopupButton from "./PopupButton.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -57,10 +58,8 @@ export const Footer = () => (
   </section>
 );
 
-
 function Premium() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
 
   const carouselRef = useRef(null);
   const happyParentRef = useRef(null);
@@ -212,14 +211,16 @@ function Premium() {
                 Starts at INR 1190* per month only
               </li>
             </ul>
-            <button className="btn" onClick={handleOpenPopup}>
-              Schedule a Demo
-            </button>
+            <PopupButton text="Schedule a Demo" />
+            {/* <button className="btn" onClick={handleOpenPopup}> */}
+            {/* Schedule a Demo */}
+            {/* </button> */}
             {/* Popup Logic */}
-            {isPopupOpen && (
-                <Popup closePopup={handleOpenPopup} />
-            )}
+            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
           </div>
+
+          {/* Popup Logic */}
+          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
 
           {/* Desktop Image */}
           <div className="image-banner-part">
@@ -245,54 +246,58 @@ function Premium() {
       {/* The Proof is in the Play: Watch How Babies Thrive! */}
 
       <section className="genius-babies">
-          <div className="carousel-container">
-            <div className="carousel-header">
-              <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
-              <p>
-                Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-                Tomorrow
-              </p>
-            </div>
-
-            <div className="carousel-wrapper">
-              <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                  alt="Previous"
-                />
-              </button>
-
-              <div className="carousel" ref={carouselRef}>
-                {cards.map((card, index) => (
-                  <div className="carousel-card" key={index}>
-                    <iframe
-                      width="300"
-                      height="200"
-                      src={card.videoUrl}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                    <h3>{card.title}</h3>
-                    {card.description && <p>{card.description}</p>}
-                  </div>
-                ))}
-              </div>
-
-              <button className="carousel-button next" onClick={handleNext}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                  alt="Next"
-                />
-              </button>
-            </div>
+        <div className="carousel-container">
+          <div className="carousel-header">
+            <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
+            <p>
+              Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
+              Tomorrow
+            </p>
           </div>
-        </section>
+
+          <div className="carousel-wrapper">
+            <button
+              className="carousel-button prev"
+              style={{ zIndex: "100" }}
+              onClick={handlePrev}
+            >
+              <img
+                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+                alt="Previous"
+              />
+            </button>
+
+            <div className="carousel" ref={carouselRef}>
+              {cards.map((card, index) => (
+                <div className="carousel-card" key={index}>
+                  <iframe
+                    width="300"
+                    height="200"
+                    src={card.videoUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                  <h3>{card.title}</h3>
+                  {card.description && <p>{card.description}</p>}
+                </div>
+              ))}
+            </div>
+
+            <button className="carousel-button next" onClick={handleNext}>
+              <img
+                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+                alt="Next"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
       {/* How our Program Works !! */}
 
       <Step />
-
+      <PopupButton text="Access this program" />
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
 
@@ -380,8 +385,6 @@ function Premium() {
             </div>
           </div>
         </div>
-        
-        
       </section>
 
       {/* Banne-2 */}
@@ -393,138 +396,136 @@ function Premium() {
             development that strengthens neural connections and builds a strong
             foundation for their future.
           </h3>
-          <button
+          {/* <button
             id="premiumScreenStartNowBannerBookDemo"
             onClick={handleOpenPopup}
           >
             Start Now
-          </button>
+          </button> */}
           {/* Popup Logic */}
-          {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+          <div className="text-black">
+            <PopupButton text="Start Now" />
+          </div>
         </div>
       </section>
 
       {/* Brilliant Minds: Celebrating Global Baby Champions */}
 
       <section className="awared-babies">
-          <h1>
-            Brilliant Minds: <span> Celebrating Global Baby Champions</span>
-          </h1>
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-button prev"
-              onClick={handleAwaredBabyPrev}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                alt="Previous"
-              />
-            </button>
-            <div className="carousel" ref={awaredBabyRef}>
-              {babyAwardList.map((ele) => (
-                <div
-                  key={ele.id}
-                  className="baby-award-card"
-                  ref={awaredBabyRef}
-                >
-                  <img src={ele.img} alt="" />
-                  <h3>{ele.title} </h3>
-                  <p>{ele.description} </p>
-                </div>
-              ))}
-            </div>
-            <button
-              className="carousel-button next"
-              onClick={handleAwaredBabyNext}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                alt="Next"
-              />
-            </button>
-          </div>
-        </section>
-        <div className="line-section">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="314"
-            height="15"
-            viewBox="0 0 314 15"
-            fill="none"
-          >
-            <path
-              d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
-              stroke="#FF3F4E"
-              strokeWidth="2"
-            ></path>
-          </svg>
-        </div>
-        <section className="happy-parents" id="happy-parents">
-          <h1>
-            Happy Parents, Thriving Tots:
-            <span>Witnessing Their Child's Growth</span>
-          </h1>
-          <h5>
-            Smarter Investment: Personalized Learning vs. Traditional Plastic
-            Toys
-          </h5>
-          <div className="happy-parent-list-container">
-            <div className="happy-parent-list" ref={happyParentRef}>
-              {happyParent.map((review) => (
-                <div key={review.id} className="happy-parents-card">
-                  <div>
-                    <iframe
-                      loading="lazy"
-                      srcDoc={review.surdoc}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen=""
-                      data-gtm-yt-inspected-4="true"
-                      data-gtm-yt-inspected-40611628_62="true"
-                      id="72071507"
-                      data-gtm-yt-inspected-14="true"
-                    ></iframe>
-                  </div>
-                  <div className="quote-container">
-                    <img
-                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                      alt="Quote"
-                      className="quote-mark"
-                    />
-                    <p className="quote-text">{review.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <img
-              className="happy-parents-slider-next"
-              onClick={handleHappyParentNext}
-              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-              loading="lazy"
-              alt="Next Happy Parent"
-            />
-            <img
-              className="happy-parents-slider-prev"
-              onClick={handleHappyParentPrev}
-              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-              loading="lazy"
-              alt="Prev Happy Parent"
-            />
-          </div>
-          <div className="happy-parents-button">
+        <h1>
+          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+        </h1>
+        <div className="carousel-wrapper">
           <button
-              className="btn"
-              id="premiumScreenSuperPremiumProgram"
-              onClick={handleOpenPopup}
-            >
-              Fuel Your Child's Development!
-            </button>
-            {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            className="carousel-button prev"
+            onClick={handleAwaredBabyPrev}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+              alt="Previous"
+            />
+          </button>
+          <div className="carousel" ref={awaredBabyRef}>
+            {babyAwardList.map((ele) => (
+              <div key={ele.id} className="baby-award-card" ref={awaredBabyRef}>
+                <img src={ele.img} alt="" />
+                <h3>{ele.title} </h3>
+                <p>{ele.description} </p>
+              </div>
+            ))}
           </div>
-        </section>
+          <button
+            className="carousel-button next"
+            onClick={handleAwaredBabyNext}
+          >
+            <img
+              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+              alt="Next"
+            />
+          </button>
+        </div>
+      </section>
+      <div className="line-section">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="314"
+          height="15"
+          viewBox="0 0 314 15"
+          fill="none"
+        >
+          <path
+            d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
+            stroke="#FF3F4E"
+            strokeWidth="2"
+          ></path>
+        </svg>
+      </div>
+      <section className="happy-parents" id="happy-parents">
+        <h1>
+          Happy Parents, Thriving Tots:
+          <span>Witnessing Their Child's Growth</span>
+        </h1>
+        <h5>
+          Smarter Investment: Personalized Learning vs. Traditional Plastic Toys
+        </h5>
+        <div className="happy-parent-list-container">
+          <div className="happy-parent-list" ref={happyParentRef}>
+            {happyParent.map((review) => (
+              <div key={review.id} className="happy-parents-card">
+                <div>
+                  <iframe
+                    loading="lazy"
+                    srcDoc={review.surdoc}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen=""
+                    data-gtm-yt-inspected-4="true"
+                    data-gtm-yt-inspected-40611628_62="true"
+                    id="72071507"
+                    data-gtm-yt-inspected-14="true"
+                  ></iframe>
+                </div>
+                <div className="quote-container">
+                  <img
+                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
+                    alt="Quote"
+                    className="quote-mark"
+                  />
+                  <p className="quote-text">{review.content}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <img
+            className="happy-parents-slider-next"
+            onClick={handleHappyParentNext}
+            src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
+            loading="lazy"
+            alt="Next Happy Parent"
+          />
+          <img
+            className="happy-parents-slider-prev"
+            onClick={handleHappyParentPrev}
+            src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
+            loading="lazy"
+            alt="Prev Happy Parent"
+          />
+        </div>
+        <div className="happy-parents-button">
+          <button
+            className="btn"
+            id="premiumScreenSuperPremiumProgram"
+            onClick={handleOpenPopup}
+          >
+            Fuel Your Child's Development!
+          </button>
+          {/* Popup Logic */}
+          {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+        </div>
+      </section>
 
       {/* Bending line */}
 
@@ -546,8 +547,6 @@ function Premium() {
 
       {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth  */}
 
-      
-
       {/* Recommended by Top Global Experts */}
 
       <section className="doctor-review" id="doctorreview">
@@ -563,8 +562,9 @@ function Premium() {
                 <img
                   src="https://www.uptodd.com/images/newWebsite/doctors/jaideep_sharma.webp"
                   onError={(e) => {
-                    e.target.onerror = null; 
-                    e.target.src = "/images/newWebsite/doctors/jaideep_sharma.png";
+                    e.target.onerror = null;
+                    e.target.src =
+                      "/images/newWebsite/doctors/jaideep_sharma.png";
                   }}
                   loading="lazy"
                   alt="Baby brain growth expert Dr.Jaideep Sharma"
@@ -593,7 +593,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/krishna_vedula.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/krishna_vedula.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/krishna_vedula.png";
                   }}
                   loading="lazy"
                   alt="Baby brain development specialist Krishna Vedula"
@@ -622,7 +623,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/manoj_mondal.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/manoj_mondal.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/manoj_mondal.png";
                   }}
                   loading="lazy"
                   alt="Baby brain development expert Manoj Mondal"
@@ -651,7 +653,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/vaishal_sharma.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/vaishal_sharma.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/vaishal_sharma.png";
                   }}
                   loading="lazy"
                   alt="Baby brain growth expert Vaishal Sharma"
@@ -680,7 +683,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/sudhanshu.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/sudhanshu.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/sudhanshu.png";
                   }}
                   loading="lazy"
                   alt="Baby brain development specialist Sudhanshu Singh"
@@ -709,7 +713,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/mani_kapur.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/mani_kapur.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/mani_kapur.png";
                   }}
                   loading="lazy"
                   alt="Baby brain growth specialist Mani Kapur"
@@ -738,7 +743,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/saurabh_khanna.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/saurabh_khanna.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/saurabh_khanna.png";
                   }}
                   loading="lazy"
                   alt="Baby growth specialist Saurabh Khanna"
@@ -767,7 +773,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/sarvesh_thakur.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/sarvesh_thakur.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/sarvesh_thakur.png";
                   }}
                   loading="lazy"
                   alt="Baby Development Specialist Sarvesh Thakur"
@@ -796,7 +803,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/vipul_sehrawat.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/vipul_sehrawat.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/vipul_sehrawat.png";
                   }}
                   loading="lazy"
                   alt="Baby Growth Expert Vipul Sehrawat"
@@ -825,7 +833,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/aditya_sharma.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/aditya_sharma.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/aditya_sharma.png";
                   }}
                   loading="lazy"
                   alt="Infant brain growth expert Aditya Sharma"
@@ -854,7 +863,8 @@ function Premium() {
                   src="https://www.uptodd.com/images/newWebsite/doctors/rohit_kalani.webp"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/images/newWebsite/doctors/rohit_kalani.png";
+                    e.target.src =
+                      "/images/images/newWebsite/doctors/rohit_kalani.png";
                   }}
                   loading="lazy"
                   alt="Infant growth specialist Rohit Kalani"
@@ -916,7 +926,8 @@ function Premium() {
             src="https://www.uptodd.com/images/newWebsite/research-insti-mobile.webp"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "/images/images/newWebsite/research-insti-mobile.png";
+              e.target.src =
+                "/images/images/newWebsite/research-insti-mobile.png";
             }}
             loading="lazy"
             alt="IIT,IIM,MIT,Harvard Research Institutes"
@@ -931,7 +942,8 @@ function Premium() {
             src="https://www.uptodd.com/images/newWebsite/researchers/all_researchers.webp"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "/images/images/newWebsite/researchers/all_researchers.png";
+              e.target.src =
+                "/images/images/newWebsite/researchers/all_researchers.png";
             }}
             loading="lazy"
             alt="Research Backed Personalised Program for Baby Development"
@@ -948,7 +960,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/glenn-doman.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/glenn-doman.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/glenn-doman.png";
                 }}
                 loading="lazy"
                 alt="glenn-doman baby development expert"
@@ -960,7 +973,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/maria-montessori.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/maria-montessori.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/maria-montessori.png";
                 }}
                 loading="lazy"
                 alt="maria-montessori baby development expert"
@@ -972,7 +986,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/rudolf-steiner.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/rudolf-steiner.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/rudolf-steiner.png";
                 }}
                 loading="lazy"
                 alt="rudolf-steiner baby development expert"
@@ -984,7 +999,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/bf-skinner.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/bf-skinner.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/bf-skinner.png";
                 }}
                 loading="lazy"
                 alt="bf-skinner baby development expert"
@@ -996,7 +1012,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/loris-malaguzzi.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/loris-malaguzzi.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/loris-malaguzzi.png";
                 }}
                 loading="lazy"
                 alt="loris-malaguzzi baby development expert"
@@ -1008,7 +1025,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/howard-gardner.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/howard-gardner.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/howard-gardner.png";
                 }}
                 loading="lazy"
                 alt="howard-gardner baby development expert"
@@ -1020,7 +1038,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/diana-baumrind.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/diana-baumrind.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/diana-baumrind.png";
                 }}
                 loading="lazy"
                 alt="diana-baumrind baby development expert"
@@ -1032,7 +1051,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/swami-vivekanand.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/swami-vivekanand.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/swami-vivekanand.png";
                 }}
                 loading="lazy"
                 alt="swami-vivekanand"
@@ -1044,7 +1064,8 @@ function Premium() {
                 src="https://www.uptodd.com/images/newWebsite/researchers/jean-piaget.webp"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/images/images/newWebsite/researchers/jean-piaget.png";
+                  e.target.src =
+                    "/images/images/newWebsite/researchers/jean-piaget.png";
                 }}
                 loading="lazy"
                 alt="jean-piaget baby development expert"
@@ -1102,15 +1123,16 @@ function Premium() {
             <h2>
               INR 38,900 <s>INR 120,900</s>
             </h2>
-            <button
-              className="btn"
+            {/* <button
+              className="a-btn"
               id="premiumScreenSuperPremiumProgram"
               onClick={handleOpenPopup}
             >
               Enroll Now
-            </button>
+            </button> */}
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <PopupButton className="btn" text="Enroll Now" />
           </div>
           <div className="product-cost-card">
             <h3>Standard Premium Program</h3>
@@ -1123,15 +1145,16 @@ function Premium() {
             <h2>
               INR 23,900 <s>INR 70,900</s>
             </h2>
-            <button
+            {/* <button
               className="btn"
               id="premiumScreenStandardPremiumProgram"
               onClick={handleOpenPopup}
             >
               Enroll Now
-            </button>
+            </button> */}
             {/* Popup Logic */}
-            {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
+            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <PopupButton className="btn" text="Enroll Now" />
           </div>
         </div>
         <div className="see-more-product">
@@ -1294,12 +1317,10 @@ function Premium() {
 
       {/* Correct Button Component */}
 
-            {/* Popup Logic */}
-            {isPopupOpen && (
-                <Popup closePopup={handleOpenPopup} />
-            )}
+      {/* Popup Logic */}
+      {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
     </>
   );
-};
+}
 
 export default Premium;

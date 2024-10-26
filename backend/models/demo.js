@@ -4,7 +4,7 @@ const bookDemoSchema = new mongoose.Schema({
   fullName: { type: String, required: true },
   email: { type: String, required: true },
   mobile: { type: String, required: true },
-  mobileCode: { type: String, required: true },
+  mobileCode: { type: String, default: "+91", required: true },
   babyAge: { type: String, required: true },
 });
 
