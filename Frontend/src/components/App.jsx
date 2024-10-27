@@ -40,6 +40,7 @@ export default function App() {
 function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
   const location = useLocation();
   const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
+  const isFooterHidden = hideFooterRoutes.includes(location.pathname) || location.pathname.startsWith('/blog/');
 
   return (
     <>
@@ -56,12 +57,12 @@ function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
         <Route path='/terms-conditions' element={<TermsCondition />} />
         <Route path='/super_daily_app_program' element={<SuperDailyProgram />} />
         <Route path="/blog" element={<Blog searchedKeyword={searchedKeyword} setSelectedTitle={setSelectedTitle} />} />
-        <Route path={'/blog/:title'} element={<Article />} />
+        <Route path='/blog/:title' element={<Article />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />
       </Routes>
-      {!(hideFooterRoutes.includes(location.pathname)) && <Footer />}
+      {!isFooterHidden && <Footer />}
     </>
   );
 }

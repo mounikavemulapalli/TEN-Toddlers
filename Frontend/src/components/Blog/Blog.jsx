@@ -45,10 +45,10 @@ export const Article = () => {
         return <strong key={index}> {item.text} </strong>;
       case 'anchor':
         return (
-          <a key={index} href={item.href} target="_blank"> {item.text} </a>
+          <a key={index} href={item.href} target={item.href.includes('#') ? '_self' : '_blank'}> {item.text} </a>
         );
       default:
-        return <p>{item.text}</p>;
+        return <p>{item.text}<br /></p>;
     }
   };
 
@@ -75,7 +75,7 @@ export const Article = () => {
               {articles[title].sections.map((section, index) => {
                 switch (section.type) {
                   case 'heading':
-                    return (<h2>{renderContent(section.content)}</h2>);
+                    return (<h2 id={section.id}>{renderContent(section.content)}</h2>);
 
                   case 'para':
                     return (
@@ -144,6 +144,7 @@ export const Article = () => {
           <button type="submit">Post Comment »</button>
         </form>
       </div>
+      <BlogFooter />
     </>
   )
 }

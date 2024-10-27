@@ -73,7 +73,6 @@ body {
 
 #blog-img img {
     width: inherit;
-    object-fit: cover;
     transition: all .5s ease-out;
 }
 
