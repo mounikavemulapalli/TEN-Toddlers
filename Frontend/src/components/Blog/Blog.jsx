@@ -18,16 +18,19 @@ export default function Blog({ searchedKeyword, setSelectedTitle }) {
         {searchedKeyword == '' ? <h2 id='heading'>UPTODD PARENTING BLOGS</h2> : <h2 id="search-result-heading">SEARCH RESULTS FOR: {searchedKeyword.toUpperCase()}</h2>}
         <div id='line'></div>
         <div id="blogs-container">
-          {filteredBlogs.map(blog => (
+          {filteredBlogs.map(blog => {
+            const blogPostRoute = `/blog/${encodeURIComponent(blog.title)}`;
+
+            return (
             <div className="blog">
-              <a id="blog-img" href="#"><img src={blog.img} /></a>
+              <a id="blog-img" href={blogPostRoute}><img src={blog.img} /></a>
               <div className="blog-content">
-                <a href="#">{blog.title}</a>
+                <a href={blogPostRoute}>{blog.title}</a>
                 <p>{blog.text}</p>
-                <Link to={`/blog/${encodeURIComponent(blog.title)}`}><button>Read More</button></Link>
+                <Link to={blogPostRoute}><button>Read More</button></Link>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
       <BlogFooter />
@@ -58,9 +61,12 @@ export const Article = () => {
   };
 
   const { title } = useParams();
-  const articleTitle = Object.keys(articles);
+  const articleTitles = Object.keys(articles);
   const decodedTitle = decodeURIComponent(title);
-  const isArticleFound = articleTitle.includes(decodedTitle);
+  const isArticleFound = articleTitles.includes(decodedTitle);
+  const currentIndex = articleTitles.indexOf(decodedTitle);
+  const prevIndex = currentIndex > 0 ? articleTitles[currentIndex - 1] : null;
+  const nextIndex = currentIndex < articleTitles.length - 1 ? articleTitles[currentIndex + 1] : null;
 
   console.log(isArticleFound);
 
@@ -114,8 +120,8 @@ export const Article = () => {
 
       <nav id="blog-page-nav">
         <div id="blog-page-nav-links">
-          <a href="#" rel="prev">← Previous Post</a>
-          <a href="#" rel="next" style={{ textAlign: 'end' }}>Next Post →</a>
+          {prevIndex ? <Link to={`/blog/${encodeURIComponent(prevIndex)}`} rel="prev">← Previous Post</Link> : <a></a>}
+          {nextIndex && <Link to={`/blog/${encodeURIComponent(nextIndex)}`} style={{textAlign: 'end'}} rel="next">Next Post →</Link>}
         </div>
       </nav>
 
