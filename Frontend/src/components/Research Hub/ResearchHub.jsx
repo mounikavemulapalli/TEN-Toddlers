@@ -323,15 +323,13 @@ export default function ResearchHub() {
                             {cards.map((card, index) => (
                                 <div className="carousel-card" style={{ height: '31.25rem' }} key={index}>
                                     <iframe
-                                        style={{ width: '100%' }}
-                                        height='190'
                                         src={card.videoUrl}
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
                                     ></iframe>
-                                    <img height='190' style={{ paddingInline: 'inherit'}} src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
-                                    <img style={{marginBlock: '.2rem', marginInline: '0', paddingLeft: '.4rem',  height: '3%', width: 'auto', position: 'relative', float: 'left' }} src="https://www.uptodd.com/images/newWebsite/quote.svg" />
-                                    <p style={{marginTop: '.7rem'}}>{card.text}<br /><br />{card.quoteAuthor}</p>
+                                    <img height='190' style={{ paddingInline: 'inherit' }} src={card.img} onClick={(e) => { e.target.style.display = 'none' }} ></img>
+                                    <img style={{ marginBlock: '.2rem', marginInline: '0', paddingLeft: '.4rem', height: '3%', width: 'auto', position: 'relative', float: 'left' }} src="https://www.uptodd.com/images/newWebsite/quote.svg" />
+                                    <p style={{ marginTop: '.7rem' }}>{card.text}<br /><br />{card.quoteAuthor}</p>
                                 </div>
                             ))}
                         </div>

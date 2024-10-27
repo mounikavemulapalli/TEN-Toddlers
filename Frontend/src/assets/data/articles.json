@@ -81,18 +81,32 @@
             {
                 "type": "ul",
                 "content": [
-                    {
-                        "strong": "Use positive reinforcement.",
-                        "text": "Praise your child or provide small rewards — such as an extra bedtime story or a trip to the park — when he or she isn’t thumb sucking. Set attainable goals, such as no thumb sucking an hour before bed. Place stickers on a calendar to record the days when your child successfully avoids doing it."
-                    },
-                    "Praise your baby when they’re not sucking their thumb. Offer small rewards or words of encouragement to motivate them to stop.",
-                    "When you notice your baby sucking their thumb, gently redirect their attention to a toy, book, or activity to engage their hands and mind elsewhere.",
-                    {
-                        "strong": "Identify triggers.",
-                        "text": "If your child sucks his or her thumb in response to stress, identify the real issue and provide comfort in other ways — such as with a hug or reassuring words. You might also give your child a pillow or stuffed animal to squeeze."
-                    },
-                    "Avoid scolding or punishing your baby, as this can create anxiety and worsen the habit.",
-                    "Provide alternative soothing methods such as a pacifier or comfort blanket. Be cautious not to replace it with another potentially problematic habit."
+                    [
+                        {
+                            "type": "strong",
+                            "text": "Use positive reinforcement."
+                        },
+                        "Praise your child or provide small rewards — such as an extra bedtime story or a trip to the park — when he or she isn’t thumb sucking. Set attainable goals, such as no thumb sucking an hour before bed. Place stickers on a calendar to record the days when your child successfully avoids doing it."
+                    ],
+                    [
+                        "Praise your baby when they’re not sucking their thumb. Offer small rewards or words of encouragement to motivate them to stop."
+                    ],
+                    [
+                        "When you notice your baby sucking their thumb, gently redirect their attention to a toy, book, or activity to engage their hands and mind elsewhere."
+                    ],
+                    [
+                        {
+                            "type": "strong",
+                            "text": "Identify triggers."
+                        },
+                        "If your child sucks his or her thumb in response to stress, identify the real issue and provide comfort in other ways — such as with a hug or reassuring words. You might also give your child a pillow or stuffed animal to squeeze."
+                    ],
+                    [
+                        "Avoid scolding or punishing your baby, as this can create anxiety and worsen the habit."
+                    ],
+                    [
+                        "Provide alternative soothing methods such as a pacifier or comfort blanket. Be cautious not to replace it with another potentially problematic habit."
+                    ]
                 ]
             },
             {
@@ -101,9 +115,18 @@
             },
             {
                 "type": "para",
+                "content": "Dr Clara Guru states that thumb sucking till the age of 2-4 years can be a way of baby to express themselves and explore things orally. It also becomes as a soothing mechanism. But any thumb sucking behvaiour post that age can cause significant developmental issues that are not just limited to physical or oral aspect but can extend to their cognitive growth too. If your baby is indulged in the thumb sucking behaviour after 2-4 years of age it is always best to identify triggers and help them correct the wrong behaviour patterns developed in form of thumb sucking."
+            },
+            {
+                "type": "para",
                 "content": [
-                    "Dr Clara Guru states that thumb sucking till the age of 2-4 years can be a way of baby to express themselves and explore things orally. It also becomes as a soothing mechanism. But any thumb sucking behvaiour post that age can cause significant developmental issues that are not just limited to physical or oral aspect but can extend to their cognitive growth too. If your baby is indulged in the thumb sucking behaviour after 2-4 years of age it is always best to identify triggers and help them correct the wrong behaviour patterns developed in form of thumb sucking.",
-                    "Explore UpTodd luminary pathway to unleash hidden abilities of the baby"
+                    "Explore",
+                    {
+                        "type": "anchor",
+                        "text": "UpTodd luminary pathway",
+                        "href": "#"
+                    },
+                    "to unleash hidden abilities of the baby"
                 ]
             },
             {
@@ -113,9 +136,33 @@
             {
                 "type": "ol",
                 "content": [
-                    "Till what age is thumb sucking normal?",
-                    "How can I help my baby change thumb sucking behaviour?",
-                    "Are there any side effects of thumb sucking?"
+                    [
+                        "Till what ",
+                        {
+                            "type": "anchor",
+                            "text": "age",
+                            "href": "#"
+                        },
+                        " is thumb sucking normal?"
+                    ],
+                    [
+                        "How can I ",
+                        {
+                            "type": "anchor",
+                            "text": "help",
+                            "href": "#"
+                        },
+                        " my baby change thumb sucking behaviour?"
+                    ],
+                    [
+                        "Are there any ",
+                        {
+                            "type": "anchor",
+                            "text": "side effects",
+                            "href": "#"
+                        },
+                        " of thumb sucking?"
+                    ]
                 ]
             },
             {
