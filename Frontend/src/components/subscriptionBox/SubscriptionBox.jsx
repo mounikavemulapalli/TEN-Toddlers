@@ -4,9 +4,12 @@ import baby1 from "../../assets/images/subscription/baby1.avif";
 import baby2 from "../../assets/images/subscription/baby2.webp";
 import baby3 from "../../assets/images/subscription/baby3.webp";
 import YouTube from "react-youtube";
+import BrilliantMinds from "../comman/BrilliantMinds";
+import Line from "../comman/Line";
+import HappyParents from "../comman/HappyParents";
 import Mentors from "../comman/Mentors";
+import ParentsLove from "./ParentsLove";
 import { awardData } from "../../assets/data/awardData";
-import { parentsData } from "../../assets/data/parentsData";
 
 function SubscriptionBox() {
   const [kitsData, setKitsData] = useState(null);
@@ -106,7 +109,7 @@ function SubscriptionBox() {
         </div>
 
         {/* Kits PopUp Section */}
-        <div className="career-kit-popup">
+        <div className="sub-kit-popup">
           <h1>Buy Baby's Developmental Kit For Your Baby</h1>
           <img src={baby2} alt="Kits Photo" />
           <div className="PopUp">
@@ -178,7 +181,7 @@ function SubscriptionBox() {
         </div>
 
         {/* Kits Section */}
-        <h1 className="heading">
+        <h1 className="developmental-kit-heading">
           Your
           <span> {ageInMonths} Months </span>Baby's Developmental Kit
         </h1>
@@ -212,37 +215,14 @@ function SubscriptionBox() {
             </div>
           ))}
 
-        {/* Video Section */}
-        <h1 className="heading">Parent Unboxing UpTodd's Kit</h1>
+        {/* BrilliantMinds Section */}
+        <BrilliantMinds />
 
-        <div className="sub-videos-div">
-          <div
-            className="sub-video"
-            style={{
-              borderRadius: "1rem",
-              overflow: "hidden",
-            }}
-          >
-            <YouTube
-              videoId="Kj6ZzR0LKpg"
-              opts={videoOptions}
-              onReady={onVideoReady}
-            />
-          </div>
-          <div
-            className="sub-video"
-            style={{
-              borderRadius: "1rem",
-              overflow: "hidden",
-            }}
-          >
-            <YouTube
-              videoId="Kj6ZzR0LKpg"
-              opts={videoOptions}
-              onReady={onVideoReady}
-            />
-          </div>
-        </div>
+        {/* Line Section */}
+        <Line />
+
+        {/* HappyParents Section */}
+        <HappyParents />
 
         {/* Research Section */}
         <div className="sub-research">
@@ -301,24 +281,10 @@ function SubscriptionBox() {
           ))}
         </div>
 
-        {/* Parents Section */}
-        <div className="sub-parents">
-          <h1 className="sub-parents-heading">
-            We are Loved by Parents | 150K+ Parents
-          </h1>
-          <div className="sub-parents-cards">
-            {parentsData.map((data) => (
-              <div key={data.id} className="sub-parents-card">
-                <img src={data.image} alt="Baby Image" />
-                <h2>{data.name}</h2>
-                <p>{data.about}</p>
-                <h4>{data.parent}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Parents Love Section */}
+        <ParentsLove />
 
-        {/* Featured Section */}
+        {/* Mentors & Featured Section */}
         <Mentors />
       </div>
     </>
