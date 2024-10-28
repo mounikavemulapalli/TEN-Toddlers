@@ -48,6 +48,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1;
 }
 
 .super-happy-parents-card {
@@ -58,6 +59,16 @@
   margin: 0 1rem;
   box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
   scroll-snap-align: start;
+}
+
+.super-happy-iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.super-happy-iframe-container iframe {
+  border-radius: 10px;
 }
 
 .super-happy-parent-quote {
@@ -115,6 +126,7 @@
 
   .super-happy-parents h1 {
     line-height: 2.25rem;
+    padding: 0 1rem;
   }
 }
 
@@ -148,10 +160,6 @@
 
   .super-happy-parents-card p {
     font-size: 18px;
-  }
-
-  .super-happy-parents-card iframe {
-    width: 250px;
   }
 
   .child-development-button a {

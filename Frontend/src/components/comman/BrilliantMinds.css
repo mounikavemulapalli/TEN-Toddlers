@@ -13,7 +13,7 @@
 }
 
 .next {
-  right: 8%;
+  right: 10%;
 }
 
 /*                           Brilliant Minds Styles */
@@ -46,6 +46,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1;
 }
 
 .super-brilliant-minds-cards {
@@ -71,9 +72,10 @@
   scroll-snap-align: start;
 }
 
-.super-brilliant-minds-card-image img {
-  width: 350px;
-  text-align: center;
+.super-brilliant-minds-card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .super-brilliant-minds-card-content {
