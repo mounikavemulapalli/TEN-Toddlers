@@ -60,6 +60,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1;
 }
 
 .super-peek-card {
@@ -79,9 +80,14 @@
   color: darkblue;
 }
 
-.super-peek-card iframe {
-  text-align: center;
-  border-radius: 20px;
+.super-peek-iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.super-peek-iframe-container iframe {
+  border-radius: 10px;
 }
 
 /*                            Media Queries for responsiveness ( 1024px )*/
@@ -125,10 +131,5 @@
 
   .super-peek-card {
     width: 100%;
-  }
-
-  .super-peek-card iframe {
-    width: 250px;
-    height: 200px;
   }
 }
