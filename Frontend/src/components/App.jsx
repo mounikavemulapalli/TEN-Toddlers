@@ -18,7 +18,10 @@ import PrivacyPolicy from "./privacyPolicy/PrivacyPolicy";
 import TermsCondition from "./termsCondition/TermsCondition";
 import Contact from "./contact_us/contactPage";
 import Blog from './Blog/Blog';
+import AllHappyParents from "./Home/AllHappyParents.jsx"
 import { Article } from './Blog/Blog.jsx';
+import BabyAchieversAll from './Home/Baby-achievers-all.jsx';
+
 
 export default function App() {
 
@@ -52,6 +55,9 @@ function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
         <Route path='/step' element={<Step />} />
         <Route path='/success story' element={<SuccessStory />} />
         <Route path='/premium' element={<Premium />} />
+        <Route path='/happy-parents' element={<AllHappyParents />} />
+        <Route path='/baby-achievers' element={<BabyAchieversAll />} />
+
         <Route path='/career' element={<Career />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-conditions' element={<TermsCondition />} />
