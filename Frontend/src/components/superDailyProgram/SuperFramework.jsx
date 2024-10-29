@@ -37,11 +37,10 @@ function SuperFramework() {
           <h4>
             INR 449 <span>INR 1,599</span>
           </h4>
-          {/* <button className="super-framework-join2-btn">Enroll Now</button> */}
-          
-          
-          <PopupButton text="Enroll Now"/>
-         
+
+          <div className="super-framework-join2-btn">
+            <PopupButton text="Enroll Now" />
+          </div>
         </div>
         <p>Mega discount | Exclusive offer</p>
       </div>

@@ -99,8 +99,7 @@ function HappyParents() {
 
       {/* Child's Development Section */}
       <div className="child-development-button">
-        {/* <a href="#">Fuel Your Child's Development!</a> */}
-        <PopupButton text="Fuel Your Child's Development'"/>
+        <PopupButton text="Fuel Your Child's Development" />
       </div>
     </>
   );
