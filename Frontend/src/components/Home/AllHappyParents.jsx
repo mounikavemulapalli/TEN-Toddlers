@@ -42,7 +42,7 @@ const AllHappyParents = () => {
               <iframe
                 loading="lazy"
                 style={{ borderRadius: "10px", margin: ".1rem" }}
-                src={extractUrl(review.surdoc)} // Extract URL for the iframe
+                srcdoc={review.surdoc} // Extract URL for the iframe
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
