@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "./premiumButton";
 import Popup from "./Popup";
 import "./PopupButton.css";
-const PopupButton = ({ text }) => {
+const PopupButton = ({ text,className}) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleOpenPopup = () => {
@@ -13,7 +13,7 @@ const PopupButton = ({ text }) => {
       <div className="button-center">
         {/* Correct Button Component */}
         <Button
-          className="a-btn"
+          className={`a-btn ${className}`}
           text={text}
           onClick={handleOpenPopup} // Ensure you're handling the click event
         >

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { happyParent } from "../../assets/data/happyParent.js";
 import "./HappyParents.css";
+import PopupButton from "../premium/PopupButton.jsx";
 
 function HappyParents() {
   const happyParentRef = useRef(null);
@@ -98,7 +99,8 @@ function HappyParents() {
 
       {/* Child's Development Section */}
       <div className="child-development-button">
-        <a href="#">Fuel Your Child's Development!</a>
+        {/* <a href="#">Fuel Your Child's Development!</a> */}
+        <PopupButton text="Fuel Your Child's Development'"/>
       </div>
     </>
   );

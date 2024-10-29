@@ -211,7 +211,7 @@ function Premium() {
                 Starts at INR 1190* per month only
               </li>
             </ul>
-            <PopupButton text="Schedule a Demo" />
+            <PopupButton className="btn" text="Schedule a Demo" />
             {/* <button className="btn" onClick={handleOpenPopup}> */}
             {/* Schedule a Demo */}
             {/* </button> */}
@@ -514,17 +514,19 @@ function Premium() {
             alt="Prev Happy Parent"
           />
         </div>
-        <div className="happy-parents-button">
-          <button
+        {/* <div className="happy-parents-button"> */}
+          {/* <button
             className="btn"
             id="premiumScreenSuperPremiumProgram"
             onClick={handleOpenPopup}
           >
             Fuel Your Child's Development!
-          </button>
+          </button> */}
           {/* Popup Logic */}
-          {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
-        </div>
+          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+
+          <PopupButton id="premiumSuperPremiumProgram" text="Fuel Your Child's Development"/>
+        {/* </div> */}
       </section>
 
       {/* Bending line */}

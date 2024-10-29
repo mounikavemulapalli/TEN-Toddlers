@@ -12,6 +12,7 @@ import { boardMembers } from "../../assets/Lists/boardMembers.js";
 import { happyParent } from "../../assets/Lists/happyParent.js";
 import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
 import { Faq } from '../Faq.jsx';
+import PopupButton from "../premium/PopupButton.jsx";
 
 export default function Home() {
   const carouselRef = useRef(null);
@@ -153,7 +154,8 @@ export default function Home() {
                 <FaCheckCircle /> <span>One Stop Parenting Solution</span>
               </li>
             </ul>
-            <Button text='Book a Demo Slot' />
+            {/* <Button text='Book a Demo Slot' /> */}
+            <PopupButton text='Book a Demo Slot'/>
           </div>
           <div className="banner-image">
             <img
@@ -269,7 +271,11 @@ export default function Home() {
               </div>
             </div>
             <div id="genius-section-btn-container">
+         <a href="/research">
+
               <Button text='Explore the Details' />
+         </a>
+              
             </div>
           </div>
         </section>
@@ -372,7 +378,10 @@ export default function Home() {
             </div>
           </div>
           <div className="developmental-pillars-footer">
+            <a href="/research">
+
             <Button text='Explore the Details' />
+            </a>
             <p>
               Create Brain stimulating home envrionment for your baby, by best
               on the Planet. We have your back in this journey
@@ -382,7 +391,8 @@ export default function Home() {
         <section className='start-now-banner'>
           <div className="start-now-banner-grid">
             <h3>Stop overspending on generic and hamful toys, filled with Chlorinated Paraffin {`->`} Toxic for your baby brain growth</h3>
-            <Button text='Start Now' />
+            {/* <Button text='Start Now' /> */}
+            <PopupButton text='Start Now'/>
           </div>
         </section>
         <section className="product-and-cost">
@@ -427,7 +437,11 @@ export default function Home() {
                 </div>
                 <h3>{card.discountPrice}</h3>
                 <del>{card.deletePrice} </del>
-                <Button text='Enroll Now' />
+
+                {/* <Button text='Enroll Now' /> */}
+                <PopupButton text='Enroll Now'/>
+                  
+              
               </div>
             ))}
           </div>
@@ -574,9 +588,10 @@ export default function Home() {
               alt="Prev Happy Parent"
             />
           </div>
-          <div className="happy-parents-button">
-            <Button text="Fuel Your Child's Development!" />
-          </div>
+          {/* <div className="happy-parents-button"> */}
+            {/* <Button text="Fuel Your Child's Development!" /> */}
+            <PopupButton text="Fuel Your Child's Development!"/>
+          {/* </div> */}
         </section>
         <section className="doctor-review" id="doctorreview">
           <h1>Recommended by Top Global Experts</h1>

@@ -13,7 +13,7 @@ export default function SuperQA() {
       <h1>FQAs</h1>
       <div id="faq-list">
         <div id="faq-category-list">
-          <button className="faq-category-button active-faq-category">Program</button>
+          <a href="/super_daily_app_program"><button className="faq-category-button active-faq-category">Program</button></a>
         </div>
         {superQA.map(data => (
           <div
