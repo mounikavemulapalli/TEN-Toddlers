@@ -42,6 +42,7 @@ p {
 
 .happy-parents-card-all div iframe {
     width: -webkit-fill-available;
+    height: 10rem;
 }
 
 
