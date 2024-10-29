@@ -108,29 +108,6 @@
   border-radius: 10px;
 }
 
-/*                             Career kits Styles */
-.career-kit-popup {
-  width: 90%;
-  margin: 4rem auto;
-  text-align: center;
-}
-
-.career-kit-popup img {
-  width: 50%;
-}
-
-.career-kit-popup h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-.career-kit-popup img {
-  margin-top: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
 /*                           Team Styles */
 .career-team {
   width: 100%;
@@ -385,10 +362,6 @@
     width: 85%;
   }
 
-  .career-kit-popup img {
-    width: 60%;
-  }
-
   .career-team-cards {
     justify-content: space-between;
   }
@@ -435,13 +408,6 @@
   }
   .career-life p {
     font-size: 1.2rem;
-  }
-
-  .career-kit-popup h1 {
-    font-size: 2rem;
-  }
-  .career-kit-popup img {
-    width: 80%;
   }
 
   .career-team-content h1 {

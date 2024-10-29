@@ -57,18 +57,20 @@ function HappyParents() {
           <div className="super-happy-parents-cards" ref={happyParentRef}>
             {happyParent.map((data) => (
               <div key={data.id} className="super-happy-parents-card">
-                <iframe
-                  loading="lazy"
-                  srcDoc={data.surdoc}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen=""
-                  data-gtm-yt-inspected-4="true"
-                  data-gtm-yt-inspected-40611628_62="true"
-                  id="72071507"
-                  data-gtm-yt-inspected-14="true"
-                ></iframe>
+                <div className="super-peek-iframe-container">
+                  <iframe
+                    loading="lazy"
+                    srcDoc={data.surdoc}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen=""
+                    data-gtm-yt-inspected-4="true"
+                    data-gtm-yt-inspected-40611628_62="true"
+                    id="72071507"
+                    data-gtm-yt-inspected-14="true"
+                  ></iframe>
+                </div>
 
                 <div className="super-happy-parent-quote">
                   <img

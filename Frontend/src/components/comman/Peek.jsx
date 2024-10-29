@@ -27,7 +27,6 @@ function Peek() {
 
   return (
     <>
-      {" "}
       {/* Peek-A-Boo! See the Joy of Development */}
       <div className="super-peek">
         <h1>Peek-A-Boo! See the Joy of Development</h1>
@@ -42,15 +41,15 @@ function Peek() {
           <div className="super-peek-cards" ref={carouselRef}>
             {cards.map((data) => (
               <div key={data.id} className="super-peek-card">
-                <iframe
-                  width="300"
-                  height="200"
-                  src={data.videoUrl}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                <div className="super-peek-iframe-container">
+                  <iframe
+                    src={data.videoUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
                 <h2>{data.title}</h2>
                 {data.description && <p>{data.description}</p>}
               </div>

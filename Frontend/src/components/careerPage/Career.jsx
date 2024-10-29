@@ -2,6 +2,7 @@ import React from "react";
 import "./Career.css";
 import airtel_logo from "../../assets/images/airtel_logo.jpg";
 import ApplicationForm from "./ApplicationForm";
+import Mentors from "../comman/Mentors";
 import { careerAbout } from "../../assets/data/careerAbout";
 import { teamCards } from "../../assets/data/teamCards";
 import { mentorsDetails } from "../../assets/data/mentorsDetails";
@@ -114,18 +115,7 @@ function Career() {
         </div>
 
         {/* Mentor Section */}
-        <div className="career-mentor">
-          <h1>Meet our Mentors & Curators | 100+ Curators R&D Team</h1>
-          <div className="career-mentor-cards">
-            {mentorsDetails.map((data) => (
-              <div key={data.id} className="career-mentor-card">
-                <img src={data.image} alt="Profile" />
-                <h2>{data.name}</h2>
-                <h3>{data.position}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Mentors />
       </div>
 
       {/* ApplicationForm Section */}

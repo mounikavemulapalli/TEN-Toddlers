@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./SuperDailyProgram.css";
 import banner from "../../assets/images/super-daily-program-banner.webp";
 import Slider from "../comman/Slider.jsx";
@@ -16,8 +16,15 @@ import SuperBanner from "./SuperBanner.jsx";
 import SuperFramework from "./SuperFramework.jsx";
 import SuperQA from "./SuperQA.jsx";
 import { Footer } from "../premium/Premium.jsx";
+import Button from "../premium/Button.jsx";
 
 function SuperDailyProgram() {
+  const componentRef = useRef(null);
+
+  const superDailyFramework = () => {
+    componentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const [date, setDate] = useState("");
   const [timeLeft, setTimeLeft] = useState({
     hours: "",
@@ -89,7 +96,7 @@ function SuperDailyProgram() {
           <h4>
             <FontAwesomeIcon icon={faShoePrints} /> For 0-5 years old baby
           </h4>
-          <a href="#">Program Features</a>
+          <button onClick={superDailyFramework}>Program Features</button>
         </div>
         <div className="super-main-image">
           <img src={banner} alt="Banner Image" />
@@ -136,7 +143,9 @@ function SuperDailyProgram() {
                 <>
                   <div className="super-offers-card-lastDiv">
                     <h2>{data.name}</h2>
-                    <a href="#">Empower Your Parenting Journey</a>
+                    <button onClick={superDailyFramework}>
+                      Empower Your Parenting Journey
+                    </button>
                   </div>
                 </>
               )}
@@ -161,7 +170,9 @@ function SuperDailyProgram() {
       <SuperScience />
 
       {/* Super Daily Framework */}
-      <SuperFramework />
+      <div ref={componentRef}>
+        <SuperFramework />
+      </div>
 
       {/* Mentors Section */}
       <Mentors />

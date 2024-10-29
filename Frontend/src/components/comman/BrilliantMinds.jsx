@@ -50,6 +50,7 @@ function BrilliantMinds() {
               alt="Previous"
             />
           </button>
+
           <div className="super-brilliant-minds-cards" ref={awaredBabyRef}>
             {babyAwardList.map((data) => (
               <div
@@ -67,6 +68,7 @@ function BrilliantMinds() {
               </div>
             ))}
           </div>
+
           <button
             className="super-brilliant-minds-button next"
             onClick={handleAwaredBabyNext}

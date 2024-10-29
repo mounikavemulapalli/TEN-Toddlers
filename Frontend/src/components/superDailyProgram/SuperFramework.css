@@ -109,20 +109,19 @@
 }
 
 .super-framework-join2-btn {
-  border-radius: 8px;
-  background: #ff5766;
   width: 100%;
-  color: #fff;
-  text-align: center;
-  font-family: "DM Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  padding: 15px;
+  background-color: #ff5766;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-decoration: none;
   border: none;
-  margin-top: 16px;
+}
+
+.super-framework-join2-btn:hover {
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 .super-framework-join p {

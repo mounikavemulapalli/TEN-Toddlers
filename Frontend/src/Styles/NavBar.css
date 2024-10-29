@@ -213,7 +213,7 @@ body {
   }
 
   #search img {
-    top: 2.7%;
+    top: 0.6%;
   }
 }
 
@@ -223,7 +223,7 @@ body {
   }
 
   #search img {
-    top: 2%;
+    top: 0;
     height: 10px;
   }
 
@@ -237,7 +237,6 @@ body {
   }
 
   .logo {
-    text-align: center;
   }
 
   .logo img {

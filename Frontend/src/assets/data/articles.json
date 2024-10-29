@@ -4,10 +4,11 @@
         "sections": [
             {
                 "type": "para",
-                "content": [
-                    "Babies have a natural urge to suck onto things. This urge usually decreases after the age of 6 months. But many babies continue to suck their thumbs to soothe themselves and engage in thumb sucking. It can become a habit in babies and young children who use it to comfort themselves when they feel hungry, afraid, restless, quiet, sleepy, or bored. So let us see what our development Expert Dr Clara Guru has to comment on it.",
-                    "Thumb sucking may cause problems with children’s developing teeth and jaws if it continues as they get older."
-                ]
+                "content": "Babies have a natural urge to suck onto things. This urge usually decreases after the age of 6 months. But many babies continue to suck their thumbs to soothe themselves and engage in thumb sucking. It can become a habit in babies and young children who use it to comfort themselves when they feel hungry, afraid, restless, quiet, sleepy, or bored. So let us see what our development Expert Dr Clara Guru has to comment on it."
+            },
+            {
+                "type": "para",
+                "content": "Thumb sucking may cause problems with children’s developing teeth and jaws if it continues as they get older."
             },
             {
                 "type": "heading",
@@ -19,18 +20,21 @@
             },
             {
                 "type": "heading",
-                "content": "How long does thumb sucking usually last?"
+                "content": "How long does thumb sucking usually last?",
+                "id": "Age"
             },
             {
                 "type": "para",
-                "content": [
-                    "Many children stop sucking their thumbs on their own between ages 2 and 4.",
-                    "But even a child who’s stopped sucking his or her thumb might go back to the behaviour during times of stress."
-                ]
+                "content": "Many children stop sucking their thumbs on their own between ages 2 and 4."
+            },
+            {
+                "type": "para",
+                "content": "But even a child who’s stopped sucking his or her thumb might go back to the behaviour during times of stress."
             },
             {
                 "type": "heading",
-                "content": "Is thumb sucking bad for teeth?"
+                "content": "Is thumb sucking bad for teeth?",
+                "id": "Side-Effects"
             },
             {
                 "type": "para",
@@ -69,30 +73,46 @@
             },
             {
                 "type": "heading",
-                "content": "What can I do to encourage my child to stop thumb sucking?"
+                "content": "What can I do to encourage my child to stop thumb sucking?",
+                "id": "Help"
             },
             {
                 "type": "para",
-                "content": [
-                    "Talk to your child about this habit. You’re more likely to be successful in stopping the habit if your child wants to stop and helps choose the method involved.",
-                    "Sometimes paying no attention to this habit is enough to stop the behaviour — especially if your child uses it to get attention. If ignoring it isn’t effective, try one of these techniques:"
-                ]
+                "content": "Talk to your child about this habit. You’re more likely to be successful in stopping the habit if your child wants to stop and helps choose the method involved."
+            },
+            {
+                "type": "para",
+                "content": "Sometimes paying no attention to this habit is enough to stop the behaviour — especially if your child uses it to get attention. If ignoring it isn’t effective, try one of these techniques:"
             },
             {
                 "type": "ul",
                 "content": [
-                    {
-                        "strong": "Use positive reinforcement.",
-                        "text": "Praise your child or provide small rewards — such as an extra bedtime story or a trip to the park — when he or she isn’t thumb sucking. Set attainable goals, such as no thumb sucking an hour before bed. Place stickers on a calendar to record the days when your child successfully avoids doing it."
-                    },
-                    "Praise your baby when they’re not sucking their thumb. Offer small rewards or words of encouragement to motivate them to stop.",
-                    "When you notice your baby sucking their thumb, gently redirect their attention to a toy, book, or activity to engage their hands and mind elsewhere.",
-                    {
-                        "strong": "Identify triggers.",
-                        "text": "If your child sucks his or her thumb in response to stress, identify the real issue and provide comfort in other ways — such as with a hug or reassuring words. You might also give your child a pillow or stuffed animal to squeeze."
-                    },
-                    "Avoid scolding or punishing your baby, as this can create anxiety and worsen the habit.",
-                    "Provide alternative soothing methods such as a pacifier or comfort blanket. Be cautious not to replace it with another potentially problematic habit."
+                    [
+                        {
+                            "type": "strong",
+                            "text": "Use positive reinforcement."
+                        },
+                        "Praise your child or provide small rewards — such as an extra bedtime story or a trip to the park — when he or she isn’t thumb sucking. Set attainable goals, such as no thumb sucking an hour before bed. Place stickers on a calendar to record the days when your child successfully avoids doing it."
+                    ],
+                    [
+                        "Praise your baby when they’re not sucking their thumb. Offer small rewards or words of encouragement to motivate them to stop."
+                    ],
+                    [
+                        "When you notice your baby sucking their thumb, gently redirect their attention to a toy, book, or activity to engage their hands and mind elsewhere."
+                    ],
+                    [
+                        {
+                            "type": "strong",
+                            "text": "Identify triggers."
+                        },
+                        "If your child sucks his or her thumb in response to stress, identify the real issue and provide comfort in other ways — such as with a hug or reassuring words. You might also give your child a pillow or stuffed animal to squeeze."
+                    ],
+                    [
+                        "Avoid scolding or punishing your baby, as this can create anxiety and worsen the habit."
+                    ],
+                    [
+                        "Provide alternative soothing methods such as a pacifier or comfort blanket. Be cautious not to replace it with another potentially problematic habit."
+                    ]
                 ]
             },
             {
@@ -101,9 +121,18 @@
             },
             {
                 "type": "para",
+                "content": "Dr Clara Guru states that thumb sucking till the age of 2-4 years can be a way of baby to express themselves and explore things orally. It also becomes as a soothing mechanism. But any thumb sucking behvaiour post that age can cause significant developmental issues that are not just limited to physical or oral aspect but can extend to their cognitive growth too. If your baby is indulged in the thumb sucking behaviour after 2-4 years of age it is always best to identify triggers and help them correct the wrong behaviour patterns developed in form of thumb sucking."
+            },
+            {
+                "type": "para",
                 "content": [
-                    "Dr Clara Guru states that thumb sucking till the age of 2-4 years can be a way of baby to express themselves and explore things orally. It also becomes as a soothing mechanism. But any thumb sucking behvaiour post that age can cause significant developmental issues that are not just limited to physical or oral aspect but can extend to their cognitive growth too. If your baby is indulged in the thumb sucking behaviour after 2-4 years of age it is always best to identify triggers and help them correct the wrong behaviour patterns developed in form of thumb sucking.",
-                    "Explore UpTodd luminary pathway to unleash hidden abilities of the baby"
+                    "Explore",
+                    {
+                        "type": "anchor",
+                        "text": "UpTodd luminary pathway",
+                        "href": "#"
+                    },
+                    "to unleash hidden abilities of the baby"
                 ]
             },
             {
@@ -113,9 +142,33 @@
             {
                 "type": "ol",
                 "content": [
-                    "Till what age is thumb sucking normal?",
-                    "How can I help my baby change thumb sucking behaviour?",
-                    "Are there any side effects of thumb sucking?"
+                    [
+                        "Till what ",
+                        {
+                            "type": "anchor",
+                            "text": "age",
+                            "href": "#Age"
+                        },
+                        " is thumb sucking normal?"
+                    ],
+                    [
+                        "How can I ",
+                        {
+                            "type": "anchor",
+                            "text": "help",
+                            "href": "#Help"
+                        },
+                        " my baby change thumb sucking behaviour?"
+                    ],
+                    [
+                        "Are there any ",
+                        {
+                            "type": "anchor",
+                            "text": "side effects",
+                            "href": "#Side-Effects"
+                        },
+                        " of thumb sucking?"
+                    ]
                 ]
             },
             {
@@ -124,19 +177,565 @@
             }
         ]
     },
-    "xyzTitle": {
-        "img": "https://blog.uptodd.com/wp-content/uploads/2024/03/Thumb-sucking-1-768x432.png",
+    "Music and Baby : How Music Shapes Baby's Brain Development": {
+        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-8-768x432.png",
         "sections": [
             {
                 "type": "para",
                 "content": [
-                    "ahkgalsdkjagasda",
-                    "dsahgsgkajsdgasdhas"
+                    "Music has an incredible power to produce a variety of emotions and alter moods. But do you know how music impacts your baby? It’s more than just a sweet melody. From Calming lullabies to playful, fun songs during playtime, music plays an important role in shaping our little ones’ developing brains. In this blog, Dr. Clara Guru, our child development expert, will inform us about the impact of music on various regions of a baby’s brain and its important role in their overall development."
                 ]
             },
             {
                 "type": "heading",
-                "content": "agjdkaslgnaskgasdg"
+                "content": "impact of music on brain areas"
+            },
+            {
+                "type": "para",
+                "content": "According to neuroscientists, music has amazing benefits for your baby. Music has a significant impact on the developing newborn brain. According to a study conducted by the Institute of Learning and Brain Sciences, newborns’ auditory and prefrontal cortices change after listening to music. These are the areas of the brain responsible for processing both music and speech. Many brain areas tend to be stimulated when music is played. Let us explore how music impacts different parts of a baby’s brain and shapes their development."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Auditory Cortex"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "The auditory cortex is situated in the temporal lobes. It plays a major role in processing sound. When babies hear music, their temporal lobe and auditory cortex start recognising rhythms, melodies, and even emotions conveyed through music. This lays the foundation for auditory comprehension and language development."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Limbic System"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "limbic system is located deep within the brain and includes brain components such as amygdala and hippocampus. These are responsible for producing, processing, and controlling emotions and memory. Music has a direct relationship with the brain area, as it produces a variety of emotions and neural responses. When music is played, baby’s limbic system gets filled with variety of feel-good neurotransmitters, promoting a sense of comfort and security. These emotions form the building blocks of attachment and social bonding, shaping babies’ emotional intelligence and interpersonal skills."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Prefrontal Cortex"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "The prefrontal cortex controls higher-order cognitive functions such as attention, planning, decision making, problem-solving, spatial reasoning, and self-regulation. Music plays a great role in developing and enhancing these cognitive functions in babies. Through musical play and engagement, babies learn to focus their attention, exercise their memory, and understand social cues."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Motor Cortex"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "The motor cortex is responsible for coordinating movement, and music is like a personal trainer for it. When babies sway, clap, or tap to music, their motor cortex is getting a workout, helping them develop coordination and rhythm."
+            },
+            {
+                "type": "para",
+                "content": "Research says that music results in enhanced neural responses in both auditory and prefrontal cortices. it helps create and strengthen connections of neurons, which in turn enables communication among neurons that specialise in different kinds of brain functions."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from ",
+                    {
+                        "type": "anchor",
+                        "text": "How musical training affects cognitive development: rhythm, reward and other modulating variables",
+                        "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3957486/"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "impact of music on babies’ overall development",
+                "id": "impact-brain"
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Language Skills"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "listening to music can boost language development in babies. As they listen to songs with repetitive lyrics or catchy melodies, they start picking up on patterns and sounds, helping in language acquisition."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Cognitive skills"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "It helps sharpen their memory, attention, and problem-solving skills. Plus, studies have shown that babies exposed to music early on tend to perform better in tasks that require spatial reasoning and mathematical skills later in life."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Social Skills"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "Whether it’s singing along with carers or participating in musical playdates, engaging with music helps babies develop social bonds and communication skills."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Emotional Regulation"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "Babies may not have words to express how they feel, but music gives them a voice. Whether it’s a soothing lullaby or an upbeat tune, music has the power to calm fussy babies, alleviate stress, and create a sense of security and comfort."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Enhances Mood"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "Music is a great way to soothe and calm your little one. It releases feel-good hormones such as serotonin, dopamine, and oxytocin. These make the baby feel happy, safe, and relaxed. It enhances baby’s mood and reduces anxiety."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Promotes Bonding"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "Dancing, playing, and singing music together supports moving together with the rhythm, which in turn promotes bonding."
+            },
+            {
+                "type": "heading",
+                "content": "Final thoughts by Dr. Clara GUru"
+            },
+            {
+                "type": "para",
+                "content": "Music is more than just entertainment for babies—it’s a fundamental tool for their development. By engaging various parts of their brain, music helps babies learn language, regulate emotions, improve motor skills, and cultivate creativity. Our developmental expert, Dr. Clara Guru, advises that it is important to continue to sing, dance, and make music with our little ones. Through the gift of music, we can create lasting memories, strengthen our bonds, and lay the foundation for a lifetime of love, learning, and harmony."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Explore",
+                    {
+                        "type": "anchor",
+                        "text": " UpTodd ",
+                        "href": "/home"
+                    },
+                    "to unleash hidden abilities of the baby"
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "faq"
+            },
+            {
+                "type": "ol",
+                "content": [
+                    [
+                        "How will",
+                        {
+                            "type": "anchor",
+                            "text": " music impact my baby’s brain",
+                            "href": "#impact-brain"
+                        },
+                        "?"
+                    ],
+                    [
+                        "Are there any",
+                        {
+                            "type": "anchor",
+                            "text": " other developmental benefits of music ",
+                            "href": "#impact-brain"
+                        },
+                        "for my baby?"
+                    ]
+                ]
+            }
+        ]
+    },
+    "making your Baby laugh : here's what you need to know": {
+        "sections": [
+            {
+                "type": "para",
+                "content": "One of the most joyful moments as parents is when our baby’s laugh. It has the power to snatch away all the stresses and sadness and provoke joy almost instantaneously. As parents, whenever we discover that our babies have now started to laugh, we will do anything to cause that laughter. Laughter is good for our babies as it makes them feel lighter and boosts up their mood. But this laughter has much more benefits than we realize. In this blog, our developmental expert, Dr. Clara Guru will inform about the benefits and tell us how to make our baby laugh?"
+            }
+        ],
+        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-9-1024x576.png"
+    },
+    "How to Care for Newborn Twins": {
+        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-1024x576.png",
+        "sections": [
+            {
+                "type": "heading",
+                "content": "Caring for Newborn Twins",
+                "id": "handle"
+            },
+            {
+                "type": "para",
+                "content": "There is no doubt that life with newborn twins is doubly difficult, but the joy is doubled, too. With a little planning, organisation, and lots of help, you and your partner can get through this hectic and sleepless time. One strategy that may be helpful is to give twins the same eating and sleeping schedule. Read on to learn more."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " Caring for Newborn Twins ",
+                        "href": "https://uchealth.staywellsolutionsonline.com/3,61007"
+                    },
+                    "and",
+                    {
+                        "type": "anchor",
+                        "text": " 9 do’s and don’ts of caring for twin babies ",
+                        "href": "https://www.care.com/c/caring-for-twin-babies-9-dos-and-donts/"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Have a schedule",
+                "id": "SCHEDULE"
+            },
+            {
+                "type": "para",
+                "content": "In the initial few weeks at home, your children will predominantly rest and eat. Infants need around 16 to 17 hours of rest north of a 24-hour time frame. They additionally need to eat about every 2 to 3 hours. Breastfeeding children may here and there have to eat for 1 to 2 hours in bunch feedings."
+            },
+            {
+                "type": "para",
+                "content": "The way to traverse those tiring early weeks with twins is to attempt to get the two children on a similar parenting and resting plan in a hurry. Doing so can assist with giving you some free time when the two infants are resting. This will make you a more joyful, and refreshed parent. If not, you’ll wind up continually taking care of your children, day in and day out."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " Caring for Newborn Twins ",
+                        "href": "https://uchealth.staywellsolutionsonline.com/3,61007"
+                    },
+                    "and",
+                    {
+                        "type": "anchor",
+                        "text": "Parenting Tips for Raising Twins",
+                        "href": "https://www.brighthorizons.com/resources/article/parenting-twins"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Repeat the cycle: Feed Burp Sleep",
+                "id": "Cycle"
+            },
+            {
+                "type": "para",
+                "content": "To assist with getting your infants on a similar feeding plan, follow this tip: When one child awakens to eat, awaken the other one. You might find that one child generally awakens before the other. This is Not a problem. You are not hurting your other child by awakening them. Over the long run, your children will begin to draw nearer to a similar timetable all alone. If your babies were in the neonatal intensive care unit (NICU), they were likely already on a 3-hour schedule. Stick to that same schedule at home."
+            },
+            {
+                "type": "para",
+                "content": "Newborn children can remain up for around 1½ to 2 hours all at once. Many twins are untimely and are up for even less time. You’ll find that goes by rapidly when you are feeding, burping, and changing diapers for twins. This is what a daytime feeding might resemble:"
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Awaken and eat"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "The point is when one child wakes up, stands by the baby a couple of minutes and then wake up the other baby. Then, at that point, feed them. Feeding precedes recess. That means it will be relaxing time for you as both babies are being fed at the same time and will have a similar schedule."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Burp your new-born Twins"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "After they eat, now is the ideal time to burp each child."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Upstanding time and playtime"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "Sitting upright in the wake of eating assists your children with processing. You can tie one child into a fun seat while you burp and hold the other. Recall that children ought to sleep on their backs, not upright. During the day, “alert time” in the wake of feeding is additionally an opportunity to play with, snuggle, and talk with your children."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " How to care for newborn twins, according to moms of multiples who’ve been there ",
+                        "href": "https://www.babycenter.com/baby/newborn-baby/caring-for-newborn-twins-or-multiples_3590"
+                    }
+                ]
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Change diapers"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": " Children will frequently cough after feeding. so it is necessary to change the diapers."
+            },
+            {
+                "type": "ul",
+                "content": [
+                    {
+                        "type": "strong",
+                        "text": "Back to sleep"
+                    }
+                ]
+            },
+            {
+                "type": "para",
+                "content": "After this action, it’s the ideal opportunity for your children to sleep once more. Try not to sit tight for them to begin crying. Crying is one of the last signs that a child is drained. All things considered, wrap them up and put them down to rest simultaneously. On the off chance that one child is more fretful, assist with relieving them until they float off to sleep."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": "Caring for Newborn Twins",
+                        "href": "https://uchealth.staywellsolutionsonline.com/3,61007"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Convert Nighttime feeding into relaxation time",
+                "id": "Nighttime"
+            },
+            {
+                "type": "para",
+                "content": "All along, treat constant feedings in an unexpected way. Make daytime feedings a more active time for your babies. This is the point at which you nestle, talk and sing to, and play along with your twins."
+            },
+            {
+                "type": "para",
+                "content": "Whereas nighttime feedings should  be quiet and calm,. This gives your children the message from the beginning that nighttime is tied to resting. Start  at around 8 p.m., going on over the course of the night until the morning, Hold the lights down low during feedings. Try not to sing to your children, and have no music on. A repetitive sound might be useful."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " Caring for Newborn Twins ",
+                        "href": "https://uchealth.staywellsolutionsonline.com/3,61007"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Bath Time",
+                "id": "Bathtime"
+            },
+            {
+                "type": "para",
+                "content": "In the first week with newborn twins, you don’t have to worry about a bath. You can just wipe them down with some lukewarm water and a washcloth. Once you get back home and want to give both of them it in turns,. Finish bathing and drying one baby and then move on to the next."
+            },
+            {
+                "type": "para",
+                "content": "Once the twins are a little older and can sit up, you can put them both in a bathtub and bathe them at the same time. If you prefer to give them a bath in the morning and again at night before bedtime, rethink it. You can consider bathing them once and just wiping them clean the next time."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": "Caring for Newborn Twins",
+                        "href": "https://uchealth.staywellsolutionsonline.com/3,61007"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Let others help you",
+                "id": "Relax"
+            },
+            {
+                "type": "para",
+                "content": "You may have family, friends, or neighbours who are available. A local support group for parents of multiples may also volunteer some time. Or you may decide to hire someone, if you are able to. People can help you in many ways. They can bring you meals, go food shopping, clean, fold laundry, run errands, hold or bottle-feed a baby, or watch both babies while you rest. Or you may want to have someone handle a nightly feeding so both you and your partner can get some solid sleep. Just make sure that people who are helping are washing their hands often to prevent infection. This is even more important if your babies were born prematurely."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " Caring for twin babies: 9 do’s and don’ts ",
+                        "href": "https://www.care.com/c/caring-for-twin-babies-9-dos-and-donts/"
+                    },
+                    "and",
+                    {
+                        "type": "anchor",
+                        "text": "How to care for newborn twins, according to moms of multiples who’ve been there",
+                        "href": "https://www.babycenter.com/baby/newborn-baby/caring-for-newborn-twins-or-multiples_3590"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Take care of yourself"
+            },
+            {
+                "type": "para",
+                "content": "Having 2 newborn twins is an amazing experience. But it’s also stressful and overwhelming. It’s important to take care of yourself. Make sure you’re eating well and drinking enough fluids. Try to split up the work with your partner as much as possible. Accept any and all offers of help from family and friends. And reach out to other parents through local groups or clubs. Parents of multiples have a higher risk of postpartum blues and postpartum depression. Having mood swings and feeling weepy is normal in these first weeks. This is called the “baby blues” (postpartum blues). But if your feelings last longer than 2 weeks or if you start to feel worse, call your healthcare provider right away. You could have a more serious condition called postpartum depression. Help is available, and it’s important to start treatment as soon as possible."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Reference from",
+                    {
+                        "type": "anchor",
+                        "text": " Parenting Tips for Raising Twins ",
+                        "href": "https://www.brighthorizons.com/resources/article/parenting-twins"
+                    },
+                    "and",
+                    {
+                        "type": "anchor",
+                        "text": " How to care for newborn twins, according to moms of multiples who’ve been there ",
+                        "href": "https://www.babycenter.com/baby/newborn-baby/caring-for-newborn-twins-or-multiples_3590"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "Final thoughts by Dr. Clara Guru"
+            },
+            {
+                "type": "para",
+                "content": "It is understandable that having two babies can be overwhelming, but it is okay to seek help from others, You also deserve rest and relaxing time. Having a schedule can help you a lot."
+            },
+            {
+                "type": "para",
+                "content": [
+                    "Discover your baby’s hidden abilities with",
+                    {
+                        "type": "anchor",
+                        "text": " UpTodd’s ",
+                        "href": "/home"
+                    },
+                    "special pathway."
+                ]
+            },
+            {
+                "type": "heading",
+                "content": "FAQ"
+            },
+            {
+                "type": "ol",
+                "content": [
+                    [
+                        "How can i handle",
+                        {
+                            "type": "anchor",
+                            "text": "new born twins?",
+                            "href": "#handle"
+                        }
+                    ],
+                    [
+                        "What to do to so that it gets less stressful to",
+                        {
+                            "type": "anchor",
+                            "text": " handle new born twins? ",
+                            "href": "#SCHEDULE"
+                        }
+                    ],
+                    [
+                        "How to have a",
+                        {
+                            "type": "anchor",
+                            "text": " Schedule? ",
+                            "href": "#Cycle"
+                        }
+                    ],
+                    [
+                        "How to handle babies at",
+                        {
+                            "type": "anchor",
+                            "text": " night time? ",
+                            "href": "#Nighttime"
+                        }
+                    ],
+                    [
+                        "How to schedule",
+                        {
+                            "type": "anchor",
+                            "text": " bath time? ",
+                            "href": "#Bathtime"
+                        }
+                    ],
+                    [
+                        "How to relax and be",
+                        {
+                            "type": "anchor",
+                            "text": " more calm? ",
+                            "href": "#Relax"
+                        }
+                    ]
+                ]
             }
         ]
     }
