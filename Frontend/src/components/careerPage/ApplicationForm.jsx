@@ -37,7 +37,7 @@ function ApplicationForm() {
 
     try {
       console.log("Sending request to server...");
-      const response = await fetch("http://localhost:3000/upload", {
+      const response = await fetch("https://uptodd.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
@@ -77,46 +77,46 @@ function ApplicationForm() {
   return (
     <div>
       {/* Application Form Section*/}
-      <div className="career-form">
+      <div className='career-form'>
         <h1>Apply for the Job</h1>
         <form
-          id="jobApplicationForm"
+          id='jobApplicationForm'
           onSubmit={handleSubmit}
-          encType="multipart/form-data"
+          encType='multipart/form-data'
         >
-          <label htmlFor="fullname">Full Name *</label>
-          <input type="text" id="fullname" name="fullname" required />
+          <label htmlFor='fullname'>Full Name *</label>
+          <input type='text' id='fullname' name='fullname' required />
 
-          <label htmlFor="email">Email *</label>
-          <input type="email" id="email" name="email" required />
+          <label htmlFor='email'>Email *</label>
+          <input type='email' id='email' name='email' required />
 
-          <label htmlFor="phone">Phone *</label>
-          <input type="text" id="phone" name="phone" required />
+          <label htmlFor='phone'>Phone *</label>
+          <input type='text' id='phone' name='phone' required />
 
-          <label htmlFor="gender">Gender *</label>
-          <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
+          <label htmlFor='gender'>Gender *</label>
+          <select id='gender' name='gender' required>
+            <option value='male'>Male</option>
+            <option value='female'>Female</option>
+            <option value='other'>Other</option>
           </select>
 
-          <label htmlFor="jobrole">Job Role *</label>
-          <select id="jobrole" name="jobrole" required>
-            <option value="test">Test</option>
-            <option value="dev">Dev</option>
-            <option value="other">Other</option>
+          <label htmlFor='jobrole'>Job Role *</label>
+          <select id='jobrole' name='jobrole' required>
+            <option value='test'>Test</option>
+            <option value='dev'>Dev</option>
+            <option value='other'>Other</option>
           </select>
 
-          <label htmlFor="resume">Upload Resume (PDF/DOC/DOCX) *</label>
+          <label htmlFor='resume'>Upload Resume (PDF/DOC/DOCX) *</label>
           <input
-            type="file"
-            id="resume"
-            name="resume"
-            accept=".pdf, .doc, .docx"
+            type='file'
+            id='resume'
+            name='resume'
+            accept='.pdf, .doc, .docx'
             required
           />
 
-          <button type="submit">Submit Application</button>
+          <button type='submit'>Submit Application</button>
         </form>
 
         {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
