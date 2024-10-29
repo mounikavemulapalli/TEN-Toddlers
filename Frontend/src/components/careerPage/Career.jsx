@@ -1,17 +1,32 @@
 import React from "react";
 import "./Career.css";
-import airtel_logo from "../../assets/images/airtel_logo.jpg";
+import careerMainImage from "../../assets/images/career/careerMainImage.webp";
+import careerLife1 from "../../assets/images/career/careerLife1.webp";
+import careerLife2 from "../../assets/images/career/careerLife2.webp";
+import careerLife3 from "../../assets/images/career/careerLife3.webp";
+import careerLife4 from "../../assets/images/career/careerLife4.webp";
+import logo1 from "../../assets/images/career/logo1.jpg";
+import logo2 from "../../assets/images/career/logo2.png";
+import logo3 from "../../assets/images/career/logo3.png";
+import logo4 from "../../assets/images/career/logo4.jpg";
+import logo5 from "../../assets/images/career/logo5.png";
+import logo6 from "../../assets/images/career/logo6.png";
+import logo7 from "../../assets/images/career/logo7.jpg";
+import logo8 from "../../assets/images/career/logo8.jpg";
+import logo9 from "../../assets/images/career/logo9.png";
+import logo10 from "../../assets/images/career/logo10.png";
+import logo11 from "../../assets/images/career/logo11.jpg";
+import logo12 from "../../assets/images/career/logo12.png";
 import ApplicationForm from "./ApplicationForm";
 import Mentors from "../comman/Mentors";
 import { careerAbout } from "../../assets/data/careerAbout";
 import { teamCards } from "../../assets/data/teamCards";
-import { mentorsDetails } from "../../assets/data/mentorsDetails";
 
 function Career() {
   return (
     <div className="career-container">
       <div className="career-main">
-        <img src="https://www.uptodd.com/images/execution-team.webp" alt="" />
+        <img src={careerMainImage} alt="Career_Main_Image" />
       </div>
 
       {/* Why Join Us? Section*/}
@@ -70,22 +85,10 @@ function Career() {
         <h1>Life at UpTodd</h1>
         <p>A workspace that promotes professional and personal growth.</p>
         <div className="career-life-image">
-          <img
-            src="https://www.uptodd.com/images/career/gallery2.webp"
-            alt="Employees Photos"
-          />
-          <img
-            src="https://www.uptodd.com/images/career/gallery1.webp"
-            alt="Employees Photos"
-          />
-          <img
-            src="https://www.uptodd.com/images/career/gallery4.webp"
-            alt="Employees Photos"
-          />
-          <img
-            src="https://www.uptodd.com/images/career/gallery3.webp"
-            alt="Employees Photos"
-          />
+          <img src={careerLife1} alt="Employees Photos" />
+          <img src={careerLife2} alt="Employees Photos" />
+          <img src={careerLife3} alt="Employees Photos" />
+          <img src={careerLife4} alt="Employees Photos" />
         </div>
       </div>
 
@@ -178,18 +181,18 @@ function Career() {
         </div>
 
         <div className="career-footer-icons">
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
-          <img src={airtel_logo} alt="" />
+          <img src={logo1} alt="airtel_logo" />
+          <img src={logo2} alt="americanExpress_logo" />
+          <img src={logo3} alt="freecharge_logo" />
+          <img src={logo4} alt="mastercard_logo" />
+          <img src={logo5} alt="payzapp_logo" />
+          <img src={logo6} alt="googlePay_logo" />
+          <img src={logo7} alt="paytm_logo" />
+          <img src={logo8} alt="mobikwik_logo" />
+          <img src={logo9} alt="visa_logo" />
+          <img src={logo10} alt="Rupay_logo" />
+          <img src={logo11} alt="olaMoney_logo" />
+          <img src={logo12} alt="phonepe_logo" />
         </div>
 
         <hr />
