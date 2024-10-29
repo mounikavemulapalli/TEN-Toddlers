@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./SubscriptionBox.css";
-import baby1 from "../../assets/images/subscription/baby1.avif";
-import baby2 from "../../assets/images/subscription/baby2.webp";
-import baby3 from "../../assets/images/subscription/baby3.webp";
+import babyMain from "../../assets/images/subscription/babyMain.avif";
+import babyToy from "../../assets/images/subscription/babyToy.jpg";
+import babyKit1 from "../../assets/images/subscription/babyKit1.jpg";
+import babyKit2 from "../../assets/images/subscription/babyKit2.jpg";
 import YouTube from "react-youtube";
+import BrilliantMinds from "../comman/BrilliantMinds";
+import Line from "../comman/Line";
+import HappyParents from "../comman/HappyParents";
 import Mentors from "../comman/Mentors";
+import ParentsLove from "./ParentsLove";
 import { awardData } from "../../assets/data/awardData";
-import { parentsData } from "../../assets/data/parentsData";
 
 function SubscriptionBox() {
   const [kitsData, setKitsData] = useState(null);
@@ -14,6 +18,12 @@ function SubscriptionBox() {
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [ageInMonths, setAgeInMonths] = useState(null);
+
+  const componentRef = useRef(null);
+
+  const subscriptionKits = () => {
+    componentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   // Function to toggle PopUp visibility
   const togglePopUp = () => setShowPopUp(!showPopUp);
@@ -95,21 +105,22 @@ function SubscriptionBox() {
         {/* Main Section */}
         <div className="sub-mainDiv">
           <div className="sub-mainDiv-img">
-            <img src={baby1} alt="Baby Image" />
+            <img src={babyMain} alt="Baby Image" />
           </div>
           <div className="sub-mainDiv-content">
             <h1>Brain Developmental Boxes</h1>
             <hr />
             <h2>Research Backed Toys</h2>
-            <a href="#">EXPLORE</a>
+            <button onClick={subscriptionKits}>EXPLORE</button>
           </div>
         </div>
 
         {/* Kits PopUp Section */}
-        <div className="career-kit-popup">
+        <div ref={componentRef} className="sub-kit-popup">
           <h1>Buy Baby's Developmental Kit For Your Baby</h1>
-          <img src={baby2} alt="Kits Photo" />
-          <div className="PopUp">
+          <img src={babyKit1} alt="Kits Photo" />
+
+          <div>
             {/* Button to open the modal */}
             <button className="pop-select-button" onClick={togglePopUp}>
               Select Kit for your Baby
@@ -178,7 +189,7 @@ function SubscriptionBox() {
         </div>
 
         {/* Kits Section */}
-        <h1 className="heading">
+        <h1 className="developmental-kit-heading">
           Your
           <span> {ageInMonths} Months </span>Baby's Developmental Kit
         </h1>
@@ -187,7 +198,7 @@ function SubscriptionBox() {
           kitsData.map((kit) => (
             <div key={kit._id} className="sub-kitDiv">
               <div className="sub-kitDiv-img">
-                <img src={baby2} alt="Baby Image" />
+                <img src={babyKit2} alt="Baby Image" />
               </div>
               <div className="sub-kitDiv-content">
                 <h1>{kit.name}</h1>
@@ -203,7 +214,7 @@ function SubscriptionBox() {
                 </h4>
                 <h5>Get at INR 2,790 on Checkout</h5>
                 <h6>Free Shipping | Cash On Delivery(COD) Available</h6>
-                <a href="#">Buy Now</a>
+                <button>Buy Now</button>
                 <p>
                   Scientifically Designed in UpTodd’s Lab, exclusively created
                   for baby’s brain development
@@ -212,42 +223,19 @@ function SubscriptionBox() {
             </div>
           ))}
 
-        {/* Video Section */}
-        <h1 className="heading">Parent Unboxing UpTodd's Kit</h1>
+        {/* BrilliantMinds Section */}
+        <BrilliantMinds />
 
-        <div className="sub-videos-div">
-          <div
-            className="sub-video"
-            style={{
-              borderRadius: "1rem",
-              overflow: "hidden",
-            }}
-          >
-            <YouTube
-              videoId="Kj6ZzR0LKpg"
-              opts={videoOptions}
-              onReady={onVideoReady}
-            />
-          </div>
-          <div
-            className="sub-video"
-            style={{
-              borderRadius: "1rem",
-              overflow: "hidden",
-            }}
-          >
-            <YouTube
-              videoId="Kj6ZzR0LKpg"
-              opts={videoOptions}
-              onReady={onVideoReady}
-            />
-          </div>
-        </div>
+        {/* Line Section */}
+        <Line />
+
+        {/* HappyParents Section */}
+        <HappyParents />
 
         {/* Research Section */}
         <div className="sub-research">
           <div className="sub-research-img">
-            <img src={baby3} alt="Baby Image" />
+            <img src={babyToy} alt="Baby Image" />
           </div>
           <div className="sub-research-content">
             <h1>Research Backed Toys</h1>
@@ -256,7 +244,7 @@ function SubscriptionBox() {
               <li>Into Parenting Program</li>
               <li>Diet & Milestone planner</li>
             </ul>
-            <a href="#">SHOP NOW</a>
+            <button onClick={subscriptionKits}>SHOP NOW</button>
           </div>
         </div>
 
@@ -301,24 +289,10 @@ function SubscriptionBox() {
           ))}
         </div>
 
-        {/* Parents Section */}
-        <div className="sub-parents">
-          <h1 className="sub-parents-heading">
-            We are Loved by Parents | 150K+ Parents
-          </h1>
-          <div className="sub-parents-cards">
-            {parentsData.map((data) => (
-              <div key={data.id} className="sub-parents-card">
-                <img src={data.image} alt="Baby Image" />
-                <h2>{data.name}</h2>
-                <p>{data.about}</p>
-                <h4>{data.parent}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Parents Love Section */}
+        <ParentsLove />
 
-        {/* Featured Section */}
+        {/* Mentors & Featured Section */}
         <Mentors />
       </div>
     </>

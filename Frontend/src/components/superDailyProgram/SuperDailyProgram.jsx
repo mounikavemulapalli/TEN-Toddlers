@@ -90,11 +90,9 @@ function SuperDailyProgram() {
           <h4>
             <FontAwesomeIcon icon={faShoePrints} /> For 0-5 years old baby
           </h4>
-          <div>
-
-          <PopupButton text="Program Features"/>
-          </div>
-          {/* <a href="#">Program Features</a> */}
+          <button onClick={superDailyFramework}>Program Features</button>
+            
+          
         </div>
         <div className="super-main-image">
           <img src={banner} alt="Banner Image" />
@@ -141,8 +139,9 @@ function SuperDailyProgram() {
                 <>
                   <div className="super-offers-card-lastDiv">
                     <h2>{data.name}</h2>
-                    {/* <a href="#">Empower Your Parenting Journey</a> */}
-                    <PopupButton text="Empower Your Parenting "/>
+                    <button onClick={superDailyFramework}>
+                      Empower Your Parenting Journey
+                    </button>
                   </div>
                 </>
               )}
@@ -182,3 +181,18 @@ function SuperDailyProgram() {
 }
 
 export default SuperDailyProgram;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

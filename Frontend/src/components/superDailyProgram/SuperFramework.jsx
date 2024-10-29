@@ -40,7 +40,7 @@ function SuperFramework() {
           {/* <button className="super-framework-join2-btn">Enroll Now</button> */}
           
           
-          <PopupButton className="super-framework-join2-btn" text="Enroll Now"/>
+          <PopupButton text="Enroll Now"/>
          
         </div>
         <p>Mega discount | Exclusive offer</p>

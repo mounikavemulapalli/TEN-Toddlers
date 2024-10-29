@@ -94,6 +94,10 @@
     grid-template-columns: 70% auto;
 }
 
+.start-now-banner-grid Button {
+    margin: auto;
+}
+
 .start-now-banner h3 {
     width: 90%;
     font-size: 1.25rem;
@@ -196,6 +200,7 @@
 .carousel-card iframe {
     border-radius: 0;
     width: 312px;
+    height: 190px;
 }
 
 .carousel-card img {

@@ -15,11 +15,16 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
     "/contact-us",
     "/super_daily_app_program",
   ];
-  const [currentPage, setCurrentPage] = useState(
-    homeRouteNames.includes(location.pathname)
-      ? "home"
-      : location.pathname.substring(1)
-  );
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (homeRouteNames.includes(location.pathname)) {
+      return "home";
+    } else if (location.pathname.startsWith('/blog')) {
+      return "blog";
+    } else {
+      return location.pathname.substring(1);
+    }
+  });
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSearchClicked, setSearchClicked] = useState(false);
   const { inputKeyword, setInputKeyword } = inputState;
