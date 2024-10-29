@@ -67,7 +67,7 @@ function SubscriptionBox() {
     const fetchKitsData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/kits/byMonth?months=${ageInMonths} months`
+          `https://uptodd.onrender.com/kits/byMonth?months=${ageInMonths} months`
         );
 
         console.log(response);
@@ -260,7 +260,7 @@ function SubscriptionBox() {
               overflow: "hidden",
             }}
           >
-            <YouTube videoId="Kj6ZzR0LKpg" opts={videoOptions} />
+            <YouTube videoId="hyORo2c9lWs" opts={videoOptions} />
           </div>
           <div className="stories-content">
             <h1>
