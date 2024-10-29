@@ -155,6 +155,8 @@ export default function Home() {
               </li>
             </ul>
             {/* <Button text='Book a Demo Slot' /> */}
+            
+
             <PopupButton text='Book a Demo Slot'/>
           </div>
           <div className="banner-image">
