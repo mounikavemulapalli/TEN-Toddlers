@@ -1,5 +1,6 @@
 import React from "react";
 import "./SuperFramework.css";
+import PopupButton from "../premium/PopupButton";
 
 function SuperFramework() {
   return (
@@ -36,7 +37,11 @@ function SuperFramework() {
           <h4>
             INR 449 <span>INR 1,599</span>
           </h4>
-          <button className="super-framework-join2-btn">Enroll Now</button>
+          {/* <button className="super-framework-join2-btn">Enroll Now</button> */}
+          
+          
+          <PopupButton className="super-framework-join2-btn" text="Enroll Now"/>
+         
         </div>
         <p>Mega discount | Exclusive offer</p>
       </div>

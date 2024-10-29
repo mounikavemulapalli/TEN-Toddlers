@@ -16,6 +16,7 @@ import SuperBanner from "./SuperBanner.jsx";
 import SuperFramework from "./SuperFramework.jsx";
 import SuperQA from "./SuperQA.jsx";
 import { Footer } from '../premium/Premium.jsx';
+import PopupButton from "../premium/PopupButton.jsx";
 
 function SuperDailyProgram() {
   const [date, setDate] = useState("");
@@ -89,7 +90,11 @@ function SuperDailyProgram() {
           <h4>
             <FontAwesomeIcon icon={faShoePrints} /> For 0-5 years old baby
           </h4>
-          <a href="#">Program Features</a>
+          <div>
+
+          <PopupButton text="Program Features"/>
+          </div>
+          {/* <a href="#">Program Features</a> */}
         </div>
         <div className="super-main-image">
           <img src={banner} alt="Banner Image" />
@@ -136,7 +141,8 @@ function SuperDailyProgram() {
                 <>
                   <div className="super-offers-card-lastDiv">
                     <h2>{data.name}</h2>
-                    <a href="#">Empower Your Parenting Journey</a>
+                    {/* <a href="#">Empower Your Parenting Journey</a> */}
+                    <PopupButton text="Empower Your Parenting "/>
                   </div>
                 </>
               )}

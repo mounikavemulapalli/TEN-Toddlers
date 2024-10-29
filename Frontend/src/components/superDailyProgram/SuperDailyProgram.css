@@ -87,7 +87,7 @@
   color: darkblue;
 }
 
-.super-main-content a {
+/* .super-main-content a {
   background-color: #ff5766;
   text-decoration: none;
   padding: 1rem 2rem;
@@ -95,7 +95,7 @@
   margin-top: 2rem;
   color: white;
   font-size: 1.5rem;
-}
+} */
 
 .super-main-image {
   width: 50%;
@@ -217,7 +217,7 @@
   font-size: 20px;
 }
 
-.super-offers-card-lastDiv a {
+/* .super-offers-card-lastDiv a {
   background-color: #ff5766;
   padding: 1rem 1rem;
   border-radius: 10px;
@@ -225,7 +225,7 @@
   font-size: 1.2rem;
   margin-top: 1rem;
   text-decoration: none;
-}
+} */
 
 /*                           About Styles */
 .super-about {
