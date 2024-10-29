@@ -70,7 +70,7 @@
   margin-top: 2rem;
 }
 
-.sub-mainDiv-content a {
+.sub-mainDiv-content button {
   background-color: #ff5766;
   text-decoration: none;
   padding: 1.5rem 3rem;
@@ -78,6 +78,12 @@
   margin-top: 2rem;
   color: white;
   font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.sub-mainDiv-content button:hover {
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 /*                                         sub-popUp styles */
@@ -114,7 +120,7 @@
 }
 
 .pop-select-button:hover {
-  background-color: #ee5766;
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 .sub-popUp {
@@ -129,6 +135,7 @@
   align-items: center;
   overflow: auto;
   padding: 1rem;
+  z-index: 1;
 }
 
 .sub-popUp-content {
@@ -227,18 +234,18 @@
   height: auto;
   display: flex;
   align-items: center;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding-bottom: 2rem;
   gap: 1rem;
 }
 
 .sub-kitDiv-img {
   width: 50%;
-  height: auto;
 }
 
 .sub-kitDiv-img img {
   width: 100%;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 .sub-kitDiv-content {
@@ -291,6 +298,7 @@
   margin-top: 1rem;
   text-decoration: line-through;
   text-align: left;
+  color: black;
 }
 
 .sub-kitDiv-content h4 span {
@@ -310,11 +318,11 @@
 .sub-kitDiv-content h6 {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-align: left;
 }
 
-.sub-kitDiv-content a {
+.sub-kitDiv-content button {
   display: inline-block;
   padding: 1rem 0;
   width: 100%;
@@ -324,7 +332,13 @@
   color: white;
   background-color: #ff5766;
   text-decoration: none;
-  border-radius: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.sub-kitDiv-content button:hover {
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 .sub-kitDiv-content p {
@@ -403,7 +417,7 @@
   color: blue;
 }
 
-.sub-research-content a {
+.sub-research-content button {
   background-color: #ff5766;
   padding: 1rem 2rem;
   border-radius: 5rem;
@@ -411,6 +425,12 @@
   font-size: 1.5rem;
   margin-top: 2rem;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.sub-research-content button:hover {
+  box-shadow: 0px 0px 20px rgb(140, 140, 140);
 }
 
 /*                     Stories Styles */
