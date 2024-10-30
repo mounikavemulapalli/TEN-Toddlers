@@ -9,11 +9,10 @@ const PopupButton = ({ text,className}) => {
     setIsPopupOpen(!isPopupOpen);
   };
   return (
-    <div className="how-it-works">
-      <div className="button-center">
+    <>
         {/* Correct Button Component */}
         <Button
-          className={`a-btn ${className}`}
+          className={`a-btn ${className} full-btn`}
           text={text}
           onClick={handleOpenPopup} // Ensure you're handling the click event
         >
@@ -23,8 +22,7 @@ const PopupButton = ({ text,className}) => {
 
         {/* Popup Logic */}
         {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
-      </div>
-    </div>
+        </>
   );
 };
 

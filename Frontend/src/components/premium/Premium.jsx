@@ -211,12 +211,14 @@ function Premium() {
                 Starts at INR 1190* per month only
               </li>
             </ul>
-            <PopupButton className="btn" text="Schedule a Demo" />
+            <div className="btn-start">
+            <PopupButton className="a-btn btn-start" text="Schedule a Demo" />
             {/* <button className="btn" onClick={handleOpenPopup}> */}
             {/* Schedule a Demo */}
             {/* </button> */}
             {/* Popup Logic */}
             {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            </div>
           </div>
 
           {/* Popup Logic */}
@@ -297,7 +299,9 @@ function Premium() {
       {/* How our Program Works !! */}
 
       <Step />
+      <div className="btn-center">
       <PopupButton text="Access this program" />
+      </div>
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
 
@@ -404,7 +408,7 @@ function Premium() {
           </button> */}
           {/* Popup Logic */}
           {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
-          <div className="text-black">
+          <div className="text-black" style={{minWidth: "10rem"}}>
             <PopupButton text="Start Now" />
           </div>
         </div>
@@ -524,16 +528,16 @@ function Premium() {
           </button> */}
           {/* Popup Logic */}
           {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
-
+          <div className="btn-center">  
           <PopupButton id="premiumSuperPremiumProgram" text="Fuel Your Child's Development"/>
+          </div>
         {/* </div> */}
-      </section>
 
-      {/* Bending line */}
+        {/* Bending line */}
 
       <section className="dividing-curly-svg">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="http.how-it-works://www.w3.org/2000/svg"
           width="314"
           height="15"
           viewBox="0 0 314 15"
@@ -546,6 +550,8 @@ function Premium() {
           ></path>
         </svg>
       </section>
+      </section>
+
 
       {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth  */}
 
@@ -1134,7 +1140,9 @@ function Premium() {
             </button> */}
             {/* Popup Logic */}
             {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <div className="btn-center" style={{padding:"0"}}>
             <PopupButton className="btn" text="Enroll Now" />
+            </div>
           </div>
           <div className="product-cost-card">
             <h3>Standard Premium Program</h3>
@@ -1156,7 +1164,9 @@ function Premium() {
             </button> */}
             {/* Popup Logic */}
             {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
+            <div className="btn-center" style={{padding:"0"}}>
             <PopupButton className="btn" text="Enroll Now" />
+            </div>
           </div>
         </div>
         <div className="see-more-product">
