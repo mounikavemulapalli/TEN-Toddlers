@@ -1,0 +1,38 @@
+[
+    {
+        "sliderImg": [
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Dhriti_Jindal-slide1.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Dhriti_Jindal-slide2.webp"
+        ],
+        "h4": "Global Book of Award",
+        "h2": "Dhriti Jindal, ",
+        "span": "4 months",
+        "p": "At 4 months, a flashcard genius and agile achiever",
+        "img1": "https://www.uptodd.com/images/newWebsite/baby-champs/geniusBabyThumbnails/Dhriti_Jindal.webp",
+        "img2": "https://www.uptodd.com/images/newWebsite/baby-champs/superParentThumbnails/Dhriti_Jindal.webp"
+    },
+    {
+        "sliderImg": [
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Divyanshi_Sahoo_slider1.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Divyanshi_Sahoo_slider2.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Divyanshi_Sahoo_slider3.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Divyanshi_Sahoo_slider4.webp"
+        ],
+        "h4": "World Book of Achievements",
+        "h2": "Divyanshi Sahoo, ",
+        "span": "1.4 yrs",
+        "p": "Trailblazer Toddler, mastering flashcards among 11,532 participants",
+        "img1": "https://www.uptodd.com/images/newWebsite/baby-champs/geniusBabyThumbnails/Divyanshi_Sahoo.webp",
+        "img2": "https://www.uptodd.com/images/newWebsite/baby-champs/superParentThumbnails/Divyanshi_Sahoo.webp"
+    },
+    {
+        "sliderImg": [
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Aditya-slide1.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Aditya-slide2.webp",
+            "https://www.uptodd.com/images/newWebsite/baby-champs/Aditya-slide3.webp"
+        ],
+        "h4": "International Book of Achievements",
+        "h2": "Aditya,",
+        "span": "1.5 yrs"
+    }
+]

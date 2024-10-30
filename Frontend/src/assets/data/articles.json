@@ -1,7 +1,10 @@
 {
     "Thumb sucking: Help your baby break the habit": {
-        "img": "https://blog.uptodd.com/wp-content/uploads/2024/03/Thumb-sucking-1-768x432.png",
         "sections": [
+            {
+                "type": "img",
+                "src": "https://blog.uptodd.com/wp-content/uploads/2024/03/Thumb-sucking-1-768x432.png"
+            },
             {
                 "type": "para",
                 "content": "Babies have a natural urge to suck onto things. This urge usually decreases after the age of 6 months. But many babies continue to suck their thumbs to soothe themselves and engage in thumb sucking. It can become a habit in babies and young children who use it to comfort themselves when they feel hungry, afraid, restless, quiet, sleepy, or bored. So let us see what our development Expert Dr Clara Guru has to comment on it."
@@ -178,13 +181,14 @@
         ]
     },
     "Music and Baby : How Music Shapes Baby's Brain Development": {
-        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-8-768x432.png",
         "sections": [
             {
+                "type": "img",
+                "src": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-8-768x432.png"
+            },
+            {
                 "type": "para",
-                "content": [
-                    "Music has an incredible power to produce a variety of emotions and alter moods. But do you know how music impacts your baby? It’s more than just a sweet melody. From Calming lullabies to playful, fun songs during playtime, music plays an important role in shaping our little ones’ developing brains. In this blog, Dr. Clara Guru, our child development expert, will inform us about the impact of music on various regions of a baby’s brain and its important role in their overall development."
-                ]
+                "content": "Music has an incredible power to produce a variety of emotions and alter moods. But do you know how music impacts your baby? It’s more than just a sweet melody. From Calming lullabies to playful, fun songs during playtime, music plays an important role in shaping our little ones’ developing brains. In this blog, Dr. Clara Guru, our child development expert, will inform us about the impact of music on various regions of a baby’s brain and its important role in their overall development."
             },
             {
                 "type": "heading",
@@ -398,13 +402,19 @@
             {
                 "type": "para",
                 "content": "One of the most joyful moments as parents is when our baby’s laugh. It has the power to snatch away all the stresses and sadness and provoke joy almost instantaneously. As parents, whenever we discover that our babies have now started to laugh, we will do anything to cause that laughter. Laughter is good for our babies as it makes them feel lighter and boosts up their mood. But this laughter has much more benefits than we realize. In this blog, our developmental expert, Dr. Clara Guru will inform about the benefits and tell us how to make our baby laugh?"
+            },
+            {
+                "type": "img",
+                "src": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-9-1024x576.png"
             }
-        ],
-        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-9-1024x576.png"
+        ]
     },
     "How to Care for Newborn Twins": {
-        "img": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-1024x576.png",
         "sections": [
+            {
+                "type": "img",
+                "src": "https://blog.uptodd.com/wp-content/uploads/2024/05/BLOG-I-LOVE-YOU-BABY-1024x576.png"
+            },
             {
                 "type": "heading",
                 "content": "Caring for Newborn Twins",

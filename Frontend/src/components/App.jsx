@@ -6,7 +6,7 @@ import Home from "./Home/Home";
 import "../Styles/About.css";
 import "./App.css";
 import Step from "./premium/Step";
-import SuccessStory from "../components/Home/SuccessStory";
+import SuccessStory, { Awardees } from "../components/Home/SuccessStory";
 import Footer from "../components/footer/Footer";
 import Premium from "./premium/Premium";
 import NavBar from "../components/NavBar";
@@ -32,15 +32,18 @@ export default function App() {
   // State to open article in blog page
   const [selectedTitle, setSelectedTitle] = useState('Article not found');
 
+  // State to handle video Modal in baby-champs page
+  const [toggleModal, setToggleModal] = useState(false);
+
   return (
     <Router>
-      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} />
-      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} />
+      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} isModalOpen={toggleModal} />
+      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} modal={{ toggleModal, setToggleModal }} />
     </Router>
   );
 }
 
-function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
+function MainRoutes({ searchedKeyword, setSelectedTitle, modal }) {
   const location = useLocation();
   const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
   const isFooterHidden = hideFooterRoutes.includes(location.pathname) || location.pathname.startsWith('/blog/');
@@ -54,10 +57,10 @@ function MainRoutes({ searchedKeyword, selectedTitle, setSelectedTitle }) {
         <Route path='/Apply' element={<ApplicationForm />} />
         <Route path='/step' element={<Step />} />
         <Route path='/success story' element={<SuccessStory />} />
+        <Route path='/baby-champs' element={<Awardees modal={modal} />} />
         <Route path='/premium' element={<Premium />} />
         <Route path='/happy-parents' element={<AllHappyParents />} />
         <Route path='/baby-achievers' element={<BabyAchieversAll />} />
-
         <Route path='/career' element={<Career />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-conditions' element={<TermsCondition />} />
