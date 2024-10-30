@@ -59,7 +59,7 @@ export default function Step() {
   ];
 
   return (
-    <div className="how-it-works">
+    <div className="how-it-works" style={{padding: "5rem 0"}}>
       <h1>How our Program Works !!</h1>
       <div style={{ display: "flex" }}>
         <div className="step-container">

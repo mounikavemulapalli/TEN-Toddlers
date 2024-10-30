@@ -1032,7 +1032,7 @@ section {
     color: white;
     font-family: "DM Sans";
     font-weight: 700;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -3132,4 +3132,16 @@ section {
   border: none;
   margin-top: 5rem;
   text-align: center;
+}
+
+
+.btn-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-center{ 
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
 }

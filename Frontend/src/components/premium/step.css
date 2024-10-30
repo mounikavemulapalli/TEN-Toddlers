@@ -37,6 +37,7 @@
 @media (min-width: 768px) {
   .step-item {
     display: flex;
+    justify-content: flex-start;
   }
 }
 

@@ -33,15 +33,17 @@ const BabyAchieversAll = () => {
               <iframe
                 loading="lazy"
                 style={{ borderRadius: "10px", margin: ".1rem" }}
-                src={card.videoUrl} // Correctly display the video URL
+                srcDoc={card.surdoc} // Correctly display the video URL
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
             </div>
-            <h3>{card.title}</h3>
-            {card.description && <p>{card.description}</p>}
+            <div className="quote-container-all">
+            <p className="quote-text-all">{card.title}</p>
+            {card.description && <p className="quote-text-all">  {card.description}</p>}
+          </div>
           </div>
         ))}
       </div>

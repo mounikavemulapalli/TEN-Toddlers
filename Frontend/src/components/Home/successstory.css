@@ -26,7 +26,7 @@
 
 .genius-babies h1 span {
   font-weight: 400;
-  margin-left: -8px;
+  padding: 0 15px
 }
 
 .genius-babies h5 {
@@ -288,7 +288,6 @@
 .curlyline {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
   background: #fffbfb;
 }
 
