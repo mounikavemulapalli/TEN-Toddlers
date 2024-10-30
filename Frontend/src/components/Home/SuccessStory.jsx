@@ -346,14 +346,16 @@ const SuccessStory = () => {
                 <iframe
                   width="350"
                   height="200"
-                  src={card.videoUrl}
+                  srcDoc={card.surdoc}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
-                <h3>{card.title}</h3>
-                {card.description && <p>{card.description}</p>}
+                <div className="quote-container-all">
+            <p className="quote-text-all">{card.title}</p>
+            {card.description && <p className="quote-text-all">  {card.description}</p>}
+          </div>
               </div>
             ))}
           </div>
@@ -364,7 +366,7 @@ const SuccessStory = () => {
         </div>
         <div className="see-all-cont child-see-all-cont">
           <a href="/baby-achievers">
-            <button className="see-all-btn child-all-btn">See All</button>
+            <button className="see-all-btn child-all-btn" style={{marginTop: "2rem"}}>See All</button>
           </a>
         </div>
       </section>
