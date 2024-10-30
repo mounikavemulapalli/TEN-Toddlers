@@ -16,6 +16,9 @@
 
 .banner-text {
   width: 62%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .Home-page h1 {
@@ -26,14 +29,14 @@
 .Home-page h3 {
   font-size: 1.8rem;
   line-height: 2.5rem;
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
 }
 .Home-page h5 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.6rem;
-  letter-spacing: -.32px;
-  margin-top: .7rem;
+  letter-spacing: -0.32px;
+  margin-top: 0.7rem;
 }
 .Home-page ul {
   padding: 1.3rem 0;
@@ -42,35 +45,16 @@
 .Home-page ul li {
   font-weight: 500;
   line-height: 1.6rem;
-  letter-spacing: -.32px;
-  padding: .6rem 0;
+  letter-spacing: -0.32px;
+  padding: 0.6rem 0;
 }
 .Home-page ul li span {
   margin-left: 10px;
 }
 
-.Home-button {
-  border-radius: 8px;
-  background: #ff5766;
-  color: #fff;
-  font-size: 1rem;
-  letter-spacing: -.8px;
-  font-family: "DM Sans";
-  font-weight: bold;
-  line-height: 1.62rem;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-}
-
 .banner-text Button {
   width: 198px;
   height: 54px;
-}
-
-.Home-button:hover {
-  box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-  transition: all 0.4s ease 0s;
 }
 
 .image {
@@ -83,12 +67,6 @@
 
 .banner-image img {
   width: 100%;
-}
-/*---------- slider */
-
-.sliders {
-  /* display: flex; */
-  width: 1000px;
 }
 
 /* --------Possibilities */
@@ -112,7 +90,7 @@
   margin-top: 1.1rem;
   color: #002863;
   line-height: 2.1rem;
-  letter-spacing: -.96px;
+  letter-spacing: -0.96px;
 }
 
 .Possibilities-image {
@@ -209,7 +187,7 @@
   font-size: 1.5rem;
   font-weight: normal;
   line-height: 2.1rem;
-  letter-spacing: -.96px;
+  letter-spacing: -0.96px;
   margin-top: 1.1rem;
 }
 .genius-section {
@@ -256,17 +234,18 @@
   font-size: 2.2rem;
   color: #ff3f4e;
   font-weight: bold;
-  letter-spacing: -.72px;
+  letter-spacing: -0.72px;
   margin-inline: 1.3rem;
 }
-.genius-text li span, .genius-text li span:nth-last-of-type(2) {
+.genius-text li span,
+.genius-text li span:nth-last-of-type(2) {
   line-height: 1.6rem;
 }
 .genius-text li span:nth-of-type(2) {
   color: #002863;
   font-weight: 500;
   font-size: 1rem;
-  letter-spacing: -.32px;
+  letter-spacing: -0.32px;
 }
 
 /* -------genius-babies */
@@ -385,7 +364,7 @@
 .development-head h1 {
   font-size: 2.7rem;
   line-height: 3.4rem;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
   margin-top: 1rem;
 }
 .development-head h1 > span {
@@ -396,7 +375,7 @@
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.9rem;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
 }
 .development-head h5 > span {
   font-weight: bold;
@@ -437,7 +416,7 @@
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6rem;
-  letter-spacing: -.4px;
+  letter-spacing: -0.4px;
 }
 .development-image {
   margin-block: auto;
@@ -447,7 +426,7 @@
   width: 100%;
 }
 .four-pillars-list {
-  padding: .9rem 1.75rem;
+  padding: 0.9rem 1.75rem;
   margin: 15px 0;
   display: flex;
 }
@@ -501,7 +480,7 @@
   color: #002863;
   width: 80%;
   margin: auto;
-  gap: .9rem 1.2rem;
+  gap: 0.9rem 1.2rem;
   margin-top: 1.7rem;
 }
 .product-and-cost-list li {
@@ -1171,7 +1150,7 @@ li {
 
 @media (max-width: 1200px) {
   .Possibilities {
-    padding: 4rem 6% 5.2reml
+    padding: 4rem 6% 5.2reml;
   }
 }
 
@@ -1187,7 +1166,7 @@ li {
   .genius-text li span {
     font-size: 2rem;
     line-height: 1.4rem;
-    letter-spacing: -.62px;
+    letter-spacing: -0.62px;
   }
 
   .building {
@@ -1200,13 +1179,13 @@ li {
   }
 
   .development-card {
-    padding: .7rem 1.4rem;
+    padding: 0.7rem 1.4rem;
   }
 
   .development-card h3 {
     font-size: 1.1rem;
     line-height: 1.4rem;
-    letter-spacing: -.35px;
+    letter-spacing: -0.35px;
   }
 
   .development-image {
@@ -1241,18 +1220,18 @@ li {
   .Home-page h3 {
     font-size: 1.5rem;
     line-height: 1.8rem;
-    letter-spacing: -.4px;
+    letter-spacing: -0.4px;
   }
 
   .Home-page h5 {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.2rem;
-    letter-spacing: -.2px;
+    letter-spacing: -0.2px;
   }
 
   .Home-page ul li {
-    font-size: .8rem;
-    padding: .2rem;
+    font-size: 0.8rem;
+    padding: 0.2rem;
   }
 }
 
@@ -1260,13 +1239,13 @@ li {
   .genius-text li span {
     font-size: 1.8rem;
     line-height: 1.3rem;
-    letter-spacing: -.57px;
+    letter-spacing: -0.57px;
   }
 
   .building {
-      width: 90%;
-      display: flex;
-      justify-content: center;
+    width: 90%;
+    display: flex;
+    justify-content: center;
   }
 
   .building iframe {
@@ -1323,7 +1302,7 @@ li {
   .doctor-review {
     padding: 1.87rem 0 3.75rem;
   }
-  
+
   .doctor-review h1 {
     width: 100%;
   }
@@ -1331,12 +1310,12 @@ li {
   .our-mentors h1 h1:nth-child(2) {
     font-size: 1.56rem;
   }
-  
+
   .mentors-list {
     width: 100%;
     margin-bottom: 2.81rem;
   }
-  
+
   .our-mentors h1:nth-child(2) {
     line-height: 2.5rem;
     letter-spacing: -1px;
@@ -1363,7 +1342,7 @@ li {
 
   .genius-header h5 {
     font-size: 1.1rem;
-    letter-spacing: -.65px;
+    letter-spacing: -0.65px;
   }
 
   .genius-container {
@@ -1419,7 +1398,8 @@ li {
     flex-direction: column-reverse;
   }
 
-  .banner-text, .banner-image {
+  .banner-text,
+  .banner-image {
     width: 100%;
     padding: 0 8% 0 3.5%;
     margin-bottom: 3.8rem;
@@ -1434,17 +1414,17 @@ li {
   .Home-page h3 {
     font-size: 1.5rem;
     line-height: 1.6rem;
-    letter-spacing: -.32px;
+    letter-spacing: -0.32px;
   }
 
   .Home-page h5 {
     line-height: 1.6rem;
-    letter-spacing: -.28px;
+    letter-spacing: -0.28px;
   }
 
   .Home-page ul li {
     font-size: 1rem;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 }
 
@@ -1452,7 +1432,7 @@ li {
   .Home-page h1 {
     font-size: 2.8rem;
     line-height: 3.5rem;
-    letter-spacing: .72px;
+    letter-spacing: 0.72px;
   }
 
   .Home-page h3 {
@@ -1478,19 +1458,19 @@ li {
   .genius-header h5 {
     font-size: 1rem;
     line-height: 1.6rem;
-    letter-spacing: -.6px;
+    letter-spacing: -0.6px;
   }
 
   .genius-text li span {
     font-size: 1.6rem;
     line-height: 1.6rem;
-    letter-spacing: -.48px;
+    letter-spacing: -0.48px;
   }
 
   .genius-text li span:nth-of-type(2) {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.4rem;
-    letter-spacing: -.28px;
+    letter-spacing: -0.28px;
   }
 
   .building iframe {
@@ -1508,13 +1488,13 @@ li {
   .development-head h1 {
     font-size: 1.4rem;
     line-height: 1.7rem;
-    letter-spacing: -.8px;
+    letter-spacing: -0.8px;
   }
 
   .development-head h5 {
     font-size: 1rem;
     line-height: 1.4rem;
-    letter-spacing: -.56px;
+    letter-spacing: -0.56px;
   }
 
   .development-container {
@@ -1523,7 +1503,7 @@ li {
 
   .development-card h3 {
     line-height: 1.6rem;
-    letter-spacing: -.32px;
+    letter-spacing: -0.32px;
   }
 
   .product-and-cost-container {
@@ -1539,8 +1519,8 @@ li {
 @media (max-width: 500px) {
   .navLinks Button:not(.blogPageBtn) {
     height: 35px !important;
-    font-size: .8rem !important;
-    letter-spacing: -.56px !important;
+    font-size: 0.8rem !important;
+    letter-spacing: -0.56px !important;
     text-align: center !important;
   }
 }
@@ -1555,7 +1535,7 @@ li {
   .Home-page h1 {
     font-size: 2.25rem;
     line-height: 2.8rem;
-    letter-spacing: -.72px;
+    letter-spacing: -0.72px;
   }
 
   .Home-page h3 {
@@ -1563,34 +1543,36 @@ li {
   }
 
   .Home-page h5 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .Home-page ul li {
-    font-size: .8rem;
-    letter-spacing: -.28px;
+    font-size: 0.8rem;
+    letter-spacing: -0.28px;
   }
 
   .Possibilities {
-    padding: 1.5rem .9rem 2.4rem;
+    padding: 1.5rem 0.9rem 2.4rem;
   }
 
-  .genius-header h1, .Possibilities-heading h1, .development-head h1 {
+  .genius-header h1,
+  .Possibilities-heading h1,
+  .development-head h1 {
     font-size: 1.2rem;
   }
 
   .Possibilities-heading h1 {
     line-height: 1.7rem;
-    letter-spacing: -.8px;
+    letter-spacing: -0.8px;
   }
 
   .genius-header h1 {
     line-height: 1.7rem;
-    letter-spacing: -.8px;
+    letter-spacing: -0.8px;
   }
 
   .genius-header h5 {
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 1.4rem;
   }
 
@@ -1599,7 +1581,7 @@ li {
   }
 
   .genius-text li span:nth-of-type(2) {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .building iframe {
@@ -1607,7 +1589,7 @@ li {
   }
 
   .development-head h5 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .development-card h3 {
