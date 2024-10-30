@@ -33,12 +33,12 @@ export default function App() {
   const [selectedTitle, setSelectedTitle] = useState('Article not found');
 
   // State to handle video Modal in baby-champs page
-  const [toggleModal, setToggleModal] = useState(false);
+  const [videoModalSrc, setVideoModalSrc] = useState(null);
 
   return (
     <Router>
-      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} isModalOpen={toggleModal} />
-      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} modal={{ toggleModal, setToggleModal }} />
+      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} isModalOpen={videoModalSrc} />
+      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} modal={{ videoModalSrc, setVideoModalSrc }} />
     </Router>
   );
 }

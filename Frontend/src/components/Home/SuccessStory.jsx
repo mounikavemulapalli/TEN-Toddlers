@@ -353,9 +353,9 @@ const SuccessStory = () => {
                   allowFullScreen
                 ></iframe>
                 <div className="quote-container-all">
-            <p className="quote-text-all">{card.title}</p>
-            {card.description && <p className="quote-text-all">  {card.description}</p>}
-          </div>
+                  <p className="quote-text-all">{card.title}</p>
+                  {card.description && <p className="quote-text-all">  {card.description}</p>}
+                </div>
               </div>
             ))}
           </div>
@@ -366,7 +366,7 @@ const SuccessStory = () => {
         </div>
         <div className="see-all-cont child-see-all-cont">
           <a href="/baby-achievers">
-            <button className="see-all-btn child-all-btn" style={{marginTop: "2rem"}}>See All</button>
+            <button className="see-all-btn child-all-btn" style={{ marginTop: "2rem" }}>See All</button>
           </a>
         </div>
       </section>
@@ -475,14 +475,15 @@ const SuccessStory = () => {
 };
 
 export const Awardees = ({ modal }) => {
-  const { toggleModal, setToggleModal } = modal;
+  window.scrollTo(0, 0);
+  const { videoModalSrc, setVideoModalSrc } = modal;
 
   return (
     <>
-      {toggleModal && <div id="video-modal">
-        <span id="closeYtModalBtn" onClick={() => setToggleModal(false)}>×</span>
-        <iframe allowFullScreen src="https://www.youtube.com/embed/nAENr2ocZR8?si=x-dm9nF9MnYEBPIP" loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share;"></iframe>
-      </div >}
+      {videoModalSrc && <div div id="video-modal">
+        <span id="closeYtModalBtn" onClick={() => setVideoModalSrc(null)}>×</span>
+        <iframe allowFullScreen src={videoModalSrc} loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share;"></iframe>
+      </div>}
       <section id="baby-champs-container">
         <h1>628+ Baby Awardees : <span>Celebrating Global Baby Champions</span></h1>
 
@@ -504,18 +505,22 @@ export const Awardees = ({ modal }) => {
                   <div id="thumbnail-container">
                     <div>
                       <div className="video-card">
-                        <h3>Genius Baby</h3>
-                        <div onClick={() => setToggleModal(true)}>
-                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                          <img src={awardee.img1} />
-                        </div>
+                        {awardee.img1 && <>
+                          <h3>Genius Baby</h3>
+                          <div onClick={() => setVideoModalSrc(awardee.babyVideo)}>
+                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                            <img src={awardee.img1} />
+                          </div>
+                        </>}
                       </div>
                       <div className="video-card">
-                        <h3>Super Parent</h3>
-                        <div onClick={() => setToggleModal(true)}>
-                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                          <img src={awardee.img2} />
-                        </div>
+                        {awardee.img2 && <>
+                          <h3>Super Parent</h3>
+                          <div onClick={() => { setVideoModalSrc(awardee.parentVideo); }}>
+                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                            <img src={awardee.img2} />
+                          </div>
+                        </>}
                       </div>
                     </div>
                   </div>

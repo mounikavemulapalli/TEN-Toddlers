@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Blog.css';
 import BlogFooter from './BlogFooter';
 import { Link, useParams } from 'react-router-dom';
@@ -33,7 +33,7 @@ export default function Blog({ searchedKeyword, setSelectedTitle }) {
               <div className="blog">
                 <a id="blog-img" href={blogPostRoute}><img src={article.sections.find(section => section.type == "img")?.src} /></a>
                 <div className="blog-content">
-                  <a href={blogPostRoute}>{title}</a>
+                  <Link to={blogPostRoute}>{title}</Link>
                   <p>{getPreview(article.sections.find(section => section.type === "para").content)}</p>
                   <Link to={blogPostRoute}><button>Read More</button></Link>
                 </div>
@@ -77,7 +77,9 @@ export const Article = () => {
   const prevIndex = currentIndex > 0 ? articleTitles[currentIndex - 1] : null;
   const nextIndex = currentIndex < articleTitles.length - 1 ? articleTitles[currentIndex + 1] : null;
 
-  console.log(isArticleFound);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [title]);
 
   return (
     <>
@@ -129,8 +131,8 @@ export const Article = () => {
 
       <nav id="blog-page-nav">
         <div id="blog-page-nav-links">
-          {prevIndex ? <Link title={prevIndex} to={prevIndex} rel="prev">← Previous Post</Link> : <a></a>}
-          {nextIndex && <Link title={nextIndex} to={nextIndex} style={{ textAlign: 'end' }} rel="next">Next Post →</Link>}
+          {prevIndex ? <Link title={prevIndex} to={`/blog/${encodeURIComponent(prevIndex)}`} rel="prev">← Previous Post</Link> : <a></a>}
+          {nextIndex && <Link title={nextIndex} to={`/blog/${encodeURIComponent(nextIndex)}`} style={{ textAlign: 'end' }} rel="next">Next Post →</Link>}
         </div>
       </nav>
 
