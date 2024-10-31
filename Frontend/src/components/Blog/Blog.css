@@ -148,12 +148,10 @@ body {
 #article h2 {
     font-size: 2.1rem;
     line-height: 1.4em;
-    color: #191919;
     margin-bottom: 1.2rem;
 }
 
 #article p {
-    font-family: 'Noto Sans', sans-serif;
     margin-bottom: 1.6em;
 }
 

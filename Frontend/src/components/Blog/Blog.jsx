@@ -74,8 +74,8 @@ export const Article = () => {
   const decodedTitle = decodeURIComponent(title);
   const isArticleFound = articleTitles.includes(decodedTitle);
   const currentIndex = articleTitles.indexOf(decodedTitle);
-  const prevIndex = currentIndex > 0 ? articleTitles[currentIndex - 1] : null;
-  const nextIndex = currentIndex < articleTitles.length - 1 ? articleTitles[currentIndex + 1] : null;
+  const prevIndex = currentIndex < articleTitles.length - 1 ? articleTitles[currentIndex + 1] : null;
+  const nextIndex = currentIndex > 0 ? articleTitles[currentIndex - 1] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -94,7 +94,7 @@ export const Article = () => {
                     return (<img src={section.src}></img>);
 
                   case 'heading':
-                    return (<h2 id={section.id}>{renderContent(section.content)}</h2>);
+                    return (<h1 id={section.id}>{renderContent(section.content)}</h1>);
 
                   case 'para':
                     return (<p>{renderContent(section.content)}</p>);
