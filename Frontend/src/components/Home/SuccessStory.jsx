@@ -491,6 +491,11 @@ export const Awardees = ({ modal }) => {
           return (
             <>
               <div className="baby-champs-card">
+                <div className="mobile-top-headings">
+                  <h4>{awardee.h4}</h4>
+                  <h2>{awardee.h2}<span>{awardee.span}</span></h2>
+                  <p>{awardee.p}</p>
+                </div>
                 <div className="left-slider">
                   {(awardee.sliderImg).map(src => (
                     <img src={src} />
@@ -503,26 +508,34 @@ export const Awardees = ({ modal }) => {
                     <p>{awardee.p}</p>
                   </div>
                   <div id="thumbnail-container">
-                    <div>
-                      <div className="video-card">
-                        {awardee.img1 && <>
-                          <h3>Genius Baby</h3>
-                          <div onClick={() => setVideoModalSrc(awardee.babyVideo)}>
-                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                            <img src={awardee.img1} />
-                          </div>
-                        </>}
-                      </div>
-                      <div className="video-card">
-                        {awardee.img2 && <>
-                          <h3>Super Parent</h3>
-                          <div onClick={() => { setVideoModalSrc(awardee.parentVideo); }}>
-                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                            <img src={awardee.img2} />
-                          </div>
-                        </>}
-                      </div>
+                    <div className="video-card">
+                      {awardee.img1 && <>
+                        <h3>Genius Baby</h3>
+                        <div onClick={() => setVideoModalSrc(awardee.babyVideo)}>
+                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                          <img src={awardee.img1} />
+                        </div>
+                      </>}
                     </div>
+                    <div className="video-card">
+                      {awardee.img2 && <>
+                        <h3>Super Parent</h3>
+                        <div onClick={() => { setVideoModalSrc(awardee.parentVideo); }}>
+                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                          <img src={awardee.img2} />
+                        </div>
+                      </>}
+                    </div>
+                  </div>
+                </div>
+                <div className="mobile-thumbnail-container">
+                  <div onClick={() => setVideoModalSrc(awardee.babyVideo)}>
+                    <img src={awardee.img1} />
+                    <div>Genius Baby Video</div>
+                  </div>
+                  <div onClick={() => setVideoModalSrc(awardee.parentVideo)}>
+                    <img src={awardee.img2} />
+                    <div>Super Parent Video</div>
                   </div>
                 </div>
               </div><br /><br />
