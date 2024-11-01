@@ -6,7 +6,7 @@
 
 article {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: DM Sans;
 }
 
 #Focussection {
@@ -88,7 +88,7 @@ article {
 #ourstorysection h3,
 #others h2 {
   margin: 10px 0;
-  font-family: "Georgia", serif;
+/*   font-family: "Georgia", serif; */
   font-weight: bold;
 }
 
