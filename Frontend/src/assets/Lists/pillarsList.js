@@ -36,5 +36,7 @@ export const pillarsList = [
     title: "Intuition & Foresight Development",
     text1: "Intuition Skills",
     text2: "Foresight Vision",
+    text3: "Creative Problem-Solving",
+    text4: "Risk Assessment",
   },
 ];
