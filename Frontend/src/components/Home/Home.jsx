@@ -11,12 +11,14 @@ import SuperScience from "../comman/SuperScience.jsx";
 import Mentors from "../comman/Mentors.jsx";
 import Modal from "../Modal.jsx";
 import { premiumProgram } from "../../assets/Lists/premiumProgram.js";
-import { list } from "../../assets/Lists/list.js";
+import { possibilitesList } from "../../assets/data/possibilitesList.js";
 import { pillarsList } from "../../assets/Lists/pillarsList.js";
 import { boardMembers } from "../../assets/Lists/boardMembers.js";
 import { Faq } from "../Faq.jsx";
 import PopupButton from "../premium/PopupButton.jsx";
 import homeMainImage from "../../assets/images/home/home_main_image.webp";
+import possibilites1 from "../../assets/images/home/possibilites1.webp";
+import solutionImage from "../../assets/images/home/solution-image.webp";
 
 export default function Home() {
   const boardMembersRef = useRef(null);
@@ -114,13 +116,10 @@ export default function Home() {
           </div>
           <div className="Possibilities-container">
             <div className="Possibilities-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/possibilites.webp"
-                alt=""
-              />
+              <img src={possibilites1} alt="possibilites Main Image" />
             </div>
             <div className="Possibilities-list">
-              {list.map((value, index) => (
+              {possibilitesList.map((value, index) => (
                 <div key={index} className="Possibilities-card">
                   <img src={value.img} alt="" />
                   <div className="card-text">
@@ -161,10 +160,7 @@ export default function Home() {
               </li>
             </ul>
             <div className="solution-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/one-stop-solution.webp"
-                alt=""
-              />
+              <img src={solutionImage} alt="solution Image" />
             </div>
           </div>
         </section>

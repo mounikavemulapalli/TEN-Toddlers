@@ -69,7 +69,7 @@
   width: 100%;
 }
 
-/* --------Possibilities */
+/*                           -------- Possibilities */
 .Possibilities {
   width: 100%;
   padding: 4rem 10% 5.2rem;
@@ -106,7 +106,7 @@
   width: 100%;
   color: #002863;
   align-items: center;
-  gap: 50px;
+  gap: 2.5rem;
   height: 100%;
 }
 .Possibilities-card {
@@ -119,8 +119,9 @@
 }
 
 .Possibilities-card img {
-  width: 200px;
+  width: 15%;
   object-fit: contain;
+  margin-right: 1rem;
 }
 
 .Possibilities-list {
@@ -128,17 +129,17 @@
 }
 
 .card-text h2 {
-  font-weight: 500;
+  font-size: 20px;
   margin-bottom: 10px;
 }
+
+/*                         ----------Solution */
 .Solution-page {
   width: 100%;
   background-color: #ffe4d0;
-  height: 500px;
-  padding: 20px;
+  padding: 2rem;
 }
 .solution-heading {
-  height: 150px;
   width: 100%;
   text-align: center;
 }
@@ -152,11 +153,11 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .solution-container ul li {
   color: #002863;
   margin: 15px 0px;
+  list-style: none;
 }
 .solution-container ul li span {
   margin: 15px;
@@ -170,7 +171,8 @@
   width: 100%;
   border-radius: 12px;
 }
-/* -------genius-section */
+
+/*                     -------genius-section */
 .genius-header {
   width: 100%;
   text-align: center;
@@ -1425,6 +1427,15 @@ li {
   .Home-page ul li {
     font-size: 1rem;
     padding: 0.5rem 0;
+  }
+
+  .solution-container {
+    flex-wrap: wrap-reverse;
+    justify-content: start;
+  }
+  .solution-image {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
