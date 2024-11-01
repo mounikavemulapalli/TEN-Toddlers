@@ -6,7 +6,7 @@ import "../Styles/NavBar.css";
 import logo from "../assets/images/footer/logo.webp"; // Adjust the path based on where your logo image is stored
 
 
-export default function NavBar({ inputState, setSearchedKeyword }) {
+export default function NavBar({ inputState, setSearchedKeyword, isModalOpen }) {
   const location = useLocation();
   const homeRouteNames = [
     "/",
@@ -82,7 +82,10 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
 
   return (
     <>
-      <nav className="navBar" style={(currentPage == 'blog' ? { background: '#f5f5f5' } : { background: 'white' })} aria-label="Main Navigation">
+      <nav className="navBar" style={{
+        background: currentPage == 'blog' ? '#f5f5f5' : 'white',
+        position: !isModalOpen ? 'sticky' : 'fixed'
+      }} aria-label="Main Navigation">
         <img className="hamburger" style={currentPage != 'blog' ? { order: '0' } : { order: '2' }} onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
         {(!isDesktopScreen && (currentPage == 'blog')) && <div id="search">
           <div>
