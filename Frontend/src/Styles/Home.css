@@ -193,41 +193,38 @@
   margin-top: 1.1rem;
 }
 .genius-section {
-  padding: 2.7rem 10% 3.4rem;
+  padding: 2rem 0;
 }
 .genius-container {
+  width: 85%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 3.6rem;
+  margin-top: 2rem;
 }
 
 #genius-section-btn-container {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
 
 .building {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 45%;
   overflow: hidden;
   text-align: center;
 }
 .building iframe {
-  height: 320px;
+  height: 100%;
   border-radius: 12px;
-}
-.fill {
-  width: 80%;
-  height: 80%;
 }
 .building p {
   text-align: center;
 }
 .genius-text {
-  width: 45%;
-  list-style-type: none;
+  width: 55%;
+  list-style: none;
 }
 .genius-text li {
   margin: 40px 0;
@@ -250,112 +247,9 @@
   letter-spacing: -0.32px;
 }
 
-/* -------genius-babies */
-.carousel-container {
-  background-image: url("https://www.uptodd.com/images/newWebsite/genius-babies-background.png");
-  background-color: #5a40c4;
-  background-size: cover;
-  color: white;
-  padding: 40px 0px 90px 0px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.carousel-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: -3px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.carousel-header p {
-  font-size: 16px;
-  margin-bottom: 30px;
-  padding: 0px 10px;
-}
-
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel {
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.carousel-card {
-  min-width: 300px;
-  flex: 0 0 auto;
-  background: white;
-  color: black;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 0 20px;
-  max-width: 350px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: start;
-}
-
-.carousel-card h3 {
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: start;
-  color: #002863;
-}
-
-.carousel-card iframe {
-  text-align: center;
-  border-radius: 20px;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-.prev {
-  left: 100px;
-}
-
-.next {
-  right: 100px;
-}
-
-@media only screen and (max-width: 600px) {
-  .carousel-card,
-  .carousel-card iframe {
-    min-width: 200px;
-    max-width: 250px;
-  }
-}
-/* ------------developmental-pillars */
+/*                        -----------developmental-pillars */
 .developmental-pillars {
-  padding: 2.9rem 10%;
+  padding: 2rem 0;
   background: #fffbfb;
   width: 100%;
   color: #002863;
@@ -386,13 +280,15 @@
   font-weight: 600;
 }
 .development-container {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  margin-top: 2.9rem;
+  margin-top: 2rem;
   justify-content: space-between;
 }
 
 .development-lest {
-  width: 52%;
+  width: 55%;
 }
 
 .development-card {
@@ -408,6 +304,7 @@
 .development-card ul {
   display: none;
   transition: 0.5s;
+  list-style: none;
 }
 .development-card.active ul {
   opacity: 1;
@@ -421,11 +318,13 @@
   letter-spacing: -0.4px;
 }
 .development-image {
-  margin-block: auto;
-  width: 42%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .development-image img {
-  width: 100%;
+  width: 90%;
 }
 .four-pillars-list {
   padding: 0.9rem 1.75rem;
@@ -461,9 +360,9 @@
   background: #5a40c4;
 }
 
-/* -------------------------product-and-cost */
+/*                     ----------product-and-cost */
 .product-and-cost-header {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   width: 100%;
   color: #002863;
   text-align: center;
@@ -471,7 +370,6 @@
 .product-and-cost-header h1 {
   font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 20px;
   letter-spacing: -3px;
 }
 .product-and-cost-container {
@@ -497,7 +395,7 @@
   justify-content: space-between;
 }
 .product-and-cost-card {
-  width: 47.3%;
+  width: 47.5%;
   padding: 20px 15px;
   border: 2px solid #5a40c4;
   border-radius: 15px;
@@ -565,7 +463,6 @@
 .developmental-kit {
   position: relative;
   display: flex;
-  margin-bottom: 50px;
   justify-content: space-evenly;
 }
 .kit-intro {
@@ -609,152 +506,6 @@
   padding-bottom: 70px;
   padding-left: 0px;
   background: #fffbfb;
-}
-.awared-babies h1,
-.awared-babies h1 span {
-  color: #002863;
-  text-align: center;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 68px;
-  letter-spacing: -1.6px;
-}
-.awared-babies h1 span {
-  font-weight: 400;
-}
-.baby-award-list-container {
-  position: relative;
-}
-.baby-award-list {
-  margin: auto;
-  margin-top: 36px;
-  width: 81%;
-  display: flex;
-  overflow-x: scroll;
-}
-.carousel-card {
-  min-width: 350px;
-  border-radius: 12px;
-  color: #002863;
-  background: #fffbfb;
-  box-shadow: 0 4px 12px 0 rgb(19 15 46 / 0.06);
-  margin-bottom: 20px;
-}
-.baby-award-card {
-  min-width: 350px;
-  margin-left: 20px;
-  border-radius: 12px;
-  color: #002863;
-  background: #fffbfb;
-  box-shadow: 0 4px 12px 0 rgb(19 15 46 / 0.06);
-  margin-bottom: 20px;
-}
-.baby-award-card img {
-  width: 100%;
-}
-.carousel-card img {
-  width: 100%;
-}
-.baby-award-slider-next,
-.baby-award-slider-prev {
-  position: absolute;
-  top: 45%;
-  right: 7.5%;
-  width: 44px;
-  cursor: pointer;
-}
-.baby-award-slider-prev {
-  left: 7.5%;
-  display: none;
-}
-.line-section {
-  width: 100%;
-  text-align: center;
-  background: #fffbfb;
-}
-.happy-parents {
-  width: 100%;
-  padding: 42px 0;
-  background: #fffbfb;
-}
-.happy-parents h1,
-.happy-parents h1 span {
-  color: #002863;
-  text-align: center;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 46px;
-  letter-spacing: -1.44px;
-}
-.happy-parents h1 span {
-  font-weight: 400;
-}
-.happy-parents h5 {
-  color: #002863;
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 34px;
-  letter-spacing: -0.96px;
-  margin-top: 17px;
-}
-.happy-parent-list-container {
-  position: relative;
-}
-.happy-parent-list {
-  margin: auto;
-  margin-top: 17px;
-  width: 81%;
-  display: flex;
-  overflow-x: hidden;
-}
-.happy-parent-card:first-of-type {
-  margin-left: 0;
-}
-
-.happy-parents-card {
-  padding: 15px;
-  width: 360px;
-  border-radius: 12px;
-  border: 0 solid var(--Primary-Font, #002863);
-  background: #fff;
-  box-shadow: 0 4px 12px 0 rgb(9 22 48 / 0.06);
-  margin-left: 40px;
-  margin-bottom: 20px;
-}
-.happy-parent-image {
-  width: 100%;
-  padding: 12px 12px 0;
-  position: relative;
-}
-.happy-parent-quote {
-  padding: 16px 24px 24px;
-}
-.happy-parents-slider-next,
-.happy-parents-slider-prev {
-  position: absolute;
-  top: 45%;
-  right: 7.5%;
-  width: 44px;
-  cursor: pointer;
-}
-.happy-parents-slider-prev {
-  left: 7.5%;
-}
-.happy-parents-slider-next,
-.happy-parents-slider-prev {
-  position: absolute;
-  top: 45%;
-  right: 7.5%;
-  width: 44px;
-  cursor: pointer;
-}
-.happy-parents-button {
-  text-align: center;
-  margin-top: 38px;
 }
 
 .doctor-review {

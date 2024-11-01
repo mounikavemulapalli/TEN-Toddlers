@@ -19,6 +19,7 @@ import PopupButton from "../premium/PopupButton.jsx";
 import homeMainImage from "../../assets/images/home/home_main_image.webp";
 import possibilites1 from "../../assets/images/home/possibilites1.webp";
 import solutionImage from "../../assets/images/home/solution-image.webp";
+import expertPersonalised from "../../assets/images/home/expert-personalised.webp";
 
 export default function Home() {
   const boardMembersRef = useRef(null);
@@ -271,7 +272,7 @@ export default function Home() {
               ))}
             </div>
             <div className="development-image">
-              <img src="https://www.uptodd.com/images/newWebsite/expert-personalised-program.webp" />
+              <img src={expertPersonalised} alt="Expert Personalised" />
             </div>
           </div>
           <div className="developmental-pillars-footer">
