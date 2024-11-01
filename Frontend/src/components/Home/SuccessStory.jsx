@@ -474,13 +474,13 @@ const SuccessStory = () => {
   );
 };
 
-export const Awardees = ({ modal }) => {
+export const Awardees = () => {
   window.scrollTo(0, 0);
-  const { videoModalSrc, setVideoModalSrc } = modal;
+  const [videoModalSrc, setVideoModalSrc] = useState(null);
 
   return (
     <>
-      {videoModalSrc && <div div id="video-modal">
+      {videoModalSrc && <div div className="modal">
         <span id="closeYtModalBtn" onClick={() => setVideoModalSrc(null)}>×</span>
         <iframe allowFullScreen src={videoModalSrc} loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share;"></iframe>
       </div>}
