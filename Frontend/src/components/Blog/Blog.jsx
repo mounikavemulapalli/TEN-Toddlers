@@ -101,7 +101,7 @@ export const Article = () => {
     // Fetch comments for the current article
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`);
+        const response = await axios.get(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`);
         console.log(response.data);
         setComments(Array.isArray(response.data) ? response.data:[]);
         
@@ -122,7 +122,7 @@ export const Article = () => {
       console.error("All fields are required");
       return
     }
-    axios.post(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`,newComment)
+    axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
       setComments([...comments,response.data]);
       setNewComment({author:'',email:'',text:''});
