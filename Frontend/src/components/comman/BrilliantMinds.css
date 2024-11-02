@@ -51,7 +51,7 @@
 
 .super-brilliant-minds-cards {
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: flex;
   scroll-behavior: smooth;
   overflow-x: auto;

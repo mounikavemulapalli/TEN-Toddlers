@@ -2,6 +2,7 @@
 .super-happy-parents {
   width: 100%;
   background: #e9dfdf;
+  padding-top: 1rem;
 }
 
 .super-happy-parents h1 {
@@ -37,7 +38,7 @@
   gap: 1rem;
   scroll-snap-type: x mandatory;
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .super-happy-parents-cards::-webkit-scrollbar {
