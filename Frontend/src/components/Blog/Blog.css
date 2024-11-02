@@ -205,6 +205,109 @@ body {
     padding: 4em 6.67em;
 }
 
+
+/* New styling   */
+/* #comments{
+    margin-top:2rem;
+    font-family: Arial,sans-serif;
+} */
+.comments-list{
+    margin-top: 1.5rem;
+}
+
+.comment{
+    border-top: 1px solid #f0f0f0;
+    padding: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.comment-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-name{
+    color:#ff007f;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+.avatar{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+
+/* .comment-author{
+    color:#ff007f;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+} */
+.comment-date{
+    /* font-size: 1rem; */
+    /* color:#777; */
+    color:#ff007f;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+.comment-text{
+    font-size: 1rem;
+    color:#333;
+    margin: 0.5rem 0;
+}
+
+.reply-link{
+    color:#ff007f;
+    font-size: 1.1rem;
+
+    text-decoration: none;
+    position: normal;
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+.reply-link:hover{
+    text-decoration: underline;
+}
+
+.moderation-notice{
+    font-size: 1.2rem;
+    color:#777;
+    margin-top: 0.5rem;
+    
+
+}
+
+
+form{
+    margin-top: 2rem;
+
+}
+form p{
+    font-size: 0.9rem;
+    color:#777;
+}
+
+textarea{
+    width: 100%;
+    padding:1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border:1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+
+/* New styling ends  */
 #comments h3 {
     line-height: 1.65;
     font-size: 1.6rem;
