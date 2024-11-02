@@ -2,25 +2,29 @@ import { useRef, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import Button from "../../components/Home/HomeButton.jsx";
 import Slider from "../comman/Slider.jsx";
+import Peek from "../comman/Peek.jsx";
+import BrilliantMinds from "../comman/BrilliantMinds.jsx";
+import Line from "../comman/Line.jsx";
+import HappyParents from "../comman/HappyParents.jsx";
+import GlobalExperts from "../comman/GlobalExperts.jsx";
+import SuperScience from "../comman/SuperScience.jsx";
+import Mentors from "../comman/Mentors.jsx";
 import Modal from "../Modal.jsx";
 import { premiumProgram } from "../../assets/Lists/premiumProgram.js";
-import { list } from "../../assets/Lists/list.js";
-import { cards } from "../../assets/Lists/card.js";
+import { possibilitesList } from "../../assets/data/possibilitesList.js";
 import { pillarsList } from "../../assets/Lists/pillarsList.js";
-import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import { boardMembers } from "../../assets/Lists/boardMembers.js";
-import { happyParent } from "../../assets/Lists/happyParent.js";
-import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
-import { Faq } from '../Faq.jsx';
+import { Faq } from "../Faq.jsx";
 import PopupButton from "../premium/PopupButton.jsx";
+import homeMainImage from "../../assets/images/home/home_main_image.webp";
+import possibilites1 from "../../assets/images/home/possibilites1.webp";
+import solutionImage from "../../assets/images/home/solution-image.webp";
+import expertPersonalised from "../../assets/images/home/expert-personalised.webp";
 
 export default function Home() {
-  const carouselRef = useRef(null);
-  const happyParentRef = useRef(null);
   const boardMembersRef = useRef(null);
   const awaredBabyRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const openModal = () => {
     setShowModal(true);
   };
@@ -33,75 +37,6 @@ export default function Home() {
     setClickedCardId(id);
   };
 
-  const handlePrev = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const handleNext = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-  const handleHappyParentPrev = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleHappyParentNext = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleAwaredBabyNext = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleAwaredBabyPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
   const handleBoardMenberPrev = () => {
     if (awaredBabyRef.current) {
       const cardWidth =
@@ -114,6 +49,7 @@ export default function Home() {
       });
     }
   };
+
   const handleBoardMemberNext = () => {
     if (boardMembersRef.current) {
       const cardWidth =
@@ -131,6 +67,7 @@ export default function Home() {
 
   return (
     <div>
+      {/* Main Section */}
       <div className="home-section">
         <section className="Home-page">
           <div className="banner-text">
@@ -154,21 +91,22 @@ export default function Home() {
                 <FaCheckCircle /> <span>One Stop Parenting Solution</span>
               </li>
             </ul>
-            {/* <Button text='Book a Demo Slot' /> */}
-            
 
-            <PopupButton text='Book a Demo Slot'/>
+            <div>
+              <PopupButton text="Book a Demo Slot" />
+            </div>
           </div>
           <div className="banner-image">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/home-page-banner.webp"
-              alt=""
-            />
+            <img src={homeMainImage} alt="home Main Image" />
           </div>
         </section>
+
+        {/* Slider Section */}
         <section>
           <Slider />
         </section>
+
+        {/* Explore the Possibilities Section */}
         <section className="Possibilities">
           <div className="Possibilities-heading">
             <h1>Explore the Possibilities with UpTodd</h1>
@@ -179,13 +117,10 @@ export default function Home() {
           </div>
           <div className="Possibilities-container">
             <div className="Possibilities-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/possibilites.webp"
-                alt=""
-              />
+              <img src={possibilites1} alt="possibilites Main Image" />
             </div>
             <div className="Possibilities-list">
-              {list.map((value, index) => (
+              {possibilitesList.map((value, index) => (
                 <div key={index} className="Possibilities-card">
                   <img src={value.img} alt="" />
                   <div className="card-text">
@@ -197,6 +132,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Solution Section */}
         <section className="Solution-page">
           <div className="solution-heading">
             <h1>One Stop Solution for your Baby's Brightest Possible Future</h1>
@@ -224,13 +161,12 @@ export default function Home() {
               </li>
             </ul>
             <div className="solution-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/one-stop-solution.webp"
-                alt=""
-              />
+              <img src={solutionImage} alt="solution Image" />
             </div>
           </div>
         </section>
+
+        {/* Genius Section */}
         <section>
           <div className="genius-section">
             <div className="genius-header">
@@ -240,16 +176,19 @@ export default function Home() {
             <div className="genius-container">
               <ul className="genius-text">
                 <li>
-                  <span>100 Bn</span><span>Every baby is born with 100 Billion of
-                    Neurons</span>
+                  <span>100 Bn</span>
+                  <span>Every baby is born with 100 Billion of Neurons</span>
                 </li>
                 <li>
-                  <span>1 Mn</span><span>One million neural connections are formed
-                    every second in the early years</span>
+                  <span>1 Mn</span>
+                  <span>
+                    One million neural connections are formed every second in
+                    the early years
+                  </span>
                 </li>
                 <li>
-                  <span>90%</span><span>Ninety percentage of our brain develops by age
-                    5</span>
+                  <span>90%</span>
+                  <span>Ninety percentage of our brain develops by age 5</span>
                 </li>
                 <li>
                   <span>60%</span>
@@ -273,59 +212,17 @@ export default function Home() {
               </div>
             </div>
             <div id="genius-section-btn-container">
-         <a href="/research">
-
-              <Button text='Explore the Details' />
-         </a>
-              
+              <a href="/research">
+                <Button text="Explore the Details" />
+              </a>
             </div>
           </div>
         </section>
-        <section className="genius-babies">
-          <div className="carousel-container">
-            <div className="carousel-header">
-              <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
-              <p>
-                Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-                Tomorrow
-              </p>
-            </div>
 
-            <div className="carousel-wrapper">
-              <button className="carousel-button prev" style={{ zIndex: '100' }} onClick={handlePrev}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                  alt="Previous"
-                />
-              </button>
+        {/* Peek-A-Boo Section */}
+        <Peek />
 
-              <div className="carousel" ref={carouselRef}>
-                {cards.map((card, index) => (
-                  <div className="carousel-card" key={index}>
-                    <iframe
-                      width="300"
-                      height="200"
-                      src={card.videoUrl}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                    <h3>{card.title}</h3>
-                    {card.description && <p>{card.description}</p>}
-                  </div>
-                ))}
-              </div>
-
-              <button className="carousel-button next" onClick={handleNext}>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                  alt="Next"
-                />
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* UpTodd Expert Personalised Program Section */}
         <section className="developmental-pillars">
           <div className="development-head">
             <h1>
@@ -344,8 +241,9 @@ export default function Home() {
                 <div
                   key={value.id}
                   onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${clickedCardId === value.id ? "active" : ""
-                    }`}
+                  className={`development-card ${
+                    clickedCardId === value.id ? "active" : ""
+                  }`}
                 >
                   <h3>{value.title}</h3>
                   <div className="four-pillars-list">
@@ -374,15 +272,12 @@ export default function Home() {
               ))}
             </div>
             <div className="development-image">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/expert-personalised-program.webp"
-              />
+              <img src={expertPersonalised} alt="Expert Personalised" />
             </div>
           </div>
           <div className="developmental-pillars-footer">
             <a href="/research">
-
-            <Button text='Explore the Details' />
+              <Button text="Explore the Details" />
             </a>
             <p>
               Create Brain stimulating home envrionment for your baby, by best
@@ -390,13 +285,20 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className='start-now-banner'>
+
+        {/* Banner Section */}
+        <section className="start-now-banner">
           <div className="start-now-banner-grid">
-            <h3>Stop overspending on generic and hamful toys, filled with Chlorinated Paraffin {`->`} Toxic for your baby brain growth</h3>
+            <h3>
+              Stop overspending on generic and hamful toys, filled with
+              Chlorinated Paraffin {`->`} Toxic for your baby brain growth
+            </h3>
             {/* <Button text='Start Now' /> */}
-            <PopupButton text='Start Now'/>
+            <PopupButton text="Start Now" />
           </div>
         </section>
+
+        {/* UpTodd Genius Premium Program Section */}
         <section className="product-and-cost">
           <div className="product-and-cost-header">
             <h1>UpTodd™ Genius Premium Program</h1>
@@ -441,9 +343,7 @@ export default function Home() {
                 <del>{card.deletePrice} </del>
 
                 {/* <Button text='Enroll Now' /> */}
-                <PopupButton text='Enroll Now'/>
-                  
-              
+                <PopupButton text="Enroll Now" />
               </div>
             ))}
           </div>
@@ -455,6 +355,8 @@ export default function Home() {
             <Modal show={showModal} onClose={closeModal}></Modal>
           </div>
         </section>
+
+        {/* 2 card Section  */}
         <section className="developmental-kit">
           <div className="kit-intro">
             <div>
@@ -483,352 +385,25 @@ export default function Home() {
             <h3>SAMPLE Personalised KIT</h3>
           </div>
         </section>
-        <section className="awared-babies">
-          <h1>
-            Brilliant Minds: <span> Celebrating Global Baby Champions</span>
-          </h1>
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-button prev"
-              onClick={handleAwaredBabyPrev}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                alt="Previous"
-              />
-            </button>
-            <div className="carousel" ref={awaredBabyRef}>
-              {babyAwardList.map((ele) => (
-                <div
-                  key={ele.id}
-                  className="baby-award-card"
-                  ref={awaredBabyRef}
-                >
-                  <img src={ele.img} alt="" />
-                  <h3>{ele.title} </h3>
-                  <p>{ele.description} </p>
-                </div>
-              ))}
-            </div>
-            <button
-              className="carousel-button next"
-              onClick={handleAwaredBabyNext}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                alt="Next"
-              />
-            </button>
-          </div>
-        </section>
-        <div className="line-section">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="314"
-            height="15"
-            viewBox="0 0 314 15"
-            fill="none"
-          >
-            <path
-              d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
-              stroke="#FF3F4E"
-              strokeWidth="2"
-            ></path>
-          </svg>
-        </div>
-        <section className="happy-parents" id="happy-parents">
-          <h1>
-            Happy Parents, Thriving Tots:
-            <span>Witnessing Their Child's Growth</span>
-          </h1>
-          <h5>
-            Smarter Investment: Personalized Learning vs. Traditional Plastic
-            Toys
-          </h5>
-          <div className="happy-parent-list-container">
-            <div className="happy-parent-list" ref={happyParentRef}>
-              {happyParent.map((review) => (
-                <div key={review.id} className="happy-parents-card">
-                  <div>
-                    <iframe
-                      loading="lazy"
-                      srcDoc={review.surdoc}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen=""
-                      data-gtm-yt-inspected-4="true"
-                      data-gtm-yt-inspected-40611628_62="true"
-                      id="72071507"
-                      data-gtm-yt-inspected-14="true"
-                    ></iframe>
-                  </div>
-                  <div className="quote-container">
-                    <img
-                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                      alt="Quote"
-                      className="quote-mark"
-                    />
-                    <p className="quote-text">{review.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
 
-            <img
-              className="happy-parents-slider-next"
-              onClick={handleHappyParentNext}
-              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-              loading="lazy"
-              alt="Next Happy Parent"
-            />
-            <img
-              className="happy-parents-slider-prev"
-              onClick={handleHappyParentPrev}
-              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-              loading="lazy"
-              alt="Prev Happy Parent"
-            />
-          </div>
-          {/* <div className="happy-parents-button"> */}
-            {/* <Button text="Fuel Your Child's Development!" /> */}
-            <PopupButton text="Fuel Your Child's Development!"/>
-          {/* </div> */}
-        </section>
-        <section className="doctor-review" id="doctorreview">
-          <h1>Recommended by Top Global Experts</h1>
-          <h5>
-            Vetted &amp; Backed by 100+ Doctors, Educationists, Parenting
-            Experts &amp; Professors
-          </h5>
+        {/*  Brilliant Minds Section */}
+        <BrilliantMinds />
 
-          <div
-            className="doctor-review-list"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div
-              className={`doctor-review-container ${isHovered ? "paused" : ""}`}
-            >
-              {doctorReviews.map((value) => (
-                <div className="doctor-review-card" key={value.id}>
-                  <div className="doctor-review-image-part">
-                    <img src={value.img} loading="lazy" alt="doctor-review" />
-                    <div>
-                      <h3>{value.name}</h3>
-                      <h6>{value.position} </h6>
-                    </div>
-                  </div>
-                  <div className="doctor-review-quote">
-                    <img
-                      src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                      loading="lazy"
-                      alt="quote"
-                    />
-                    <p>{value.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="research-backed">
-          <h1>
-            Science-Backed Approach: <span>Rooted in Research</span>
-          </h1>
-          <h5>
-            Developed using research from leading Global institutions &amp;
-            Organisations
-          </h5>
-          <div className="insti-research">
-            <div className="insti-head">
-              <h4>Research analysed by institutions from</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/research-insti.webp"
-              loading="lazy"
-              alt="IIT,IIM,MIT,Harvard Research Institutes"
-            />
-            <p>and 35+ other top global institutions</p>
-          </div>
-          <div className="insti-research-mobile">
-            <div className="insti-research-mobile-head">
-              <h4>Research analysed by institutions from</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/research-insti-mobile.webp"
-              loading="lazy"
-              alt="IIT,IIM,MIT,Harvard Research Institutes"
-            />
-          </div>
+        {/* Line Section */}
+        <Line />
 
-          <div className="theory-research">
-            <div className="theory-head">
-              <h4>Enriched with top research by</h4>
-            </div>
-            <img
-              src="https://www.uptodd.com/images/newWebsite/researchers/all_researchers.webp"
-              loading="lazy"
-              alt="Research Backed Personalised Program for Baby Development"
-            />
-            <p>and 50+ other top global experts</p>
-          </div>
-          <div className="theory-research-mobile">
-            <div className="theory-research-mobile-head">
-              <h4>Enriched with top research by</h4>
-            </div>
-            <div className="theory-research-mobile-list">
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/glenn-doman.webp"
-                  loading="lazy"
-                  alt="glenn-doman baby development expert"
-                />
-                <h3>Glenn Doman</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/maria-montessori.webp"
-                  loading="lazy"
-                  alt="maria-montessori baby development expert"
-                />
-                <h3>Maria Montessori</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/rudolf-steiner.webp"
-                  loading="lazy"
-                  alt="rudolf-steiner baby development expert"
-                />
-                <h3>Rudolf Steiner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/bf-skinner.webp"
-                  loading="lazy"
-                  alt="bf-skinner baby development expert"
-                />
-                <h3>BF Skinner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/loris-malaguzzi.webp"
-                  loading="lazy"
-                  alt="loris-malaguzzi baby development expert"
-                />
-                <h3>Loris Malaguzzi</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/howard-gardner.webp"
-                  loading="lazy"
-                  alt="howard-gardner baby development expert"
-                />
-                <h3>Howard Gardner</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/diana-baumrind.webp"
-                  loading="lazy"
-                  alt="diana-baumrind baby development expert"
-                />
-                <h3>Diana Baumrind</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/swami-vivekanand.webp"
-                  loading="lazy"
-                  alt="swami-vivekanand"
-                />
-                <h3>Swami Vivekanand</h3>
-              </div>
-              <div>
-                <img
-                  src="https://www.uptodd.com/images/newWebsite/researchers/jean-piaget.webp"
-                  loading="lazy"
-                  alt="jean-piaget baby development expert"
-                />
-                <h3>Jean Piaget</h3>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="our-mentors" id="our-mentors">
-          <h1>
-            Meet our Mentors &amp; Curators |
-            <span>100+ Curators R&amp;D Team</span>
-          </h1>
-          <div className="mentors-list">
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Krishna Vedula MIT"
-              />
-              <h3>
-                Krishna Vedula
-                <br />
-                <span>Professor, MIT, United States</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-              />
-              <h3>
-                Dr. Jaideep Sharma
-                <br />
-                <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-                loading="lazy"
-                alt="Uptodd mentor Dr.Sudhanshu Singh"
-              />
-              <h3>
-                Dr. Sudhanshu
-                <br />
-                <span>MD, DSMA CMC Vellore</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-                loading="lazy"
-                alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-              />
-              <h3>
-                Manoj Mondal
-                <br />
-                <span>Professor, IIT Kharagpur</span>
-              </h3>
-            </div>
-            <div className="mentor-card">
-              <img
-                src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-                loading="lazy"
-                alt="Uptodd mentor PK Mishra IIT BHU"
-              />
-              <h3>
-                Prof. PK Mishra
-                <br />
-                <span>IIT BHU</span>
-              </h3>
-            </div>
-          </div>
-          <h1>UpTodd™ has been Featured In</h1>
-          <div className="featured-in">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
-              loading="lazy"
-              alt="Media Houses Featuring UpTodd"
-            />
-          </div>
-        </section>
+        {/* Happy Parents Section */}
+        <HappyParents />
+
+        {/* Global Experts Section  */}
+        <GlobalExperts />
+
+        {/* Science Section */}
+        <SuperScience />
+
+        {/* Mentors Section */}
+        <Mentors />
+
         <section className="board-container happy-parents">
           <h1>Meet our Other Board Members</h1>
           <h5>On a mission to empower 10 Million+ families globally by 2026</h5>
@@ -861,8 +436,7 @@ export default function Home() {
         </section>
 
         <Faq />
-
       </div>
     </div>
   );
-};
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { modalCard } from "../assets/Lists/modal";
+import '../Styles/Modal.css'
 
 const Modal = ({ show, onClose, children }) => {
   if (!show) return null;
