@@ -132,7 +132,7 @@ export const Article = () => {
   }
 const handleDelete=async(commentId)=>{
   try {
-    await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${commentId}`);
+    await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}`);
     setComments(comments.filter(comment=>comment._id!==commentId));
   } catch (error) {
     console.error("Error deleting comment: ",error)
