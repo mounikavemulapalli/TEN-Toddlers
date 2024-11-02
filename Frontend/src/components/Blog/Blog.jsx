@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import './Blog.css';
 import BlogFooter from './BlogFooter';
 import { Link, useParams } from 'react-router-dom';
 import articles from '../../assets/data/articles.json';
+import axios from "axios";
 
 export default function Blog({ searchedKeyword, setSelectedTitle }) {
 
@@ -48,6 +49,10 @@ export default function Blog({ searchedKeyword, setSelectedTitle }) {
 };
 
 export const Article = () => {
+  const [comments,setComments]=useState([])
+  const [isSubmitted,setIsSubmitted]=useState(null)
+  const [newComment,setNewComment]=useState({author:'',email:'',text:''});
+
 
   const renderContentItem = (item, index) => {
     if (typeof item === 'string') return item;
@@ -70,6 +75,9 @@ export const Article = () => {
   };
 
   const { title } = useParams();
+
+  
+
   const articleTitles = Object.keys(articles);
   const decodedTitle = decodeURIComponent(title);
   const isArticleFound = articleTitles.includes(decodedTitle);
@@ -80,6 +88,57 @@ export const Article = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [title]);
+
+
+  // useEffect(() => {
+  //   axios.get(`/api/comments/${title}`)
+  //   .then(response=>setComments(response.data))
+  //   .catch(error=>console.error(error))
+
+  // },[title]);
+
+  useEffect(() => {
+    // Fetch comments for the current article
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`);
+        console.log(response.data);
+        setComments(Array.isArray(response.data) ? response.data:[]);
+        
+        // setComments(response.data);
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+        setComments([]);
+      }
+    };
+    fetchComments();
+  }, [title]);
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    setIsSubmitted(true);
+
+    if(!newComment.author || !newComment.email || !newComment.text){
+      console.error("All fields are required");
+      return
+    }
+    axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
+    .then(response=>{
+      setComments([...comments,response.data]);
+      setNewComment({author:'',email:'',text:''});
+    })
+    .catch(error=>console.error(error))
+    setIsSubmitted(false)
+  }
+const handleDelete=async(commentId)=>{
+  try {
+    await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}`);
+    setComments(comments.filter(comment=>comment._id!==commentId));
+  } catch (error) {
+    console.error("Error deleting comment: ",error)
+  }
+}
+
 
   return (
     <>
@@ -135,20 +194,61 @@ export const Article = () => {
           {nextIndex && <Link title={nextIndex} to={`/blog/${encodeURIComponent(nextIndex)}`} style={{ textAlign: 'end' }} rel="next">Next Post →</Link>}
         </div>
       </nav>
+ 
+
+ {/* Show comments here */}
+      
 
       <div id="comments">
+
+      
+      <h3>{comments.length} thoughts on "{decodedTitle}"</h3>
+      <div className="comments-list">  
+        
+      </div>
+      {comments.map((comment,index)=>(
+         <div key={index} className="comment">
+          <div className="comment-header">
+            
+          <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=170667a&w=0&k=20&c=EpwfsVjTx8cqJJZzBMp__1qJ_7qSfsMoWRGnVGuS8Ew=" alt="Avatar" className="avatar" />
+          <div className="comment-name">
+          <strong>{comment.author}</strong>
+          <span className="comment-date">{new Date(comment.date).toLocaleDateString("en-US",{
+            year:'numeric',
+            month:"long",
+            day:"numeric"
+          })} at {
+            new Date(comment.date).toLocaleTimeString("en-US",{
+              hour:"numeric",
+              minute:"numeric",
+              hour12:true
+            })
+          }</span>
+
+
+          </div>
+          <button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDelete(comment._id)}>Delete</button>
+          </div>
+           
+          <p className="comment-text">{comment.text}</p>
+          <a href="#reply" className="reply-link">Reply</a>
+          <p className="moderation-notice">Your comment awaiting moderation.</p>
+
+        </div>
+))}
+
         <h3>Leave a Comment</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <p>Your email address will not be published. Required fields are marked *</p>
           <fieldset>
-            <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }}></textarea>
+            <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }} value={newComment.text} onChange={(e)=>setNewComment({...newComment,text:e.target.value})}  required></textarea>
           </fieldset>
           <div>
             <div className="input-box">
-              <input id="author" placeholder='Name*' type="text" />
+              <input id="author" placeholder='Name*' type="text" value={newComment.author} onChange={(e)=>setNewComment({...newComment,author:e.target.value})} required/>
             </div>
             <div className="input-box">
-              <input id="email" placeholder='Email*' type="text" />
+              <input id="email" placeholder='Email*' type="text" value={newComment.email} onChange={(e)=>setNewComment({...newComment,email:e.target.value})} required/>
             </div>
             <div className="input-box">
               <input id="url" placeholder='Website' type="text" />
@@ -158,8 +258,11 @@ export const Article = () => {
             <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} />
             <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
           </div>
-          <button type="submit">Post Comment »</button>
+          <button type="submit">{isSubmitted ?"Wait a min":"Post Comment »"} </button>
         </form>
+
+
+
       </div>
       <BlogFooter />
     </>

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import quoteSvg from "../../assets/images/successstory/symbols/quote.svg";
 import "./AllHappyPatents.css";

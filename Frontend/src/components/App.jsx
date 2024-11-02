@@ -22,7 +22,6 @@ import AllHappyParents from "./Home/AllHappyParents.jsx"
 import { Article } from './Blog/Blog.jsx';
 import BabyAchieversAll from './Home/Baby-achievers-all.jsx';
 
-
 export default function App() {
 
   // States for blog page search bar
@@ -32,18 +31,15 @@ export default function App() {
   // State to open article in blog page
   const [selectedTitle, setSelectedTitle] = useState('Article not found');
 
-  // State to handle video Modal in baby-champs page
-  const [videoModalSrc, setVideoModalSrc] = useState(null);
-
   return (
     <Router>
-      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} isModalOpen={videoModalSrc} />
-      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} modal={{ videoModalSrc, setVideoModalSrc }} />
+      <NavBar inputState={{ inputKeyword, setInputKeyword }} setSearchedKeyword={setSearchedKeyword} />
+      <MainRoutes searchedKeyword={searchedKeyword} selectedTitle={selectedTitle} setSelectedTitle={setSelectedTitle} />
     </Router>
   );
 }
 
-function MainRoutes({ searchedKeyword, setSelectedTitle, modal }) {
+function MainRoutes({ searchedKeyword, setSelectedTitle }) {
   const location = useLocation();
   const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
   const isFooterHidden = hideFooterRoutes.includes(location.pathname) || location.pathname.startsWith('/blog/');
@@ -57,7 +53,7 @@ function MainRoutes({ searchedKeyword, setSelectedTitle, modal }) {
         <Route path='/Apply' element={<ApplicationForm />} />
         <Route path='/step' element={<Step />} />
         <Route path='/success story' element={<SuccessStory />} />
-        <Route path='/baby-champs' element={<Awardees modal={modal} />} />
+        <Route path='/baby-champs' element={<Awardees />} />
         <Route path='/premium' element={<Premium />} />
         <Route path='/happy-parents' element={<AllHappyParents />} />
         <Route path='/baby-achievers' element={<BabyAchieversAll />} />
