@@ -41,8 +41,8 @@ section {
 
 .banner-container {
   display: flex;
-  justify-content: center; /* Centers child elements horizontally */
-  align-items: center; /* Centers child elements vertically */
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
 }
 
@@ -52,8 +52,8 @@ section {
 
 .text-banner-part {
   width: 45%;
-  display: flex; /* Enables flex properties for inner elements */
-  flex-direction: column; /* Stacks items vertically */
+  display: flex;
+  flex-direction: column;
   justify-content: start;
 }
 
@@ -98,23 +98,6 @@ section {
   margin-right: 11px;
 }
 
-/* .text-banner-part button {
-  border-radius: 8px;
-  background: #ff5766;
-  width: 198px;
-  height: 54px;
-  flex-shrink: 0;
-  color: #fff;
-  font-family: "DM Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  border: none;
-  cursor: pointer;
-} */
-
 .full {
   width: 100%;
   height: 100%;
@@ -154,13 +137,6 @@ section {
   .text-banner-part li i {
     font-size: 18px;
   }
-
-  /* .text-banner-part button {
-    width: 170px;
-    height: 45px;
-    font-size: 17px;
-    line-height: 20px;
-  } */
 }
 
 @media (max-width: 700px) {
@@ -233,175 +209,6 @@ section {
     font-size: 14px;
     line-height: 26px;
     letter-spacing: -0.28px;
-  }
-}
-
-/* Program curated by Medical experts, Researchers, & IITians */
-
-.program-curation {
-  padding: 41px 0 80px;
-}
-
-.program-curation h1,
-.program-curation h1 span {
-  color: var(--Primary-Font, #002863);
-  text-align: center;
-  font-family: "DM Sans";
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 46px;
-  letter-spacing: -0.6px;
-}
-
-.program-curation h1 span {
-  color: var(--Primary-Font, #002863);
-  font-weight: 700;
-}
-
-.curation-insti {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.curation-insti img {
-  width: 60%;
-  margin-bottom: 55px;
-}
-
-.curation-insti svg {
-  width: 80%;
-}
-
-.curation-objective {
-  padding: 49px 11% 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.curation-objective div {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.curation-objective img {
-  width: 65px;
-  height: 65px;
-}
-
-.curation-objective p {
-  color: var(--Primary-Font, #002863);
-  text-align: center;
-  font-family: "DM Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 46px;
-  letter-spacing: -0.4px;
-  padding: 8px 0;
-}
-
-@media (max-width: 1100px) {
-  .curation-objective {
-    padding: 49px 5% 0;
-  }
-
-  .curation-objective img {
-    width: 55px;
-  }
-
-  .curation-objective p {
-    font-size: 18px;
-    line-height: 25px;
-  }
-}
-
-@media (max-width: 800px) {
-  .program-curation {
-    padding: 41px 0 50px;
-  }
-
-  .program-curation h1 {
-    padding: 0 15px;
-  }
-
-  .program-curation h1,
-  .program-curation h1 span {
-    font-size: 25px;
-    line-height: 38px;
-    letter-spacing: -0.5px;
-  }
-
-  .curation-objective p {
-    font-size: 17px;
-  }
-
-  /* Objective css    */
-
-  .curation-objective {
-    padding: 43px 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .curation-objective div {
-    margin-right: 15px;
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 700px) {
-  .curation-insti img {
-    width: 85%;
-    margin-bottom: 40px;
-  }
-
-  .curation-insti svg {
-    width: 100%;
-  }
-}
-
-@media (max-width: 500px) {
-  .program-curation h1,
-  .program-curation h1 span {
-    font-size: 20px;
-    line-height: 32px;
-    letter-spacing: -0.4px;
-  }
-
-  .curation-objective img {
-    width: 50px;
-  }
-
-  .curation-objective div {
-    width: 100px;
-    margin-right: 15px;
-  }
-
-  .curation-objective p {
-    font-size: 15px;
-    line-height: 18px;
-    letter-spacing: -0.28px;
-    padding: 8px 0;
-  }
-}
-
-@media (max-width: 367px) {
-  .curation-objective img {
-    width: 40px;
-  }
-
-  .curation-objective div {
-    width: 85px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-
-  .curation-objective p {
-    font-size: 14px;
   }
 }
 
@@ -997,22 +804,6 @@ section {
   letter-spacing: -0.8px;
   margin-right: 2.5rem;
 }
-
-/* .start-now-banner button {
-  padding: 0px 20px;
-  height: 54px;
-  width: 10rem;
-  border-radius: 8px;
-  background: #ff5766;
-  color: #fff;
-  font-family: "DM Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: -0.8px;
-  border: none;
-} */
 
 @media (max-width: 1150px) {
   .start-now-banner {

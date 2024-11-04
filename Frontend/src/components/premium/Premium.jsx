@@ -1,24 +1,21 @@
 import React from "react";
-import { useRef, useState } from "react";
-import { pillarsList } from "../../assets/Lists/pillarsList.js";
-import Slider from "../comman/Slider.jsx";
+import { useState } from "react";
 import "./Premium.css";
 import Faq from "../Faq.jsx";
-import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
-import { happyParent } from "../../assets/Lists/happyParent.js";
 import Popup from "./Popup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Step from "./Step";
-import Mentors from "../comman/Mentors.jsx";
 import PopupButton from "./PopupButton.jsx";
 import Modal from "../Modal.jsx";
+import Slider from "../comman/Slider.jsx";
 import Peek from "../comman/Peek.jsx";
 import BrilliantMind from "../comman/BrilliantMinds.jsx";
 import Line from "../comman/Line.jsx";
 import HappyParents from "../comman/HappyParents.jsx";
 import GlobalExperts from "../comman/GlobalExperts.jsx";
 import SuperScience from "../comman/SuperScience.jsx";
+import Mentors from "../comman/Mentors.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -61,16 +58,12 @@ export const Footer = () => (
 
 function Premium() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const carouselRef = useRef(null);
-  const happyParentRef = useRef(null);
-  const boardMembersRef = useRef(null);
-  const awaredBabyRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+
   const openModal = () => {
     setShowModal(true);
   };
+
   const closeModal = () => {
     setShowModal(false);
   };
@@ -78,79 +71,6 @@ function Premium() {
   const handleOpenPopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
-
-  const handlePrev = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
-  };
-
-  const handleNext = () => {
-    if (carouselRef.current) {
-      const cardWidth =
-        carouselRef.current.querySelector(".carousel-card").offsetWidth;
-      const gap = 20; // Set this to the gap between cards in pixels
-      const scrollAmount = cardWidth + gap; // Scroll by the width of one card plus the gap
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-  const handleHappyParentPrev = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleHappyParentNext = () => {
-    if (happyParentRef.current) {
-      const cardWidth = happyParentRef.current.querySelector(
-        ".happy-parents-card"
-      ).offsetWidth;
-      const gap = 20;
-      const scrollAmount = cardWidth + gap;
-      happyParentRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleBoardMenberPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleBoardMemberNext = () => {
-    if (boardMembersRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const [clickedCardId, setClickedCardId] = useState(pillarsList[0].id);
 
   return (
     <>
@@ -389,15 +309,8 @@ function Premium() {
             <h2>
               INR 38,900 <s>INR 120,900</s>
             </h2>
-            {/* <button
-              className="a-btn"
-              id="premiumScreenSuperPremiumProgram"
-              onClick={handleOpenPopup}
-            >
-              Enroll Now
-            </button> */}
+
             {/* Popup Logic */}
-            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
             <div className="btn-center" style={{ padding: "0" }}>
               <PopupButton className="btn" text="Enroll Now" />
             </div>
@@ -413,15 +326,8 @@ function Premium() {
             <h2>
               INR 23,900 <s>INR 70,900</s>
             </h2>
-            {/* <button
-              className="btn"
-              id="premiumScreenStandardPremiumProgram"
-              onClick={handleOpenPopup}
-            >
-              Enroll Now
-            </button> */}
+
             {/* Popup Logic */}
-            {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
             <div className="btn-center" style={{ padding: "0" }}>
               <PopupButton className="btn" text="Enroll Now" />
             </div>
@@ -472,7 +378,6 @@ function Premium() {
       </section>
 
       {/* Your Child’s Peronalized Journey begins here: From enrollment to Thriving */}
-
       <section className="personalise-journey">
         <h1>
           Your Child’s Personalized Journey begins here:
@@ -576,17 +481,13 @@ function Premium() {
       </section>
 
       {/* Meet our Mentors & Curators | 100+ Curators R&D Team */}
-
       <Mentors />
 
       {/* Your Frequently Asked Questions */}
-
       <Faq />
 
       {/* Footer */}
       <Footer />
-
-      {/* Correct Button Component */}
 
       {/* Popup Logic */}
       {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
