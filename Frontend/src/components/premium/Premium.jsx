@@ -246,7 +246,7 @@ function Premium() {
 
       {/* The Proof is in the Play: Watch How Babies Thrive! */}
 
-      <section className="genius-babies">
+      <section  id="genius-babies" className="genius-babies">
         <div className="carousel-container">
           <div className="carousel-header">
             <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
