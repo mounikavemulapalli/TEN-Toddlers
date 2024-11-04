@@ -14,6 +14,9 @@ import Mentors from "../comman/Mentors.jsx";
 import PopupButton from "./PopupButton.jsx";
 import Modal from "../Modal.jsx";
 import Peek from "../comman/Peek.jsx";
+import BrilliantMind from "../comman/BrilliantMinds.jsx";
+import Line from "../comman/Line.jsx";
+import HappyParents from "../comman/HappyParents.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -119,30 +122,7 @@ function Premium() {
       });
     }
   };
-  const handleAwaredBabyNext = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-  const handleAwaredBabyPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        awaredBabyRef.current.querySelector(".baby-award-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      awaredBabyRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+
   const handleBoardMenberPrev = () => {
     if (awaredBabyRef.current) {
       const cardWidth =
@@ -243,7 +223,6 @@ function Premium() {
 
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
-
       <section className="why-uptodd" id="why-uptodd">
         <h1>Why UpTodd? The UpTodd Difference</h1>
         <h5>
@@ -331,7 +310,6 @@ function Premium() {
       </section>
 
       {/* Banne-2 */}
-
       <section>
         <div className="start-now-banner">
           <h3 className="h3-heading">
@@ -339,14 +317,8 @@ function Premium() {
             development that strengthens neural connections and builds a strong
             foundation for their future.
           </h3>
-          {/* <button
-            id="premiumScreenStartNowBannerBookDemo"
-            onClick={handleOpenPopup}
-          >
-            Start Now
-          </button> */}
+
           {/* Popup Logic */}
-          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
           <div className="text-black" style={{ minWidth: "10rem" }}>
             <PopupButton text="Start Now" />
           </div>
@@ -354,147 +326,13 @@ function Premium() {
       </section>
 
       {/* Brilliant Minds: Celebrating Global Baby Champions */}
+      <BrilliantMind />
 
-      <section className="awared-babies">
-        <h1>
-          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
-        </h1>
-        <div className="carousel-wrapper">
-          <button
-            className="carousel-button prev"
-            onClick={handleAwaredBabyPrev}
-          >
-            <img
-              src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-              alt="Previous"
-            />
-          </button>
-          <div className="carousel" ref={awaredBabyRef}>
-            {babyAwardList.map((ele) => (
-              <div key={ele.id} className="baby-award-card" ref={awaredBabyRef}>
-                <img src={ele.img} alt="" />
-                <h3>{ele.title} </h3>
-                <p>{ele.description} </p>
-              </div>
-            ))}
-          </div>
-          <button
-            className="carousel-button next"
-            onClick={handleAwaredBabyNext}
-          >
-            <img
-              src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-              alt="Next"
-            />
-          </button>
-        </div>
-      </section>
-      <div className="line-section">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="314"
-          height="15"
-          viewBox="0 0 314 15"
-          fill="none"
-        >
-          <path
-            d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
-            stroke="#FF3F4E"
-            strokeWidth="2"
-          ></path>
-        </svg>
-      </div>
-      <section className="happy-parents" id="happy-parents">
-        <h1>
-          Happy Parents, Thriving Tots:
-          <span>Witnessing Their Child's Growth</span>
-        </h1>
-        <h5>
-          Smarter Investment: Personalized Learning vs. Traditional Plastic Toys
-        </h5>
-        <div className="happy-parent-list-container">
-          <div className="happy-parent-list" ref={happyParentRef}>
-            {happyParent.map((review) => (
-              <div key={review.id} className="happy-parents-card">
-                <div>
-                  <iframe
-                    loading="lazy"
-                    srcDoc={review.surdoc}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen=""
-                    data-gtm-yt-inspected-4="true"
-                    data-gtm-yt-inspected-40611628_62="true"
-                    id="72071507"
-                    data-gtm-yt-inspected-14="true"
-                  ></iframe>
-                </div>
-                <div className="quote-container">
-                  <img
-                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                    alt="Quote"
-                    className="quote-mark"
-                  />
-                  <p className="quote-text">{review.content}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Line Section */}
+      <Line />
 
-          <img
-            className="happy-parents-slider-next"
-            onClick={handleHappyParentNext}
-            src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-            loading="lazy"
-            alt="Next Happy Parent"
-          />
-          <img
-            className="happy-parents-slider-prev"
-            onClick={handleHappyParentPrev}
-            src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-            loading="lazy"
-            alt="Prev Happy Parent"
-          />
-        </div>
-        {/* <div className="happy-parents-button"> */}
-        {/* <button
-            className="btn"
-            id="premiumScreenSuperPremiumProgram"
-            onClick={handleOpenPopup}
-          >
-            Fuel Your Child's Development!
-          </button> */}
-        {/* Popup Logic */}
-        {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
-        <div className="btn-center">
-          <PopupButton
-            id="premiumSuperPremiumProgram"
-            text="Fuel Your Child's Development"
-          />
-        </div>
-        {/* </div> */}
-
-        {/* Bending line */}
-
-        <section className="dividing-curly-svg">
-          <svg
-            xmlns="http.how-it-works://www.w3.org/2000/svg"
-            width="314"
-            height="15"
-            viewBox="0 0 314 15"
-            fill="none"
-          >
-            <path
-              d="M313 3.33333L302.601 9.73483C292.552 15.9212 279.732 15.2903 270.339 8.14717L269.488 7.49999C259.774 0.113225 246.325 0.113226 236.612 7.49999V7.49999C226.898 14.8868 213.449 14.8868 203.736 7.49999V7.49999C194.022 0.113222 180.573 0.113221 170.86 7.49999V7.49999C161.146 14.8868 147.697 14.8868 137.983 7.49998V7.49998C128.27 0.113216 114.821 0.113215 105.107 7.49998V7.49998C95.3935 14.8867 81.8854 14.8412 72.1715 7.45444V7.45444C62.5281 0.121297 49.1181 0.0760858 39.4747 7.40923V7.40923C29.7195 14.8274 16.1884 14.7325 6.53812 7.17834L0.999997 2.84311"
-              stroke="#FF3F4E"
-              strokeWidth="2"
-            ></path>
-          </svg>
-        </section>
-      </section>
-
-      {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth  */}
+      {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth */}
+      <HappyParents />
 
       {/* Recommended by Top Global Experts */}
 
