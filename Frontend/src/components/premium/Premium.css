@@ -3134,14 +3134,13 @@ section {
   text-align: center;
 }
 
-
 .btn-start {
   display: flex;
   justify-content: flex-start;
 }
 
-.btn-center{ 
+.btn-center {
   display: flex;
   justify-content: center;
-  margin: 2rem;
+  margin-bottom: 2rem;
 }

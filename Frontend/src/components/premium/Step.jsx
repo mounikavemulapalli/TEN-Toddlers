@@ -1,7 +1,5 @@
 import { useState } from "react";
-import Button from "./premiumButton"; // Ensure you're importing the correct Button component
 import "./step.css";
-import Popup from "./Popup";
 
 export default function Step() {
   const [selectedStep, setSelectedStep] = useState(1);
@@ -9,10 +7,6 @@ export default function Step() {
 
   const handleStepChange = (id) => {
     setSelectedStep(id);
-  };
-
-  const handleOpenPopup = () => {
-    setIsPopupOpen(!isPopupOpen);
   };
 
   const steps = [
@@ -59,7 +53,7 @@ export default function Step() {
   ];
 
   return (
-    <div className="how-it-works" style={{padding: "5rem 0"}}>
+    <div className="how-it-works">
       <h1>How our Program Works !!</h1>
       <div style={{ display: "flex" }}>
         <div className="step-container">

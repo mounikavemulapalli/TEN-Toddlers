@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import { pillarsList } from "../../assets/Lists/pillarsList.js";
 import Slider from "../comman/Slider.jsx";
 import "./Premium.css";
-import { cards } from "../../assets/Lists/card.js";
 import Faq from "../Faq.jsx";
 import { babyAwardList } from "../../assets/Lists/babyAwardList.js";
 import { happyParent } from "../../assets/Lists/happyParent.js";
@@ -13,7 +12,8 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Step from "./Step";
 import Mentors from "../comman/Mentors.jsx";
 import PopupButton from "./PopupButton.jsx";
-import Modal from '../Modal.jsx'
+import Modal from "../Modal.jsx";
+import Peek from "../comman/Peek.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
@@ -173,7 +173,6 @@ function Premium() {
   return (
     <>
       {/* Banner */}
-
       <section className="uptodd-banner">
         <div className="banner-container">
           {/* Mobile Image */}
@@ -212,16 +211,8 @@ function Premium() {
             </ul>
             <div className="btn-start">
               <PopupButton className="a-btn btn-start" text="Schedule a Demo" />
-              {/* <button className="btn" onClick={handleOpenPopup}> */}
-              {/* Schedule a Demo */}
-              {/* </button> */}
-              {/* Popup Logic */}
-              {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
             </div>
           </div>
-
-          {/* Popup Logic */}
-          {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
 
           {/* Desktop Image */}
           <div className="image-banner-part">
@@ -239,68 +230,17 @@ function Premium() {
       </section>
 
       {/* Program curated by Medical experts, Researchers, & IITians */}
-
-      <section>
-        <Slider />
-      </section>
+      <Slider />
 
       {/* The Proof is in the Play: Watch How Babies Thrive! */}
+      <Peek />
 
-      <section  id="genius-babies" className="genius-babies">
-        <div className="carousel-container">
-          <div className="carousel-header">
-            <h1>The Proof is in the Play: Watch How Babies Thrive!</h1>
-            <p>
-              Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-              Tomorrow
-            </p>
-          </div>
-
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-button prev"
-              style={{ zIndex: "100" }}
-              onClick={handlePrev}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                alt="Previous"
-              />
-            </button>
-
-            <div className="carousel" ref={carouselRef}>
-              {cards.map((card, index) => (
-                <div className="carousel-card" key={index}>
-                  <iframe
-                    width="300"
-                    height="200"
-                    src={card.videoUrl}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                  <h3>{card.title}</h3>
-                  {card.description && <p>{card.description}</p>}
-                </div>
-              ))}
-            </div>
-
-            <button className="carousel-button next" onClick={handleNext}>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                alt="Next"
-              />
-            </button>
-          </div>
-        </div>
-      </section>
       {/* How our Program Works !! */}
-
       <Step />
       <div className="btn-center">
         <PopupButton text="Access this program" />
       </div>
+
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
 
@@ -528,7 +468,10 @@ function Premium() {
         {/* Popup Logic */}
         {/* {isPopupOpen && <Popup closePopup={handleOpenPopup} />} */}
         <div className="btn-center">
-          <PopupButton id="premiumSuperPremiumProgram" text="Fuel Your Child's Development" />
+          <PopupButton
+            id="premiumSuperPremiumProgram"
+            text="Fuel Your Child's Development"
+          />
         </div>
         {/* </div> */}
 
@@ -550,7 +493,6 @@ function Premium() {
           </svg>
         </section>
       </section>
-
 
       {/* Happy Parents, Thriving Tots:Witnessing Their Child's Growth  */}
 
@@ -1174,48 +1116,47 @@ function Premium() {
             <span
               id="premiumScreenViewDetailedProgramDetails"
               onClick={openModal}
-            style={{ color: "#ff5766" }}
+              style={{ color: "#ff5766" }}
             >
-            see here
-          </span>
-        </p>
-        <Modal show={showModal} onClose={closeModal}></Modal>
+              see here
+            </span>
+          </p>
+          <Modal show={showModal} onClose={closeModal}></Modal>
+        </div>
 
-      </div>
-
-      <div className="developmental-kit">
-        <div className="kit-intro">
-          <div>
-            <h3>Curated Just for You: Mega Kit at Your Doorstep</h3>
-            <p>World's only true personalised system</p>
+        <div className="developmental-kit">
+          <div className="kit-intro">
+            <div>
+              <h3>Curated Just for You: Mega Kit at Your Doorstep</h3>
+              <p>World's only true personalised system</p>
+            </div>
+            <img
+              src="https://www.uptodd.com/images/newWebsite/kit-shipment.svg"
+              loading="lazy"
+              alt="Personalised Baby Kit"
+            />
           </div>
-          <img
-            src="https://www.uptodd.com/images/newWebsite/kit-shipment.svg"
-            loading="lazy"
-            alt="Personalised Baby Kit"
-          />
+          <div className="kit-video">
+            <iframe
+              loading="lazy"
+              srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/r1SwlfmvuCM?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'><img src='https://www.uptodd.com/images/newWebsite/kit-video.webp' className='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:3%;top:30%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""
+              data-gtm-yt-inspected-4="true"
+              data-gtm-yt-inspected-40611628_62="true"
+              id="72071507"
+              data-gtm-yt-inspected-14="true"
+            ></iframe>
+            <h3>SAMPLE Personalised KIT</h3>
+          </div>
         </div>
-        <div className="kit-video">
-          <iframe
-            loading="lazy"
-            srcdoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover}</style> <a href='https://www.youtube.com/embed/r1SwlfmvuCM?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0' className='full'><img src='https://www.uptodd.com/images/newWebsite/kit-video.webp' className='full' /><svg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46' fill='none' style='position: relative; left:3%;top:30%;'><mask id='mask0_303_1345' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='46' height='46'><rect width='45.9356' height='45.9356' fill='#D9D9D9'/></mask><g mask='url(#mask0_303_1345)'><path d='M18.1828 31.5807L31.5807 22.9677L18.1828 14.3548L18.1828 31.5807ZM22.9677 42.1076C20.32 42.1076 17.8319 41.6051 15.5032 40.6003C13.1745 39.5955 11.1489 38.2318 9.42628 36.5092C7.7037 34.7866 6.33999 32.7609 5.33514 30.4323C4.3303 28.1036 3.82788 25.6154 3.82788 22.9677C3.82788 20.32 4.3303 17.8319 5.33514 15.5032C6.33999 13.1745 7.7037 11.1489 9.42628 9.42628C11.1489 7.7037 13.1745 6.33999 15.5032 5.33514C17.8319 4.3303 20.32 3.82788 22.9677 3.82788C25.6154 3.82788 28.1036 4.3303 30.4323 5.33514C32.7609 6.33999 34.7866 7.7037 36.5092 9.42628C38.2318 11.1489 39.5955 13.1745 40.6003 15.5032C41.6051 17.8319 42.1076 20.32 42.1076 22.9677C42.1076 25.6154 41.6051 28.1036 40.6003 30.4323C39.5955 32.7609 38.2318 34.7866 36.5092 36.5092C34.7866 38.2318 32.7609 39.5955 30.4323 40.6003C28.1036 41.6051 25.6154 42.1076 22.9677 42.1076Z' fill='white'/></g></svg> </a>"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen=""
-            data-gtm-yt-inspected-4="true"
-            data-gtm-yt-inspected-40611628_62="true"
-            id="72071507"
-            data-gtm-yt-inspected-14="true"
-          ></iframe>
-          <h3>SAMPLE Personalised KIT</h3>
-        </div>
-      </div>
-    </section >
+      </section>
 
-      {/* Your Child’s Peronalized Journey begins here: From enrollment to Thriving */ }
+      {/* Your Child’s Peronalized Journey begins here: From enrollment to Thriving */}
 
-      < section className = "personalise-journey" >
+      <section className="personalise-journey">
         <h1>
           Your Child’s Personalized Journey begins here:
           <span>From enrollment to Thriving</span>
@@ -1315,23 +1256,23 @@ function Premium() {
             </h3>
           </div>
         </div>
-      </ section>
+      </section>
 
-    {/* Meet our Mentors & Curators | 100+ Curators R&D Team */ }
+      {/* Meet our Mentors & Curators | 100+ Curators R&D Team */}
 
-    < Mentors />
+      <Mentors />
 
-    {/* Your Frequently Asked Questions */ }
+      {/* Your Frequently Asked Questions */}
 
-    < Faq />
+      <Faq />
 
-    {/* Footer */ }
-    < Footer />
+      {/* Footer */}
+      <Footer />
 
-    {/* Correct Button Component */ }
+      {/* Correct Button Component */}
 
-  {/* Popup Logic */ }
-  { isPopupOpen && <Popup closePopup={handleOpenPopup} /> }
+      {/* Popup Logic */}
+      {isPopupOpen && <Popup closePopup={handleOpenPopup} />}
     </>
   );
 }

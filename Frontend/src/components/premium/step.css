@@ -210,6 +210,10 @@
   transition: all 0.4s ease 0s;
 }
 
+.how-it-works {
+  padding: 2.5rem !important;
+}
+
 .how-it-works h1 {
   color: var(--Primary-Font, #002863);
   text-align: center;
