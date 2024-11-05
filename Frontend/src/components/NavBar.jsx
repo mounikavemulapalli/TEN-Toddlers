@@ -62,7 +62,7 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
   };
 
   const links =
-    currentPage === "premium"
+    currentPage === ""
       ? [
         { href: "#root", label: "Home" },
         { href: "#product-and-cost", label: "Premium" },
@@ -83,7 +83,7 @@ export default function NavBar({ inputState, setSearchedKeyword }) {
     <>
       <nav className="navBar" style={{
         background: currentPage == 'blog' ? '#f5f5f5' : 'white',
-        position: 'sticky'
+        position: 'sticky', maxWidth: "100%"
       }} aria-label="Main Navigation">
         <img className="hamburger" style={currentPage != 'blog' ? { order: '0' } : { order: '2' }} onClick={toggleMenu} src="https://www.uptodd.com/images/newWebsite/hamburger-icon.svg"></img>
         {(!isDesktopScreen && (currentPage == 'blog')) && <div id="search">
