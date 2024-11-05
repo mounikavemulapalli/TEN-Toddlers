@@ -23,14 +23,6 @@ import expertPersonalised from "../../assets/images/home/expert-personalised.web
 export default function Home() {
   const boardMembersRef = useRef(null);
   const awaredBabyRef = useRef(null);
-  const [showModal, setShowModal] = useState(false);
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   const handleCardClick = (id) => {
     setClickedCardId(id);
