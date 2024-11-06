@@ -95,9 +95,6 @@ function SubscriptionBox() {
       rel: 0,
     },
   };
-  const onVideoReady = (event) => {
-    event.target.pauseVideo();
-  };
 
   return (
     <>
