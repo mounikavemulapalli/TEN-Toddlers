@@ -289,9 +289,14 @@
   display: flex;
   justify-content: center;
   background: #fffbfb;
+  padding-bottom: 3rem;
 }
 
 /* happy parents section */
+
+.happy-parents {
+  padding-top: 3rem;
+}
 
 .happy-parents h1,
 .happy-parents h1 span {
