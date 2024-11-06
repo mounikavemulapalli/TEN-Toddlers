@@ -29,7 +29,14 @@ function Peek() {
     <>
       {/* Peek-A-Boo! See the Joy of Development */}
       <div className="super-peek">
-        <h1>Peek-A-Boo! See the Joy of Development</h1>
+        <h1>
+          The Proof is in the Play:
+          <span> Watch How Babies Thrive!</span>
+        </h1>
+        <h5>
+          Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
+          Tomorrow
+        </h5>
         <div className="super-peek-wrapper">
           <button className="super-peek-button prev" onClick={handlePrev}>
             <img
@@ -43,7 +50,9 @@ function Peek() {
               <div key={data.id} className="super-peek-card">
                 <div className="super-peek-iframe-container">
                   <iframe
-                    src={data.videoUrl}
+                    width="320"
+                    height="200"
+                    srcDoc={data.surdoc}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
