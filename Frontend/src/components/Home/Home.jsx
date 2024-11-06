@@ -29,17 +29,21 @@ export default function Home() {
   };
 
   const handleBoardMenberPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+      if (boardMembersRef.current) {
+        const boardCard = boardMembersRef.current.querySelector(".board-card");
+    
+        if (boardCard) {
+          const cardWidth = boardCard.offsetWidth;
+          const gap = 30;
+          const scrollAmount = cardWidth + gap;
+    
+          boardMembersRef.current.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
 
   const handleBoardMemberNext = () => {
     if (boardMembersRef.current) {

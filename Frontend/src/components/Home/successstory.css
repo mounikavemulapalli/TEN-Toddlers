@@ -72,7 +72,6 @@
 
 .carousel-card {
   min-width: 300px; /* Ensure each card has a minimum width */
-  height: 330px;
   flex: 0 0 auto; /* Prevent shrinking */
   background: white;
   color: black;
