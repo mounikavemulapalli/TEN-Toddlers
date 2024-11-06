@@ -21,6 +21,7 @@ import Blog from './Blog/Blog';
 import AllHappyParents from "./Home/AllHappyParents.jsx"
 import { Article } from './Blog/Blog.jsx';
 import BabyAchieversAll from './Home/Baby-achievers-all.jsx';
+import UnapprovedMsg from './Blog/UnapprovedMsg.jsx';
 
 export default function App() {
 
@@ -66,6 +67,7 @@ function MainRoutes({ searchedKeyword, setSelectedTitle }) {
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
         <Route path='/contact-us' element={<Contact />} />
+        <Route path="/unapproved" element={<UnapprovedMsg/>} />
       </Routes>
       {!isFooterHidden && <Footer />}
     </>

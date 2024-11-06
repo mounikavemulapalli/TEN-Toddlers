@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import './Blog.css';
 import BlogFooter from './BlogFooter';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import articles from '../../assets/data/articles.json';
 import axios from "axios";
 
@@ -50,8 +50,18 @@ export default function Blog({ searchedKeyword, setSelectedTitle }) {
 
 export const Article = () => {
   const [comments,setComments]=useState([])
-  const [isSubmitted,setIsSubmitted]=useState(null)
+  const [isSubmitted,setIsSubmitted]=useState(false)
   const [newComment,setNewComment]=useState({author:'',email:'',text:''});
+
+  const [replyingTo,setReplyingTo]=useState(null);
+  const [replyText,setReplyText]=useState('');
+  const [replyAuthor,setReplyAuthor]=useState("");
+  const [replyEmail,setReplyEmail]=useState('');
+  const [showReplies,setShowReplies]=useState({});
+  const [showUnapprovedMessage,setShowUnapprovedMessage]=useState(false);
+  const [errorMessage,setErrorMessage]=useState("");
+  const navigate=useNavigate();
+
 
 
   const renderContentItem = (item, index) => {
@@ -90,12 +100,6 @@ export const Article = () => {
   }, [title]);
 
 
-  // useEffect(() => {
-  //   axios.get(`/api/comments/${title}`)
-  //   .then(response=>setComments(response.data))
-  //   .catch(error=>console.error(error))
-
-  // },[title]);
 
   useEffect(() => {
     // Fetch comments for the current article
@@ -114,14 +118,35 @@ export const Article = () => {
     fetchComments();
   }, [title]);
 
+//Render only the latest comment
+const latestComment=comments[comments.length - 1] //Get the latest comment if available
+
   const handleSubmit=(e)=>{
     e.preventDefault();
     setIsSubmitted(true);
+    const validateEmail=(email)=>{
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+      return re.test(String(newComment.email).toLowerCase());
+    }
 
     if(!newComment.author || !newComment.email || !newComment.text){
-      console.error("All fields are required");
+      const errorMessage ="All fields are required"; //Error message
+      setErrorMessage(errorMessage);
+      console.error(errorMessage);
+      setIsSubmitted(false);
+    
       return
     }
+
+    if(!validateEmail(newComment.email)){
+      const errorMessage="Invalid email address"; //Error message
+      setErrorMessage(errorMessage);
+      console.error(errorMessage);
+      setIsSubmitted(false);
+      return
+    }
+    setErrorMessage('');
+
     axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
       setComments([...comments,response.data]);
@@ -130,6 +155,8 @@ export const Article = () => {
     .catch(error=>console.error(error))
     setIsSubmitted(false)
   }
+
+
 const handleDelete=async(commentId)=>{
   try {
     await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}`);
@@ -139,7 +166,91 @@ const handleDelete=async(commentId)=>{
   }
 }
 
+const handleReplySubmit=async(e,commentId)=>{
+  e.preventDefault();
+  if(!replyAuthor || !replyEmail || !replyText){
+    console.error("All fields are required");
+    return;
+  }
 
+  setIsSubmitted(true);
+  const validateEmail=(email)=>{
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+    return re.test(String(replyEmail).toLowerCase());
+  }
+
+  
+  if(!validateEmail(replyEmail)){
+    const errorMessage="Invalid email address"; //Error message
+    setErrorMessage(errorMessage);
+    console.error(errorMessage);
+    setIsSubmitted(false);
+    return
+  }
+  setErrorMessage('');
+
+//if approved, proceed with submitting the reply
+  try {
+
+    //Only write this logic if you want to display reply text
+    //  const response=await axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}/reply`,{
+    //   author:replyAuthor,
+    //   email:replyEmail,
+    //   text:replyText,
+    //  });
+    //  console.log("Reply added",response.data);
+     
+
+    //  //Find the comment and add the new reply
+    //  const updatedComments=comments.map(comment=>{
+    //   if(comment._id === commentId){
+    //     return {...comment, replies:[...comment.replies,response.data]};
+
+    //   }
+    //   return comment;
+    //  })
+    //  setComments(updatedComments);
+     setReplyingTo(null);
+     
+     setReplyText('');
+     setReplyAuthor('');
+     setReplyEmail('');
+     setIsSubmitted(false);
+     setShowUnapprovedMessage(true);
+     navigate("/unapproved");
+     
+  } catch (error) {
+    console.error("Error submitting reply:",error);
+  }
+}
+const handleReplyClick=(comment)=>{
+  setReplyingTo(comment._id);
+  setShowUnapprovedMessage(false);
+  if(!comment.approved){
+    setShowUnapprovedMessage(true);
+  }else{
+    setReplyingTo(comment._id);
+    setShowUnapprovedMessage(false);
+  }
+};
+
+const handleDeleteReply=async(commentId,replyId)=>{
+  try {
+    const response= await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
+    if(response.status===200){
+
+      setComments(prevComments=>prevComments.map(comment=>comment._id === commentId ? {...comment,replies:comment.replies.filter(reply=>reply._id !==replyId)}:comment));
+    }
+
+  } catch (error) {
+    console.error("Error deleting reply: ",error);
+  }
+}
+const toggleReplies=(commentId)=>{
+  setShowReplies(prev=>({
+    ...prev,[commentId]:!prev[commentId]
+  }))
+}
   return (
     <>
       <div id='article-container'>
@@ -202,23 +313,26 @@ const handleDelete=async(commentId)=>{
       <div id="comments">
 
       
-      <h3>{comments.length} thoughts on "{decodedTitle}"</h3>
+      {/* <h3>{comments.length} thoughts on "{decodedTitle}"</h3> */}
+      <h3>{latestComment ? `1 thought on "${decodedTitle}"` : "No comments yet"} </h3>
       <div className="comments-list">  
         
       </div>
-      {comments.map((comment,index)=>(
-         <div key={index} className="comment">
+      {/* {comments.map((comment,index)=>( */}
+      {latestComment && (
+
+         <div key={latestComment.index} className="comment">
           <div className="comment-header">
             
           <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=170667a&w=0&k=20&c=EpwfsVjTx8cqJJZzBMp__1qJ_7qSfsMoWRGnVGuS8Ew=" alt="Avatar" className="avatar" />
           <div className="comment-name">
-          <strong>{comment.author}</strong>
-          <span className="comment-date">{new Date(comment.date).toLocaleDateString("en-US",{
+          <strong>{latestComment.author}</strong>
+          <span className="comment-date">{new Date(latestComment.date).toLocaleDateString("en-US",{
             year:'numeric',
             month:"long",
             day:"numeric"
           })} at {
-            new Date(comment.date).toLocaleTimeString("en-US",{
+            new Date(latestComment.date).toLocaleTimeString("en-US",{
               hour:"numeric",
               minute:"numeric",
               hour12:true
@@ -227,28 +341,106 @@ const handleDelete=async(commentId)=>{
 
 
           </div>
-          <button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDelete(comment._id)}>Delete</button>
+          <button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDelete(latestComment._id)}>Delete</button>
           </div>
            
-          <p className="comment-text">{comment.text}</p>
-          <a href="#reply" className="reply-link">Reply</a>
-          <p className="moderation-notice">Your comment awaiting moderation.</p>
+          <p className="comment-text">{latestComment.text}</p>
+          {/* <a href="#reply" className="reply-link" onClick={()=>handleReplyClick(comment)}>Reply</a> */}
+             {/* Unapproved Reply message  */}
+             {showUnapprovedMessage && !latestComment.approved && (
+              <div className="unapproved-message">
+                <p>Sorry, replies to unapproved comments are not allowed</p>
+                <Link to="/blog">« Back</Link>
 
-        </div>
-))}
+              </div>
+             )}
 
-        <h3>Leave a Comment</h3>
-        <form onSubmit={handleSubmit}>
-          <p>Your email address will not be published. Required fields are marked *</p>
-          <fieldset>
-            <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }} value={newComment.text} onChange={(e)=>setNewComment({...newComment,text:e.target.value})}  required></textarea>
+             {/* it is used to display replies  */}
+
+          {/* {comment.replies && comment.replies.length>0 && (
+            <div className="replies">
+              {
+                comment.replies.map((reply,index)=>(
+                  <div key={index} className="reply">
+                    <strong>{reply.author}</strong>
+                    <span className="reply-date">  
+                      {new Date(reply.date).toLocaleDateString("en-US",{month:"long",day:"numeric"})} at         
+                      {new Date(reply.date).toLocaleTimeString("en-US",{hour:"numeric",minute:"numeric",hour12:true})}
+                    </span>
+                       <p>{reply.text}</p>
+
+<button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDeleteReply(comment._id,reply._id)}>DelReply</button>
+                  </div>
+                ))
+              }
+
+
+
+            </div>
+          )} */}
+
+          {/* Reply link and form  */}
+          <a href="#reply" className="reply-link" onClick={()=>setReplyingTo(latestComment._id)}>Reply</a>
+          {replyingTo === latestComment._id  && (
+
+
+            <form onSubmit={(e)=>handleReplySubmit(e,latestComment._id)} >
+              <p className="reply-header">
+                <strong>Reply to {latestComment.author}</strong>
+                <button type="button" onClick={()=>setReplyingTo(null)} className="cancel-reply">Cancel</button>
+              </p>
+
+
+              <p>Your email address will not be published.Required fields are marked *</p>
+
+              
+              {/* <textarea placeholder="Type here.."
+               value={replyText}
+               onChange={()=>setReplyText(e.target.value)}
+               required
+              
+              >
+
+              </textarea>
+              <div className="reply-form-fields">
+      <input 
+        type="text" 
+        placeholder="Name*" 
+        value={replyAuthor} 
+        onChange={(e) => setReplyAuthor(e.target.value)} 
+        required 
+      />
+      <input 
+        type="email" 
+        placeholder="Email*" 
+        value={replyEmail} 
+        onChange={(e) => setReplyEmail(e.target.value)} 
+        required 
+      />
+      
+                     <input id="url" placeholder='Website' type="text" />
+
+      
+    </div>
+    
+    <div className="reply-form-footer">
+      <label>
+        <input type="checkbox" /> Save my name, email, and website in this browser for the next time I comment.
+      </label>
+      <button type="submit" className="submit-reply">POST COMMENT »</button>
+    </div> */}
+
+
+<fieldset>
+            <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }} value={replyText} onChange={(e)=>setReplyText(e.target.value)} required></textarea>
           </fieldset>
           <div>
             <div className="input-box">
-              <input id="author" placeholder='Name*' type="text" value={newComment.author} onChange={(e)=>setNewComment({...newComment,author:e.target.value})} required/>
+              <input id="author" placeholder='Name*' type="text" value={replyAuthor} onChange={(e)=>setReplyAuthor(e.target.value)} required/>
             </div>
             <div className="input-box">
-              <input id="email" placeholder='Email*' type="text" value={newComment.email} onChange={(e)=>setNewComment({...newComment,email:e.target.value})} required/>
+              <input id="email" placeholder='Email*' type="text" value={replyEmail} onChange={(e)=>setReplyEmail(e.target.value)} required/>
+              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} {/* Display error message */}
             </div>
             <div className="input-box">
               <input id="url" placeholder='Website' type="text" />
@@ -258,7 +450,50 @@ const handleDelete=async(commentId)=>{
             <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} />
             <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
           </div>
-          <button type="submit">{isSubmitted ?"Wait a min":"Post Comment »"} </button>
+          <button type="submit">Post Reply » </button>
+
+            </form>
+          )}
+
+
+          <p className="moderation-notice">Your comment awaiting moderation.</p>
+
+        </div>
+
+      )}
+
+
+
+
+        <h3>Leave a Comment</h3>
+        <form onSubmit={handleSubmit}>
+          <p>Your email address will not be published. Required fields are marked *</p>
+
+
+          <fieldset>
+            <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }} value={newComment.text} onChange={(e)=>setNewComment({...newComment,text:e.target.value})}  required></textarea>
+          </fieldset>
+          <div>
+            <div className="input-box">
+              <input id="author" placeholder='Name*' type="text" value={newComment.author} onChange={(e)=>setNewComment({...newComment,author:e.target.value})} required/>
+            </div>
+            <div className="input-box">
+              <input id="email" placeholder='Email*' type="text" value={newComment.email} onChange={(e)=>setNewComment({...newComment,email:e.target.value})} required/>
+              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>} {/* Display error message */}
+            </div>
+            <div className="input-box">
+              <input id="url" placeholder='Website' type="text" />
+            </div>
+          </div>
+          <div id="cookies-consent">
+            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} />
+            <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
+          </div>
+          <button type="submit">
+            {isSubmitted ?(<span>Loading...</span>)
+          : ("Post Comment » " )  
+          }
+            </button>
         </form>
 
 
