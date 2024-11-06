@@ -29,21 +29,21 @@ export default function Home() {
   };
 
   const handleBoardMenberPrev = () => {
-      if (boardMembersRef.current) {
-        const boardCard = boardMembersRef.current.querySelector(".board-card");
-    
-        if (boardCard) {
-          const cardWidth = boardCard.offsetWidth;
-          const gap = 30;
-          const scrollAmount = cardWidth + gap;
-    
-          boardMembersRef.current.scrollBy({
-            left: -scrollAmount,
-            behavior: "smooth",
-          });
-        }
+    if (boardMembersRef.current) {
+      const boardCard = boardMembersRef.current.querySelector(".board-card");
+
+      if (boardCard) {
+        const cardWidth = boardCard.offsetWidth;
+        const gap = 30;
+        const scrollAmount = cardWidth + gap;
+
+        boardMembersRef.current.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",
+        });
       }
-    };
+    }
+  };
 
   const handleBoardMemberNext = () => {
     if (boardMembersRef.current) {
@@ -193,7 +193,7 @@ export default function Home() {
               <div className="building">
                 <iframe
                   loading="lazy"
-                  srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
+                  srcDoc="<style>body,.full {position:relative;margin:0;overflow:hidden;display:flex;justify-content:center;align-content:center}.full img {width:100%;}</style> <div class='full'><a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a></div>"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -236,9 +236,8 @@ export default function Home() {
                 <div
                   key={value.id}
                   onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${
-                    clickedCardId === value.id ? "active" : ""
-                  }`}
+                  className={`development-card ${clickedCardId === value.id ? "active" : ""
+                    }`}
                 >
                   <h3>{value.title}</h3>
                   <div className="four-pillars-list">
