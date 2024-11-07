@@ -451,6 +451,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative
 }
 .board-container {
   width: 100%;
@@ -463,15 +464,17 @@
   background-color: #f5eae2 !important;
 }
 .board-grid {
-  width: 90%;
+  width: 86% !important;
   box-sizing: border-box;
   padding: 2em 0;
   scroll-behavior: smooth;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
-
-  overflow: hidden;
+  overflow-x: scroll !important;
   gap: 15px;
+}
+.board-grid::-webkit-scrollbar {
+  display: none;
 }
 .board-card {
   width: 262px;
@@ -517,6 +520,18 @@
   letter-spacing: -0.04em;
   text-align: center;
   color: rgb(107, 114, 128);
+}
+#boardGridPrevBtn, #boardGridNextBtn {
+  position: absolute;
+  z-index: 1;
+  width: 44px;
+  top: 200px;
+}
+#boardGridPrevBtn {
+  left: 5px;
+}
+#boardGridNextBtn {
+  right: 5px;
 }
 
 @media (max-width: 1250px) {
