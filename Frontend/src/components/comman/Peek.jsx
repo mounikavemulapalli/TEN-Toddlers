@@ -30,12 +30,11 @@ function Peek() {
       {/* Peek-A-Boo! See the Joy of Development */}
       <div className="super-peek">
         <h1>
-          The Proof is in the Play:
-          <span> Watch How Babies Thrive!</span>
+          The Proof is in the Play: <span>Watch How Babies Flourish!</span>
         </h1>
         <h5>
-          Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-          Tomorrow
+          Busy Parents, Smart Decision: Dedicate 10 Minutes a Day for a Brighter
+          Future
         </h5>
         <div className="super-peek-wrapper">
           <button className="super-peek-button prev" onClick={handlePrev}>
