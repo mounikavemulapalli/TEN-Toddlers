@@ -177,7 +177,7 @@ const SuccessStory = () => {
         <h1>Real Stories: Watch Babies Thrive</h1>
       </div>
       <section className="dev-wonder">
-        <h1>Developmental Wonders: Early Learning Made Fun</h1>
+        <h1>Joyful Beginnings: Making Early Learning Fun and Engaging</h1>
         <div className="dev-cont">
           <div className="dev-card">
             <div className="bg-sq">
@@ -256,12 +256,12 @@ const SuccessStory = () => {
 
       <section className="happy-parents">
         <h1>
-          Happy Parents, Thriving Tots:
-          <span> Witnessing Their Child&#39;s Growth</span>
+          Happy Parents, Thriving Tots:{" "}
+          <span>Celebrating Their Child's Journey</span>
         </h1>
         <h5>
-          A One Stop Personalized Solution | Shift Your Baby Investments For
-          Strong Future
+          A Comprehensive Personalized Solution | Secure Your Child’s Future
+          with Smart Investments
         </h5>
         <div className="happy-parent-list-container">
           <div className="happy-parent-list" ref={happyParentRef}>
@@ -347,11 +347,11 @@ const SuccessStory = () => {
 
       <section className="carousel-container how-baby-thrives genius-babies">
         <h1>
-          The Proof is in the Play:<span>Watch How Babies Thrive!</span>
+          The Proof is in the Play: <span>Watch How Babies Flourish!</span>
         </h1>
         <h5>
-          Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-          Tomorrow
+          Busy Parents, Smart Decision: Dedicate 10 Minutes a Day for a Brighter
+          Future
         </h5>
 
         <div className="carousel-wrapper">
@@ -399,7 +399,7 @@ const SuccessStory = () => {
 
       <section className="awared-babies">
         <h1>
-          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+          Brilliant Minds: <span>Honoring the World's Top Baby Achievers</span>
         </h1>
         <div className="awared-babies-cont">
           <div className="baby-award-list" ref={awaredBabyRef}>
