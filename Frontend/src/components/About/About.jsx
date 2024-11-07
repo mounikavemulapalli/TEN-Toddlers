@@ -11,19 +11,20 @@ const About = () => {
   return (
     <article>
       <div>
-        <div className="focussection"> 
+        <div className="focussection">
           <h1>
-            We focus to personalise every child's journey at our best. We are
-            obsessed for success at every family which merges with UpTodd
+            We are dedicated to personalizing each child's journey to the best
+            of our ability. Our commitment to success drives us to ensure every
+            family that joins UpTodd thrives.
           </h1>
         </div>
         <div className="aboutus-container">
           <div className="ourgoalsection">
             <p>
-              Our goal is to help every parent feel confident. Our play products
-              are designed by child development experts and distilled to their
-              simplest, purest purpose: to be exactly what children need at each
-              stage.
+              Our goal is to empower every parent with confidence. Our play
+              products are crafted by child development experts, carefully
+              designed to fulfill a child's needs at each stage in the simplest
+              and most effective way.
             </p>
           </div>
 
@@ -47,13 +48,14 @@ const About = () => {
                 <h3>Welcome to the World of UpTodd early development! </h3>
                 <h4>Hello, Dear Parent!</h4>
                 <p>
-                  Welcome to the World of UpTodd early development! We are
-                  delighted to have you here. UpTodd was born from the dreams of
-                  three friends—Abhishek, Devesh, and Richa—who believed that
-                  every child deserves a bright and joyful start. Their journey
-                  began in the inspiring halls of IITs, driven by personal
-                  stories of resilience and hope. Sharing a common vision, they
-                  set out to bring a touch of wonder to early baby development.
+                  Welcome to the world of early development with UpTodd! We’re
+                  thrilled to have you with us. UpTodd was founded by three
+                  friends—Abhishek, Devesh, and Richa—who shared a vision that
+                  every child deserves a bright and joyful beginning. Their
+                  journey started in the inspiring halls of the IITs, fueled by
+                  personal stories of resilience and hope. United by their
+                  passion, they set out to bring a sense of wonder to early
+                  childhood development.
                 </p>
                 <img
                   className="journey-background-img3"
@@ -65,15 +67,15 @@ const About = () => {
                 <h3>The Birth of a Dream</h3>
 
                 <p>
-                  In 2015, Abhishek, Devesh, and Richa launched an NGO dedicated
-                  to giving every child a strong start in education. They
-                  noticed a common desire among parents: to offer the best for
-                  their children's early baby development. This observation led
-                  to a burning question: "What if?" What if they could help
-                  parents provide the right meaningful pattern of UpTodd early
-                  development for their children? This question ignited their
-                  passion and curiosity, and they embarked on a journey to find
-                  answers.
+                  In 2015, Abhishek, Devesh, and Richa founded an NGO with the
+                  mission of giving every child a strong educational foundation.
+                  They soon realized that many parents shared a common desire:
+                  to provide the best possible start for their children's early
+                  development. This observation sparked a profound question:
+                  What if? What if they could help parents offer the right,
+                  meaningful approach to early childhood development? This
+                  question fueled their passion and curiosity, setting them on a
+                  journey to discover the answers.
                 </p>
                 <img
                   className="journey-background-img2"
@@ -84,17 +86,17 @@ const About = () => {
                 ></img>
                 <h3>Rooted in Love and Knowledge</h3>
                 <p>
-                  To bring their vision to life, they collaborated with over 100
-                  leading experts and researchers in the field of personalised
-                  baby growth and development. They delved into more than 10,000
-                  research studies, driven by a passion to provide the best for
-                  every child. From MIT to Stanford, IITs to AIIMS, each piece
-                  of knowledge contributed to a recipe for an UpTodd early
-                  development environment filled with joy, creativity, and love.
+                  To turn their vision into reality, they partnered with over
+                  100 leading experts and researchers in personalized baby
+                  growth and development. They examined more than 10,000
+                  research studies, driven by a passion to offer the best for
+                  every child. From MIT to Stanford, IITs to AIIMS, each insight
+                  contributed to crafting the perfect environment for UpTodd
+                  early development—one filled with joy, creativity, and love.
                   This collaboration led to a breakthrough understanding of the
-                  importance of personalised baby growth. In 2019, UpTodd early
-                  development was born—a place where growth and happiness meet,
-                  bringing personalized attention to every child.
+                  importance of personalized baby growth. In 2019, UpTodd early
+                  development was born—a place where growth and happiness
+                  converge, providing individualized attention to every child.
                 </p>
                 <img
                   className="journey-background-img4"
@@ -104,132 +106,131 @@ const About = () => {
                   alt="Uptodd infant growth"
                 ></img>
                 <div id="imagecontainer">
+                  <img
+                    src={additionalImage}
+                    alt="Additional visual content"
+                    className="additional-image"
+                  />
+                </div>
+                <h3>Understanding Parents' Hopes and Concerns</h3>
+
                 <img
-                  src={additionalImage}
-                  alt="Additional visual content"
-                  className="additional-image"
-                />
+                  className="journey-background-img1"
+                  src="https://www.uptodd.com/images/newWebsite/journey/background-2.webp"
+                  onerror="this.onerror=null; this.src='/images/newWebsite/journey/background-2.png'"
+                  loading="lazy"
+                  alt="Early baby development"
+                ></img>
+                <p>
+                  Throughout their journey, they connected with over 5,000
+                  parents and discovered a shared hope in every parent’s eyes:
+                  to give their children the best start in customized baby
+                  growth and development. However, they also uncovered a common
+                  feeling of guilt due to limited time and the overwhelming
+                  presence of screens and technology. This highlighted a deeper
+                  concern about providing the right foundation in a world full
+                  of challenges. The insights gained from these conversations
+                  led to a profound understanding of the impact of UpTodd early
+                  development, emphasizing the role of play and environment in
+                  shaping a child’s growth.
+                </p>
+                <h3>Why uptodd started</h3>
+                <p>
+                  Fueled by these insights, UpTodd’s journey took flight in
+                  2019, evolving from a single spark in India to a guiding light
+                  in 158 countries. By viewing the world through the lens of
+                  children's development, they saw boundless possibilities.
+                  Their mission became clear: to give every baby the best start,
+                  tailored specifically for them. UpTodd early baby development
+                  strives to create a world where every baby, no matter where
+                  they are, receives the right foundation for growth.
+                </p>
+                <img
+                  className="journey-background-img3"
+                  src="https://www.uptodd.com/images/newWebsite/journey/background-1.webp"
+                  onError="this.onerror=null; this.src='/images/newWebsite/journey/background-1.png'"
+                  loading="lazy"
+                  alt="Uptodd baby growth"
+                ></img>
+                <h3>Our Growing Family</h3>
+
+                <p>
+                  Building on this mission, UpTodd has expanded from a simple
+                  online “hello” to a global community of over 150,000 members.
+                  It’s a space where parents find support, share joyful moments,
+                  and witness their children’s remarkable growth. Here, you’ll
+                  discover a community that feels like an extended family,
+                  celebrating every milestone with you.
+                </p>
+                <h3>Why You’ll Cherish UpTodd Early Development</h3>
+                <p>
+                  Additionally, our early development processes are uniquely
+                  designed for your child, making every step both exciting and
+                  joyful. At UpTodd, everything—from toys to stories—is crafted
+                  to ignite curiosity and happiness. You’ll find a supportive
+                  community here, celebrating each milestone alongside you. Our
+                  approach is rooted in science and infused with warmth,
+                  ensuring a journey filled with smiles and success for your
+                  baby.
+                </p>
+                <h3>Driven by Passion and Innovation</h3>
+                <p>
+                  UpTodd’s specially crafted baby growth development programs
+                  are designed to offer something truly exceptional. We provide
+                  comprehensive support, from brain development to nutrition and
+                  toys, all at an affordable cost.
+                </p>
+                <p>
+                  We're here to nurture, support, and celebrate the unique
+                  journey of every baby.
+                </p>
+                <h3>Join Our Story</h3>
+                <p>
+                  We invite you to join us on this heartfelt journey. At UpTodd,
+                  we believe in the incredible potential within every child,
+                  waiting to be nurtured and supported.
+                </p>
+
+                <img
+                  className="journey-background-img2"
+                  src="https://www.uptodd.com/images/newWebsite/journey/background-4.webp"
+                  onError="this.onerror=null; this.src='/images/newWebsite/journey/background-4.png'"
+                  loading="lazy"
+                  alt="Uptodd infant growth"
+                ></img>
+                <p>
+                  Our promise to you is to provide everything at a price that
+                  honors the value you seek for your family.
+                </p>
+
+                <p>
+                  At the heart of UpTodd are people like you—parents, dreamers,
+                  and believers.
+                </p>
+
+                <p>
+                  Our leadership team, including Richa, Abhishek, and Devesh,
+                  along with our panel of experts, invites you to meet the minds
+                  shaping the future.
+                </p>
+
+                <img
+                  className="journey-bg-img2"
+                  src="https://www.uptodd.com/images/newWebsite/journey/background-3.webp"
+                  onError="this.onerror=null; this.src='/images/newWebsite/journey/background-3.png'"
+                  loading="lazy"
+                  alt="Uptodd baby development"
+                ></img>
+                <p>
+                  Each day at UpTodd is a fresh start, filled with laughter,
+                  growth, and love. Here’s to the incredible journey ahead!
+                </p>
+
+                <p>
+                  Welcome to UpTodd early development, where every day is a
+                  celebration of growth and joy.
+                </p>
               </div>
-              <h3>Understanding Parents' Hopes and Concerns</h3>
-
-              <img
-                className="journey-background-img1"
-                src="https://www.uptodd.com/images/newWebsite/journey/background-2.webp"
-                onerror="this.onerror=null; this.src='/images/newWebsite/journey/background-2.png'"
-                loading="lazy"
-                alt="Early baby development"
-              ></img>
-              <p>
-                During their journey, they met over 5,000 parents and discovered
-                a common hope in every eye: to give their children the best
-                start for customised baby growth and development. However, they
-                also found a common guilt about having limited time and the
-                overwhelming presence of screens and technology. This revealed a
-                deeper concern about providing the right start in a world filled
-                with challenges. The insights gathered from these interactions
-                led to a deeper understanding of the impact of UpTodd early
-                development experiences through play and environment.
-              </p>
-              <h3>Why uptodd started</h3>
-              <p>
-                by these insights, UpTodd’s journey took flight in 2019,
-                transforming from a single spark in India to a comforting light
-                in 158 countries. Viewing the world through the lens of
-                children's development, they saw endless possibilities. Their
-                mission was clear: to provide the best start to every baby,
-                tailored just for them. UpTodd early baby development aims to
-                create a world where every baby receives the right start,
-                regardless of where they are.
-              </p>
-              <img
-                className="journey-background-img3"
-                src="https://www.uptodd.com/images/newWebsite/journey/background-1.webp"
-                onError="this.onerror=null; this.src='/images/newWebsite/journey/background-1.png'"
-                loading="lazy"
-                alt="Uptodd baby growth"
-              ></img>
-              <h3>Our Growing Family</h3>
-
-              <p>
-                Building on this mission, UpTodd has grown from the first
-                “hello” online to a worldwide community of over 150,000. It's a
-                space where parents find support, share joyful moments, and
-                witness their children's wonderful growth. Here, you'll find a
-                community that’s like an extended family, celebrating every
-                achievement with you.
-              </p>
-              <h3>Why You’ll Cherish UpTodd Early Development</h3>
-              <p>
-                Furthermore, our early development processes are specially
-                designed for your child, making it exciting and joyful.
-                Everything in baby development at Uptodd, from toys to stories,
-                is created to spark curiosity and joy. Here, you'll find a
-                supportive community celebrating each milestone with you. Our
-                approach is scientifically sound and filled with warmth,
-                ensuring a path of smiles and success for your baby.
-              </p>
-              <h3>Driven by Passion and Innovation</h3>
-              <p>
-                UpTodd’s uniquely crafted baby growth development programs are
-                dedicated to offering something truly special. We provide
-                everything from brain development support to nutrition and toys,
-                all at an accessible cost.
-              </p>
-              <p>
-                We're here to nurture, support, and celebrate the unique journey
-                of every baby.
-              </p>
-              <h3>Join Our Story</h3>
-              <p>
-                We invite you to be part of this heartfelt journey. At Uptodd,
-                we believe in the incredible potential within each child, just
-                waiting to be nurtured.
-              </p>
-
-              <img
-                className="journey-background-img2"
-                src="https://www.uptodd.com/images/newWebsite/journey/background-4.webp"
-                onError="this.onerror=null; this.src='/images/newWebsite/journey/background-4.png'"
-                loading="lazy"
-                alt="Uptodd infant growth"
-              ></img>
-              <p>
-                Our promise to you is to offer everything at a price that
-                respects the value you seek for your family.
-              </p>
-
-              <p>
-                At the heart of UpTodd are people like you—parents, dreamers,
-                believers.
-              </p>
-
-              <p>
-                Our leadership team, including Richa, Abhishek, and Devesh,
-                alongside our panel of experts, invites you to meet the minds
-                sculpting the future.
-              </p>
-
-              <img
-                className="journey-bg-img2"
-                src="https://www.uptodd.com/images/newWebsite/journey/background-3.webp"
-                onError="this.onerror=null; this.src='/images/newWebsite/journey/background-3.png'"
-                loading="lazy"
-                alt="Uptodd baby development"
-              ></img>
-              <p>
-                Each day at UpTodd is a new beginning, filled with laughter,
-                development, and love. Here's to the incredible journey ahead!
-              </p>
-
-              <p>
-                Welcome to UpTodd early development, where every day is a
-                celebration of growth and joy.
-              </p>
-
-              
-              
-              </div>
-
             </div>
           </div>
         </div>
