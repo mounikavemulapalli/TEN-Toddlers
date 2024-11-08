@@ -8,24 +8,24 @@ export const careerAbout = [
     id: 0,
     image: careerAbout1,
     name: "Role With a purpose",
-    desc: "Role with an opportunity to nurture Future Generation",
+    desc: "Position with a chance to foster the Next Generation",
   },
   {
     id: 1,
     image: careerAbout2,
     name: "Impact at Work",
-    desc: "Empower every moment with the magic of growth, transforming tiny steps into giant leaps for the future's architects.",
+    desc: "Inspire every instant with the wonder of progress, turning small actions into significant strides for the creators of tomorrow.",
   },
   {
     id: 2,
     image: careerAbout3,
     name: "Collaborative culture",
-    desc: "Easily approachable and cooperative team with no air around designations",
+    desc: "A team that is easy to connect with and works well together, without any pretentiousness regarding titles.",
   },
   {
     id: 3,
     image: careerAbout4,
     name: "Vision-Oriented Team",
-    desc: "Join a constellation of dreamers and doers, united by a vision to unlock the infinite potential of every child",
+    desc: "Become part of a community of visionaries and achievers, coming together with a shared mission to unleash the limitless possibilities within every child.",
   },
 ];
