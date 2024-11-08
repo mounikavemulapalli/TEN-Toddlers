@@ -66,24 +66,24 @@ export default function Home() {
       <div className="home-section">
         <section className="Home-page">
           <div className="banner-text">
-            <h1>Give Your Baby the Best Possible Start!</h1>
-            <h3>Nurture your baby's developing Brain</h3>
-            <h5>Expert Guided Personalised Program - Just For Your Baby</h5>
+            <h1>Ensure the Best Start for Your Baby!</h1>
+            <h3>Support Your Baby's Growing Brain</h3>
+            <h5>Expert-Guided Personalized Program Tailored for Your Baby</h5>
             <ul>
               <li>
-                <FaCheckCircle /> <span> No Pressure - No testing </span>
+                <FaCheckCircle /> <span>No Pressure, No Testing</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>No screen Time</span>
+                <FaCheckCircle /> <span>No Screen Time</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>10 Minutes Daily</span>
+                <FaCheckCircle /> <span>Just 10 Minutes a Day</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>Loved by babies</span>
+                <FaCheckCircle /> <span>Loved by Babies</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>One Stop Parenting Solution</span>
+                <FaCheckCircle /> <span>The Ultimate Parenting Solution</span>
               </li>
             </ul>
 
@@ -105,10 +105,7 @@ export default function Home() {
         <section className="Possibilities">
           <div className="Possibilities-heading">
             <h1>Explore the Possibilities with UpTodd</h1>
-            <p>
-              We have your back in this Journey - Top experts support you in
-              your baby’s brain development journey.
-            </p>
+            <p>We've Got Your Back – Top Experts Support You in Your Baby’s Brain Development Journey</p>
           </div>
           <div className="Possibilities-container">
             <div className="Possibilities-image">
@@ -131,28 +128,26 @@ export default function Home() {
         {/* Solution Section */}
         <section className="Solution-page">
           <div className="solution-heading">
-            <h1>One Stop Solution for your Baby's Brightest Possible Future</h1>
-            <p>Research-Backed Baby Brain Development Journey</p>
+            <h1>The Complete Solution for Your Baby's Brightest Future</h1>
+            <p>Research-Driven Baby Brain Development Program</p>
           </div>
           <div className="solution-container">
             <ul>
               <li>
                 <FaCheckCircle />
-                <span>Parenting made easy: One App, all you need</span>
+                <span>Parenting Made Easy: One App, Everything You Need</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span>Holistic Development & Baby Brain Reports</span>
+                <span>Holistic Growth & Baby Brain Reports</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span> 10,000+ Research Studies, 100+ Top Experts </span>
+                <span>10,000+ Research Studies, 100+ Leading Experts</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span>
-                  Expert Customised Mega Toy based developmental Kits{" "}
-                </span>
+                <span>Expert-Customized Mega Toy Developmental Kits{" "}</span>
               </li>
             </ul>
             <div className="solution-image">
@@ -165,29 +160,26 @@ export default function Home() {
         <section>
           <div className="genius-section">
             <div className="genius-header">
-              <h1>Inside Your Baby's Genius - Building Baby Brain</h1>
-              <h5>Every Baby is born with infinite Potential</h5>
+              <h1>Unlocking Your Baby's Genius – Nurturing Brain Development</h1>
+              <h5>Every Baby is Born with Unlimited Potential</h5>
             </div>
             <div className="genius-container">
               <ul className="genius-text">
                 <li>
                   <span>100 Bn</span>
-                  <span>Every baby is born with 100 Billion of Neurons</span>
+                  <span>Every Baby is Born with 100 Billion Neurons</span>
                 </li>
                 <li>
                   <span>1 Mn</span>
-                  <span>
-                    One million neural connections are formed every second in
-                    the early years
-                  </span>
+                  <span>One Million Neural Connections Form Every Second in the Early Years</span>
                 </li>
                 <li>
                   <span>90%</span>
-                  <span>Ninety percentage of our brain develops by age 5</span>
+                  <span>Ninety Percent of Our Brain Develops by Age 5</span>
                 </li>
                 <li>
                   <span>60%</span>
-                  <span>60% of baby's energy goes in brain development</span>
+                  <span>60% of a Baby's Energy is Dedicated to Brain Development</span>
                 </li>
               </ul>
               <div className="building">
@@ -221,13 +213,12 @@ export default function Home() {
         <section className="developmental-pillars">
           <div className="development-head">
             <h1>
-              UpTodd Expert Personalised Program -
+              UpTodd Expert-Personalized Program
               <br />
               <span>Nurture your baby's genius potential</span>
             </h1>
             <h5>
-              Holistic Approach of baby brain development on complete
-              foundational Pillars - <span> Just 10 Minutes a day</span>
+              A Holistic Approach to Baby Brain Development Across All Foundational Pillars – <span>Just 10 Minutes a Day</span>
             </h5>
           </div>
           <div className="development-container">
@@ -273,10 +264,7 @@ export default function Home() {
             <a href="/research">
               <Button text="Explore the Details" />
             </a>
-            <p>
-              Create Brain stimulating home envrionment for your baby, by best
-              on the Planet. We have your back in this journey
-            </p>
+            <p>Create a Brain-Stimulating Home Environment for Your Baby, with the Best Resources on the Planet. We’ve Got Your Back on This Journey.</p>
           </div>
         </section>
 
@@ -284,9 +272,7 @@ export default function Home() {
         <section className="start-now-banner">
           <div className="start-now-banner-grid">
             <h3>
-              Stop overspending on generic and hamful toys, filled with
-              Chlorinated Paraffin {`->`} Toxic for your baby brain growth
-            </h3>
+              Stop Wasting Money on Generic, Harmful Toys Filled with Chlorinated Paraffin {`->`} Toxic to Your Baby’s Brain Growth.</h3>
             {/* <Button text='Start Now' /> */}
             <PopupButton text="Start Now" />
           </div>
