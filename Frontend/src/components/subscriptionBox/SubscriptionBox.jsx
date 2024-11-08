@@ -11,7 +11,7 @@ import HappyParents from "../comman/HappyParents";
 import Mentors from "../comman/Mentors";
 import ParentsLove from "./ParentsLove";
 import { awardData } from "../../assets/data/awardData";
-import { kits } from "../../assets/data/kits.json";
+import { kits } from "../../assets/data/kits";
 
 function SubscriptionBox() {
   const [kitsData, setKitsData] = useState(null);
@@ -67,10 +67,10 @@ function SubscriptionBox() {
   useEffect(() => {
     const fetchKitsData = () => {
       try {
-        const data = kits[`${ageInMonths} months`]; // Access the kits data by month
+        const data = kits.find((kit) => kit.months === `${ageInMonths} months`); // Find the kit by months
         console.log(data);
 
-        setKitsData(data || []); // Set data or empty array if undefined
+        setKitsData(data ? [data] : []); // Set data in an array or empty array if not found
       } catch (error) {
         console.error("Error fetching kits data:", error);
       }
@@ -205,8 +205,8 @@ function SubscriptionBox() {
                 <h6>Free Shipping | Cash On Delivery(COD) Available</h6>
                 <button>Buy Now</button>
                 <p>
-                  Scientifically Designed in UpTodd’s Lab, exclusively created
-                  for baby’s brain development
+                  Exclusively crafted in UpTodd's lab, scientifically designed
+                  for optimal brain development in babies.
                 </p>
               </div>
             </div>
@@ -229,9 +229,9 @@ function SubscriptionBox() {
           <div className="sub-research-content">
             <h1>Research Backed Toys</h1>
             <ul>
-              <li>Audio-Visual Toys</li>
-              <li>Into Parenting Program</li>
-              <li>Diet & Milestone planner</li>
+              <li>Audio-Visual Learning Toys</li>
+              <li>Parenting Support Program</li>
+              <li>Nutrition & Milestone Planner</li>
             </ul>
             <button onClick={subscriptionKits}>SHOP NOW</button>
           </div>
@@ -253,13 +253,13 @@ function SubscriptionBox() {
           </div>
           <div className="stories-content">
             <h1>
-              Creating success stories every day and adding smiles in 150K+
-              Parents life
+              Bringing smiles to over 150,000 + parents and creating success
+              stories every day.
             </h1>
             <p>
-              High quality research backed scientific toys to stimulate baby's
-              development and growth, focussed to boost baby's neural synapses
-              and shaping brain architecture.
+              Premium, research-backed educational toys designed to stimulate
+              your baby’s development, enhance neural connections, and support
+              healthy brain growth.
             </p>
           </div>
         </div>
