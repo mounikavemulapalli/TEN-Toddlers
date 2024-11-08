@@ -11,6 +11,7 @@ import HappyParents from "../comman/HappyParents";
 import Mentors from "../comman/Mentors";
 import ParentsLove from "./ParentsLove";
 import { awardData } from "../../assets/data/awardData";
+import { kits } from "../../assets/data/kits.json";
 
 function SubscriptionBox() {
   const [kitsData, setKitsData] = useState(null);
@@ -64,26 +65,17 @@ function SubscriptionBox() {
   };
 
   useEffect(() => {
-    const fetchKitsData = async () => {
+    const fetchKitsData = () => {
       try {
-        const response = await fetch(
-          `https://uptodd.onrender.com/kits/byMonth?months=${ageInMonths} months`
-        );
-
-        console.log(response);
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
+        const data = kits[`${ageInMonths} months`]; // Access the kits data by month
         console.log(data);
 
-        setKitsData(data);
+        setKitsData(data || []); // Set data or empty array if undefined
       } catch (error) {
-        throw new Error(error);
+        console.error("Error fetching kits data:", error);
       }
     };
+
     fetchKitsData();
   }, [ageInMonths]);
 
