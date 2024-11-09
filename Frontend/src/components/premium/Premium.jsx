@@ -21,21 +21,20 @@ export const Footer = () => (
   <section className="plain-footer">
     <h1>About Uptodd</h1>
     <p>
-      At UpTodd, we've carefully curated our approach by leveraging insights
-      from over 10,000+ research papers and tapping into the expertise of
-      professionals from prestigious institutions like MIT, Stanford, IITs, and
-      AIIMS. Our program integrates techniques from globally recognized
-      methodologies, including early stimulation from Glenn Doman, Montessori's
-      emphasis on independence and exploration, Howard Gardner's theory of
-      multiple intelligences from Harvard University, Waldorf's holistic
-      approach, the Reggio Emilia Approach's focus on creativity, indigenous
-      parenting and mindful parenting. This comprehensive approach empowers
-      babies worldwide to thrive and reach their full potential with
-      evidence-based guidance.
+      At UpTodd, our approach is built on insights from more than 10,000
+      research studies and shaped by experts from renowned institutions like
+      MIT, Stanford, IITs, and AIIMS. Our program combines globally recognized
+      methods, including Glenn Doman's early stimulation, Montessori's focus on
+      independence, Howard Gardner’s multiple intelligences from Harvard, the
+      Waldorf holistic approach, and the creativity-driven Reggio Emilia
+      approach, as well as principles of indigenous and mindful parenting. This
+      well-rounded, evidence-based framework supports babies around the world in
+      unlocking their full potential.
     </p>
     <h5>
-      "Join us on this captivating journey, where every child is truly special,
-      and every family's dreams matter"
+      "Embark on this inspiring journey with us, where each child shines
+      uniquely, and every family’s dreams hold meaning. Supporting children
+      globally to flourish and achieve their potential through proven guidance."
       <span>Your's UpTodd Family</span>
     </h5>
     <svg
@@ -224,7 +223,9 @@ function Premium() {
       <section>
         <div className="start-now-banner">
           <h3 className="h3-heading">
-          Imagine the endless possibilities for your child! Discover personalized development that enhances brain connections and lays a strong foundation for their future growth and success.
+            Imagine the endless possibilities for your child! Discover
+            personalized development that enhances brain connections and lays a
+            strong foundation for their future growth and success.
           </h3>
 
           {/* Popup Logic */}
