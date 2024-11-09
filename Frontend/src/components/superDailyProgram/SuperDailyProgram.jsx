@@ -87,10 +87,10 @@ function SuperDailyProgram() {
           <h1>
             Super Daily <span>Program</span>
           </h1>
-          <p>Screen Free Brain Development Activities & Much More</p>
+          <p>Activities for Brain Development Without Screens & So Much More</p>
           <ul>
-            <li>Give Brightest Possible Future</li>
-            <li>Unlock Hidden Genius Abilities of Your Baby</li>
+            <li>Illuminate Your Baby’s Future to Its Fullest Potential</li>
+            <li>Unleash the Hidden Genius Within Your Child</li>
           </ul>
           <h4>
             <FontAwesomeIcon icon={faShoePrints} /> For 0-5 years old baby
