@@ -60,8 +60,11 @@ export const Article = () => {
   const [showReplies,setShowReplies]=useState({});
   const [showUnapprovedMessage,setShowUnapprovedMessage]=useState(false);
   const [errorMessage,setErrorMessage]=useState("");
+  const [saveDetails,setSaveDetails]=useState(false);
   const navigate=useNavigate();
 
+
+  
 
 
   const renderContentItem = (item, index) => {
@@ -100,6 +103,18 @@ export const Article = () => {
   }, [title]);
 
 
+  useEffect(()=>{
+    const savedAuthor=localStorage.getItem("commentAuthor");
+    const savedEmail=localStorage.getItem("commentEmail");
+    if(savedAuthor && savedEmail){
+      setNewComment({author:savedAuthor, email:savedEmail,text:''});
+    }
+  },[])
+  
+
+const handleCheckboxChange=(e)=>{
+  setSaveDetails(e.target.checked);
+}
 
   useEffect(() => {
     // Fetch comments for the current article
@@ -125,12 +140,12 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
     e.preventDefault();
     setIsSubmitted(true);
     const validateEmail=(email)=>{
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
       return re.test(String(newComment.email).toLowerCase());
     }
 
     if(!newComment.author || !newComment.email || !newComment.text){
-      const errorMessage ="All fields are required"; //Error message
+      const errorMessage ="All fields are required"; 
       setErrorMessage(errorMessage);
       console.error(errorMessage);
       setIsSubmitted(false);
@@ -139,13 +154,20 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
     }
 
     if(!validateEmail(newComment.email)){
-      const errorMessage="Invalid email address"; //Error message
+      const errorMessage="Invalid email address"; 
       setErrorMessage(errorMessage);
       console.error(errorMessage);
       setIsSubmitted(false);
       return
     }
+
+    
     setErrorMessage('');
+
+    if(saveDetails){
+      localStorage.setItem("commentAuthor",newComment.author);
+      localStorage.setItem("commentEmail",newComment.email)
+    }
 
     axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
@@ -246,11 +268,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
     console.error("Error deleting reply: ",error);
   }
 }
-const toggleReplies=(commentId)=>{
-  setShowReplies(prev=>({
-    ...prev,[commentId]:!prev[commentId]
-  }))
-}
+
   return (
     <>
       <div id='article-container'>
@@ -447,7 +465,7 @@ const toggleReplies=(commentId)=>{
             </div>
           </div>
           <div id="cookies-consent">
-            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} />
+            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} checked={saveDetails} onChange={handleCheckboxChange} />
             <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
           </div>
           <button type="submit">Post Reply » </button>
@@ -486,7 +504,7 @@ const toggleReplies=(commentId)=>{
             </div>
           </div>
           <div id="cookies-consent">
-            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} />
+            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} checked={saveDetails} onChange={handleCheckboxChange}/>
             <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
           </div>
           <button type="submit">
