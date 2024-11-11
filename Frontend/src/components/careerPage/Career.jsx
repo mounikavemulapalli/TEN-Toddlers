@@ -32,37 +32,13 @@ function Career() {
       {/* Why Join Us? Section*/}
       <div className="career-joinUs">
         <h1>Why Join Us?</h1>
-        <p>
-          At UpTodd, we're not merely creating solutions; we're nurturing dreams
-          and building futures. We stand as the planet's best and only truly
-          personalized, one-stop platform dedicated to empowering parents with
-          unparalleled guidance for their children's development. Our heart
-          beats with the passion of a thousand dreams, each one dedicated to the
-          potential that every child holds within.
-        </p>
+        <p>At UpTodd, our mission goes beyond just delivering solutions; we are dedicated to fostering aspirations and shaping future possibilities. We serve as the world's leading and unique fully customized, all-in-one platform aimed at providing parents with exceptional support for their children's growth. Our passion resonates with the energy of countless dreams, all focused on unlocking the potential that every child possesses.</p>
 
-        <p>
-          Join us, and be a part of a visionary team that believes in love,
-          growth, and the transformative power of parenting done right. Your
-          work here isn't just a job; it's a legacy. A chance to touch lives,
-          mold futures, and contribute to a brighter world. We are pioneers,
-          charting unexplored territories to ensure every parent has the tools,
-          knowledge, and support to unlock their child's boundless potential.
-        </p>
+        <p>Become a member of a forward-thinking team that values love, development, and the life-changing impact of effective parenting. Your role here transcends mere employment; it’s an opportunity to create a lasting impact, influence lives, and play a part in cultivating a better future. We are trailblazers, navigating uncharted paths to guarantee that every parent is equipped with the resources, insights, and support necessary to unleash their child's limitless potential.</p>
 
-        <p>
-          This is more than a call to action. It's a call to heart, to purpose,
-          and to the profound impact we can make together. UpTodd is your
-          platform to inspire, to change, and to lead with love. Join us in
-          shaping a future where every child thrives, powered by the world's
-          most dedicated team of dreamers, doers, and believers.
-        </p>
+        <p>This is not just a request for action; it's a summons to your heart, your purpose, and the significant difference we can create collectively. UpTodd serves as your platform to motivate, transform, and guide with compassion. Come together with us to build a future where each child flourishes, supported by the most devoted team of visionaries, activists, and advocates.</p>
 
-        <p>
-          If your heart beats for making a real difference and you yearn to be
-          part of a cause that matters, UpTodd awaits. Let's create a legacy of
-          empowered parenting, one child at a time.
-        </p>
+        <p>If you are passionate about making a genuine impact and aspire to contribute to a meaningful cause, UpTodd is here for you. Together, let’s build a legacy of empowered parenting, impacting one child at a time.</p>
       </div>
 
       {/* About Section */}
@@ -83,7 +59,7 @@ function Career() {
       {/* Life Section*/}
       <div className="career-life">
         <h1>Life at UpTodd</h1>
-        <p>A workspace that promotes professional and personal growth.</p>
+        <p>An environment that encourages both career development and individual progress.</p>
         <div className="career-life-image">
           <img src={careerLife1} alt="Employees Photos" />
           <img src={careerLife2} alt="Employees Photos" />
@@ -96,15 +72,7 @@ function Career() {
       <div className="career-team">
         <div className="career-team-content">
           <h1>Join our team</h1>
-          <p>
-            At UpTodd, we strive to be the beacon of personalized parenting,
-            offering unmatched support and insights to parents worldwide. Our
-            mission is simple: to make every child's potential boundless and
-            every parent's journey joyful. Here, innovation meets empathy,
-            creating a future where parenting is not just easier but a truly
-            enriching experience. Join us, and be part of a movement where
-            nurturing the future stars becomes a shared passion.
-          </p>
+          <p>At UpTodd, we aim to be a guiding light in personalized parenting, providing exceptional support and insights to parents across the globe. Our goal is straightforward: to unlock every child's potential and to make every parent's journey a delightful one. In our space, innovation intersects with compassion, paving the way for a future where parenting is not only simpler but also an enriching adventure. Become a part of our movement, where collectively nurturing the future stars is a shared enthusiasm.</p>
         </div>
 
         <div className="career-team-cards">

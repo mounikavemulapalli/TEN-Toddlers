@@ -39,10 +39,11 @@ function HappyParents() {
       <div className="super-happy-parents">
         <h1>
           Happy Parents, Thriving Tots:
-          <span> Witnessing Their Child's Growth</span>
+          <span> Celebrating Their Child's Journey</span>
         </h1>
         <h4>
-          Smarter Investment: Personalized Learning vs. Traditional Plastic Toys
+          A Comprehensive Personalized Solution | Secure Your Child’s Future
+          with Smart Investments
         </h4>
         <div className="super-happy-parents-wrapper">
           <button

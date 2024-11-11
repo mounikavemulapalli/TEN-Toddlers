@@ -56,13 +56,13 @@ function ApplicationForm() {
       // Check if the response is successful
       if (response.ok) {
         setSuccessMessage(
-          result.message || "Application submitted successfully!"
+          result.message || "Your application has been submitted successfully!"
         );
         setErrorMessage("");
       } else {
         setErrorMessage(
           result.message ||
-            "Failed to submit the application. Please try again."
+            "The application submission was unsuccessful. Please attempt to submit it again."
         );
         setSuccessMessage("");
       }

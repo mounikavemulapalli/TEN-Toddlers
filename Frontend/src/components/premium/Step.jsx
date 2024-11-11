@@ -14,7 +14,7 @@ export default function Step() {
       id: 1,
       title: "01",
       content:
-        "Unlock your Child's Brilliance: Personalised programs for their unique mind!",
+        "Spark Your Little One's Curiosity: Fun and personalized activities just for them!",
       image:
         "https://www.uptodd.com/images/newWebsite/process/mobile-step-1.webp",
     },
@@ -22,7 +22,7 @@ export default function Step() {
       id: 2,
       title: "02",
       content:
-        "Tailored Learning: Customized curriculum to match your child's pace and interests.",
+        "Learning at Their Own Pace: Engaging activities that match their interests.",
       image:
         "https://www.uptodd.com/images/newWebsite/process/mobile-step-2.webp",
     },
@@ -30,7 +30,7 @@ export default function Step() {
       id: 3,
       title: "03",
       content:
-        "Expert Guidance: Experienced mentors to nurture your child's potential.",
+        "Supportive Guidance: Caring mentors to help your little one explore and grow.",
       image:
         "https://www.uptodd.com/images/newWebsite/process/mobile-step-3.webp",
     },
@@ -38,7 +38,7 @@ export default function Step() {
       id: 4,
       title: "04",
       content:
-        "Progress Tracking: Regular assessments to monitor your child's growth.",
+        "Celebrating Progress: Easy ways to see how your toddler is learning every day.",
       image:
         "https://www.uptodd.com/images/newWebsite/process/mobile-step-4.webp",
     },
@@ -46,7 +46,7 @@ export default function Step() {
       id: 5,
       title: "05",
       content:
-        "Parental Involvement: Tools to stay connected and involved in your child's learning.",
+        "Stay Connected: Simple tools to be part of your child’s learning adventure.",
       image:
         "https://www.uptodd.com/images/newWebsite/process/mobile-step-5.webp",
     },

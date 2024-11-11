@@ -11,25 +11,24 @@ function SuperFramework() {
         <h3>11 Days Challenge with 1 Month Access</h3>
         <div className="super-framework-info-list">
           <ul>
-            <li>4 Powerful Neural Musics</li>
-            <li>Screen FREE Activities for the Baby</li>
-            <li>Parenting Intro Training Sessions</li>
-            <li>1 Live Interactive Webinar</li>
-            <li>1 Parenting Accelerator Master Live Sessions</li>
-            <li>Super Parental Coaches Unlimited Access</li>
-            <li>RealTime Training Sessions & Activities Tracking</li>
-            <li>
-              1 Milestone Report & Tracking : Intro Research Backed Suggestions
-            </li>
+            <li>Four immersive neural music sessions.</li>
+            <li>Screen-free activities tailored for babies.</li>
+            <li>Introductory parenting training sessions.</li>
+            <li>One live interactive webinar.</li>
+            <li>One exclusive Parenting Accelerator Master Live Session.</li>
+            <li>Unlimited access to top-tier parenting coaches.</li>
+            <li>Real-time tracking of training sessions and activities.</li>
+            <li>One milestone report with research-backed suggestions.</li>
           </ul>
         </div>
-        <p>Immediate App access is granted after payment</p>
+        <p>Access to the app is provided instantly after payment.</p>
       </div>
       <div className="super-framework-join">
         <div className="super-framework-join1">
           <h4>
-            Join Now! Whether Your Baby is Just 1 Week Old or 3 Years old or
-            exactly 4.5 Years old : Sooner You Join, the Better for the Baby
+            Sign Up Today! Whether your baby is just 1 week, 3 years, or even
+            4.5 years old – the earlier you start, the better it is for their
+            development!
           </h4>
         </div>
         <div className="super-framework-join2">

@@ -21,21 +21,20 @@ export const Footer = () => (
   <section className="plain-footer">
     <h1>About Uptodd</h1>
     <p>
-      At UpTodd, we've carefully curated our approach by leveraging insights
-      from over 10,000+ research papers and tapping into the expertise of
-      professionals from prestigious institutions like MIT, Stanford, IITs, and
-      AIIMS. Our program integrates techniques from globally recognized
-      methodologies, including early stimulation from Glenn Doman, Montessori's
-      emphasis on independence and exploration, Howard Gardner's theory of
-      multiple intelligences from Harvard University, Waldorf's holistic
-      approach, the Reggio Emilia Approach's focus on creativity, indigenous
-      parenting and mindful parenting. This comprehensive approach empowers
-      babies worldwide to thrive and reach their full potential with
-      evidence-based guidance.
+      At UpTodd, our approach is built on insights from more than 10,000
+      research studies and shaped by experts from renowned institutions like
+      MIT, Stanford, IITs, and AIIMS. Our program combines globally recognized
+      methods, including Glenn Doman's early stimulation, Montessori's focus on
+      independence, Howard Gardner’s multiple intelligences from Harvard, the
+      Waldorf holistic approach, and the creativity-driven Reggio Emilia
+      approach, as well as principles of indigenous and mindful parenting. This
+      well-rounded, evidence-based framework supports babies around the world in
+      unlocking their full potential.
     </p>
     <h5>
-      "Join us on this captivating journey, where every child is truly special,
-      and every family's dreams matter"
+      "Embark on this inspiring journey with us, where each child shines
+      uniquely, and every family’s dreams hold meaning. Supporting children
+      globally to flourish and achieve their potential through proven guidance."
       <span>Your's UpTodd Family</span>
     </h5>
     <svg
@@ -137,11 +136,11 @@ function Premium() {
       {/* Why UpTodd? The UpTodd Difference */}
       {/* section-1 */}
       <section className="why-uptodd" id="why-uptodd">
-        <h1>Why UpTodd? The UpTodd Difference</h1>
+        <h1>Why UpTodd? The UpTodd Advantage</h1>
         <h5>
-          Trusted by 150k parents in 150+ countries, with over 107 International
-          and 213 National Awards. Endorsed by global experts with our research
-          featured on wikipedia and leading platforms.
+          Loved by over 150,000 parents in 150+ countries! Recognized with 100+
+          international and 200+ national awards, endorsed by experts, and
+          featured on leading platforms.
         </h5>
         <div className="why-uptodd-usps">
           <div className="usp-card">
@@ -152,14 +151,14 @@ function Premium() {
                 e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-1.png";
               }}
               loading="lazy"
-              alt="Personalised Program"
+              alt="Personalized Program"
             />
             <div>
-              <h3>Personalised Program</h3>
+              <h3>Personalized Just for Your Child</h3>
               <p>
-                Every child shines bright. We help them find their spark.
-                Science-backed, personalized development. We monitor progress
-                and adapt, just like family.
+                Every child is unique. We nurture their special talents with
+                science-backed, personalized growth plans that adapt as they
+                grow.
               </p>
             </div>
           </div>
@@ -174,11 +173,10 @@ function Premium() {
               alt="Brain Boost"
             />
             <div>
-              <h3>Brain Boost, Built Just for Them</h3>
+              <h3>Boost Their Brain with Play</h3>
               <p>
-                All-in-One Play &amp; Development Kit: Organic toys, engaging
-                activities, and everything in between - customized to fuel your
-                baby's unique development!
+                All-in-One Development Kit: Organic toys, fun activities, and
+                more—all tailored to support your child’s learning and growth.
               </p>
             </div>
           </div>
@@ -190,14 +188,13 @@ function Premium() {
                 e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-3.png";
               }}
               loading="lazy"
-              alt="Parenting One Stop Solution"
+              alt="Parenting Made Simple"
             />
             <div>
-              <h3>Parenting made easy: One App, all you need</h3>
+              <h3>Everything You Need in One App</h3>
               <p>
-                Unlock Expert Strategies: From holistic brain development to
-                nutrition—Your comprehensive solution for personalized child
-                growth plans.
+                From brain-boosting activities to nutrition tips—get expert
+                advice and tools for your toddler’s daily needs.
               </p>
             </div>
           </div>
@@ -209,13 +206,13 @@ function Premium() {
                 e.target.src = "/images/newWebsite/why-uptodd/why-uptodd-4.png";
               }}
               loading="lazy"
-              alt="Expert-Guided"
+              alt="Expert Guidance"
             />
             <div>
-              <h3>Science-Powered, Expert-Guided</h3>
+              <h3>Guided by Experts, Powered by Science</h3>
               <p>
-                10,000+ Studies, 100+ Top Experts: Unmatched Insights for Your
-                Child.
+                10,000+ studies and insights from top experts to support your
+                child’s growth and development.
               </p>
             </div>
           </div>
@@ -226,9 +223,9 @@ function Premium() {
       <section>
         <div className="start-now-banner">
           <h3 className="h3-heading">
-            Imagine what your child can achieve! Explore personalized
-            development that strengthens neural connections and builds a strong
-            foundation for their future.
+            Imagine the endless possibilities for your child! Discover
+            personalized development that enhances brain connections and lays a
+            strong foundation for their future growth and success.
           </h3>
 
           {/* Popup Logic */}

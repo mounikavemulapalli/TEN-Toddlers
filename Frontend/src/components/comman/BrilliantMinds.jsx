@@ -38,7 +38,7 @@ function BrilliantMinds() {
       {/* Brilliant Minds Section */}
       <div className="super-brilliant-minds">
         <h1>
-          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+          Brilliant Minds: <span>Honoring the World's Top Baby Achievers</span>
         </h1>
         <div className="super-brilliant-minds-wrapper">
           <button

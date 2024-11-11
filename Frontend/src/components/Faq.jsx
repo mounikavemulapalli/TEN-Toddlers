@@ -73,7 +73,7 @@ export const Faq = () => {
 
     return (
         <section id="faqs">
-            <h1>FAQs</h1>
+            <h1>Frequently Asked Questions</h1>
             <div id="faq-list">
                 <div id="faq-category-list">
                     {categories.map((category, index) => {

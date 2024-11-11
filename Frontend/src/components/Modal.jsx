@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import React from "react";
 import { modalCard } from "../assets/Lists/modal";
 import '../Styles/Modal.css'
@@ -9,8 +11,8 @@ const Modal = ({ show, onClose, children }) => {
     <div className="modal-overlay">
       <div className="modal-container">
         <div className="clone-btn-container">
-          <button className="close-btn" onClick={onClose}>
-            &times;
+          <button className="close-btn"  onClick={onClose}>
+          <FontAwesomeIcon icon={faTimes} size="2x" />
           </button>
         </div>
         <div className="modal-header">
@@ -25,9 +27,9 @@ const Modal = ({ show, onClose, children }) => {
           {modalCard.map((ele) => (
             <div className="modal-card">
               <div>
-                <img src={ele.img} alt="" />
+                <img src={ele.img} alt="" style={{width: "5rem", margin: "1rem"}} />
               </div>
-              <div>
+              <div className='center-components'>
                 <h2>{ele.title} </h2>
                 <p> {ele.description} </p>
               </div>

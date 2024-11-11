@@ -120,7 +120,7 @@ const handleCheckboxChange=(e)=>{
     // Fetch comments for the current article
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`);
+        const response = await axios.get(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`);
         console.log(response.data);
         setComments(Array.isArray(response.data) ? response.data:[]);
         
@@ -169,7 +169,7 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
       localStorage.setItem("commentEmail",newComment.email)
     }
 
-    axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
+    axios.post(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
       setComments([...comments,response.data]);
       setNewComment({author:'',email:'',text:''});
@@ -181,7 +181,7 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
 
 const handleDelete=async(commentId)=>{
   try {
-    await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}`);
+    await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${commentId}`);
     setComments(comments.filter(comment=>comment._id!==commentId));
   } catch (error) {
     console.error("Error deleting comment: ",error)
@@ -258,7 +258,7 @@ const handleReplyClick=(comment)=>{
 
 const handleDeleteReply=async(commentId,replyId)=>{
   try {
-    const response= await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
+    const response= await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
     if(response.status===200){
 
       setComments(prevComments=>prevComments.map(comment=>comment._id === commentId ? {...comment,replies:comment.replies.filter(reply=>reply._id !==replyId)}:comment));

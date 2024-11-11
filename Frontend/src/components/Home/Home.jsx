@@ -29,15 +29,19 @@ export default function Home() {
   };
 
   const handleBoardMenberPrev = () => {
-    if (awaredBabyRef.current) {
-      const cardWidth =
-        boardMembersRef.current.querySelector(".board-card").offsetWidth;
-      const gap = 30;
-      const scrollAmount = cardWidth + gap;
-      boardMembersRef.current.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
+    if (boardMembersRef.current) {
+      const boardCard = boardMembersRef.current.querySelector(".board-card");
+
+      if (boardCard) {
+        const cardWidth = boardCard.offsetWidth;
+        const gap = 30;
+        const scrollAmount = cardWidth + gap;
+
+        boardMembersRef.current.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -62,24 +66,24 @@ export default function Home() {
       <div className="home-section">
         <section className="Home-page">
           <div className="banner-text">
-            <h1>Give Your Baby the Best Possible Start!</h1>
-            <h3>Nurture your baby's developing Brain</h3>
-            <h5>Expert Guided Personalised Program - Just For Your Baby</h5>
+            <h1>Ensure the Best Start for Your Baby!</h1>
+            <h3>Support Your Baby's Growing Brain</h3>
+            <h5>Expert-Guided Personalized Program Tailored for Your Baby</h5>
             <ul>
               <li>
-                <FaCheckCircle /> <span> No Pressure - No testing </span>
+                <FaCheckCircle /> <span>No Pressure, No Testing</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>No screen Time</span>
+                <FaCheckCircle /> <span>No Screen Time</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>10 Minutes Daily</span>
+                <FaCheckCircle /> <span>Just 10 Minutes a Day</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>Loved by babies</span>
+                <FaCheckCircle /> <span>Loved by Babies</span>
               </li>
               <li>
-                <FaCheckCircle /> <span>One Stop Parenting Solution</span>
+                <FaCheckCircle /> <span>The Ultimate Parenting Solution</span>
               </li>
             </ul>
 
@@ -101,10 +105,7 @@ export default function Home() {
         <section className="Possibilities">
           <div className="Possibilities-heading">
             <h1>Explore the Possibilities with UpTodd</h1>
-            <p>
-              We have your back in this Journey - Top experts support you in
-              your baby’s brain development journey.
-            </p>
+            <p>We've Got Your Back – Top Experts Support You in Your Baby’s Brain Development Journey</p>
           </div>
           <div className="Possibilities-container">
             <div className="Possibilities-image">
@@ -127,28 +128,26 @@ export default function Home() {
         {/* Solution Section */}
         <section className="Solution-page">
           <div className="solution-heading">
-            <h1>One Stop Solution for your Baby's Brightest Possible Future</h1>
-            <p>Research-Backed Baby Brain Development Journey</p>
+            <h1>The Complete Solution for Your Baby's Brightest Future</h1>
+            <p>Research-Driven Baby Brain Development Program</p>
           </div>
           <div className="solution-container">
             <ul>
               <li>
                 <FaCheckCircle />
-                <span>Parenting made easy: One App, all you need</span>
+                <span>Parenting Made Easy: One App, Everything You Need</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span>Holistic Development & Baby Brain Reports</span>
+                <span>Holistic Growth & Baby Brain Reports</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span> 10,000+ Research Studies, 100+ Top Experts </span>
+                <span>10,000+ Research Studies, 100+ Leading Experts</span>
               </li>
               <li>
                 <FaCheckCircle />
-                <span>
-                  Expert Customised Mega Toy based developmental Kits{" "}
-                </span>
+                <span>Expert-Customized Mega Toy Developmental Kits{" "}</span>
               </li>
             </ul>
             <div className="solution-image">
@@ -161,35 +160,32 @@ export default function Home() {
         <section>
           <div className="genius-section">
             <div className="genius-header">
-              <h1>Inside Your Baby's Genius - Building Baby Brain</h1>
-              <h5>Every Baby is born with infinite Potential</h5>
+              <h1>Unlocking Your Baby's Genius – Nurturing Brain Development</h1>
+              <h5>Every Baby is Born with Unlimited Potential</h5>
             </div>
             <div className="genius-container">
               <ul className="genius-text">
                 <li>
                   <span>100 Bn</span>
-                  <span>Every baby is born with 100 Billion of Neurons</span>
+                  <span>Every Baby is Born with 100 Billion Neurons</span>
                 </li>
                 <li>
                   <span>1 Mn</span>
-                  <span>
-                    One million neural connections are formed every second in
-                    the early years
-                  </span>
+                  <span>One Million Neural Connections Form Every Second in the Early Years</span>
                 </li>
                 <li>
                   <span>90%</span>
-                  <span>Ninety percentage of our brain develops by age 5</span>
+                  <span>Ninety Percent of Our Brain Develops by Age 5</span>
                 </li>
                 <li>
                   <span>60%</span>
-                  <span>60% of baby's energy goes in brain development</span>
+                  <span>60% of a Baby's Energy is Dedicated to Brain Development</span>
                 </li>
               </ul>
               <div className="building">
                 <iframe
                   loading="lazy"
-                  srcDoc="<style>body,.full {width:100%;height:100%;margin:0;position:absolute;display:flex;justify-content:center;object-fit:cover;overflow: hidden;}</style> <a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a>"
+                  srcDoc="<style>body,.full {position:relative;margin:0;overflow:hidden;display:flex;justify-content:center;align-content:center}.full img {width:100%;}</style> <div class='full'><a href='https://www.youtube.com/embed/VNNsN9IJkws?autoplay=1;modestbranding=1&amp;autohide=1&amp;rel=0'> <img src='https://www.uptodd.com/images/newWebsite/inside-baby-genius.webp' /> <svg version='1.1' viewBox='0 0 68 48' width='68px' style='position: absolute; top:50%; left:50%; transform:translate(-50%,-50%)'><path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path><path d='M 45,24 27,14 27,34' fill='#fff'></path></svg> </a></div>"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -217,13 +213,12 @@ export default function Home() {
         <section className="developmental-pillars">
           <div className="development-head">
             <h1>
-              UpTodd Expert Personalised Program -
+              UpTodd Expert-Personalized Program
               <br />
               <span>Nurture your baby's genius potential</span>
             </h1>
             <h5>
-              Holistic Approach of baby brain development on complete
-              foundational Pillars - <span> Just 10 Minutes a day</span>
+              A Holistic Approach to Baby Brain Development Across All Foundational Pillars – <span>Just 10 Minutes a Day</span>
             </h5>
           </div>
           <div className="development-container">
@@ -232,9 +227,8 @@ export default function Home() {
                 <div
                   key={value.id}
                   onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${
-                    clickedCardId === value.id ? "active" : ""
-                  }`}
+                  className={`development-card ${clickedCardId === value.id ? "active" : ""
+                    }`}
                 >
                   <h3>{value.title}</h3>
                   <div className="four-pillars-list">
@@ -270,10 +264,7 @@ export default function Home() {
             <a href="/research">
               <Button text="Explore the Details" />
             </a>
-            <p>
-              Create Brain stimulating home envrionment for your baby, by best
-              on the Planet. We have your back in this journey
-            </p>
+            <p>Create a Brain-Stimulating Home Environment for Your Baby, with the Best Resources on the Planet. We’ve Got Your Back on This Journey.</p>
           </div>
         </section>
 
@@ -281,9 +272,7 @@ export default function Home() {
         <section className="start-now-banner">
           <div className="start-now-banner-grid">
             <h3>
-              Stop overspending on generic and hamful toys, filled with
-              Chlorinated Paraffin {`->`} Toxic for your baby brain growth
-            </h3>
+              Stop Wasting Money on Generic, Harmful Toys Filled with Chlorinated Paraffin {`->`} Toxic to Your Baby’s Brain Growth.</h3>
             {/* <Button text='Start Now' /> */}
             <PopupButton text="Start Now" />
           </div>

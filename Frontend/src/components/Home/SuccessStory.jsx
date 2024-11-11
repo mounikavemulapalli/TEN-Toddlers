@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./successstory.css";
 import {
   happyParentsReview,
@@ -16,8 +16,8 @@ import supervisedUser from "../../assets/images/successstory/luminary/supervised
 import sliderPrev from "../../assets/images/successstory/symbols/slider-prev.svg";
 import sliderNext from "../../assets/images/successstory/symbols/slider-next.svg";
 import IFramePopup from "./IFramePopup";
-import Button from '../premium/premiumButton';
-import awardeesJson from '../../assets/data/baby-champs.json';
+import Button from "../premium/premiumButton";
+import awardeesJson from "../../assets/data/baby-champs.json";
 
 const SuccessStory = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -177,33 +177,44 @@ const SuccessStory = () => {
         <h1>Real Stories: Watch Babies Thrive</h1>
       </div>
       <section className="dev-wonder">
-        <h1>Developmental Wonders: Early Learning Made Fun</h1>
+        <h1>Joyful Beginnings: Making Early Learning Fun and Engaging</h1>
         <div className="dev-cont">
           <div className="dev-card">
             <div className="bg-sq">
               2 Months & <br /> Crawling!
             </div>
-            <div className="front-img f-1" onClick={() => handleDivClick('f-1')}>
+            <div
+              className="front-img f-1"
+              onClick={() => handleDivClick("f-1")}
+            >
               <div className="play-circle"></div>
             </div>
-            {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
+            {isOpen && (
+              <IFramePopup
+                handleClose={handleClose}
+                selectedVideo={selectedVideo}
+              />
+            )}
           </div>
           <div className="right-circle"></div>
           <div className="down-circle"></div>
-
-
-
-
-
 
           <div className="dev-card">
             <div className="bg-sq">
               10 Months & <br /> Recognising Objects
             </div>
-            <div className="front-img f-2" onClick={() => handleDivClick('f-2')}>
+            <div
+              className="front-img f-2"
+              onClick={() => handleDivClick("f-2")}
+            >
               <div className="play-circle"></div>
             </div>
-            {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
+            {isOpen && (
+              <IFramePopup
+                handleClose={handleClose}
+                selectedVideo={selectedVideo}
+              />
+            )}
           </div>
           <div className="right-circle"></div>
           <div className="down-circle"></div>
@@ -212,10 +223,18 @@ const SuccessStory = () => {
             <div className="bg-sq">
               18 Months & <br /> Reading Pictures
             </div>
-            <div className="front-img f-3" onClick={() => handleDivClick('f-3')}>
+            <div
+              className="front-img f-3"
+              onClick={() => handleDivClick("f-3")}
+            >
               <div className="play-circle"></div>
             </div>
-            {isOpen && <IFramePopup handleClose={handleClose} selectedVideo={selectedVideo} />}
+            {isOpen && (
+              <IFramePopup
+                handleClose={handleClose}
+                selectedVideo={selectedVideo}
+              />
+            )}
           </div>
         </div>
       </section>
@@ -237,12 +256,12 @@ const SuccessStory = () => {
 
       <section className="happy-parents">
         <h1>
-          Happy Parents, Thriving Tots:
-          <span> Witnessing Their Child&#39;s Growth</span>
+          Happy Parents, Thriving Tots:{" "}
+          <span>Celebrating Their Child's Journey</span>
         </h1>
         <h5>
-          A One Stop Personalized Solution | Shift Your Baby Investments For
-          Strong Future
+          A Comprehensive Personalized Solution | Secure Your Child’s Future
+          with Smart Investments
         </h5>
         <div className="happy-parent-list-container">
           <div className="happy-parent-list" ref={happyParentRef}>
@@ -328,11 +347,11 @@ const SuccessStory = () => {
 
       <section className="carousel-container how-baby-thrives genius-babies">
         <h1>
-          The Proof is in the Play:<span>Watch How Babies Thrive!</span>
+          The Proof is in the Play: <span>Watch How Babies Flourish!</span>
         </h1>
         <h5>
-          Busy Parents, Smart Choice: Invest 10 Mins a day to a Brighter
-          Tomorrow
+          Busy Parents, Smart Decision: Dedicate 10 Minutes a Day for a Brighter
+          Future
         </h5>
 
         <div className="carousel-wrapper">
@@ -354,7 +373,9 @@ const SuccessStory = () => {
                 ></iframe>
                 <div className="quote-container-all">
                   <p className="quote-text-all">{card.title}</p>
-                  {card.description && <p className="quote-text-all">  {card.description}</p>}
+                  {card.description && (
+                    <p className="quote-text-all"> {card.description}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -366,14 +387,19 @@ const SuccessStory = () => {
         </div>
         <div className="see-all-cont child-see-all-cont">
           <a href="/baby-achievers">
-            <button className="see-all-btn child-all-btn" style={{ marginTop: "2rem" }}>See All</button>
+            <button
+              className="see-all-btn child-all-btn"
+              style={{ marginTop: "2rem", marginBottom: "1rem" }}
+            >
+              See All
+            </button>
           </a>
         </div>
       </section>
 
       <section className="awared-babies">
         <h1>
-          Brilliant Minds: <span> Celebrating Global Baby Champions</span>
+          Brilliant Minds: <span>Honoring the World's Top Baby Achievers</span>
         </h1>
         <div className="awared-babies-cont">
           <div className="baby-award-list" ref={awaredBabyRef}>
@@ -406,8 +432,10 @@ const SuccessStory = () => {
             onClick={handleAwaredBabyPrev}
           />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link to='/baby-champs' style={{ textDecoration: 'none' }}><Button text='See All' /></Link>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Link to="/baby-champs" style={{ textDecoration: "none" }}>
+            <Button text="See All" />
+          </Link>
         </div>
       </section>
 
@@ -480,12 +508,23 @@ export const Awardees = () => {
 
   return (
     <>
-      {videoModalSrc && <div div className="modal">
-        <span id="closeYtModalBtn" onClick={() => setVideoModalSrc(null)}>×</span>
-        <iframe allowFullScreen src={videoModalSrc} loading="lazy" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share;"></iframe>
-      </div>}
+      {videoModalSrc && (
+        <div div className="modal">
+          <span id="closeYtModalBtn" onClick={() => setVideoModalSrc(null)}>
+            ×
+          </span>
+          <iframe
+            allowFullScreen
+            src={videoModalSrc}
+            loading="lazy"
+            allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share;"
+          ></iframe>
+        </div>
+      )}
       <section id="baby-champs-container">
-        <h1>628+ Baby Awardees : <span>Celebrating Global Baby Champions</span></h1>
+        <h1>
+          628+ Baby Awardees : <span>Celebrating Global Baby Champions</span>
+        </h1>
 
         {awardeesJson.map((awardee) => {
           return (
@@ -493,38 +532,54 @@ export const Awardees = () => {
               <div className="baby-champs-card">
                 <div className="mobile-top-headings">
                   <h4>{awardee.h4}</h4>
-                  <h2>{awardee.h2}<span>{awardee.span}</span></h2>
+                  <h2>
+                    {awardee.h2}
+                    <span>{awardee.span}</span>
+                  </h2>
                   <p>{awardee.p}</p>
                 </div>
                 <div className="left-slider">
-                  {(awardee.sliderImg).map(src => (
+                  {awardee.sliderImg.map((src) => (
                     <img src={src} />
                   ))}
                 </div>
                 <div className="right-container">
                   <div>
                     <h4>{awardee.h4}</h4>
-                    <h2>{awardee.h2}<span>{awardee.span}</span></h2>
+                    <h2>
+                      {awardee.h2}
+                      <span>{awardee.span}</span>
+                    </h2>
                     <p>{awardee.p}</p>
                   </div>
                   <div id="thumbnail-container">
                     <div className="video-card">
-                      {awardee.img1 && <>
-                        <h3>Genius Baby</h3>
-                        <div onClick={() => setVideoModalSrc(awardee.babyVideo)}>
-                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                          <img src={awardee.img1} />
-                        </div>
-                      </>}
+                      {awardee.img1 && (
+                        <>
+                          <h3>Genius Baby</h3>
+                          <div
+                            onClick={() => setVideoModalSrc(awardee.babyVideo)}
+                          >
+                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                            <img src={awardee.img1} />
+                          </div>
+                        </>
+                      )}
                     </div>
                     <div className="video-card">
-                      {awardee.img2 && <>
-                        <h3>Super Parent</h3>
-                        <div onClick={() => { setVideoModalSrc(awardee.parentVideo); }}>
-                          <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
-                          <img src={awardee.img2} />
-                        </div>
-                      </>}
+                      {awardee.img2 && (
+                        <>
+                          <h3>Super Parent</h3>
+                          <div
+                            onClick={() => {
+                              setVideoModalSrc(awardee.parentVideo);
+                            }}
+                          >
+                            <img src="https://www.uptodd.com/images/newWebsite/play_circle.png" />
+                            <img src={awardee.img2} />
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -538,13 +593,15 @@ export const Awardees = () => {
                     <div>Super Parent Video</div>
                   </div>
                 </div>
-              </div><br /><br />
+              </div>
+              <br />
+              <br />
             </>
-          )
+          );
         })}
       </section>
     </>
-  )
-}
+  );
+};
 
 export default SuccessStory;

@@ -34,6 +34,18 @@
   margin-bottom: 2rem;
 }
 
+.super-peek h1 span {
+  font-weight: 300;
+}
+
+.super-peek h5 {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
 .super-peek-wrapper {
   display: flex;
   align-items: center;
@@ -105,6 +117,12 @@
 
   .super-peek h1 {
     font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .super-peek h5 {
+    font-size: 18px;
   }
 }
 
@@ -123,6 +141,14 @@
 
   .super-peek h1 {
     font-size: 1.25rem;
+    padding: 0 1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .super-peek h5 {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 
   .super-peek-cards {

@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import countryList from "../../assets/Lists/countryCode.json";
 import "./Popup.css";
 import Button from "./Button";
@@ -50,9 +52,11 @@ export default function Popup({ closePopup }) {
       <div className='popup-overlay'></div>
       <div className='lead-form-container'>
         <div className='lead-form-head'>
-          <button onClick={closePopup} className='close-btn'>
-            ✕
+        <div className="clone-btn-container">
+          <button className="close-btn" style={{color: "white"}} onClick={closePopup}>
+          <FontAwesomeIcon icon={faTimes} size="2x" />
           </button>
+        </div>
           <h2>Book Demo Session (0-4.5 yrs)</h2>
           <p>Only 4 Spots Left!</p>
         </div>
