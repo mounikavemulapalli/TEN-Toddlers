@@ -169,7 +169,7 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
       localStorage.setItem("commentEmail",newComment.email)
     }
 
-    axios.post(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`,newComment)
+    axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
       setComments([...comments,response.data]);
       setNewComment({author:'',email:'',text:''});
@@ -214,24 +214,24 @@ const handleReplySubmit=async(e,commentId)=>{
 //if approved, proceed with submitting the reply
   try {
 
-    //Only write this logic if you want to display reply text
-    //  const response=await axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}/reply`,{
-    //   author:replyAuthor,
-    //   email:replyEmail,
-    //   text:replyText,
-    //  });
-    //  console.log("Reply added",response.data);
+    // Only write this logic if you want to display reply text
+     const response=await axios.post(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${commentId}/reply`,{
+      author:replyAuthor,
+      email:replyEmail,
+      text:replyText,
+     });
+     console.log("Reply added",response.data);
      
 
-    //  //Find the comment and add the new reply
-    //  const updatedComments=comments.map(comment=>{
-    //   if(comment._id === commentId){
-    //     return {...comment, replies:[...comment.replies,response.data]};
+     //Find the comment and add the new reply
+     const updatedComments=comments.map(comment=>{
+      if(comment._id === commentId){
+        return {...comment, replies:[...comment.replies,response.data]};
 
-    //   }
-    //   return comment;
-    //  })
-    //  setComments(updatedComments);
+      }
+      return comment;
+     })
+     setComments(updatedComments);
      setReplyingTo(null);
      
      setReplyText('');
@@ -239,7 +239,7 @@ const handleReplySubmit=async(e,commentId)=>{
      setReplyEmail('');
      setIsSubmitted(false);
      setShowUnapprovedMessage(true);
-     navigate("/unapproved");
+    //  navigate("/unapproved");
      
   } catch (error) {
     console.error("Error submitting reply:",error);
@@ -258,7 +258,9 @@ const handleReplyClick=(comment)=>{
 
 const handleDeleteReply=async(commentId,replyId)=>{
   try {
-    const response= await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
+    const response= await axios.delete(`http://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
+    // const response= await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
+    
     if(response.status===200){
 
       setComments(prevComments=>prevComments.map(comment=>comment._id === commentId ? {...comment,replies:comment.replies.filter(reply=>reply._id !==replyId)}:comment));
@@ -365,20 +367,20 @@ const handleDeleteReply=async(commentId,replyId)=>{
           <p className="comment-text">{latestComment.text}</p>
           {/* <a href="#reply" className="reply-link" onClick={()=>handleReplyClick(comment)}>Reply</a> */}
              {/* Unapproved Reply message  */}
-             {showUnapprovedMessage && !latestComment.approved && (
+             {/* {showUnapprovedMessage && !latestComment.approved && (
               <div className="unapproved-message">
                 <p>Sorry, replies to unapproved comments are not allowed</p>
                 <Link to="/blog">« Back</Link>
 
               </div>
-             )}
+             )} */}
 
              {/* it is used to display replies  */}
 
-          {/* {comment.replies && comment.replies.length>0 && (
+          {latestComment.replies && latestComment.replies.length>0 && (
             <div className="replies">
               {
-                comment.replies.map((reply,index)=>(
+              latestComment.replies.map((reply,index)=>(
                   <div key={index} className="reply">
                     <strong>{reply.author}</strong>
                     <span className="reply-date">  
@@ -387,7 +389,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
                     </span>
                        <p>{reply.text}</p>
 
-<button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDeleteReply(comment._id,reply._id)}>DelReply</button>
+<button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDeleteReply(latestComment._id,reply._id)}>DelReply</button>
                   </div>
                 ))
               }
@@ -395,7 +397,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
 
 
             </div>
-          )} */}
+          )}
 
           {/* Reply link and form  */}
           <a href="#reply" className="reply-link" onClick={()=>setReplyingTo(latestComment._id)}>Reply</a>
