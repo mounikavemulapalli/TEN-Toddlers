@@ -376,18 +376,26 @@ const handleDeleteReply=async(commentId,replyId)=>{
              )} */}
 
              {/* it is used to display replies  */}
-
+           
           {latestComment.replies && latestComment.replies.length>0 && (
-            <div className="replies">
+
+            <div className="comment">
               {
               latestComment.replies.map((reply,index)=>(
-                  <div key={index} className="reply">
+                  <div key={index} className="comment-header">
+          <img src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=170667a&w=0&k=20&c=EpwfsVjTx8cqJJZzBMp__1qJ_7qSfsMoWRGnVGuS8Ew=" alt="Avatar" className="avatar" />
+
+ 
+                    <div className="comment-name">
+
                     <strong>{reply.author}</strong>
-                    <span className="reply-date">  
+                    <span className="comment-date">  
                       {new Date(reply.date).toLocaleDateString("en-US",{month:"long",day:"numeric"})} at         
                       {new Date(reply.date).toLocaleTimeString("en-US",{hour:"numeric",minute:"numeric",hour12:true})}
                     </span>
-                       <p>{reply.text}</p>
+<p className="comment-text lowercase ">{reply.text}</p>
+
+                    </div>
 
 <button style={{color:"#ff007f",margin:"1rem",padding:"0.3rem",fontSize:"1rem",display:"flex",flexDirection:"row-reverse"}} onClick={()=>handleDeleteReply(latestComment._id,reply._id)}>DelReply</button>
                   </div>
