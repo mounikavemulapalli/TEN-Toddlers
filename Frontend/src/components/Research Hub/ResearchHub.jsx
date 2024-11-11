@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import "./ResearchHub.css";
-import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
 import cards from "../../assets/Lists/expertTalksCards.json";
 import Button from "../Home/HomeButton";
+import Mentors from "../comman/Mentors.jsx";
+import GlobalExperts from "../comman/GlobalExperts.jsx";
+import SuperScience from "../comman/SuperScience.jsx";
 
 export default function ResearchHub() {
   const [isHovered, setIsHovered] = useState(false);
@@ -173,127 +175,7 @@ export default function ResearchHub() {
         </div>
       </section>
 
-      <section className="research-backed">
-        <h1>
-          Science-Backed Approach: <span>Rooted in Research</span>
-        </h1>
-        <h5>
-          Developed using research from leading Global institutions &amp;
-          Organisations
-        </h5>
-        <div className="insti-research">
-          <div className="insti-head">
-            <h4>Research analysed by institutions from</h4>
-          </div>
-          <img
-            src="https://www.uptodd.com/images/newWebsite/research-insti.webp"
-            loading="lazy"
-            alt="IIT,IIM,MIT,Harvard Research Institutes"
-          />
-          <p>and 35+ other top global institutions</p>
-        </div>
-        <div className="insti-research-mobile">
-          <div className="insti-research-mobile-head">
-            <h4>Research analysed by institutions from</h4>
-          </div>
-          <img
-            src="https://www.uptodd.com/images/newWebsite/research-insti-mobile.webp"
-            loading="lazy"
-            alt="IIT,IIM,MIT,Harvard Research Institutes"
-          />
-        </div>
-
-        <div className="theory-research">
-          <div className="theory-head">
-            <h4>Enriched with top research by</h4>
-          </div>
-          <img
-            src="https://www.uptodd.com/images/newWebsite/researchers/all_researchers.webp"
-            loading="lazy"
-            alt="Research Backed Personalised Program for Baby Development"
-          />
-          <p>and 50+ other top global experts</p>
-        </div>
-        <div className="theory-research-mobile">
-          <div className="theory-research-mobile-head">
-            <h4>Enriched with top research by</h4>
-          </div>
-          <div className="theory-research-mobile-list">
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/glenn-doman.webp"
-                loading="lazy"
-                alt="glenn-doman baby development expert"
-              />
-              <h3>Glenn Doman</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/maria-montessori.webp"
-                loading="lazy"
-                alt="maria-montessori baby development expert"
-              />
-              <h3>Maria Montessori</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/rudolf-steiner.webp"
-                loading="lazy"
-                alt="rudolf-steiner baby development expert"
-              />
-              <h3>Rudolf Steiner</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/bf-skinner.webp"
-                loading="lazy"
-                alt="bf-skinner baby development expert"
-              />
-              <h3>BF Skinner</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/loris-malaguzzi.webp"
-                loading="lazy"
-                alt="loris-malaguzzi baby development expert"
-              />
-              <h3>Loris Malaguzzi</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/howard-gardner.webp"
-                loading="lazy"
-                alt="howard-gardner baby development expert"
-              />
-              <h3>Howard Gardner</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/diana-baumrind.webp"
-                loading="lazy"
-                alt="diana-baumrind baby development expert"
-              />
-              <h3>Diana Baumrind</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/swami-vivekanand.webp"
-                loading="lazy"
-                alt="swami-vivekanand"
-              />
-              <h3>Swami Vivekanand</h3>
-            </div>
-            <div>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/researchers/jean-piaget.webp"
-                loading="lazy"
-                alt="jean-piaget baby development expert"
-              />
-              <h3>Jean Piaget</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SuperScience />
 
       <section className="super-daily-why-uptodd">
         <h1>UpTodd's Philosphies</h1>
@@ -321,41 +203,7 @@ export default function ResearchHub() {
         </div>
       </section>
 
-      <section className="doctor-review" id="doctorreview">
-        <h1>
-          Vetted &amp; Backed by 100+ Doctors, Educationists, Parenting Experts
-          &amp; Professors
-        </h1>
-        <div
-          className="doctor-review-list"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div
-            className={`doctor-review-container ${isHovered ? "paused" : ""}`}
-          >
-            {doctorReviews.map((value) => (
-              <div className="doctor-review-card" key={value.id}>
-                <div className="doctor-review-image-part">
-                  <img src={value.img} loading="lazy" alt="doctor-review" />
-                  <div>
-                    <h3>{value.name}</h3>
-                    <h6>{value.position} </h6>
-                  </div>
-                </div>
-                <div className="doctor-review-quote">
-                  <img
-                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                    loading="lazy"
-                    alt="quote"
-                  />
-                  <p>{value.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GlobalExperts />
 
       <section className="expert-talks">
         <div className="carousel-container">
@@ -431,82 +279,7 @@ export default function ResearchHub() {
         </div>
       </section>
 
-      <section className="our-mentors" id="our-mentors">
-        <h1>
-          Meet our Mentors &amp; Curators |
-          <span>100+ Curators R&amp;D Team</span>
-        </h1>
-        <div className="mentors-list">
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/krishna_vedula.webp"
-              loading="lazy"
-              alt="Uptodd mentor Prof.Krishna Vedula MIT"
-            />
-            <h3>
-              Krishna Vedula
-              <br />
-              <span>Professor, MIT, United States</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/jaideep_sharma.webp"
-              loading="lazy"
-              alt="Uptodd mentor Dr.Jaideep Sharma AIIMS"
-            />
-            <h3>
-              Dr. Jaideep Sharma
-              <br />
-              <span>MBBS &amp; MD, AIIMS, New Delhi</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/sudhanshu.webp"
-              loading="lazy"
-              alt="Uptodd mentor Dr.Sudhanshu Singh"
-            />
-            <h3>
-              Dr. Sudhanshu
-              <br />
-              <span>MD, DSMA CMC Vellore</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/manoj_mondal.webp"
-              loading="lazy"
-              alt="Uptodd mentor Prof.Manoj Mondal IIT KGP"
-            />
-            <h3>
-              Manoj Mondal
-              <br />
-              <span>Professor, IIT Kharagpur</span>
-            </h3>
-          </div>
-          <div className="mentor-card">
-            <img
-              src="https://www.uptodd.com/images/newWebsite/professors/PK_Mishra.webp"
-              loading="lazy"
-              alt="Uptodd mentor PK Mishra IIT BHU"
-            />
-            <h3>
-              Prof. PK Mishra
-              <br />
-              <span>IIT BHU</span>
-            </h3>
-          </div>
-        </div>
-        <h1>UpTodd™ has been Featured In</h1>
-        <div className="featured-in">
-          <img
-            src="https://www.uptodd.com/images/newWebsite/featured-in.webp"
-            loading="lazy"
-            alt="Media Houses Featuring UpTodd"
-          />
-        </div>
-      </section>
+      <Mentors />
     </>
   );
 }
