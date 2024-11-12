@@ -22,7 +22,6 @@ import expertPersonalised from "../../assets/images/home/expert-personalised.web
 
 export default function Home() {
   const boardMembersRef = useRef(null);
-  const awaredBabyRef = useRef(null);
 
   const handleCardClick = (id) => {
     setClickedCardId(id);
@@ -105,7 +104,10 @@ export default function Home() {
         <section className="Possibilities">
           <div className="Possibilities-heading">
             <h1>Explore the Possibilities with UpTodd</h1>
-            <p>We've Got Your Back – Top Experts Support You in Your Baby’s Brain Development Journey</p>
+            <p>
+              We've Got Your Back – Top Experts Support You in Your Baby’s Brain
+              Development Journey
+            </p>
           </div>
           <div className="Possibilities-container">
             <div className="Possibilities-image">
@@ -147,7 +149,7 @@ export default function Home() {
               </li>
               <li>
                 <FaCheckCircle />
-                <span>Expert-Customized Mega Toy Developmental Kits{" "}</span>
+                <span>Expert-Customized Mega Toy Developmental Kits </span>
               </li>
             </ul>
             <div className="solution-image">
@@ -160,7 +162,9 @@ export default function Home() {
         <section>
           <div className="genius-section">
             <div className="genius-header">
-              <h1>Unlocking Your Baby's Genius – Nurturing Brain Development</h1>
+              <h1>
+                Unlocking Your Baby's Genius – Nurturing Brain Development
+              </h1>
               <h5>Every Baby is Born with Unlimited Potential</h5>
             </div>
             <div className="genius-container">
@@ -171,7 +175,10 @@ export default function Home() {
                 </li>
                 <li>
                   <span>1 Mn</span>
-                  <span>One Million Neural Connections Form Every Second in the Early Years</span>
+                  <span>
+                    One Million Neural Connections Form Every Second in the
+                    Early Years
+                  </span>
                 </li>
                 <li>
                   <span>90%</span>
@@ -179,7 +186,9 @@ export default function Home() {
                 </li>
                 <li>
                   <span>60%</span>
-                  <span>60% of a Baby's Energy is Dedicated to Brain Development</span>
+                  <span>
+                    60% of a Baby's Energy is Dedicated to Brain Development
+                  </span>
                 </li>
               </ul>
               <div className="building">
@@ -218,7 +227,8 @@ export default function Home() {
               <span>Nurture your baby's genius potential</span>
             </h1>
             <h5>
-              A Holistic Approach to Baby Brain Development Across All Foundational Pillars – <span>Just 10 Minutes a Day</span>
+              A Holistic Approach to Baby Brain Development Across All
+              Foundational Pillars – <span>Just 10 Minutes a Day</span>
             </h5>
           </div>
           <div className="development-container">
@@ -227,8 +237,9 @@ export default function Home() {
                 <div
                   key={value.id}
                   onClick={() => handleCardClick(value.id)}
-                  className={`development-card ${clickedCardId === value.id ? "active" : ""
-                    }`}
+                  className={`development-card ${
+                    clickedCardId === value.id ? "active" : ""
+                  }`}
                 >
                   <h3>{value.title}</h3>
                   <div className="four-pillars-list">
@@ -264,7 +275,11 @@ export default function Home() {
             <a href="/research">
               <Button text="Explore the Details" />
             </a>
-            <p>Create a Brain-Stimulating Home Environment for Your Baby, with the Best Resources on the Planet. We’ve Got Your Back on This Journey.</p>
+            <p>
+              Create a Brain-Stimulating Home Environment for Your Baby, with
+              the Best Resources on the Planet. We’ve Got Your Back on This
+              Journey.
+            </p>
           </div>
         </section>
 
@@ -272,7 +287,9 @@ export default function Home() {
         <section className="start-now-banner">
           <div className="start-now-banner-grid">
             <h3>
-              Stop Wasting Money on Generic, Harmful Toys Filled with Chlorinated Paraffin {`->`} Toxic to Your Baby’s Brain Growth.</h3>
+              Stop Wasting Money on Generic, Harmful Toys Filled with
+              Chlorinated Paraffin {`->`} Toxic to Your Baby’s Brain Growth.
+            </h3>
             {/* <Button text='Start Now' /> */}
             <PopupButton text="Start Now" />
           </div>
