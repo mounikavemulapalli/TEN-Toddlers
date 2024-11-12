@@ -8,7 +8,6 @@ function Mentors() {
   useEffect(() => {
     // Check if screen width is 768px or less (mobile view)
     const isMobile = window.matchMedia("(max-width: 768px)");
-
     let scrollInterval;
 
     // Apply auto-scroll only if in mobile view
@@ -16,16 +15,18 @@ function Mentors() {
       if (isMobile.matches) {
         scrollInterval = setInterval(() => {
           if (mentorsListRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = mentorsListRef.current;
+
+            // Scroll the container horizontally
             mentorsListRef.current.scrollLeft += 1;
-            if (
-              mentorsListRef.current.scrollLeft +
-                mentorsListRef.current.clientWidth >=
-              mentorsListRef.current.scrollWidth
-            ) {
+
+            // Check if the scroll has reached the end
+            if (scrollLeft + clientWidth >= scrollWidth - 1) {
+              // Reset to the beginning
               mentorsListRef.current.scrollLeft = 0;
             }
           }
-        }, 35);
+        }, 20);
       }
     };
 
