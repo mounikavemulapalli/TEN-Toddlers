@@ -331,7 +331,7 @@
   justify-content: end;
 }
 .development-image img {
-  width: 100%;
+  width: 90%;
 }
 .four-pillars-list {
   margin: 15px 0;
@@ -957,6 +957,10 @@
 
   .development-head h5 {
     font-size: 0.8rem;
+  }
+
+  .development-image img {
+    width: 100%;
   }
 
   .development-card h3 {
