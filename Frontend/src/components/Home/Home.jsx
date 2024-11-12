@@ -22,7 +22,6 @@ import expertPersonalised from "../../assets/images/home/expert-personalised.web
 
 export default function Home() {
   const boardMembersRef = useRef(null);
-  const awaredBabyRef = useRef(null);
 
   const handleCardClick = (id) => {
     setClickedCardId(id);
