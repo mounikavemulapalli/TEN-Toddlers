@@ -3,6 +3,7 @@ import "./ResearchHub.css";
 import cards from "../../assets/Lists/expertTalksCards.json";
 import Button from "../Home/HomeButton";
 import Mentors from "../comman/Mentors.jsx";
+import ExpertTalks from "./ExpertTalks.jsx";
 import GlobalExperts from "../comman/GlobalExperts.jsx";
 import SuperScience from "../comman/SuperScience.jsx";
 
@@ -205,80 +206,7 @@ export default function ResearchHub() {
 
       <GlobalExperts />
 
-      <section className="expert-talks">
-        <div className="carousel-container">
-          <div className="carousel-header">
-            <h1>Expert Talks</h1>
-          </div>
-
-          <div className="carousel-wrapper">
-            <button
-              className="carousel-button prev"
-              style={{ zIndex: "100" }}
-              onClick={handlePrev}
-            >
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-prev.svg"
-                alt="Previous"
-              />
-            </button>
-
-            <div
-              className="carousel"
-              style={{ width: "81%" }}
-              ref={carouselRef}
-            >
-              {cards.map((card, index) => (
-                <div
-                  className="carousel-card"
-                  style={{ height: "31.25rem" }}
-                  key={index}
-                >
-                  <iframe
-                    src={card.videoUrl}
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                  <img
-                    height="190"
-                    style={{ paddingInline: "inherit" }}
-                    src={card.img}
-                    onClick={(e) => {
-                      e.target.style.display = "none";
-                    }}
-                  ></img>
-                  <img
-                    style={{
-                      marginBlock: ".2rem",
-                      marginInline: "0",
-                      paddingLeft: ".4rem",
-                      height: "3%",
-                      width: "auto",
-                      position: "relative",
-                      float: "left",
-                    }}
-                    src="https://www.uptodd.com/images/newWebsite/quote.svg"
-                  />
-                  <p style={{ marginTop: ".7rem" }}>
-                    {card.text}
-                    <br />
-                    <br />
-                    {card.quoteAuthor}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <button className="carousel-button next" onClick={handleNext}>
-              <img
-                src="https://www.uptodd.com/images/newWebsite/slider-next.svg"
-                alt="Next"
-              />
-            </button>
-          </div>
-        </div>
-      </section>
-
+      <ExpertTalks/>
       <Mentors />
     </>
   );
