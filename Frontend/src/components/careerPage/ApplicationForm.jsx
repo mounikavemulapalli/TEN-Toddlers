@@ -37,7 +37,7 @@ function ApplicationForm() {
 
     try {
       console.log("Sending request to server...");
-      const response = await fetch("https://uptodd.onrender.com/upload", {
+      const response = await fetch("https://ten-uptodd.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
