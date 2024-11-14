@@ -9,8 +9,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,10 +63,11 @@
 
 
 .lead-form {
-  padding: 35px;
+  padding: 2rem;
+  padding-bottom: 0;
   display: flex;
+  margin-top: 0;
   flex-direction: column;
-  gap: 10px;
 }
 
 .lead-form input {
@@ -90,8 +92,9 @@ form > div {
   margin-bottom: 20px;
 }
 
-div > h4 {
+div > h5 {
   margin-bottom: 10px;
+  color: rgba(255, 63, 78, 1);
 }
 
 .lead-form button {
@@ -120,6 +123,7 @@ div > h4 {
 .form-baby-age-group label {
   flex: 1;
   padding: 10px;
+  font-size: 1rem;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -156,7 +160,7 @@ div > h4 {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 768px) {
