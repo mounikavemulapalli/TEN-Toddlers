@@ -61,6 +61,9 @@ export const Article = () => {
   const [showUnapprovedMessage,setShowUnapprovedMessage]=useState(false);
   const [errorMessage,setErrorMessage]=useState("");
   const [saveDetails,setSaveDetails]=useState(false);
+
+  const [replySaveDetails,setReplySaveDetails]=useState(false);
+
   const navigate=useNavigate();
 
 
@@ -110,10 +113,22 @@ export const Article = () => {
       setNewComment({author:savedAuthor, email:savedEmail,text:''});
     }
   },[])
+
+  useEffect(()=>{ 
+    const savedReplyAuthor=localStorage.getItem("replyAuthor");
+    const savedReplyEmail=localStorage.getItem("replyEmail");
+    if(savedReplyAuthor && savedReplyEmail){
+      setReplyAuthor(savedReplyAuthor);
+      setReplyEmail(savedReplyEmail)
+    }
+  },[])
   
 
 const handleCheckboxChange=(e)=>{
   setSaveDetails(e.target.checked);
+}
+const handleReplyCheckboxChange=(e)=>{
+  setReplySaveDetails(e.target.checked);
 }
 
   useEffect(() => {
@@ -168,6 +183,9 @@ const latestComment=comments[comments.length - 1] //Get the latest comment if av
       localStorage.setItem("commentAuthor",newComment.author);
       localStorage.setItem("commentEmail",newComment.email)
     }
+    if(saveDetails){
+      setNewComment({author:newComment.author,email:newComment.email,text:''})
+    }
 
     axios.post(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}`,newComment)
     .then(response=>{
@@ -210,6 +228,16 @@ const handleReplySubmit=async(e,commentId)=>{
     return
   }
   setErrorMessage('');
+
+  //Save details in localStorage if the user checked the box
+  if(replySaveDetails){
+    localStorage.setItem("replyAuthor",replyAuthor);
+    localStorage.setItem("replyEmail",replyEmail)
+  }
+  if(replySaveDetails){
+    setReplyAuthor(replyAuthor);
+    setReplyEmail(replyEmail)
+  }
 
 //if approved, proceed with submitting the reply
   try {
@@ -256,20 +284,35 @@ const handleReplyClick=(comment)=>{
   }
 };
 
-const handleDeleteReply=async(commentId,replyId)=>{
-  try {
-    const response= await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
-    // const response= await axios.delete(`http://localhost:3000/api/comments/${encodeURIComponent(title)}/${encodeURIComponent(commentId)}/reply/${replyId}`);
-    
-    if(response.status===200){
 
-      setComments(prevComments=>prevComments.map(comment=>comment._id === commentId ? {...comment,replies:comment.replies.filter(reply=>reply._id !==replyId)}:comment));
+
+
+const handleDeleteReply = async (commentId, replyId) => {
+  // Optimistically update the UI by removing the reply
+  const updatedComments = comments.map((comment) => {
+    if (comment._id === commentId) {
+      return {
+        ...comment,
+        replies: comment.replies.filter((reply) => reply._id !== replyId),
+      };
     }
+    return comment;
+  });
+  setComments(updatedComments);  // Update the state immediately
 
+  try {
+    const response = await axios.delete(`https://uptodd.onrender.com/api/comments/${encodeURIComponent(title)}/${commentId}/reply/${replyId}`);
+    if (response.status !== 200) {
+      // If deletion fails, revert the optimistic update
+      setComments(comments);  // Revert back to the original state
+      alert('Failed to delete reply');
+    }
   } catch (error) {
-    console.error("Error deleting reply: ",error);
+    console.error("Error deleting reply:", error);
+    setComments(comments);  // Revert back to the original state
   }
-}
+};
+
 
   return (
     <>
@@ -365,15 +408,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
           </div>
            
           <p className="comment-text">{latestComment.text}</p>
-          {/* <a href="#reply" className="reply-link" onClick={()=>handleReplyClick(comment)}>Reply</a> */}
-             {/* Unapproved Reply message  */}
-             {/* {showUnapprovedMessage && !latestComment.approved && (
-              <div className="unapproved-message">
-                <p>Sorry, replies to unapproved comments are not allowed</p>
-                <Link to="/blog">« Back</Link>
-
-              </div>
-             )} */}
+         
 
              {/* it is used to display replies  */}
            
@@ -422,42 +457,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
               <p>Your email address will not be published.Required fields are marked *</p>
 
               
-              {/* <textarea placeholder="Type here.."
-               value={replyText}
-               onChange={()=>setReplyText(e.target.value)}
-               required
               
-              >
-
-              </textarea>
-              <div className="reply-form-fields">
-      <input 
-        type="text" 
-        placeholder="Name*" 
-        value={replyAuthor} 
-        onChange={(e) => setReplyAuthor(e.target.value)} 
-        required 
-      />
-      <input 
-        type="email" 
-        placeholder="Email*" 
-        value={replyEmail} 
-        onChange={(e) => setReplyEmail(e.target.value)} 
-        required 
-      />
-      
-                     <input id="url" placeholder='Website' type="text" />
-
-      
-    </div>
-    
-    <div className="reply-form-footer">
-      <label>
-        <input type="checkbox" /> Save my name, email, and website in this browser for the next time I comment.
-      </label>
-      <button type="submit" className="submit-reply">POST COMMENT »</button>
-    </div> */}
-
 
 <fieldset>
             <textarea placeholder="Type here..." name="" id="" rows='8' style={{ width: '100%' }} value={replyText} onChange={(e)=>setReplyText(e.target.value)} required></textarea>
@@ -475,7 +475,7 @@ const handleDeleteReply=async(commentId,replyId)=>{
             </div>
           </div>
           <div id="cookies-consent">
-            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} checked={saveDetails} onChange={handleCheckboxChange} />
+            <input type="checkbox" value='yes' id="cookies-consent-checkbox" style={{ marginRight: '.6rem' }} checked={replySaveDetails} onChange={handleReplyCheckboxChange} />
             <label htmlFor="cookies-consent-checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
           </div>
           <button type="submit">Post Reply » </button>
