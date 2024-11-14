@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
 import "./ResearchHub.css";
-import cards from "../../assets/Lists/expertTalksCards.json";
-import Button from "../Home/HomeButton";
 import Mentors from "../comman/Mentors.jsx";
 import ExpertTalks from "./ExpertTalks.jsx";
 import GlobalExperts from "../comman/GlobalExperts.jsx";
 import SuperScience from "../comman/SuperScience.jsx";
+import PopupButton from "../premium/PopupButton.jsx";
 
 export default function ResearchHub() {
   const [isHovered, setIsHovered] = useState(false);
@@ -133,7 +132,7 @@ export default function ResearchHub() {
             aspect of the program, including colors, music, touch, sounds, and
             all related elements.
           </h3>
-          <Button text="View White Papers" />
+          <PopupButton text="View White Papers" />
         </div>
       </section>
       <section className="building-brain-impact">
