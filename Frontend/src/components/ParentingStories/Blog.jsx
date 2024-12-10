@@ -24,7 +24,7 @@ export default function Blog({ searchedKeyword, setSelectedTitle }) {
   return (
     <div>
       <div id="container">
-        {searchedKeyword == '' ? <h2 id='heading'>UPTODD PARENTING BLOGS</h2> : <h2 id="search-result-heading">SEARCH RESULTS FOR: {searchedKeyword.toUpperCase()}</h2>}
+        {searchedKeyword == '' ? <h2 id='heading'>TEN-Toddlers PARENTING BLOGS</h2> : <h2 id="search-result-heading">SEARCH RESULTS FOR: {searchedKeyword.toUpperCase()}</h2>}
         <div id='line'></div>
         <div id="blogs-container">
           {filteredBlogs.map(([title, article]) => {

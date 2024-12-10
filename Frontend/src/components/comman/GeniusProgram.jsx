@@ -20,7 +20,7 @@ function GeniusProgram() {
 
   return (
     <section className="product-and-cost" id="product-and-cost">
-      <h1>UpTodd™ Genius Premium Program</h1>
+      <h1>TEN-Toddlers™ Genius Premium Program</h1>
       <h5>Exclusive Parenting Program for Overall Baby Brain Development</h5>
       <h5>
         Exclusive Mega KIT + World's only True Personalised APP + Brain dev.

@@ -52,9 +52,9 @@ export default function ResearchHub() {
           <h1>A Dedicated Research Centre</h1>
           <h2>Led by Top Minds from IITs, AIIMS, and MIT</h2>
           <p style={{ lineHeight: "1.5rem" }}>
-            UpTodd’s dedicated research team, featuring top experts from IITs,
+            TEN-Toddler’s dedicated research team, featuring top experts from IITs,
             AIIMS, and MIT, explores the science of early brain development in
-            babies. Through this research-driven approach, UpTodd uncovers the
+            babies. Through this research-driven approach, TEN-Toddlers uncovers the
             benefits of early intervention and stimulation, equipping you with
             the most effective tools to support your child’s growth and
             potential.
@@ -74,7 +74,7 @@ export default function ResearchHub() {
             <h2>State of the Art R&D</h2>
             <div>
               <p>
-                UpTodd’s advanced R&D center pioneers the science of baby brain
+                TEN-Toddler’s advanced R&D center pioneers the science of baby brain
                 development. Our team of experts consistently innovates with new
                 methods and publishes research, keeping us at the forefront of
                 early childhood growth and parenting strategies.
@@ -82,7 +82,7 @@ export default function ResearchHub() {
               <p>
                 Every item, from toys to app content, is thoughtfully crafted to
                 align with a baby’s interests and developmental milestones at
-                each age. This research-backed approach by UpTodd boosts
+                each age. This research-backed approach by TEN-Toddlers boosts
                 attention span and supports well-rounded development.
               </p>
               <p>
@@ -160,7 +160,7 @@ export default function ResearchHub() {
           <p>
             Every second, a child's brain forms 1 million neural connections.
             These "serve and return" interactions are vital for shaping brain
-            development. Our research-based UpTodd program guarantees that these
+            development. Our research-based TEN-Toddlers program guarantees that these
             connections are nurtured in the most effective way.
             <br />
             <br />
@@ -178,17 +178,17 @@ export default function ResearchHub() {
       <SuperScience />
 
       <section className="super-daily-why-uptodd">
-        <h1>UpTodd's Philosphies</h1>
+        <h1>TEN-Toddler's Philosphies</h1>
         <div className="super-daily-why-uptodd-cards">
           <SuperDailyUspCard
             imgSrc="https://www.uptodd.com/images/newWebsite/philosophies/1.webp"
             heading="Tailored Guidance for Your Child's Development"
-            para="At UpTodd, we understand that each child has their own individual developmental needs. Our research-driven approach provides personalized solutions that aim to boost growth by five times."
+            para="At TEN-Toddlers, we understand that each child has their own individual developmental needs. Our research-driven approach provides personalized solutions that aim to boost growth by five times."
           />
           <SuperDailyUspCard
             imgSrc="https://www.uptodd.com/images/newWebsite/philosophies/2.webp"
             heading="A supportive and caring atmosphere, resembling that of a family"
-            para="At UpTodd, we act as your extended family, offering evidence-based strategies and personalized attention to foster your child's overall development."
+            para="At TEN-Toddlers, we act as your extended family, offering evidence-based strategies and personalized attention to foster your child's overall development."
           />
           <SuperDailyUspCard
             imgSrc="https://www.uptodd.com/images/newWebsite/philosophies/3.webp"
@@ -198,7 +198,7 @@ export default function ResearchHub() {
           <SuperDailyUspCard
             imgSrc="https://www.uptodd.com/images/newWebsite/philosophies/4.webp"
             heading="A comprehensive, research-backed app for all your solutions"
-            para="The UpTodd app provides customized insights tailored to your child’s developmental needs. Our committed team ensures that every feature is crafted to enhance your child’s growth. Supported by thorough research, the app reflects the UpTodd’s scientifically-backed approach to early development."
+            para="The TEN-Toddlers app provides customized insights tailored to your child’s developmental needs. Our committed team ensures that every feature is crafted to enhance your child’s growth. Supported by thorough research, the app reflects the UpTodd’s scientifically-backed approach to early development."
           />
         </div>
       </section>

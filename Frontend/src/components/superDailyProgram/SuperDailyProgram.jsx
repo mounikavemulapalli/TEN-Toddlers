@@ -122,7 +122,7 @@ function SuperDailyProgram() {
 
       {/* What UpTodd Offers Your Baby: */}
       <div className="super-offers">
-        <h1>What UpTodd Offers Your Baby:</h1>
+        <h1>What TEN-Toddlers Offers Your Baby:</h1>
         <h5>Empower Your Parenting Journey</h5>
         <div className="super-offers-cards">
           {superOffers.map((data) => (

@@ -19,9 +19,9 @@ import Mentors from "../comman/Mentors.jsx";
 
 export const Footer = () => (
   <section className="plain-footer">
-    <h1>About Uptodd</h1>
+    <h1>About TEN-Toddlers</h1>
     <p>
-      At UpTodd, our approach is built on insights from more than 10,000
+      At TEN-Toddlers, our approach is built on insights from more than 10,000
       research studies and shaped by experts from renowned institutions like
       MIT, Stanford, IITs, and AIIMS. Our program combines globally recognized
       methods, including Glenn Doman's early stimulation, Montessori's focus on
@@ -35,7 +35,7 @@ export const Footer = () => (
       "Embark on this inspiring journey with us, where each child shines
       uniquely, and every family’s dreams hold meaning. Supporting children
       globally to flourish and achieve their potential through proven guidance."
-      <span>Your's UpTodd Family</span>
+      <span>Your's TEN-Toddlers Family</span>
     </h5>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export const Footer = () => (
       <path d="M0 1H1361" stroke="#492EB4" strokeWidth="0.5"></path>
     </svg>
     <div className="plain-footer-bottom">
-      <h3>Copyright UpTodd Care Pvt ltd © 2024. All Rights Reserved</h3>
+      <h3>Copyright TEN-Toddlers Care Pvt ltd © 2024. All Rights Reserved</h3>
       <h3>
         Made with Love <b>❤</b>
       </h3>
@@ -133,10 +133,10 @@ function Premium() {
         <PopupButton text="Access this program" />
       </div>
 
-      {/* Why UpTodd? The UpTodd Difference */}
+      {/* Why TEN-Toddlers? The TEN-Toddlers Difference */}
       {/* section-1 */}
       <section className="why-uptodd" id="why-uptodd">
-        <h1>Why UpTodd? The UpTodd Advantage</h1>
+        <h1>Why TEN-Toddlers? The TEN-Toddlers Advantage</h1>
         <h5>
           Loved by over 150,000 parents in 150+ countries! Recognized with 100+
           international and 200+ national awards, endorsed by experts, and

@@ -10,134 +10,131 @@ import line from "../../assets/images/footer/line.svg";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-list">
-        <div className="footer-card" id="footer-card-with-logo">
-          <div className="nav-logo">
-            <img src={footerLogo} alt="" />
+    <footer className='footer'>
+      <div className='footer-list'>
+        <div className='footer-card' id='footer-card-with-logo'>
+          <div className='nav-logo'>
+            <img src={footerLogo} alt='' />
           </div>
-          <div className="social-media-icons">
-            <a href="https://www.facebook.com/uptodd/" target="_blank">
-              <img src={facebook} alt="UpTodd - Nurturing Baby Genius" />
+          <div className='social-media-icons'>
+            <a href='https://www.facebook.com/uptodd/' target='_blank'>
+              <img src={facebook} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
             <a
-              href="https://www.instagram.com/uptoddler/?hl=en"
-              target="_blank"
+              href='https://www.instagram.com/uptoddler/?hl=en'
+              target='_blank'
             >
-              <img src={insta} alt="UpTodd - Nurturing Baby Genius" />
+              <img src={insta} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
             <a
-              href="https://www.youtube.com/channel/UCsFXOLtW2VeaFgXK-VxLC5g"
-              target="_blank"
+              href='https://www.youtube.com/channel/UCsFXOLtW2VeaFgXK-VxLC5g'
+              target='_blank'
             >
-              <img src={youtube} alt="UpTodd - Nurturing Baby Genius" />
+              <img src={youtube} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
             <a
-              href="https://www.linkedin.com/company/uptodd/?originalSubdomain=in"
-              target="_blank"
+              href='https://www.linkedin.com/company/uptodd/?originalSubdomain=in'
+              target='_blank'
             >
-              <img src={linkedin} alt="UpTodd - Nurturing Baby Genius" />
+              <img src={linkedin} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
           </div>
         </div>
-        <div className="footer-card">
+        <div className='footer-card'>
           <h3>Company</h3>
           <li>
-            <a href="/about" target="_blank">
+            <a href='/about' target='_blank'>
               About us
             </a>
           </li>
           <li>
-            <a href="/career" target="_blank">
+            <a href='/career' target='_blank'>
               Career
             </a>
           </li>
           <li>
-            <a href="/contact-us" target="_blank">
+            <a href='/contact-us' target='_blank'>
               Contact us
             </a>
           </li>
         </div>
-        <div className="footer-card">
+        <div className='footer-card'>
           <h3>Community</h3>
           <li>
-            <a
-              href="/parenting-stories"
-              target="_blank"
-            >
+            <a href='/parenting-stories' target='_blank'>
               Share your journey
             </a>
           </li>
           <li>
-            <a href="/blog" target="_blank">
+            <a href='/blog' target='_blank'>
               Blog
             </a>
           </li>
           <li>
-            <a href="/research" target="_blank">
+            <a href='/research' target='_blank'>
               Research Hub
             </a>
           </li>
         </div>
-        <div className="footer-card">
+        <div className='footer-card'>
           <h3>Program</h3>
           <li>
-            <a href="/premium" target="_blank">
+            <a href='/premium' target='_blank'>
               Personalised Premium Program
             </a>
           </li>
           <li>
             <a
-              id="homeScreenToSuperDailyViaFooter"
-              href="/super_daily_app_program"
-              target="_blank"
+              id='homeScreenToSuperDailyViaFooter'
+              href='/super_daily_app_program'
+              target='_blank'
             >
               Super Daily Program
             </a>
           </li>
           <li>
             <a
-              id="homeScreenToSuperDailyViaFooter"
-              href="/subscription_box"
-              target="_blank"
+              id='homeScreenToSuperDailyViaFooter'
+              href='/subscription_box'
+              target='_blank'
             >
               Subscription Box
             </a>
           </li>
         </div>
-        <div className="footer-card" id="footer-card-with-applinks">
+        <div className='footer-card' id='footer-card-with-applinks'>
           <h3>Download App now</h3>
-          <div className="application-links">
+          <div className='application-links'>
             <a
-              href="https://play.google.com/store/apps/details?id=com.uptodd.uptoddapp&amp;hl=en_IN&amp;gl=US"
-              target="_blank"
+              href='https://play.google.com/store/apps/details?id=com.uptodd.uptoddapp&amp;hl=en_IN&amp;gl=US'
+              target='_blank'
             >
-              <img src={playstore} alt="UpTodd - Nurturing Baby Genius" />
+              <img src={playstore} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
             <a
-              href="https://apps.apple.com/in/app/uptodd/id1558333792"
-              target="_blank"
+              href='https://apps.apple.com/in/app/uptodd/id1558333792'
+              target='_blank'
             >
-              <img src={appstore} alt="UpTodd - Nurturing Baby Genius" />
+              <img src={appstore} alt='TEN-Toddlers - Nurturing Baby Genius' />
             </a>
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
+      <div className='footer-bottom'>
         <h4>
           © 2024 All Rights Reserved
           <span>
-            <a href="/privacy-policy" target="_blank">
+            <a href='/privacy-policy' target='_blank'>
               Privacy policy
             </a>
           </span>
           <span>
-            <a href="/terms-conditions" target="_blank">
+            <a href='/terms-conditions' target='_blank'>
               Terms and Conditions
             </a>
           </span>
         </h4>
-        <img src={line} alt="UpTodd - Nurturing Baby Genius" />
+        <img src={line} alt='TEN-Toddlers - Nurturing Baby Genius' />
         <p>
           Disclaimer: The information provided on this website is for general
           purposes only. We do not guarantee its accuracy or suitability for any

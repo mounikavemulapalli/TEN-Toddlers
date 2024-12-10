@@ -3,24 +3,24 @@ import "./TermsCondition.css";
 
 function TermsCondition() {
   return (
-    <div className="terms-container">
+    <div className='terms-container'>
       <h3>Terms & Condition</h3>
       <h5>( Effective date: Oct 4th, 2024 )</h5>
 
-      <div className="terms-content">
+      <div className='terms-content'>
         <h2>1. USE OF THIS SITE</h2>
         <p>
-          Welcome to https://uptodd.com ("Site” or “UpTodd“). This Site is owned
-          and operated by UpTodd Care Private Limited (“Parent Company“). You
-          may be accessing our Site from a computer or mobile phone device
-          (through an iOS or Android application, for example) and these Terms
-          of Use govern your use of our Site and your conduct, regardless of the
-          means of access. You may also be using our satellite sites/subdomains
-          (“Sub-Sites“), such as ambassadors.uptodd.com, enroll.uptodd.com,
-          vr.uptodd.com, or other individual sub-sites we have set up to serve
-          individual customers or deliver distinct consumer experiences. These
-          Terms of Use govern all the products offered on the Site and
-          Sub-Sites.
+          Welcome to https://uptodd.com ("Site” or “TEN-Toddlers“). This Site is
+          owned and operated by TEN-Toddlers Care Private Limited (“Parent
+          Company“). You may be accessing our Site from a computer or mobile
+          phone device (through an iOS or Android application, for example) and
+          these Terms of Use govern your use of our Site and your conduct,
+          regardless of the means of access. You may also be using our satellite
+          sites/subdomains (“Sub-Sites“), such as ambassadors.TEN-Toddlers.com,
+          enroll.TEN-Toddlers.com, vr.TEN-Toddlers.com, or other individual
+          sub-sites we have set up to serve individual customers or deliver
+          distinct consumer experiences. These Terms of Use govern all the
+          products offered on the Site and Sub-Sites.
           <br />
           <br />
           The Site is only to be used for your personal non-commercial use and
@@ -42,21 +42,21 @@ function TermsCondition() {
           through which you access or view the site or such material.
           <br />
           <br />
-          UpTodd reserves the right to change the particulars contained in the
-          Terms of Use or the Policies from time to time and at any time,
-          without notice to its users and in its sole discretion. If UpTodd
-          decides to change the Terms of Use or Policies, UpTodd will post the
-          new version of the Terms of Use or the Policies on the Site and update
-          the date specified above. Any change or modification to the Terms of
-          Use and the Policies will be effective immediately from the date of
-          such upload of the Terms of Use and Policies on the Site. Your
-          continued use of the Site following the modifications to the Terms of
-          Use and Policies constitutes your acceptance of the modified Terms of
-          Use and Policies whether or not you have read them. For this reason,
-          you should frequently review these Terms of Use, our Guidelines and
-          Rules and any other applicable policies, including their dates, to
-          understand the terms and conditions that apply to your use of the
-          Site.
+          TEN-Toddlers reserves the right to change the particulars contained in
+          the Terms of Use or the Policies from time to time and at any time,
+          without notice to its users and in its sole discretion. If
+          TEN-Toddlers decides to change the Terms of Use or Policies,
+          TEN-Toddlers will post the new version of the Terms of Use or the
+          Policies on the Site and update the date specified above. Any change
+          or modification to the Terms of Use and the Policies will be effective
+          immediately from the date of such upload of the Terms of Use and
+          Policies on the Site. Your continued use of the Site following the
+          modifications to the Terms of Use and Policies constitutes your
+          acceptance of the modified Terms of Use and Policies whether or not
+          you have read them. For this reason, you should frequently review
+          these Terms of Use, our Guidelines and Rules and any other applicable
+          policies, including their dates, to understand the terms and
+          conditions that apply to your use of the Site.
         </p>
 
         <h2>2. PRIVACY PRACTICES</h2>
@@ -67,10 +67,10 @@ function TermsCondition() {
           the Privacy Policy shall also govern your visit and use of the Site.
           Your continued use of the Site implies that you have read and accepted
           the Privacy Policy and agree to be bound by its terms and conditions.
-          You consent to the use of personal information by UpTodd following the
-          terms of and purposes set forth in the Privacy Policy, the same may be
-          subject to amendment from time to time at the sole discretion of
-          UpTodd.
+          You consent to the use of personal information by TEN-Toddlers
+          following the terms of and purposes set forth in the Privacy Policy,
+          the same may be subject to amendment from time to time at the sole
+          discretion of TEN-Toddlers.
         </p>
 
         <h2>3. YOUR ACCOUNT</h2>
@@ -96,12 +96,12 @@ function TermsCondition() {
           Contact Information provided below. If we have found a breach or
           suspected breach of the security of your account, we may require you
           to change your password, or suspend your account without any liability
-          to UpTodd.
+          to TEN-Toddlers.
           <br />
           <br />
           We reserve the right to refuse service and/or terminate accounts
           without prior notice if these Terms of Use are violated or if we
-          decide, in our sole discretion, that it would be in UpTodd’s best
+          decide, in our sole discretion, that it would be in TEN-Toddler’s best
           interests to do so. You are solely responsible for all content that
           you upload, post, email or otherwise transmit via the Site. The
           information provided to us shall be maintained by us in accordance
@@ -110,26 +110,26 @@ function TermsCondition() {
 
         <h2>4. PRODUCT & SERVICES INFORMATION</h2>
         <p>
-          UpTodd attempts to be as accurate as possible in the description of
-          the product on the Site. The Site may contain typographical errors or
-          inaccuracies and may not be complete or current, and UpTodd reserves
-          the right to correct, change or update information, errors,
+          TEN-Toddlers attempts to be as accurate as possible in the description
+          of the product on the Site. The Site may contain typographical errors
+          or inaccuracies and may not be complete or current, and TEN-Toddlers
+          reserves the right to correct, change or update information, errors,
           inaccuracies or omissions at any time without prior notice. Please
           note that such errors, inaccuracies or omissions may also relate to
           pricing and availability.
           <br />
           <br />
-          UpTodd will be sending messages related promotional, marketing and
-          transactional through email, calls and phones once you book a session
-          with us.
+          TEN-Toddlers will be sending messages related promotional, marketing
+          and transactional through email, calls and phones once you book a
+          session with us.
         </p>
 
         <h2>5. PRICING INFORMATION</h2>
         <p>
           Prices and availability of products and services provided on the site
           are subject to change without prior notice and at the sole discretion
-          of UpTodd. UpToddmay revises and ceases to make available any product/
-          services at any time.
+          of TEN-Toddlers. TEN-Toddlersmay revises and ceases to make available
+          any product/ services at any time.
         </p>
 
         <h2>6. MODE OF PAYMENT</h2>
@@ -146,11 +146,12 @@ function TermsCondition() {
           following conditions:
           <ol>
             <li>
-              UpTodd may suspend the chat service at any time without notice
+              TEN-Toddlers may suspend the chat service at any time without
+              notice
             </li>
             <li>
-              UpTodd or its executives are not responsible for any delay caused
-              in attending to or replying to the queries via chat
+              TEN-Toddlers or its executives are not responsible for any delay
+              caused in attending to or replying to the queries via chat
             </li>
             <li>
               While ‘chatting’ you may not communicate any objectionable
@@ -222,64 +223,64 @@ function TermsCondition() {
             </li>
           </ol>
           <br />
-          UpTodd shall in no way be held responsible for examining or evaluating
-          User Content, nor does it assume any responsibility or liability for
-          the User Content. UpTodd does not endorse or control the User Content
-          transmitted or posted on the Site by you and therefore, accuracy,
-          integrity or quality of User Content is not guaranteed by UpTodd. You
-          understand that by using the Site, you may be exposed to User Content
-          that is offensive, indecent or objectionable to you. Under no
-          circumstances will UpTodd be liable in any way for any User Content,
-          including without limitation, for any errors or omissions in any User
-          Content, or for any loss or damage of any kind incurred by you as a
-          result of the use of any User Content transmitted, uploaded, posted,
-          e-mailed or otherwise made available via the Site. You hereby waive
-          all rights to any claims against UpTodd for any alleged or actual
-          infringements of any proprietary rights, rights of privacy and
-          publicity, moral rights, and rights of attribution in connection with
-          User Content.
+          TEN-Toddlers shall in no way be held responsible for examining or
+          evaluating User Content, nor does it assume any responsibility or
+          liability for the User Content. TEN-Toddlers does not endorse or
+          control the User Content transmitted or posted on the Site by you and
+          therefore, accuracy, integrity or quality of User Content is not
+          guaranteed by TEN-Toddlers. You understand that by using the Site, you
+          may be exposed to User Content that is offensive, indecent or
+          objectionable to you. Under no circumstances will TEN-Toddlers be
+          liable in any way for any User Content, including without limitation,
+          for any errors or omissions in any User Content, or for any loss or
+          damage of any kind incurred by you as a result of the use of any User
+          Content transmitted, uploaded, posted, e-mailed or otherwise made
+          available via the Site. You hereby waive all rights to any claims
+          against TEN-Toddlers for any alleged or actual infringements of any
+          proprietary rights, rights of privacy and publicity, moral rights, and
+          rights of attribution in connection with User Content.
           <br />
           <br />
-          You hereby acknowledge that UpTodd has the right (but not the
+          You hereby acknowledge that TEN-Toddlers has the right (but not the
           obligation) in its sole discretion to refuse to post or remove any
           User Content and further reserves the right to change, condense, or
           delete any User Content. Without limiting the generality of the
-          foregoing or any other provision of these Terms and Conditions, UpTodd
-          has the right to remove any User Content that violates these Terms and
-          Conditions or is otherwise objectionable and further reserves the
-          right to refuse service and/or terminate accounts without prior notice
-          for any users who violate these Terms and Conditions or infringe the
-          rights of others.
+          foregoing or any other provision of these Terms and Conditions,
+          TEN-Toddlers has the right to remove any User Content that violates
+          these Terms and Conditions or is otherwise objectionable and further
+          reserves the right to refuse service and/or terminate accounts without
+          prior notice for any users who violate these Terms and Conditions or
+          infringe the rights of others.
           <br />
           <br />
           If you wish to delete your User Content on our Site or in connection
           with our mobile applications, please contact us by email at
-          support@uptodd.com and request you to include the following personal
-          information in your deletion request: first name, last name, user
-          name/screen name (if applicable), email address associated with our
-          Site and/or mobile applications, and your reason for deleting. We may
-          not be able to process your deletion request if you are unable to
-          provide such information to us. Please allow up to 10 business days to
-          process your deletion request.
+          info@entreprenuershipnetwork.com and request you to include the
+          following personal information in your deletion request: first name,
+          last name, user name/screen name (if applicable), email address
+          associated with our Site and/or mobile applications, and your reason
+          for deleting. We may not be able to process your deletion request if
+          you are unable to provide such information to us. Please allow up to
+          10 business days to process your deletion request.
         </p>
 
         <h2>9. INTELLECTUAL PROPERTY RIGHTS</h2>
         <p>
-          The “UpTodd” name and logo and all related product and service names,
-          design marks and slogans are the trademarks, logos, or service marks
-          (hereinafter referred to as “Marks“) of UpTodd. No trademark or
-          service mark license is granted in connection with the materials
-          contained on this Site. Access to this Site does not authorize anyone
-          to use any Marks in any manner. Marks displayed on this Site, whether
-          registered or unregistered, of UpTodd or others, are the intellectual
-          property of their respective owners, and UpTodd shall not be held
-          liable in any manner whatsoever for any unlawful, unauthorized use of
-          the Marks.
+          The “TEN-Toddlers” name and logo and all related product and service
+          names, design marks and slogans are the trademarks, logos, or service
+          marks (hereinafter referred to as “Marks“) of TEN-Toddlers. No
+          trademark or service mark license is granted in connection with the
+          materials contained on this Site. Access to this Site does not
+          authorize anyone to use any Marks in any manner. Marks displayed on
+          this Site, whether registered or unregistered, of TEN-Toddlers or
+          others, are the intellectual property of their respective owners, and
+          TEN-Toddlers shall not be held liable in any manner whatsoever for any
+          unlawful, unauthorized use of the Marks.
           <br />
           <br />
           The compilation (meaning the collection, arrangement and assembly) of
-          the content on the Site is the exclusive property of UpTodd and is
-          protected by the Indian copyright laws and International treaties.
+          the content on the Site is the exclusive property of TEN-Toddlers and
+          is protected by the Indian copyright laws and International treaties.
           Consequently, the materials on this Site shall not be copied,
           reproduced, duplicated, republished, downloaded, posted, transmitted,
           distributed or modified in whole or in part or in any other form
@@ -302,25 +303,25 @@ function TermsCondition() {
           be used only as a shopping resource. Any other use, including the
           reproduction, modification, distribution, transmission,
           re-publication, display, or performance, of the Contents on this Site
-          is strictly prohibited. Unless UpTodd explicitly provides to the
+          is strictly prohibited. Unless TEN-Toddlers explicitly provides to the
           contrary, all Contents are copyrighted, trademarked, trade dressed
           and/or other intellectual property owned, controlled or licensed by
-          UpTodd, any of its affiliates or by third parties who have licensed
-          their materials to UpTodd and are protected by Indian copyright laws
-          and international treaties.
+          TEN-Toddlers, any of its affiliates or by third parties who have
+          licensed their materials to TEN-Toddlers and are protected by Indian
+          copyright laws and international treaties.
         </p>
 
         <h2>10. LIMITED LICENSE</h2>
         <p>
-          UpTodd grants you limited, non-exclusive, non-transferable,
+          TEN-Toddlers grants you limited, non-exclusive, non-transferable,
           non-sublicensable license to access, and make personal and
           non-commercial use of the Site. All rights not expressly granted to
           you in these Terms of Use, are reserved and retained by the Site and
           its affiliates.
           <br />
           <br />
-          UpTodd reserves the right, at any time, without notice, and at its
-          sole discretion, to terminate your license to use the Site and to
+          TEN-Toddlers reserves the right, at any time, without notice, and at
+          its sole discretion, to terminate your license to use the Site and to
           block and prevent your future access the Site.
         </p>
 
@@ -329,9 +330,9 @@ function TermsCondition() {
           This Site is provided to you “AS IS”. We make no representations
           regarding the use of or the result of the use/depiction of the
           Contents on the Site in terms of their correctness, accuracy,
-          reliability, or otherwise. UpTodd shall not be liable for any loss
-          suffered in any manner by the user as a result of depending directly
-          or indirectly on the depiction of the Content on this Site.
+          reliability, or otherwise. TEN-Toddlers shall not be liable for any
+          loss suffered in any manner by the user as a result of depending
+          directly or indirectly on the depiction of the Content on this Site.
           <br />
           <br />
           You acknowledge that this Site is provided only on the basis set out
@@ -343,14 +344,14 @@ function TermsCondition() {
           service work carried out on this Site.
           <br />
           <br />
-          UpTodd shall have the right, at any time, to change or discontinue any
-          aspect or feature of the Site, including, but not limited to, content,
-          hours of availability, and equipment needed for access or use.
-          Further, the Site may discontinue disseminating any portion of
-          information or category of information. UpTodd does not accept any
-          responsibility and will not be liable for any loss or damage
-          whatsoever arising out of or in connection with any ability/inability
-          to access or to use the Site.
+          TEN-Toddlers shall have the right, at any time, to change or
+          discontinue any aspect or feature of the Site, including, but not
+          limited to, content, hours of availability, and equipment needed for
+          access or use. Further, the Site may discontinue disseminating any
+          portion of information or category of information. TEN-Toddlers does
+          not accept any responsibility and will not be liable for any loss or
+          damage whatsoever arising out of or in connection with any
+          ability/inability to access or to use the Site.
           <br />
           <br />
           For any general information posted on the Site, users must not infer
@@ -381,8 +382,9 @@ function TermsCondition() {
           FAILURES OR MALFUNCTIONS WHICH MAY OCCUR IN CONNECTION WITH YOUR USE
           OF THE SITE, INCLUDING DURING HYPERLINK TO OR FROM THIRD PARTY
           WEBSITES; (f) ANY INACCURACIES OR OMISSIONS IN CONTENT; OR (g) EVENTS
-          BEYOND THE REASONABLE CONTROL OF UpTodd. WE MAKE NO REPRESENTATIONS OR
-          WARRANTIES THAT DEFECTS OR ERRORS WILL BE CORRECTED.
+          BEYOND THE REASONABLE CONTROL OF TEN-Toddlers. WE MAKE NO
+          REPRESENTATIONS OR WARRANTIES THAT DEFECTS OR ERRORS WILL BE
+          CORRECTED.
           <br />
           <br />
           FURTHER, TO THE FULLEST EXTENT PERMITTED BY LAW, NEITHER WE NOR OUR
@@ -412,56 +414,58 @@ function TermsCondition() {
           References on the Site to any names, marks, products or services of
           third parties or hypertext links to third party sites or information
           are provided solely as a convenience to you. This does not in any way
-          constitute or imply UpTodd endorsement, sponsorship or recommendation
-          of the third party, information, product or service or any association
-          and relationship between UpTodd and those third parties.
+          constitute or imply TEN-Toddlers endorsement, sponsorship or
+          recommendation of the third party, information, product or service or
+          any association and relationship between TEN-Toddlers and those third
+          parties.
           <br />
           <br />
-          UpTodd is not responsible for the content of any third party sites and
-          does not make any representations regarding the content or accuracy of
-          material on such sites. If you decide to link to any such third party
-          websites, you do so entirely at your own risk. UpTodd does not assume
-          any responsibility for examining or evaluating the offerings of the
-          off-websites pages or any other websites linked from the Site. We
-          shall not be responsible for the actions, content, products, or
-          services of such pages and websites, including, without limitation,
-          their privacy policies and terms and conditions. You should carefully
-          review the terms and conditions and privacy policies of all
-          off-website pages and other websites that you visit via the Site.
+          TEN-Toddlers is not responsible for the content of any third party
+          sites and does not make any representations regarding the content or
+          accuracy of material on such sites. If you decide to link to any such
+          third party websites, you do so entirely at your own risk.
+          TEN-Toddlers does not assume any responsibility for examining or
+          evaluating the offerings of the off-websites pages or any other
+          websites linked from the Site. We shall not be responsible for the
+          actions, content, products, or services of such pages and websites,
+          including, without limitation, their privacy policies and terms and
+          conditions. You should carefully review the terms and conditions and
+          privacy policies of all off-website pages and other websites that you
+          visit via the Site.
         </p>
 
         <h2>14. TERMINATION</h2>
         <p>
           These Terms of Use are effective unless and until terminated by either
-          you or UpTodd.
+          you or TEN-Toddlers.
           <br />
           <br />
           You may terminate the Terms of Use at any time, provided that you
-          discontinue any further use of this Site. UpTodd may terminate the
-          Terms of Use at any time and may do so without notice, and accordingly
-          deny you access to the Site, such termination will be without any
-          liability to the Site.
+          discontinue any further use of this Site. TEN-Toddlers may terminate
+          the Terms of Use at any time and may do so without notice, and
+          accordingly deny you access to the Site, such termination will be
+          without any liability to the Site.
           <br />
           <br />
-          Upon any termination of the Terms of Use by either you or UpTodd, you
-          must promptly destroy all materials downloaded or otherwise obtained
-          from this Site, as well as all copies of such materials, whether made
-          under the Terms of Use or otherwise. Any such termination of the Terms
-          of Use shall not cancel your obligation to pay for the product already
-          ordered from the Site or affect any liability that may have arisen
-          under the Terms of Use.
+          Upon any termination of the Terms of Use by either you or
+          TEN-Toddlers, you must promptly destroy all materials downloaded or
+          otherwise obtained from this Site, as well as all copies of such
+          materials, whether made under the Terms of Use or otherwise. Any such
+          termination of the Terms of Use shall not cancel your obligation to
+          pay for the product already ordered from the Site or affect any
+          liability that may have arisen under the Terms of Use.
         </p>
 
         <h2>15. INDEMNITY</h2>
         <p>
-          You agree to defend, indemnify and hold harmless UpTodd, its
+          You agree to defend, indemnify and hold harmless TEN-Toddlers, its
           employees, directors, officers, agents and their successors and
           assigns, its holding, subsidiaries, affiliates, partners, or licensors
           from and against any and all claims, liabilities, damages, losses,
           costs and expenses, including attorney’s fees, caused by or arising
           out of claims based upon your actions or inactions, which may result
-          in any loss or liability to UpTodd or any third party including but
-          not limited to breach of any warranties, representations or
+          in any loss or liability to TEN-Toddlers or any third party including
+          but not limited to breach of any warranties, representations or
           undertakings or in relation to the non-fulfillment of any of your
           obligations under the Terms of Use, or arising out of the your
           violation of any applicable laws, regulations including but not
@@ -488,11 +492,12 @@ function TermsCondition() {
           time. The seat of arbitration shall be held in Delhi.
           <br />
           <br />
-          Without any prejudice to particulars listed in Clause 10 above, UpTodd
-          shall have the right to seek and obtain any injunctive, provisional or
-          interim relief from any court of competent jurisdiction to protect its
-          trade-mark or other intellectual property rights or confidential
-          information or to preserve the status quo pending arbitration.
+          Without any prejudice to particulars listed in Clause 10 above,
+          TEN-Toddlers shall have the right to seek and obtain any injunctive,
+          provisional or interim relief from any court of competent jurisdiction
+          to protect its trade-mark or other intellectual property rights or
+          confidential information or to preserve the status quo pending
+          arbitration.
         </p>
 
         <h2>17. SITE SECURITY</h2>
@@ -526,18 +531,19 @@ function TermsCondition() {
           </ol>
           <br />
           Violations of system or network security may result in civil or
-          criminal liability. UpTodd is entitled to investigate occurrences that
-          may involve such violations and may involve, and co-operate with, law
-          enforcement authorities in prosecuting users who are involved in such
-          violations. You agree not to use any device, software or routine to
-          interfere or attempt to interfere with the proper working of this Site
-          or any activity being conducted on this Site. You agree, further, not
-          to use or attempt to use any engine, software, tool, agent or other
-          device or mechanism (including without limitation browsers, spiders,
-          robots, avatars or intelligent agents) to navigate or search this Site
-          other than the search engine and search agents available from UpTodd
-          on this Site and other than generally available third party web
-          browsers (e.g., Google Chrome, Microsoft Explorer).
+          criminal liability. TEN-Toddlers is entitled to investigate
+          occurrences that may involve such violations and may involve, and
+          co-operate with, law enforcement authorities in prosecuting users who
+          are involved in such violations. You agree not to use any device,
+          software or routine to interfere or attempt to interfere with the
+          proper working of this Site or any activity being conducted on this
+          Site. You agree, further, not to use or attempt to use any engine,
+          software, tool, agent or other device or mechanism (including without
+          limitation browsers, spiders, robots, avatars or intelligent agents)
+          to navigate or search this Site other than the search engine and
+          search agents available from TEN-Toddlers on this Site and other than
+          generally available third party web browsers (e.g., Google Chrome,
+          Microsoft Explorer).
         </p>
 
         <h2>18. ENTIRE AGREEMENT</h2>
@@ -550,17 +556,17 @@ function TermsCondition() {
           matches the intent of the original provision and the remainder of the
           Terms of Use shall continue to be in effect. Unless otherwise
           specified herein, these Terms of Use constitutes the entire agreement
-          between you and UpTodd concerning the Site/services and it supersedes
-          all prior or contemporaneous communications and proposals, whether
-          electronic, oral or written.
+          between you and TEN-Toddlers concerning the Site/services and it
+          supersedes all prior or contemporaneous communications and proposals,
+          whether electronic, oral or written.
           <br />
           <br />
-          UpTodd’s failure to act concerning a breach by you or others does not
-          waive its right to act concerning the breach or subsequent and similar
-          breaches.
+          TEN-Toddler’s failure to act concerning a breach by you or others does
+          not waive its right to act concerning the breach or subsequent and
+          similar breaches.
         </p>
 
-        <h2>19. Refund policy at UpTodd</h2>
+        <h2>19. Refund policy at TEN-Toddlers</h2>
         <p>
           <span>NOTE - </span>Session Duration is generally of 20 minutes but
           can be extended maximum to 30 minutes
@@ -585,10 +591,11 @@ function TermsCondition() {
           This program offered to you requires tons of effort and cost from our
           side, still we provide you the option to take a strict 14 days refund
           policy of no credit used only. Once you enrolled and you are writing
-          us on support@uptodd.com by or before 14th day of enrollment then as
-          we curate the entire kit for you, all level of access & assets are
-          shared which is created with years of research, all level of expert
-          blocking & planning goes for you, so we will be able to provide -
+          us on info@entreprenuershipnetwork.com by or before 14th day of
+          enrollment then as we curate the entire kit for you, all level of
+          access & assets are shared which is created with years of research,
+          all level of expert blocking & planning goes for you, so we will be
+          able to provide -
           <br />
           <br />
           For All cases after 4th October, 2024 -
@@ -602,7 +609,7 @@ function TermsCondition() {
             <li>Super Daily Program - No Refund, but 100% redeemable</li>
             <li>
               100% Money Redeem Guarantee and super coins are applicable only
-              while purchasing premium programs at uptodd
+              while purchasing premium programs at TEN-Toddlers
             </li>
           </ol>
           <br />
@@ -623,7 +630,8 @@ function TermsCondition() {
             <li>
               Even in exceptional cases, we won't be able to accept the refund
               request post 14th day of making payment. Any request made beyond
-              mailing to support@uptodd.com, will be considered as null and void
+              mailing to info@entreprenuershipnetwork.com, will be considered as
+              null and void
             </li>
             <li>
               We provide you dedicated support and ensure that all portions of
@@ -635,7 +643,7 @@ function TermsCondition() {
           <br />
           <span>NOTE - </span>No Refund request is accpeted post 14th day of
           making the payment in the program, all refund request are must need to
-          be initiated by support@uptodd.com
+          be initiated by info@entreprenuershipnetwork.com
           <br />
           <br />
           After refund request all services are stopped immediately, and any
@@ -655,11 +663,11 @@ function TermsCondition() {
           <br />
           <br />
           Its completely your responsibility to choose right offers and options
-          while making any kind of payment at Uptodd Website or Uptodd linked
-          Payment Gateways
+          while making any kind of payment at TEN-Toddlers Website or
+          TEN-Toddlers linked Payment Gateways
           <br />
           <br />
-          UpTodd don't take any ownership of EMI options used by you while
+          TEN-Toddlers don't take any ownership of EMI options used by you while
           opting the services.
         </p>
         <br />
@@ -667,36 +675,37 @@ function TermsCondition() {
 
         <h2>20. Payment Based Terms and Conditions</h2>
         <p>
-          By purchasing any services at UpTodd, you agree, accept and
+          By purchasing any services at TEN-Toddlers, you agree, accept and
           acknowledge the following terms -
           <ol style={{ "list-style-type": "number" }}>
             <li>
-              UpTodd does not guarantee neither claim any cure of any form of
-              medical condition or disease.
+              TEN-Toddlers does not guarantee neither claim any cure of any form
+              of medical condition or disease.
             </li>
             <li>
-              UpTodd will acknowledge and consider the date of birth of the baby
-              provided by you as final, any incorrect information will be
-              completely your responsibility.
+              TEN-Toddlers will acknowledge and consider the date of birth of
+              the baby provided by you as final, any incorrect information will
+              be completely your responsibility.
             </li>
             <li>
-              UpTodd will consider the details provided by you as correct, any
-              issue in the data provided by you will be completely your
+              TEN-Toddlers will consider the details provided by you as correct,
+              any issue in the data provided by you will be completely your
               responsibility.
             </li>
             <li>
-              UpTodd does not guarantee outcomes as it is completely dependent
-              on the efforts you put and various other uncontrolled parameters.
+              TEN-Toddlers does not guarantee outcomes as it is completely
+              dependent on the efforts you put and various other uncontrolled
+              parameters.
             </li>
             <li>
-              UpTodd tries to start services and delivery at earliest but
+              TEN-Toddlers tries to start services and delivery at earliest but
               delivery of any physical product may take upto 3 weeks of time
               period in unforeseen conditions, where we compensate that with the
               extended subscription.
             </li>
             <li>
               For any medical condition or disease you need to reach out to
-              doctors, UpTodd suggestions may not help you.
+              doctors, TEN-Toddlers suggestions may not help you.
             </li>
             <li>
               You are responsible to go through all the communications and
@@ -749,12 +758,12 @@ function TermsCondition() {
           <br />
           <br />
           If you have any questions regarding these Terms and Conditions, please
-          email us at support@uptodd.com
+          email us at info@entreprenuershipnetwork.com
         </p>
       </div>
 
-      <h6 className="terms-container-para">
-        © 2024, made with Love by UpTodd Care Private Limited.
+      <h6 className='terms-container-para'>
+        © 2024, made with Love by TEN-Toddlers Care Private Limited.
       </h6>
     </div>
   );

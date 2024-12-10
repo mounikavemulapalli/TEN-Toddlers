@@ -156,7 +156,7 @@ export default function Popup({ closePopup }) {
             {isSubmitting ? "Submitting..." : "Apply Now"}
           </Button>
           <p className='form-terms-conditions'>
-            UpTodd&apos;s{" "}
+            TEN-Toddlers&apos;s{" "}
             <a href='/terms-conditions' target='_blank'>
               Terms & Conditions
             </a>{" "}

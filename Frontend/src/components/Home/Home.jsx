@@ -103,7 +103,7 @@ export default function Home() {
         {/* Explore the Possibilities Section */}
         <section className="Possibilities">
           <div className="Possibilities-heading">
-            <h1>Explore the Possibilities with UpTodd</h1>
+            <h1>Explore the Possibilities with TEN-Toddlers</h1>
             <p>
               We've Got Your Back – Top Experts Support You in Your Baby’s Brain
               Development Journey
@@ -218,11 +218,11 @@ export default function Home() {
         {/* Peek-A-Boo Section */}
         <Peek />
 
-        {/* UpTodd Expert Personalised Program Section */}
+        {/* TEN-Toddlers Expert Personalised Program Section */}
         <section className="developmental-pillars">
           <div className="development-head">
             <h1>
-              UpTodd Expert-Personalized Program
+              TEN-Toddlers Expert-Personalized Program
               <br />
               <span>Nurture your baby's genius potential</span>
             </h1>
@@ -293,7 +293,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* UpTodd Genius Premium Program Section */}
+        {/* TEN-Toddlers Genius Premium Program Section */}
         <GeniusProgram />
 
         {/*  Brilliant Minds Section */}

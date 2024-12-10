@@ -90,13 +90,13 @@ function SubscriptionBox() {
 
   return (
     <>
-      <div className="sub-container">
+      <div className='sub-container'>
         {/* Main Section */}
-        <div className="sub-mainDiv">
-          <div className="sub-mainDiv-img">
-            <img src={babyMain} alt="Baby Image" />
+        <div className='sub-mainDiv'>
+          <div className='sub-mainDiv-img'>
+            <img src={babyMain} alt='Baby Image' />
           </div>
-          <div className="sub-mainDiv-content">
+          <div className='sub-mainDiv-content'>
             <h1>Brain Developmental Boxes</h1>
             <hr />
             <h2>Research Backed Toys</h2>
@@ -105,55 +105,55 @@ function SubscriptionBox() {
         </div>
 
         {/* Kits PopUp Section */}
-        <div ref={componentRef} className="sub-kit-popup">
+        <div ref={componentRef} className='sub-kit-popup'>
           <h1>Buy Baby's Developmental Kit For Your Baby</h1>
-          <img src={babyKit1} alt="Kits Photo" />
+          <img src={babyKit1} alt='Kits Photo' />
 
           <div>
             {/* Button to open the modal */}
-            <button className="pop-select-button" onClick={togglePopUp}>
+            <button className='pop-select-button' onClick={togglePopUp}>
               Select Kit for your Baby
             </button>
 
             {/* Modal */}
             {showPopUp && (
-              <div className="sub-popUp">
-                <div className="sub-popUp-content">
+              <div className='sub-popUp'>
+                <div className='sub-popUp-content'>
                   <h1>Enter Child's DOB Get Super Developmental Kit Now</h1>
                   <h2>Baby's Month & Year of Birth</h2>
 
                   {/* Form to select month and year */}
                   <form onSubmit={handleSubmit}>
-                    <label htmlFor="month">Month:</label>
+                    <label htmlFor='month'>Month:</label>
                     <select
-                      id="month"
+                      id='month'
                       value={selectedMonth}
                       required
                       onChange={(e) => setSelectedMonth(e.target.value)}
                     >
-                      <option value="">Select Month</option>
-                      <option value="1">January</option>
-                      <option value="2">February</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
+                      <option value=''>Select Month</option>
+                      <option value='1'>January</option>
+                      <option value='2'>February</option>
+                      <option value='3'>March</option>
+                      <option value='4'>April</option>
+                      <option value='5'>May</option>
+                      <option value='6'>June</option>
+                      <option value='7'>July</option>
+                      <option value='8'>August</option>
+                      <option value='9'>September</option>
+                      <option value='10'>October</option>
+                      <option value='11'>November</option>
+                      <option value='12'>December</option>
                     </select>
 
-                    <label htmlFor="year">Year:</label>
+                    <label htmlFor='year'>Year:</label>
                     <select
-                      id="year"
+                      id='year'
                       value={selectedYear}
                       required
                       onChange={(e) => setSelectedYear(e.target.value)}
                     >
-                      <option value="">Select Year</option>
+                      <option value=''>Select Year</option>
                       {years.map((year) => (
                         <option key={year} value={year}>
                           {year}
@@ -162,13 +162,13 @@ function SubscriptionBox() {
                     </select>
                     <br />
                     <br />
-                    <button className="popup-submit-button" type="submit">
+                    <button className='popup-submit-button' type='submit'>
                       Show My Baby's Kit
                     </button>
                   </form>
 
                   {/* Cancel Button */}
-                  <button onClick={togglePopUp} className="popup-cancel-button">
+                  <button onClick={togglePopUp} className='popup-cancel-button'>
                     Cancel
                   </button>
                 </div>
@@ -178,18 +178,18 @@ function SubscriptionBox() {
         </div>
 
         {/* Kits Section */}
-        <h1 className="developmental-kit-heading">
+        <h1 className='developmental-kit-heading'>
           Your
           <span> {ageInMonths} Months </span>Baby's Developmental Kit
         </h1>
 
         {kitsData &&
           kitsData.map((kit) => (
-            <div key={kit._id} className="sub-kitDiv">
-              <div className="sub-kitDiv-img">
-                <img src={babyKit2} alt="Baby Image" />
+            <div key={kit._id} className='sub-kitDiv'>
+              <div className='sub-kitDiv-img'>
+                <img src={babyKit2} alt='Baby Image' />
               </div>
-              <div className="sub-kitDiv-content">
+              <div className='sub-kitDiv-content'>
                 <h1>{kit.name}</h1>
                 <h2>( For your {ageInMonths} Month's Baby )</h2>
                 <ul>
@@ -205,8 +205,8 @@ function SubscriptionBox() {
                 <h6>Free Shipping | Cash On Delivery(COD) Available</h6>
                 <button>Buy Now</button>
                 <p>
-                  Exclusively crafted in UpTodd's lab, scientifically designed
-                  for optimal brain development in babies.
+                  Exclusively crafted in TEN-Toddler's lab, scientifically
+                  designed for optimal brain development in babies.
                 </p>
               </div>
             </div>
@@ -222,11 +222,11 @@ function SubscriptionBox() {
         <HappyParents />
 
         {/* Research Section */}
-        <div className="sub-research">
-          <div className="sub-research-img">
-            <img src={babyToy} alt="Baby Image" />
+        <div className='sub-research'>
+          <div className='sub-research-img'>
+            <img src={babyToy} alt='Baby Image' />
           </div>
-          <div className="sub-research-content">
+          <div className='sub-research-content'>
             <h1>Research Backed Toys</h1>
             <ul>
               <li>Audio-Visual Learning Toys</li>
@@ -238,20 +238,20 @@ function SubscriptionBox() {
         </div>
 
         {/* Stories Section */}
-        <h1 className="heading">
+        <h1 className='heading'>
           Accessible & Affordable Brain Developmental Boxes
         </h1>
-        <div className="sub-stories">
+        <div className='sub-stories'>
           <div
-            className="sub-stories-video"
+            className='sub-stories-video'
             style={{
               borderRadius: "1rem",
               overflow: "hidden",
             }}
           >
-            <YouTube videoId="hyORo2c9lWs" opts={videoOptions} />
+            <YouTube videoId='hyORo2c9lWs' opts={videoOptions} />
           </div>
-          <div className="stories-content">
+          <div className='stories-content'>
             <h1>
               Bringing smiles to over 150,000 + parents and creating success
               stories every day.
@@ -265,12 +265,12 @@ function SubscriptionBox() {
         </div>
 
         {/* Award Section */}
-        <h1 className="heading">Still Not Sure? See our Genius Awardees</h1>
+        <h1 className='heading'>Still Not Sure? See our Genius Awardees</h1>
 
-        <div className="sub-award-cards">
+        <div className='sub-award-cards'>
           {awardData.map((data) => (
-            <div key={data.id} className="sub-award-card">
-              <img src={data.image} alt="Baby Image" />
+            <div key={data.id} className='sub-award-card'>
+              <img src={data.image} alt='Baby Image' />
               <h2>{data.name}</h2>
               <h2>{data.age}</h2>
               <p>{data.about}</p>

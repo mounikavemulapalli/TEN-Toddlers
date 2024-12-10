@@ -3,16 +3,16 @@ import "./PrivacyPolicy.css";
 
 function PrivacyPolicy() {
   return (
-    <div className="privacy-container">
+    <div className='privacy-container'>
       <h3>Privacy Policy</h3>
       <h5>( Effective date: Oct 4th, 2024 )</h5>
-      <div className="privacy-content">
+      <div className='privacy-content'>
         <h2>INTRODUCTION</h2>
         <p>
           The domain name https://www.UpTodd (“Site”) is owned and operated by
-          UpTodd Care Private Limited (“UpTodd” or “We” or “Us“). We value the
-          trust you have in us. Therefore, we insist upon the highest standards
-          for secure transactions and customer information privacy.
+          TEN-Toddlers Care Private Limited (“TEN-Toddlers” or “We” or “Us“). We
+          value the trust you have in us. Therefore, we insist upon the highest
+          standards for secure transactions and customer information privacy.
           <br />
           <br />
           This Privacy Policy ('Policy') defines the type of personal
@@ -176,11 +176,11 @@ function PrivacyPolicy() {
           What is the intention of gathering personal and sensitive information?
         </h2>
         <p>
-          UpTodd may use your Personal Information collected:
+          TEN-Toddlers may use your Personal Information collected:
           <ol>
             <li>
               To learn about your expectations for the course/product and to
-              recommend specific UpTodd deals to you
+              recommend specific TEN-Toddlers deals to you
             </li>
             <li>
               Conduct marketing and performance research to help us evaluate our
@@ -197,33 +197,34 @@ function PrivacyPolicy() {
               will be important to you or your child,
             </li>
             <li>
-              Through using UpTodd and/or registering with UpTodd, you allow
-              UpTodd (including its agents, associates, and business partners)
-              to contact you through email or telephone or SMS and to provide
-              you with our services for the product you have selected, to impart
-              product knowledge, to offer promotional offers running on UpTodd
-              and to offer offers from its business partners and related third
-              parties. You hereby accept that, even if you have registered under
-              DND or DNC or NCPR service(s), you allow UpTodd to contact you for
-              the above-mentioned purposes. Your permission to do so is valid as
-              long as your account is not deactivated by either you or us
+              Through using TEN-Toddlers and/or registering with TEN-Toddlers,
+              you allow TEN-Toddlers (including its agents, associates, and
+              business partners) to contact you through email or telephone or
+              SMS and to provide you with our services for the product you have
+              selected, to impart product knowledge, to offer promotional offers
+              running on TEN-Toddlers and to offer offers from its business
+              partners and related third parties. You hereby accept that, even
+              if you have registered under DND or DNC or NCPR service(s), you
+              allow TEN-Toddlers to contact you for the above-mentioned
+              purposes. Your permission to do so is valid as long as your
+              account is not deactivated by either you or us
             </li>
           </ol>
         </p>
         <h2>The personal and confidential details we share with whom?</h2>
         <p>
-          Oh, nobody. UpTodd is not in the processing and sale of information
-          business, and we will not sell it to any other company or supply your
-          information and confidential information. We can only use this
-          knowledge through tailored products and course offerings to support
-          you better.
+          Oh, nobody. TEN-Toddlers is not in the processing and sale of
+          information business, and we will not sell it to any other company or
+          supply your information and confidential information. We can only use
+          this knowledge through tailored products and course offerings to
+          support you better.
           <br />
           <br />
-          Uh, nobody. UpTodd is not in the processing and sale of information
-          business, and we will not sell it or provide any other company with
-          your information and confidential information. We can use this
-          knowledge only through targeted products and course offerings to serve
-          you better.
+          Uh, nobody. TEN-Toddlers is not in the processing and sale of
+          information business, and we will not sell it or provide any other
+          company with your information and confidential information. We can use
+          this knowledge only through targeted products and course offerings to
+          serve you better.
           <br />
           <br />
           If we plan to merge/sell all or substantially all of our business to
@@ -274,9 +275,9 @@ function PrivacyPolicy() {
           When You update information, We usually keep a copy of the previous
           version for Our records. If You do not want to receive updates from
           Us, please update Your preferences or write to us at
-          support@uptodd.com. However, opting out of updates still governs Your
-          use of the Platform and Services under the Terms of Use and Privacy
-          Policy.
+          info@entreprenuershipnetwork.com. However, opting out of updates still
+          governs Your use of the Platform and Services under the Terms of Use
+          and Privacy Policy.
         </p>
 
         <h2>COOKIES</h2>
@@ -320,7 +321,8 @@ function PrivacyPolicy() {
           The Platform gives all users the opportunity to opt-out of receiving
           any advertisement or promotional messages from us. If you do not wish
           to receive any promotional or marketing messages from us, you can
-          contact us to remind us of this choice at support@UpTodd.
+          contact us to remind us of this choice at
+          info@entreprenuershipnetwork.com.
         </p>
 
         <h2>SECURITY</h2>
@@ -342,10 +344,10 @@ function PrivacyPolicy() {
         </p>
 
         <h2>CONTACT INFORMATION</h2>
-        <p>email: support@Uptodd.com</p>
+        <p>email: info@entreprenuershipnetwork.com</p>
       </div>
-      <h6 className="privacy-container-para">
-        © 2024, made with Love by UpTodd Care Private Limited.
+      <h6 className='privacy-container-para'>
+        © 2024, made with Love by TEN-Toddlers odd Care Private Limited.
       </h6>
     </div>
   );
