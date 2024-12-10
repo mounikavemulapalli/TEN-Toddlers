@@ -20,6 +20,7 @@ import Contact from "./contact_us/contactPage";
 import Blog from './Blog/Blog';
 import AllHappyParents from "./Home/AllHappyParents.jsx"
 import { Article } from './Blog/Blog.jsx';
+import ParentingStories from './ParentingStories/ParentingStories.jsx';
 import BabyAchieversAll from './Home/Baby-achievers-all.jsx';
 import UnapprovedMsg from './Blog/UnapprovedMsg.jsx';
 
@@ -42,8 +43,8 @@ export default function App() {
 
 function MainRoutes({ searchedKeyword, setSelectedTitle }) {
   const location = useLocation();
-  const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions'];
-  const isFooterHidden = hideFooterRoutes.includes(location.pathname) || location.pathname.startsWith('/blog/');
+  const hideFooterRoutes = ['/blog', '/premium', '/super_daily_app_program', '/privacy-policy', '/terms-conditions', '/parenting-stories'];
+  const isFooterHidden = hideFooterRoutes.includes(location.pathname) || location.pathname.startsWith('/blog/') || location.pathname.startsWith('/parenting-stories/');
 
   return (
     <>
@@ -66,6 +67,7 @@ function MainRoutes({ searchedKeyword, setSelectedTitle }) {
         <Route path='/blog/:title' element={<Article />} />
         <Route path='/subscription_box' element={<SubscriptionBox />} />
         <Route path='/research' element={<ResearchHub />} />
+        <Route path='/parenting-stories' element={<ParentingStories />} />
         <Route path='/contact-us' element={<Contact />} />
         <Route path="/unapproved" element={<UnapprovedMsg/>} />
       </Routes>

@@ -3,7 +3,7 @@ import additionalImage from "/src/assets/images/2.webp";
 import Slider from "../comman/Slider.jsx";
 import Iframe from "react-iframe";
 import { doctorReviews } from "../../assets/Lists/doctorReviews.js";
-import "./AboutSection.css"; //////////////////////////
+import "./AboutSection.css"; 
 import { boardMembers } from "../../assets/Lists/boardMembers.js";
 import about from "../../assets/Lists/about.js"; // Importing the default export
 

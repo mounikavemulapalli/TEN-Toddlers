@@ -24,7 +24,7 @@ export default function Popup({ closePopup }) {
 
     try {
       const response = await axios.post(
-        "https://uptodd.onrender.com/api/book-demo",
+        "https://uptodd-29rq.onrender.com/api/book-demo",
         {
           fullName: data.fullName,
           email: data.email,

@@ -17,8 +17,8 @@ const transporter = nodemailer.createTransport({
   secure: false,
 
   auth: {
-    user: "mounikavemulapalli289@gmail.com", // Replace with your email
-    pass: "fsdi uykz goxm zglj",
+    user: "tech@entrepreneurshipnetwork.net", // Replace with your email
+    pass: "ulzo ueut cueu vlpv",
   },
 });
 
@@ -35,14 +35,56 @@ router.post("/book-demo", async (req, res) => {
     });
     await newBooking.save();
 
-    // Send email notification
-    const mailOptions = {
-      from: "mounikavemulapalli289@gmail.com",
-      to: email,
+    // Send email to user
+    const userMailOptions = {
+      from: "tech@entrepreneurshipnetwork.net",
+      to: email, // User's email address
       subject: "Demo Session Booking Confirmation",
-      html: `<div style={{display:flex;flex-direction:column}}> <h1>Dear ${fullName}, your demo session has been successfully booked. Our team will contact you soon!</h1> <br /><h3>This is what you have filled:</h3> <ul> <li>FullName:${fullName}</li><li>Email:${email}</li> <li>Mobile Code:${mobileCode}</li><li>Mobile:${mobile} <li>Child Age: ${babyAge}</li></ul></div> `,
+      html: `
+    <div>
+      <h1>Dear ${fullName}, your demo session has been successfully booked. Our team will contact you soon!</h1>
+      <br />
+      <h3>This is what you have filled:</h3>
+      <ul>
+        <li>Full Name: ${fullName}</li>
+        <li>Email: ${email}</li>
+        <li>Mobile Code: ${mobileCode}</li>
+        <li>Mobile: ${mobile}</li>
+        <li>Child Age: ${babyAge}</li>
+      </ul>
+    </div>`,
     };
-    await transporter.sendMail(mailOptions);
+
+    // Send email to admin
+    const adminMailOptions = {
+      from: "tech@entrepreneurshipnetwork.net",
+      to: "tech@entrepreneurshipnetwork.net", // Admin's email address
+      subject: "New Demo Session Booking Alert",
+      html: `
+    <div>
+      <h1>Hello, you have received! one new demo. ${fullName} booked a demo session</h1>
+      <br />
+      <h3>Booking Details:</h3>
+      <ul>
+        <li>Full Name: ${fullName}</li>
+        <li>Email: ${email}</li>
+        <li>Mobile Code: ${mobileCode}</li>
+        <li>Mobile: ${mobile}</li>
+        <li>Child Age: ${babyAge}</li>
+      </ul>
+    </div>`,
+    };
+
+    try {
+      // Send emails
+      await transporter.sendMail(userMailOptions);
+      await transporter.sendMail(adminMailOptions);
+
+      res.status(200).json({ message: "Booking successful!" });
+    } catch (error) {
+      console.error("Error sending emails:", error);
+      res.status(500).json({ message: "Server error, try again later" });
+    }
 
     // const sendWhatsAppMessage = async (recipient, message) => {
     //   try {
@@ -61,7 +103,7 @@ router.post("/book-demo", async (req, res) => {
     // await sendWhatsAppMessage(recipientNumber, whatsappMessage);
 
     // Respond back to frontend
-    res.status(200).json({ message: "Booking successful!" });
+    // res.status(200).json({ message: "Booking successful!" });
   } catch (error) {
     console.error("Error booking demo session:", error);
     res.status(500).json({ message: "Server error, try again later" });

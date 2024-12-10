@@ -62,7 +62,7 @@ const Footer = () => {
           <h3>Community</h3>
           <li>
             <a
-              href="https://blog.uptodd.com/parenting-stories/"
+              href="/parenting-stories"
               target="_blank"
             >
               Share your journey
